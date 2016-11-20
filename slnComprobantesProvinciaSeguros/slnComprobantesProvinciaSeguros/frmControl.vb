@@ -17,7 +17,7 @@ Public Class frmControl
             MsgBox("Ingrese el codigo", MsgBoxStyle.Exclamation, "Aviso")
         Else
             ComprontesDA.InsertarDetalleComprobante(txtEntrada.Text, txtRM.Text, txtPoliza.Text, txtEndoso.Text, txtNroCuota.Text, txtFechaVto.Text, txtMoneda.Text, Convert.ToDecimal(txtImporte.Text), txtObservaciones.Text, "Pepito")
-            ComprobantesAct.printTicket(txtPoliza.Text, txtNroCuota.Text, txtMoneda.Text, txtImporte.Text)
+            ComprobantesAct.PrintTicket(txtPoliza.Text, txtNroCuota.Text, txtMoneda.Text, txtImporte.Text, "12313123132")
         End If
 
         txtEntrada.Focus()
