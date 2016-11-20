@@ -17,13 +17,14 @@ Public Class frmControl
             MsgBox("Ingrese el codigo", MsgBoxStyle.Exclamation, "Aviso")
         Else
             ComprontesDA.InsertarDetalleComprobante(txtEntrada.Text, txtRM.Text, txtPoliza.Text, txtEndoso.Text, txtNroCuota.Text, txtFechaVto.Text, txtMoneda.Text, Convert.ToDecimal(txtImporte.Text), txtObservaciones.Text, "Pepito")
+            ComprobantesAct.printTicket(txtPoliza.Text, txtNroCuota.Text, txtMoneda.Text, txtImporte.Text)
         End If
 
         txtEntrada.Focus()
     End Sub
 
 
-    Private Sub txtEntrada_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtEntrada.TextChanged
+    Private Sub txtEntrada_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtEntrada.TextChanged
         If txtEntrada.Text = String.Empty Then
             MsgBox("Ingrese el codigo", MsgBoxStyle.Exclamation, "Aviso")
         ElseIf (txtEntrada.Text.Length = 38) Then
@@ -102,4 +103,6 @@ Public Class frmControl
         txtImporte.Enabled = estado
 
     End Sub
+
+
 End Class

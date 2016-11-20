@@ -25,7 +25,7 @@ Public Class ComprontesDA
            ByVal NROCUENTA As String,
            ByVal FECHAVTO As Integer,
            ByVal MONEDA As Decimal,
-           ByVal IMPORTE As String,
+           ByVal IMPORTE As Decimal,
            ByVal OBSERVACIONES As String,
            ByVal USR_ALTA As String)
 
