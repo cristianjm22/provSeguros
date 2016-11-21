@@ -105,4 +105,8 @@ Public Class frmControl
     End Sub
 
 
+    Private Sub btnComprobantes_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnComprobantes.Click
+        Dim form As New frmReporte
+        form.Show()
+    End Sub
 End Class

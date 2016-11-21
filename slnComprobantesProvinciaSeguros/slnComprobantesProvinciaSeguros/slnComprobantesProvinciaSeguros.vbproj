@@ -74,6 +74,12 @@
   <ItemGroup>
     <Compile Include="ComprobantesAct.vb" />
     <Compile Include="ComprontesDA.vb" />
+    <Compile Include="frmReporte.Designer.vb">
+      <DependentUpon>frmReporte.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmReporte.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmControl.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -81,10 +87,10 @@
       <DependentUpon>frmControl.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmLogin.Designer.vb">
-      <DependentUpon>frmLogin.vb</DependentUpon>
+    <Compile Include="LoginForm1.Designer.vb">
+      <DependentUpon>LoginForm1.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmLogin.vb">
+    <Compile Include="LoginForm1.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -105,11 +111,14 @@
     <Compile Include="Variables.vb" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmReporte.resx">
+      <DependentUpon>frmReporte.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmControl.resx">
       <DependentUpon>frmControl.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmLogin.resx">
-      <DependentUpon>frmLogin.vb</DependentUpon>
+    <EmbeddedResource Include="LoginForm1.resx">
+      <DependentUpon>LoginForm1.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -128,6 +137,9 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

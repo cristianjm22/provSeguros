@@ -24,7 +24,7 @@ Public Class ComprobantesAct
     Public Shared Sub PrintTicket(
            ByVal pPoliza As String,
            ByVal pCuota As String,
-           ByVal pMoneda As Decimal,
+           ByVal pMoneda As String,
            ByVal pImporte As String,
            ByVal pNroComprobante As String)
 
@@ -54,20 +54,20 @@ Public Class ComprobantesAct
     Public Shared Sub SetData(
            ByVal pPoliza As String,
            ByVal pCuota As String,
-           ByVal pMoneda As Decimal,
+           ByVal pMoneda As String,
            ByVal pImporte As String,
            ByVal pNroComprobante As String)
 
         FechaPago = Date.Now
         NroComprobante = pNroComprobante
 
-        If (pMoneda = 1) Then
+        If (pMoneda = "1") Then
             pMoneda = "$"
         Else
             pMoneda = "US$"
         End If
 
-        Importe = pMoneda + Importe
+        Importe = pMoneda + pImporte
         Poliza = pPoliza
         Cuota = pCuota
 
@@ -81,8 +81,7 @@ Public Class ComprobantesAct
     ''' <param name="e"></param>
     ''' <remarks></remarks>
     Private Shared Sub BuildData(ByVal sender As Object, ByVal e As PrintPageEventArgs)
-
-        Dim newImage As Image = Image.FromFile("/Imagenes/logo.png")
+        Dim newImage = My.Resources.ResourceManager.GetObject("logo")
         Dim destRect As New Rectangle(15, 0, 250, 100)
         e.Graphics.DrawImage(newImage, destRect)
         e.Graphics.DrawString("FECHA: " + FechaPago.ToString("dd/MM/yyyy"), PrintFont, Brushes.Black, 15, 120, New StringFormat())
