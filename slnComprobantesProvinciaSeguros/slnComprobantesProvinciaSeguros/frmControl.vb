@@ -1,22 +1,24 @@
 ﻿
 Imports System.Data
 Imports System.Data.SqlClient
+Imports System.Globalization
+
 Public Class frmControl
 
-    Private Sub txtPoliza_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtPoliza.TextChanged
+    Private Sub txtPoliza_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtPoliza.TextChanged
 
     End Sub
 
-    Private Sub txtFechaVto_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtFechaVto.TextChanged
+    Private Sub txtFechaVto_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
 
     End Sub
 
-    Private Sub btnPagar_Click(sender As System.Object, e As System.EventArgs) Handles btnPagar.Click
+    Private Sub btnPagar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnPagar.Click
 
         If txtEntrada.Text = String.Empty Then
             MsgBox("Ingrese el codigo", MsgBoxStyle.Exclamation, "Aviso")
         Else
-            ComprontesDA.InsertarDetalleComprobante(txtEntrada.Text, txtRM.Text, txtPoliza.Text, txtEndoso.Text, txtNroCuota.Text, txtFechaVto.Text, txtMoneda.Text, Convert.ToDecimal(txtImporte.Text), txtObservaciones.Text, "Pepito")
+            ComprontesDA.InsertarDetalleComprobante(txtEntrada.Text, txtRM.Text, txtPoliza.Text, txtEndoso.Text, txtNroCuota.Text, dtpFechaVencimiento.Text, txtMoneda.Text, Convert.ToDecimal(txtImporte.Text), txtObservaciones.Text, "Pepito")
             ComprobantesAct.PrintTicket(txtPoliza.Text, txtNroCuota.Text, txtMoneda.Text, txtImporte.Text, "12313123132")
         End If
 
@@ -78,8 +80,8 @@ Public Class frmControl
         cuota = cuota * 1
 
         txtNroCuota.Text = rm.ToString()
-
-        txtFechaVto.Text = entrada.Substring(31, 6)
+        Dim provider As CultureInfo = CultureInfo.InvariantCulture
+        dtpFechaVencimiento.Text = Date.ParseExact(entrada.Substring(31, 6), "ddMMyy", CultureInfo.InvariantCulture)
         txtMoneda.Text = entrada.Substring(3, 1)
 
         txtImporte.Text = entrada.Substring(22, 9)
@@ -97,9 +99,9 @@ Public Class frmControl
     ''' <param name="estado"></param>
     ''' <remarks></remarks>
     Private Sub habilitarControles(ByVal estado As String)
-       
-        txtFechaVto.Enabled = estado
-       
+
+        dtpFechaVencimiento.Enabled = estado
+
         txtImporte.Enabled = estado
 
     End Sub
