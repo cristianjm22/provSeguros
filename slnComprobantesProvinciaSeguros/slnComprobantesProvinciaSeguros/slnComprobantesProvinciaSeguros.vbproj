@@ -49,6 +49,9 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -75,6 +78,12 @@
   <ItemGroup>
     <Compile Include="ComprobantesAct.vb" />
     <Compile Include="ComprontesDA.vb" />
+    <Compile Include="frmAccesoMenu.Designer.vb">
+      <DependentUpon>frmAccesoMenu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAccesoMenu.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmReporte.Designer.vb">
       <DependentUpon>frmReporte.vb</DependentUpon>
     </Compile>
@@ -88,10 +97,10 @@
       <DependentUpon>frmControl.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginForm1.Designer.vb">
-      <DependentUpon>LoginForm1.vb</DependentUpon>
+    <Compile Include="Logueo.Designer.vb">
+      <DependentUpon>Logueo.vb</DependentUpon>
     </Compile>
-    <Compile Include="LoginForm1.vb">
+    <Compile Include="Logueo.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -109,23 +118,44 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="frmPermisos.Designer.vb">
+      <DependentUpon>frmPermisos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmPermisos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProcBar.Designer.vb">
+      <DependentUpon>ProcBar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ProcBar.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Variables.vb" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmAccesoMenu.resx">
+      <DependentUpon>frmAccesoMenu.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmReporte.resx">
       <DependentUpon>frmReporte.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmControl.resx">
       <DependentUpon>frmControl.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoginForm1.resx">
-      <DependentUpon>LoginForm1.vb</DependentUpon>
+    <EmbeddedResource Include="Logueo.resx">
+      <DependentUpon>Logueo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPermisos.resx">
+      <DependentUpon>frmPermisos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProcBar.resx">
+      <DependentUpon>ProcBar.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -144,6 +174,54 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logotipo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lassists.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit_group.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kdvi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kedit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fileprint.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button_ok.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button_cancel.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_male.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1leftarrow.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2leftarrow.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1leftarrow1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1rightarrow.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2rightarrow.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\database_add.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\database_delete.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\database_save.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

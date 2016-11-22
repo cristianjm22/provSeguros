@@ -130,4 +130,32 @@ Public Class ComprontesDA
         Return dt
 
     End Function
+
+
+    Public Shared Function verificaPermisos(ByVal USUARIO As String, ByVal MENU As String)
+
+        Dim dt As New DataTable
+
+
+        Try
+            conn = New SqlConnection(sCnn)
+            conn.Open()
+            Dim cmd As New SqlCommand("SP_VERIFICAR_PERMISO", conn)
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandTimeout = 300
+            cmd.Parameters.AddWithValue("@USUARIO", USUARIO)
+            cmd.Parameters.AddWithValue("@MENU", MENU)
+
+            Dim da As New SqlDataAdapter(cmd)
+            da.Fill(dt)
+            conn.Close()
+
+
+        Catch e As SqlException
+            MsgBox("Mensaje: " & e.Message)
+        End Try
+
+        Return dt
+
+    End Function
 End Class

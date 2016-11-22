@@ -111,4 +111,16 @@ Public Class frmControl
         Dim form As New frmReporte
         form.Show()
     End Sub
+
+    Private Sub btnModComprobantes_Click(sender As System.Object, e As System.EventArgs) Handles btnModComprobantes.Click
+
+    End Sub
+
+    Private Sub Button1_Click(sender As System.Object, e As System.EventArgs) Handles Button1.Click
+
+    End Sub
+
+    Private Sub frmControl_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class

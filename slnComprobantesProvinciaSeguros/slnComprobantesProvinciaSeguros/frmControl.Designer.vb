@@ -22,6 +22,7 @@ Partial Class frmControl
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmControl))
         Me.btnComprobantes = New System.Windows.Forms.Button()
         Me.btnPagar = New System.Windows.Forms.Button()
         Me.txtEntrada = New System.Windows.Forms.TextBox()
@@ -44,11 +45,16 @@ Partial Class frmControl
         Me.dtpFechaVencimiento = New System.Windows.Forms.DateTimePicker()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.gbPagos = New System.Windows.Forms.GroupBox()
-        Me.pbLogo = New System.Windows.Forms.PictureBox()
         Me.ShapeContainer1 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
-        Me.LineShape1 = New Microsoft.VisualBasic.PowerPacks.LineShape()
-        Me.LineShape2 = New Microsoft.VisualBasic.PowerPacks.LineShape()
         Me.LineShape3 = New Microsoft.VisualBasic.PowerPacks.LineShape()
+        Me.LineShape2 = New Microsoft.VisualBasic.PowerPacks.LineShape()
+        Me.LineShape1 = New Microsoft.VisualBasic.PowerPacks.LineShape()
+        Me.btnModComprobantes = New System.Windows.Forms.Button()
+        Me.Permisos = New System.Windows.Forms.Button()
+        Me.btnDetalleComprobantes = New System.Windows.Forms.Button()
+        Me.btnPagos = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.pbLogo = New System.Windows.Forms.PictureBox()
         CType(Me.pbLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -250,43 +256,15 @@ Partial Class frmControl
         Me.gbPagos.TabIndex = 26
         Me.gbPagos.TabStop = False
         '
-        'pbLogo
-        '
-        Me.pbLogo.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.logotipo
-        Me.pbLogo.Location = New System.Drawing.Point(335, 3)
-        Me.pbLogo.Name = "pbLogo"
-        Me.pbLogo.Size = New System.Drawing.Size(105, 100)
-        Me.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.pbLogo.TabIndex = 27
-        Me.pbLogo.TabStop = False
-        '
         'ShapeContainer1
         '
         Me.ShapeContainer1.Location = New System.Drawing.Point(0, 0)
         Me.ShapeContainer1.Margin = New System.Windows.Forms.Padding(0)
         Me.ShapeContainer1.Name = "ShapeContainer1"
         Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.LineShape3, Me.LineShape2, Me.LineShape1})
-        Me.ShapeContainer1.Size = New System.Drawing.Size(457, 492)
+        Me.ShapeContainer1.Size = New System.Drawing.Size(646, 492)
         Me.ShapeContainer1.TabIndex = 28
         Me.ShapeContainer1.TabStop = False
-        '
-        'LineShape1
-        '
-        Me.LineShape1.BorderWidth = 2
-        Me.LineShape1.Name = "LineShape1"
-        Me.LineShape1.X1 = 14
-        Me.LineShape1.X2 = 439
-        Me.LineShape1.Y1 = 99
-        Me.LineShape1.Y2 = 99
-        '
-        'LineShape2
-        '
-        Me.LineShape2.BorderWidth = 2
-        Me.LineShape2.Name = "LineShape2"
-        Me.LineShape2.X1 = 16
-        Me.LineShape2.X2 = 441
-        Me.LineShape2.Y1 = 246
-        Me.LineShape2.Y2 = 246
         '
         'LineShape3
         '
@@ -297,12 +275,102 @@ Partial Class frmControl
         Me.LineShape3.Y1 = 106
         Me.LineShape3.Y2 = 106
         '
+        'LineShape2
+        '
+        Me.LineShape2.BorderWidth = 2
+        Me.LineShape2.Name = "LineShape2"
+        Me.LineShape2.X1 = 16
+        Me.LineShape2.X2 = 441
+        Me.LineShape2.Y1 = 246
+        Me.LineShape2.Y2 = 246
+        '
+        'LineShape1
+        '
+        Me.LineShape1.BorderWidth = 2
+        Me.LineShape1.Name = "LineShape1"
+        Me.LineShape1.X1 = 14
+        Me.LineShape1.X2 = 439
+        Me.LineShape1.Y1 = 99
+        Me.LineShape1.Y2 = 99
+        '
+        'btnModComprobantes
+        '
+        Me.btnModComprobantes.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.kedit
+        Me.btnModComprobantes.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btnModComprobantes.Location = New System.Drawing.Point(487, 297)
+        Me.btnModComprobantes.Name = "btnModComprobantes"
+        Me.btnModComprobantes.Size = New System.Drawing.Size(90, 68)
+        Me.btnModComprobantes.TabIndex = 33
+        Me.btnModComprobantes.Text = "Modificar Comprobantes"
+        Me.btnModComprobantes.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnModComprobantes.UseVisualStyleBackColor = True
+        '
+        'Permisos
+        '
+        Me.Permisos.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.edit_group
+        Me.Permisos.Location = New System.Drawing.Point(487, 117)
+        Me.Permisos.Name = "Permisos"
+        Me.Permisos.Size = New System.Drawing.Size(89, 68)
+        Me.Permisos.TabIndex = 32
+        Me.Permisos.Text = "Permisos"
+        Me.Permisos.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.Permisos.UseVisualStyleBackColor = True
+        '
+        'btnDetalleComprobantes
+        '
+        Me.btnDetalleComprobantes.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.kdvi
+        Me.btnDetalleComprobantes.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btnDetalleComprobantes.Location = New System.Drawing.Point(487, 209)
+        Me.btnDetalleComprobantes.Name = "btnDetalleComprobantes"
+        Me.btnDetalleComprobantes.Size = New System.Drawing.Size(90, 68)
+        Me.btnDetalleComprobantes.TabIndex = 31
+        Me.btnDetalleComprobantes.Text = "Detalle Comprobantes"
+        Me.btnDetalleComprobantes.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnDetalleComprobantes.UseVisualStyleBackColor = True
+        '
+        'btnPagos
+        '
+        Me.btnPagos.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.lassists
+        Me.btnPagos.Location = New System.Drawing.Point(486, 31)
+        Me.btnPagos.Name = "btnPagos"
+        Me.btnPagos.Size = New System.Drawing.Size(90, 68)
+        Me.btnPagos.TabIndex = 30
+        Me.btnPagos.Text = "Cobrar"
+        Me.btnPagos.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnPagos.UseVisualStyleBackColor = True
+        '
+        'Button1
+        '
+        Me.Button1.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.fileprint
+        Me.Button1.Location = New System.Drawing.Point(486, 395)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(89, 68)
+        Me.Button1.TabIndex = 29
+        Me.Button1.Text = "Imprimir"
+        Me.Button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'pbLogo
+        '
+        Me.pbLogo.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.logotipo
+        Me.pbLogo.Location = New System.Drawing.Point(335, 3)
+        Me.pbLogo.Name = "pbLogo"
+        Me.pbLogo.Size = New System.Drawing.Size(105, 100)
+        Me.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pbLogo.TabIndex = 27
+        Me.pbLogo.TabStop = False
+        '
         'frmControl
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Silver
-        Me.ClientSize = New System.Drawing.Size(457, 492)
+        Me.ClientSize = New System.Drawing.Size(646, 492)
+        Me.Controls.Add(Me.btnModComprobantes)
+        Me.Controls.Add(Me.Permisos)
+        Me.Controls.Add(Me.btnDetalleComprobantes)
+        Me.Controls.Add(Me.btnPagos)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.dtpFechaVencimiento)
         Me.Controls.Add(Me.Label2)
@@ -327,6 +395,7 @@ Partial Class frmControl
         Me.Controls.Add(Me.pbLogo)
         Me.Controls.Add(Me.gbPagos)
         Me.Controls.Add(Me.ShapeContainer1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmControl"
         Me.Text = "Formulario"
         CType(Me.pbLogo, System.ComponentModel.ISupportInitialize).EndInit()
@@ -361,5 +430,10 @@ Partial Class frmControl
     Friend WithEvents LineShape3 As Microsoft.VisualBasic.PowerPacks.LineShape
     Friend WithEvents LineShape2 As Microsoft.VisualBasic.PowerPacks.LineShape
     Friend WithEvents btnPagar As System.Windows.Forms.Button
+    Friend WithEvents btnModComprobantes As System.Windows.Forms.Button
+    Friend WithEvents Permisos As System.Windows.Forms.Button
+    Friend WithEvents btnDetalleComprobantes As System.Windows.Forms.Button
+    Friend WithEvents btnPagos As System.Windows.Forms.Button
+    Friend WithEvents Button1 As System.Windows.Forms.Button
 
 End Class
