@@ -19,11 +19,11 @@ Partial Class ProcBar
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ProcBar))
-        Me.ProgressBar1 = New System.Windows.Forms.ProgressBar
-        Me.Top_Lbl = New System.Windows.Forms.Label
-        Me.HiloBackgroundWorker = New System.ComponentModel.BackgroundWorker
+        Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
+        Me.Top_Lbl = New System.Windows.Forms.Label()
+        Me.HiloBackgroundWorker = New System.ComponentModel.BackgroundWorker()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.SuspendLayout()
         '

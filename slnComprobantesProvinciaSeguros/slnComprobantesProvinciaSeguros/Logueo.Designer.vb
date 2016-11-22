@@ -23,47 +23,15 @@ Partial Class Logueo
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Logueo))
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Login_No_Btn = New System.Windows.Forms.Button()
-        Me.Login_Yes_Btn = New System.Windows.Forms.Button()
         Me.Pass_Lbl = New System.Windows.Forms.Label()
         Me.User_Lbl = New System.Windows.Forms.Label()
         Me.Login_Pass_Txt = New System.Windows.Forms.TextBox()
         Me.Login_Usr_Txt = New System.Windows.Forms.TextBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Login_No_Btn = New System.Windows.Forms.Button()
+        Me.Login_Yes_Btn = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.user_male
-        Me.PictureBox1.Location = New System.Drawing.Point(13, 13)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(32, 32)
-        Me.PictureBox1.TabIndex = 15
-        Me.PictureBox1.TabStop = False
-        '
-        'Login_No_Btn
-        '
-        Me.Login_No_Btn.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.Login_No_Btn.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.button_cancel
-        Me.Login_No_Btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Login_No_Btn.Location = New System.Drawing.Point(128, 118)
-        Me.Login_No_Btn.Name = "Login_No_Btn"
-        Me.Login_No_Btn.Size = New System.Drawing.Size(80, 22)
-        Me.Login_No_Btn.TabIndex = 14
-        Me.Login_No_Btn.Text = "   Cancelar"
-        Me.Login_No_Btn.UseVisualStyleBackColor = True
-        '
-        'Login_Yes_Btn
-        '
-        Me.Login_Yes_Btn.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.button_ok
-        Me.Login_Yes_Btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Login_Yes_Btn.Location = New System.Drawing.Point(39, 118)
-        Me.Login_Yes_Btn.Name = "Login_Yes_Btn"
-        Me.Login_Yes_Btn.Size = New System.Drawing.Size(71, 22)
-        Me.Login_Yes_Btn.TabIndex = 13
-        Me.Login_Yes_Btn.Text = "  Aceptar"
-        Me.Login_Yes_Btn.UseVisualStyleBackColor = True
         '
         'Pass_Lbl
         '
@@ -99,6 +67,39 @@ Partial Class Logueo
         Me.Login_Usr_Txt.Name = "Login_Usr_Txt"
         Me.Login_Usr_Txt.Size = New System.Drawing.Size(141, 20)
         Me.Login_Usr_Txt.TabIndex = 9
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.appbar_user
+        Me.PictureBox1.Location = New System.Drawing.Point(1, 5)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(60, 70)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 15
+        Me.PictureBox1.TabStop = False
+        '
+        'Login_No_Btn
+        '
+        Me.Login_No_Btn.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.Login_No_Btn.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.button_cancel
+        Me.Login_No_Btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Login_No_Btn.Location = New System.Drawing.Point(128, 118)
+        Me.Login_No_Btn.Name = "Login_No_Btn"
+        Me.Login_No_Btn.Size = New System.Drawing.Size(80, 22)
+        Me.Login_No_Btn.TabIndex = 14
+        Me.Login_No_Btn.Text = "   Cancelar"
+        Me.Login_No_Btn.UseVisualStyleBackColor = True
+        '
+        'Login_Yes_Btn
+        '
+        Me.Login_Yes_Btn.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.button_ok
+        Me.Login_Yes_Btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Login_Yes_Btn.Location = New System.Drawing.Point(39, 118)
+        Me.Login_Yes_Btn.Name = "Login_Yes_Btn"
+        Me.Login_Yes_Btn.Size = New System.Drawing.Size(71, 22)
+        Me.Login_Yes_Btn.TabIndex = 13
+        Me.Login_Yes_Btn.Text = "  Aceptar"
+        Me.Login_Yes_Btn.UseVisualStyleBackColor = True
         '
         'Logueo
         '

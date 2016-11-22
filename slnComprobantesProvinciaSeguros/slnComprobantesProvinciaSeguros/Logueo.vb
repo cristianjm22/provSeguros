@@ -22,12 +22,8 @@ Public Class Logueo
         Clave = Login_Pass_Txt.Text
 
         If Usuario = "ADM" And Clave = "ADM123" Then
-            Me.Close()
             frmAccesoMenu.Show()
-
         Else
-
-            Me.Close()
             'Ejecuto tareas con el usuario
             Dim sSel As String = "SELECT TOP 1 PASSWORD FROM USUARIOS WHERE  USUARIO='" & Usuario & "'"
             conn = New SqlConnection(sCnn)
@@ -56,6 +52,9 @@ Public Class Logueo
                     conn.Open()
                     cmd.ExecuteNonQuery()
                 End If
+                Me.Close()
+                'Permisos(Usuario)
+                frmAccesoMenu.Show()
             Else
                 'conn.Close()
                 'cmd = conn.CreateCommand()
@@ -68,19 +67,13 @@ Public Class Logueo
 
 
             End If
-            'Permisos(Usuario)
-            frmAccesoMenu.Show()
-
 
         End If
 
     End Sub
-    Private Function CloseAll()
-        Dim Success As Boolean = True
+    Private Sub CloseAll()
         Me.Close()
-
-        Return Success
-    End Function
+    End Sub
 
     Private Sub Login_Yes_Btn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Login_Yes_Btn.Click
         Aceptar()
@@ -89,7 +82,4 @@ Public Class Logueo
     Private Sub Login_No_Btn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Login_No_Btn.Click
         CloseAll()
     End Sub
-
-
-
 End Class

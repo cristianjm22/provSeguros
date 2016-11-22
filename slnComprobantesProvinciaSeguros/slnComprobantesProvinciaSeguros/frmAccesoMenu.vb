@@ -27,12 +27,12 @@
 
     End Sub
 
-    Private Sub frmAccesoMenu_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
-        Logueo.ShowDialog()
-        'Informacion()
+    Private Sub btnDetalleComprobantes_Click(sender As System.Object, e As System.EventArgs) Handles btnDetalleComprobantes.Click
+        Dim form As New frmReporte
+        form.Show()
     End Sub
 
-    Private Sub btnDetalleComprobantes_Click(sender As System.Object, e As System.EventArgs) Handles btnDetalleComprobantes.Click
-
+    Private Sub frmAccesoMenu_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        Logueo.Close()
     End Sub
 End Class

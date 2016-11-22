@@ -23,7 +23,6 @@ Partial Class frmControl
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmControl))
-        Me.btnComprobantes = New System.Windows.Forms.Button()
         Me.btnPagar = New System.Windows.Forms.Button()
         Me.txtEntrada = New System.Windows.Forms.TextBox()
         Me.lblEntrada = New System.Windows.Forms.Label()
@@ -49,28 +48,10 @@ Partial Class frmControl
         Me.LineShape3 = New Microsoft.VisualBasic.PowerPacks.LineShape()
         Me.LineShape2 = New Microsoft.VisualBasic.PowerPacks.LineShape()
         Me.LineShape1 = New Microsoft.VisualBasic.PowerPacks.LineShape()
-        Me.btnModComprobantes = New System.Windows.Forms.Button()
-        Me.Permisos = New System.Windows.Forms.Button()
-        Me.btnDetalleComprobantes = New System.Windows.Forms.Button()
-        Me.btnPagos = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.pbLogo = New System.Windows.Forms.PictureBox()
+        Me.btnVolver = New System.Windows.Forms.Button()
         CType(Me.pbLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'btnComprobantes
-        '
-        Me.btnComprobantes.BackColor = System.Drawing.Color.DimGray
-        Me.btnComprobantes.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.btnComprobantes.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnComprobantes.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnComprobantes.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.btnComprobantes.Location = New System.Drawing.Point(200, 410)
-        Me.btnComprobantes.Name = "btnComprobantes"
-        Me.btnComprobantes.Size = New System.Drawing.Size(125, 36)
-        Me.btnComprobantes.TabIndex = 3
-        Me.btnComprobantes.Text = "Ver Comprobantes"
-        Me.btnComprobantes.UseVisualStyleBackColor = False
         '
         'btnPagar
         '
@@ -262,7 +243,7 @@ Partial Class frmControl
         Me.ShapeContainer1.Margin = New System.Windows.Forms.Padding(0)
         Me.ShapeContainer1.Name = "ShapeContainer1"
         Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.LineShape3, Me.LineShape2, Me.LineShape1})
-        Me.ShapeContainer1.Size = New System.Drawing.Size(646, 492)
+        Me.ShapeContainer1.Size = New System.Drawing.Size(456, 492)
         Me.ShapeContainer1.TabIndex = 28
         Me.ShapeContainer1.TabStop = False
         '
@@ -293,63 +274,6 @@ Partial Class frmControl
         Me.LineShape1.Y1 = 99
         Me.LineShape1.Y2 = 99
         '
-        'btnModComprobantes
-        '
-        Me.btnModComprobantes.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.kedit
-        Me.btnModComprobantes.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnModComprobantes.Location = New System.Drawing.Point(487, 297)
-        Me.btnModComprobantes.Name = "btnModComprobantes"
-        Me.btnModComprobantes.Size = New System.Drawing.Size(90, 68)
-        Me.btnModComprobantes.TabIndex = 33
-        Me.btnModComprobantes.Text = "Modificar Comprobantes"
-        Me.btnModComprobantes.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btnModComprobantes.UseVisualStyleBackColor = True
-        '
-        'Permisos
-        '
-        Me.Permisos.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.edit_group
-        Me.Permisos.Location = New System.Drawing.Point(487, 117)
-        Me.Permisos.Name = "Permisos"
-        Me.Permisos.Size = New System.Drawing.Size(89, 68)
-        Me.Permisos.TabIndex = 32
-        Me.Permisos.Text = "Permisos"
-        Me.Permisos.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.Permisos.UseVisualStyleBackColor = True
-        '
-        'btnDetalleComprobantes
-        '
-        Me.btnDetalleComprobantes.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.kdvi
-        Me.btnDetalleComprobantes.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnDetalleComprobantes.Location = New System.Drawing.Point(487, 209)
-        Me.btnDetalleComprobantes.Name = "btnDetalleComprobantes"
-        Me.btnDetalleComprobantes.Size = New System.Drawing.Size(90, 68)
-        Me.btnDetalleComprobantes.TabIndex = 31
-        Me.btnDetalleComprobantes.Text = "Detalle Comprobantes"
-        Me.btnDetalleComprobantes.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btnDetalleComprobantes.UseVisualStyleBackColor = True
-        '
-        'btnPagos
-        '
-        Me.btnPagos.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.lassists
-        Me.btnPagos.Location = New System.Drawing.Point(486, 31)
-        Me.btnPagos.Name = "btnPagos"
-        Me.btnPagos.Size = New System.Drawing.Size(90, 68)
-        Me.btnPagos.TabIndex = 30
-        Me.btnPagos.Text = "Cobrar"
-        Me.btnPagos.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btnPagos.UseVisualStyleBackColor = True
-        '
-        'Button1
-        '
-        Me.Button1.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.fileprint
-        Me.Button1.Location = New System.Drawing.Point(486, 395)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(89, 68)
-        Me.Button1.TabIndex = 29
-        Me.Button1.Text = "Imprimir"
-        Me.Button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.Button1.UseVisualStyleBackColor = True
-        '
         'pbLogo
         '
         Me.pbLogo.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.logotipo
@@ -360,17 +284,27 @@ Partial Class frmControl
         Me.pbLogo.TabIndex = 27
         Me.pbLogo.TabStop = False
         '
+        'btnVolver
+        '
+        Me.btnVolver.BackColor = System.Drawing.Color.DimGray
+        Me.btnVolver.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnVolver.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnVolver.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.btnVolver.Location = New System.Drawing.Point(219, 410)
+        Me.btnVolver.Name = "btnVolver"
+        Me.btnVolver.Size = New System.Drawing.Size(107, 36)
+        Me.btnVolver.TabIndex = 29
+        Me.btnVolver.Text = "Menu Principal"
+        Me.btnVolver.UseVisualStyleBackColor = False
+        '
         'frmControl
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.Silver
-        Me.ClientSize = New System.Drawing.Size(646, 492)
-        Me.Controls.Add(Me.btnModComprobantes)
-        Me.Controls.Add(Me.Permisos)
-        Me.Controls.Add(Me.btnDetalleComprobantes)
-        Me.Controls.Add(Me.btnPagos)
-        Me.Controls.Add(Me.Button1)
+        Me.BackColor = System.Drawing.SystemColors.Control
+        Me.ClientSize = New System.Drawing.Size(456, 492)
+        Me.Controls.Add(Me.btnVolver)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.dtpFechaVencimiento)
         Me.Controls.Add(Me.Label2)
@@ -390,7 +324,6 @@ Partial Class frmControl
         Me.Controls.Add(Me.txtRM)
         Me.Controls.Add(Me.lblEntrada)
         Me.Controls.Add(Me.txtEntrada)
-        Me.Controls.Add(Me.btnComprobantes)
         Me.Controls.Add(Me.btnPagar)
         Me.Controls.Add(Me.pbLogo)
         Me.Controls.Add(Me.gbPagos)
@@ -403,7 +336,6 @@ Partial Class frmControl
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents btnComprobantes As System.Windows.Forms.Button
     Friend WithEvents txtEntrada As System.Windows.Forms.TextBox
     Friend WithEvents lblEntrada As System.Windows.Forms.Label
     Friend WithEvents txtRM As System.Windows.Forms.TextBox
@@ -430,10 +362,6 @@ Partial Class frmControl
     Friend WithEvents LineShape3 As Microsoft.VisualBasic.PowerPacks.LineShape
     Friend WithEvents LineShape2 As Microsoft.VisualBasic.PowerPacks.LineShape
     Friend WithEvents btnPagar As System.Windows.Forms.Button
-    Friend WithEvents btnModComprobantes As System.Windows.Forms.Button
-    Friend WithEvents Permisos As System.Windows.Forms.Button
-    Friend WithEvents btnDetalleComprobantes As System.Windows.Forms.Button
-    Friend WithEvents btnPagos As System.Windows.Forms.Button
-    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents btnVolver As System.Windows.Forms.Button
 
 End Class

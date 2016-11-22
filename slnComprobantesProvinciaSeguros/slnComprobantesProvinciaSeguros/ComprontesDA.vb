@@ -23,8 +23,8 @@ Public Class ComprontesDA
            ByVal POLIZA As String,
            ByVal ENDOSO As String,
            ByVal NROCUENTA As String,
-           ByVal FECHAVTO As Integer,
-           ByVal MONEDA As Decimal,
+           ByVal FECHAVTO As Date,
+           ByVal MONEDA As String,
            ByVal IMPORTE As Decimal,
            ByVal OBSERVACIONES As String,
            ByVal USR_ALTA As String)

@@ -5,21 +5,13 @@ Imports System.Globalization
 
 Public Class frmControl
 
-    Private Sub txtPoliza_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtPoliza.TextChanged
-
-    End Sub
-
-    Private Sub txtFechaVto_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
-
-    End Sub
-
     Private Sub btnPagar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnPagar.Click
 
         If txtEntrada.Text = String.Empty Then
             MsgBox("Ingrese el codigo", MsgBoxStyle.Exclamation, "Aviso")
         Else
             ComprontesDA.InsertarDetalleComprobante(txtEntrada.Text, txtRM.Text, txtPoliza.Text, txtEndoso.Text, txtNroCuota.Text, dtpFechaVencimiento.Text, txtMoneda.Text, Convert.ToDecimal(txtImporte.Text), txtObservaciones.Text, "Pepito")
-            ComprobantesAct.PrintTicket(txtPoliza.Text, txtNroCuota.Text, txtMoneda.Text, txtImporte.Text, "12313123132")
+            'ComprobantesAct.PrintTicket(txtPoliza.Text, txtNroCuota.Text, txtMoneda.Text, txtImporte.Text, "12313123132")
         End If
 
         txtEntrada.Focus()
@@ -54,19 +46,15 @@ Public Class frmControl
 
         txtRM.Text = rm.ToString()
 
-
-
         txtPoliza.Text = entrada.Substring(6, 7)
 
         txtEndoso.Text = entrada.Substring(13, 7)
-
 
         endoso = Convert.ToInt16(txtEndoso.Text)
 
         endoso = endoso * 1
 
         txtEndoso.Text = endoso.ToString()
-
 
         If (ComprontesDA.verificaPagoAnticipado(txtEndoso.Text) > 0) Then
 
@@ -106,21 +94,8 @@ Public Class frmControl
 
     End Sub
 
-
-    Private Sub btnComprobantes_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnComprobantes.Click
-        Dim form As New frmReporte
-        form.Show()
-    End Sub
-
-    Private Sub btnModComprobantes_Click(sender As System.Object, e As System.EventArgs) Handles btnModComprobantes.Click
-
-    End Sub
-
-    Private Sub Button1_Click(sender As System.Object, e As System.EventArgs) Handles Button1.Click
-
-    End Sub
-
-    Private Sub frmControl_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
-
+    Private Sub btnVolver_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnVolver.Click
+        frmAccesoMenu.Show()
+        Me.Close()
     End Sub
 End Class

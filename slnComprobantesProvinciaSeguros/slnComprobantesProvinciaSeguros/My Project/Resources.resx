@@ -136,9 +136,6 @@
   <data name="dobleleftarrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\2leftarrow.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="user_male" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\user_male.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="logotipo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logotipo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -168,5 +165,14 @@
   </data>
   <data name="database_save" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\database_save.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="appbar_user" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\appbar.user.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="appbar_check" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\appbar.check.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="appbar_close" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\appbar.close.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
