@@ -5,17 +5,7 @@ Imports System.Globalization
 
 Public Class frmControl
 
-    Private Sub btnPagar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnPagar.Click
 
-        If txtEntrada.Text = String.Empty Then
-            MsgBox("Ingrese el codigo", MsgBoxStyle.Exclamation, "Aviso")
-        Else
-            ComprontesDA.InsertarDetalleComprobante(txtEntrada.Text, txtRM.Text, txtPoliza.Text, txtEndoso.Text, txtNroCuota.Text, dtpFechaVencimiento.Text, txtMoneda.Text, Convert.ToDecimal(txtImporte.Text), txtObservaciones.Text, "Pepito")
-            'ComprobantesAct.PrintTicket(txtPoliza.Text, txtNroCuota.Text, txtMoneda.Text, txtImporte.Text, "12313123132")
-        End If
-
-        txtEntrada.Focus()
-    End Sub
 
 
     Private Sub txtEntrada_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtEntrada.TextChanged
@@ -69,7 +59,13 @@ Public Class frmControl
 
         txtNroCuota.Text = rm.ToString()
         Dim provider As CultureInfo = CultureInfo.InvariantCulture
-        dtpFechaVencimiento.Text = Date.ParseExact(entrada.Substring(31, 6), "ddMMyy", CultureInfo.InvariantCulture)
+        Dim fechaVtoString As String = entrada.Substring(31, 6)
+        If (fechaVtoString = "000000") Then
+            dtpFechaVencimiento.Value = DateTime.Now
+        Else
+            dtpFechaVencimiento.Text = Date.ParseExact(fechaVtoString, "ddMMyy", CultureInfo.InvariantCulture)
+        End If
+
         txtMoneda.Text = entrada.Substring(3, 1)
 
         txtImporte.Text = entrada.Substring(22, 9)
@@ -94,8 +90,36 @@ Public Class frmControl
 
     End Sub
 
-    Private Sub btnVolver_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnVolver.Click
-        frmAccesoMenu.Show()
-        Me.Close()
+    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnImprimir.Click
+        If txtEntrada.Text = String.Empty Then
+            MsgBox("Ingrese el codigo", MsgBoxStyle.Exclamation, "Aviso")
+        Else
+            ComprontesDA.InsertarDetalleComprobante(txtEntrada.Text, txtRM.Text, txtPoliza.Text, txtEndoso.Text, txtNroCuota.Text, dtpFechaVencimiento.Text, txtMoneda.Text, Convert.ToDecimal(txtImporte.Text), txtObservaciones.Text, "Pepito")
+            'ComprobantesAct.PrintTicket(txtPoliza.Text, txtNroCuota.Text, txtMoneda.Text, txtImporte.Text, "12313123132")
+        End If
+
+        txtEntrada.Focus()
+    End Sub
+
+    Private Sub btnModificarPagos_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnModificarPagos.Click
+
+    End Sub
+
+    Private Sub btnPermisos_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnPermisos.Click
+
+    End Sub
+
+    Private Sub frmControl_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        If ComprobantesAct.AccesoMenu(Usuario, "frmPermisos") Then
+
+            btnPermisos.Show()
+        Else
+            btnPermisos.Hide()
+
+        End If
+    End Sub
+
+    Private Sub Button1_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+        frmReporte.Show()
     End Sub
 End Class

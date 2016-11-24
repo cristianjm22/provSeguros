@@ -175,4 +175,28 @@
   <data name="appbar_close" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\appbar.close.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="appbar_lock" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\appbar.lock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cancelar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cancelar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="right_arrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\right-arrow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="appbar_calendar_dollar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\appbar.calendar.dollar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="appbar_coupon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\appbar.coupon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="appbar_group" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\appbar.group.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="arrow_right_d" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\flecha-indicando-hacia-la-derecha-en-un-circulo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cancelar__1_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cancelar (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

@@ -1,15 +1,7 @@
 ﻿
 Imports System.Data
 Imports System.Data.SqlClient
-Public Class Logueo
-
-    Private Sub Logueo_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
-        'Login_CmbBx_Domain.SelectedIndex = 0
-        Login_Pass_Txt.Text = ""
-        Login_Usr_Txt.Text = Environment.UserName
-
-        PictureBox1.Image = Image.FromFile("../../Resources/user_male.png")
-    End Sub
+Public Class frmLogin
 
     Private Sub Aceptar()
 
@@ -22,7 +14,7 @@ Public Class Logueo
         Clave = Login_Pass_Txt.Text
 
         If Usuario = "ADM" And Clave = "ADM123" Then
-            frmAccesoMenu.Show()
+            frmControl.Show()
         Else
             'Ejecuto tareas con el usuario
             Dim sSel As String = "SELECT TOP 1 PASSWORD FROM USUARIOS WHERE  USUARIO='" & Usuario & "'"
@@ -51,10 +43,10 @@ Public Class Logueo
                     cmd.CommandText = cmd.CommandText & "WHERE USUARIO='" & Usuario & "'"
                     conn.Open()
                     cmd.ExecuteNonQuery()
-                End If
-                Me.Close()
+                End If  
                 'Permisos(Usuario)
-                frmAccesoMenu.Show()
+                frmControl.Show()
+                Me.Close()
             Else
                 'conn.Close()
                 'cmd = conn.CreateCommand()
@@ -71,15 +63,17 @@ Public Class Logueo
         End If
 
     End Sub
-    Private Sub CloseAll()
-        Me.Close()
+
+    Private Sub frmLogin_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        Login_Pass_Txt.Text = ""
+        Login_Usr_Txt.Text = Environment.UserName
     End Sub
 
-    Private Sub Login_Yes_Btn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Login_Yes_Btn.Click
+    Private Sub btnIngresar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnIngresar.Click
         Aceptar()
     End Sub
 
-    Private Sub Login_No_Btn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Login_No_Btn.Click
-        CloseAll()
+    Private Sub btnCancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCancelar.Click
+        Me.Close()
     End Sub
 End Class

@@ -75,12 +75,6 @@
   <ItemGroup>
     <Compile Include="ComprobantesAct.vb" />
     <Compile Include="ComprontesDA.vb" />
-    <Compile Include="frmAccesoMenu.Designer.vb">
-      <DependentUpon>frmAccesoMenu.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frmAccesoMenu.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="frmReporte.Designer.vb">
       <DependentUpon>frmReporte.vb</DependentUpon>
     </Compile>
@@ -94,10 +88,10 @@
       <DependentUpon>frmControl.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Logueo.Designer.vb">
-      <DependentUpon>Logueo.vb</DependentUpon>
+    <Compile Include="frmLogin.Designer.vb">
+      <DependentUpon>frmLogin.vb</DependentUpon>
     </Compile>
-    <Compile Include="Logueo.vb">
+    <Compile Include="frmLogin.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -130,17 +124,14 @@
     <Compile Include="Variables.vb" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="frmAccesoMenu.resx">
-      <DependentUpon>frmAccesoMenu.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmReporte.resx">
       <DependentUpon>frmReporte.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmControl.resx">
       <DependentUpon>frmControl.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Logueo.resx">
-      <DependentUpon>Logueo.vb</DependentUpon>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -254,6 +245,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\appbar.close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\right-arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancelar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\appbar.lock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\appbar.coupon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancelar %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flecha-indicando-hacia-la-derecha-en-un-circulo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\appbar.calendar.dollar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\appbar.group.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

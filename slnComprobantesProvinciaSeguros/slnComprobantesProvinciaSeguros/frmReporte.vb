@@ -19,9 +19,4 @@ Public Class frmReporte
 
         dgvReporte.DataSource = table
     End Sub
-
-    Private Sub btnVolver_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnVolver.Click
-        frmAccesoMenu.Show()
-        Me.Close()
-    End Sub
 End Class

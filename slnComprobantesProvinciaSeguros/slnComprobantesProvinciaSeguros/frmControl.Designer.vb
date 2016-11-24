@@ -23,7 +23,6 @@ Partial Class frmControl
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmControl))
-        Me.btnPagar = New System.Windows.Forms.Button()
         Me.txtEntrada = New System.Windows.Forms.TextBox()
         Me.lblEntrada = New System.Windows.Forms.Label()
         Me.txtRM = New System.Windows.Forms.TextBox()
@@ -43,33 +42,18 @@ Partial Class frmControl
         Me.txtObservaciones = New System.Windows.Forms.TextBox()
         Me.dtpFechaVencimiento = New System.Windows.Forms.DateTimePicker()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.gbPagos = New System.Windows.Forms.GroupBox()
+        Me.btnImprimir = New System.Windows.Forms.Button()
+        Me.RectangleShape1 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.ShapeContainer1 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
-        Me.LineShape3 = New Microsoft.VisualBasic.PowerPacks.LineShape()
-        Me.LineShape2 = New Microsoft.VisualBasic.PowerPacks.LineShape()
-        Me.LineShape1 = New Microsoft.VisualBasic.PowerPacks.LineShape()
-        Me.pbLogo = New System.Windows.Forms.PictureBox()
-        Me.btnVolver = New System.Windows.Forms.Button()
-        CType(Me.pbLogo, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.RectangleShape2 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
+        Me.btnPermisos = New System.Windows.Forms.Button()
+        Me.btnModificarPagos = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
-        '
-        'btnPagar
-        '
-        Me.btnPagar.BackColor = System.Drawing.Color.DimGray
-        Me.btnPagar.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.btnPagar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnPagar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnPagar.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.btnPagar.Location = New System.Drawing.Point(345, 410)
-        Me.btnPagar.Name = "btnPagar"
-        Me.btnPagar.Size = New System.Drawing.Size(95, 36)
-        Me.btnPagar.TabIndex = 2
-        Me.btnPagar.Text = "Pagar"
-        Me.btnPagar.UseVisualStyleBackColor = False
         '
         'txtEntrada
         '
-        Me.txtEntrada.Location = New System.Drawing.Point(24, 158)
+        Me.txtEntrada.Location = New System.Drawing.Point(24, 246)
         Me.txtEntrada.Name = "txtEntrada"
         Me.txtEntrada.Size = New System.Drawing.Size(404, 20)
         Me.txtEntrada.TabIndex = 4
@@ -77,16 +61,18 @@ Partial Class frmControl
         'lblEntrada
         '
         Me.lblEntrada.AutoSize = True
-        Me.lblEntrada.Location = New System.Drawing.Point(24, 139)
+        Me.lblEntrada.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblEntrada.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.lblEntrada.Location = New System.Drawing.Point(24, 227)
         Me.lblEntrada.Name = "lblEntrada"
-        Me.lblEntrada.Size = New System.Drawing.Size(44, 13)
+        Me.lblEntrada.Size = New System.Drawing.Size(49, 14)
         Me.lblEntrada.TabIndex = 5
         Me.lblEntrada.Text = "Entrada"
         '
         'txtRM
         '
         Me.txtRM.Enabled = False
-        Me.txtRM.Location = New System.Drawing.Point(24, 203)
+        Me.txtRM.Location = New System.Drawing.Point(24, 291)
         Me.txtRM.Name = "txtRM"
         Me.txtRM.Size = New System.Drawing.Size(44, 20)
         Me.txtRM.TabIndex = 6
@@ -94,25 +80,29 @@ Partial Class frmControl
         'lblRM
         '
         Me.lblRM.AutoSize = True
-        Me.lblRM.Location = New System.Drawing.Point(24, 187)
+        Me.lblRM.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblRM.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.lblRM.Location = New System.Drawing.Point(24, 275)
         Me.lblRM.Name = "lblRM"
-        Me.lblRM.Size = New System.Drawing.Size(24, 13)
+        Me.lblRM.Size = New System.Drawing.Size(23, 14)
         Me.lblRM.TabIndex = 7
         Me.lblRM.Text = "RM"
         '
         'lblPoliza
         '
         Me.lblPoliza.AutoSize = True
-        Me.lblPoliza.Location = New System.Drawing.Point(197, 234)
+        Me.lblPoliza.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPoliza.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.lblPoliza.Location = New System.Drawing.Point(197, 322)
         Me.lblPoliza.Name = "lblPoliza"
-        Me.lblPoliza.Size = New System.Drawing.Size(35, 13)
+        Me.lblPoliza.Size = New System.Drawing.Size(36, 14)
         Me.lblPoliza.TabIndex = 9
         Me.lblPoliza.Text = "Poliza"
         '
         'txtPoliza
         '
         Me.txtPoliza.Enabled = False
-        Me.txtPoliza.Location = New System.Drawing.Point(198, 250)
+        Me.txtPoliza.Location = New System.Drawing.Point(198, 338)
         Me.txtPoliza.Name = "txtPoliza"
         Me.txtPoliza.Size = New System.Drawing.Size(100, 20)
         Me.txtPoliza.TabIndex = 8
@@ -120,16 +110,18 @@ Partial Class frmControl
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(24, 234)
+        Me.Label1.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Label1.Location = New System.Drawing.Point(24, 322)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(43, 13)
+        Me.Label1.Size = New System.Drawing.Size(47, 14)
         Me.Label1.TabIndex = 11
         Me.Label1.Text = "Endoso"
         '
         'txtEndoso
         '
         Me.txtEndoso.Enabled = False
-        Me.txtEndoso.Location = New System.Drawing.Point(24, 250)
+        Me.txtEndoso.Location = New System.Drawing.Point(24, 338)
         Me.txtEndoso.Name = "txtEndoso"
         Me.txtEndoso.Size = New System.Drawing.Size(100, 20)
         Me.txtEndoso.TabIndex = 10
@@ -137,16 +129,18 @@ Partial Class frmControl
         'lblNroCuota
         '
         Me.lblNroCuota.AutoSize = True
-        Me.lblNroCuota.Location = New System.Drawing.Point(197, 283)
+        Me.lblNroCuota.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNroCuota.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.lblNroCuota.Location = New System.Drawing.Point(197, 371)
         Me.lblNroCuota.Name = "lblNroCuota"
-        Me.lblNroCuota.Size = New System.Drawing.Size(75, 13)
+        Me.lblNroCuota.Size = New System.Drawing.Size(86, 14)
         Me.lblNroCuota.TabIndex = 13
         Me.lblNroCuota.Text = "Numero Cuota"
         '
         'txtNroCuota
         '
         Me.txtNroCuota.Enabled = False
-        Me.txtNroCuota.Location = New System.Drawing.Point(198, 299)
+        Me.txtNroCuota.Location = New System.Drawing.Point(198, 387)
         Me.txtNroCuota.Name = "txtNroCuota"
         Me.txtNroCuota.Size = New System.Drawing.Size(100, 20)
         Me.txtNroCuota.TabIndex = 12
@@ -154,25 +148,29 @@ Partial Class frmControl
         'lblFechaVto
         '
         Me.lblFechaVto.AutoSize = True
-        Me.lblFechaVto.Location = New System.Drawing.Point(21, 283)
+        Me.lblFechaVto.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblFechaVto.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.lblFechaVto.Location = New System.Drawing.Point(21, 371)
         Me.lblFechaVto.Name = "lblFechaVto"
-        Me.lblFechaVto.Size = New System.Drawing.Size(98, 13)
+        Me.lblFechaVto.Size = New System.Drawing.Size(111, 14)
         Me.lblFechaVto.TabIndex = 15
         Me.lblFechaVto.Text = "Fecha Vencimiento"
         '
         'lblMoneda
         '
         Me.lblMoneda.AutoSize = True
-        Me.lblMoneda.Location = New System.Drawing.Point(195, 336)
+        Me.lblMoneda.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblMoneda.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.lblMoneda.Location = New System.Drawing.Point(195, 424)
         Me.lblMoneda.Name = "lblMoneda"
-        Me.lblMoneda.Size = New System.Drawing.Size(46, 13)
+        Me.lblMoneda.Size = New System.Drawing.Size(50, 14)
         Me.lblMoneda.TabIndex = 17
         Me.lblMoneda.Text = "Moneda"
         '
         'txtMoneda
         '
         Me.txtMoneda.Enabled = False
-        Me.txtMoneda.Location = New System.Drawing.Point(198, 352)
+        Me.txtMoneda.Location = New System.Drawing.Point(198, 440)
         Me.txtMoneda.Name = "txtMoneda"
         Me.txtMoneda.Size = New System.Drawing.Size(100, 20)
         Me.txtMoneda.TabIndex = 16
@@ -180,16 +178,18 @@ Partial Class frmControl
         'lblImporte
         '
         Me.lblImporte.AutoSize = True
-        Me.lblImporte.Location = New System.Drawing.Point(19, 336)
+        Me.lblImporte.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblImporte.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.lblImporte.Location = New System.Drawing.Point(19, 424)
         Me.lblImporte.Name = "lblImporte"
-        Me.lblImporte.Size = New System.Drawing.Size(42, 13)
+        Me.lblImporte.Size = New System.Drawing.Size(51, 14)
         Me.lblImporte.TabIndex = 19
         Me.lblImporte.Text = "Importe"
         '
         'txtImporte
         '
         Me.txtImporte.Enabled = False
-        Me.txtImporte.Location = New System.Drawing.Point(22, 352)
+        Me.txtImporte.Location = New System.Drawing.Point(22, 440)
         Me.txtImporte.Name = "txtImporte"
         Me.txtImporte.Size = New System.Drawing.Size(100, 20)
         Me.txtImporte.TabIndex = 18
@@ -197,23 +197,26 @@ Partial Class frmControl
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(197, 187)
+        Me.Label2.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Label2.Location = New System.Drawing.Point(197, 275)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(78, 13)
+        Me.Label2.Size = New System.Drawing.Size(85, 14)
         Me.Label2.TabIndex = 21
         Me.Label2.Text = "Observaciones"
         '
         'txtObservaciones
         '
-        Me.txtObservaciones.Location = New System.Drawing.Point(198, 203)
+        Me.txtObservaciones.Location = New System.Drawing.Point(198, 291)
         Me.txtObservaciones.Name = "txtObservaciones"
         Me.txtObservaciones.Size = New System.Drawing.Size(228, 20)
         Me.txtObservaciones.TabIndex = 20
         '
         'dtpFechaVencimiento
         '
+        Me.dtpFechaVencimiento.Enabled = False
         Me.dtpFechaVencimiento.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpFechaVencimiento.Location = New System.Drawing.Point(22, 299)
+        Me.dtpFechaVencimiento.Location = New System.Drawing.Point(22, 387)
         Me.dtpFechaVencimiento.Name = "dtpFechaVencimiento"
         Me.dtpFechaVencimiento.Size = New System.Drawing.Size(97, 20)
         Me.dtpFechaVencimiento.TabIndex = 22
@@ -223,88 +226,103 @@ Partial Class frmControl
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label3.Location = New System.Drawing.Point(12, 73)
+        Me.Label3.Location = New System.Drawing.Point(12, 178)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(189, 24)
         Me.Label3.TabIndex = 24
         Me.Label3.Text = "Entrada de pagos"
         '
-        'gbPagos
+        'btnImprimir
         '
-        Me.gbPagos.Location = New System.Drawing.Point(13, 117)
-        Me.gbPagos.Name = "gbPagos"
-        Me.gbPagos.Size = New System.Drawing.Size(430, 276)
-        Me.gbPagos.TabIndex = 26
-        Me.gbPagos.TabStop = False
+        Me.btnImprimir.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.fileprint
+        Me.btnImprimir.Location = New System.Drawing.Point(336, 489)
+        Me.btnImprimir.Name = "btnImprimir"
+        Me.btnImprimir.Size = New System.Drawing.Size(90, 68)
+        Me.btnImprimir.TabIndex = 29
+        Me.btnImprimir.Text = "Imprimir"
+        Me.btnImprimir.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnImprimir.UseVisualStyleBackColor = True
+        '
+        'RectangleShape1
+        '
+        Me.RectangleShape1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.RectangleShape1.BorderColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
+        Me.RectangleShape1.FillColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.RectangleShape1.FillGradientColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
+        Me.RectangleShape1.FillGradientStyle = Microsoft.VisualBasic.PowerPacks.FillGradientStyle.Horizontal
+        Me.RectangleShape1.FillStyle = Microsoft.VisualBasic.PowerPacks.FillStyle.Solid
+        Me.RectangleShape1.Location = New System.Drawing.Point(0, 0)
+        Me.RectangleShape1.Name = "RectangleShape1"
+        Me.RectangleShape1.Size = New System.Drawing.Size(454, 97)
         '
         'ShapeContainer1
         '
         Me.ShapeContainer1.Location = New System.Drawing.Point(0, 0)
         Me.ShapeContainer1.Margin = New System.Windows.Forms.Padding(0)
         Me.ShapeContainer1.Name = "ShapeContainer1"
-        Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.LineShape3, Me.LineShape2, Me.LineShape1})
-        Me.ShapeContainer1.Size = New System.Drawing.Size(456, 492)
-        Me.ShapeContainer1.TabIndex = 28
+        Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape2, Me.RectangleShape1})
+        Me.ShapeContainer1.Size = New System.Drawing.Size(456, 569)
+        Me.ShapeContainer1.TabIndex = 30
         Me.ShapeContainer1.TabStop = False
         '
-        'LineShape3
+        'RectangleShape2
         '
-        Me.LineShape3.BorderWidth = 2
-        Me.LineShape3.Name = "LineShape3"
-        Me.LineShape3.X1 = 14
-        Me.LineShape3.X2 = 439
-        Me.LineShape3.Y1 = 106
-        Me.LineShape3.Y2 = 106
+        Me.RectangleShape2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.RectangleShape2.BorderColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
+        Me.RectangleShape2.FillColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.RectangleShape2.FillGradientColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
+        Me.RectangleShape2.FillGradientStyle = Microsoft.VisualBasic.PowerPacks.FillGradientStyle.Horizontal
+        Me.RectangleShape2.FillStyle = Microsoft.VisualBasic.PowerPacks.FillStyle.Solid
+        Me.RectangleShape2.Location = New System.Drawing.Point(0, 97)
+        Me.RectangleShape2.Name = "RectangleShape2"
+        Me.RectangleShape2.Size = New System.Drawing.Size(454, 38)
         '
-        'LineShape2
+        'btnPermisos
         '
-        Me.LineShape2.BorderWidth = 2
-        Me.LineShape2.Name = "LineShape2"
-        Me.LineShape2.X1 = 16
-        Me.LineShape2.X2 = 441
-        Me.LineShape2.Y1 = 246
-        Me.LineShape2.Y2 = 246
+        Me.btnPermisos.BackColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
+        Me.btnPermisos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnPermisos.ForeColor = System.Drawing.SystemColors.Control
+        Me.btnPermisos.Location = New System.Drawing.Point(353, 109)
+        Me.btnPermisos.Name = "btnPermisos"
+        Me.btnPermisos.Size = New System.Drawing.Size(75, 23)
+        Me.btnPermisos.TabIndex = 32
+        Me.btnPermisos.Text = "Permisos"
+        Me.btnPermisos.UseVisualStyleBackColor = False
         '
-        'LineShape1
+        'btnModificarPagos
         '
-        Me.LineShape1.BorderWidth = 2
-        Me.LineShape1.Name = "LineShape1"
-        Me.LineShape1.X1 = 14
-        Me.LineShape1.X2 = 439
-        Me.LineShape1.Y1 = 99
-        Me.LineShape1.Y2 = 99
+        Me.btnModificarPagos.BackColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
+        Me.btnModificarPagos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnModificarPagos.ForeColor = System.Drawing.SystemColors.Control
+        Me.btnModificarPagos.Location = New System.Drawing.Point(233, 109)
+        Me.btnModificarPagos.Name = "btnModificarPagos"
+        Me.btnModificarPagos.Size = New System.Drawing.Size(106, 23)
+        Me.btnModificarPagos.TabIndex = 34
+        Me.btnModificarPagos.Text = "Modificar Pagos"
+        Me.btnModificarPagos.UseVisualStyleBackColor = False
         '
-        'pbLogo
+        'Button1
         '
-        Me.pbLogo.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.logotipo
-        Me.pbLogo.Location = New System.Drawing.Point(335, 3)
-        Me.pbLogo.Name = "pbLogo"
-        Me.pbLogo.Size = New System.Drawing.Size(105, 100)
-        Me.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.pbLogo.TabIndex = 27
-        Me.pbLogo.TabStop = False
-        '
-        'btnVolver
-        '
-        Me.btnVolver.BackColor = System.Drawing.Color.DimGray
-        Me.btnVolver.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnVolver.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnVolver.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.btnVolver.Location = New System.Drawing.Point(219, 410)
-        Me.btnVolver.Name = "btnVolver"
-        Me.btnVolver.Size = New System.Drawing.Size(107, 36)
-        Me.btnVolver.TabIndex = 29
-        Me.btnVolver.Text = "Menu Principal"
-        Me.btnVolver.UseVisualStyleBackColor = False
+        Me.Button1.Location = New System.Drawing.Point(224, 489)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(90, 68)
+        Me.Button1.TabIndex = 35
+        Me.Button1.Text = "Reporte"
+        Me.Button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'frmControl
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
-        Me.ClientSize = New System.Drawing.Size(456, 492)
-        Me.Controls.Add(Me.btnVolver)
+        Me.ClientSize = New System.Drawing.Size(456, 569)
+        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.btnModificarPagos)
+        Me.Controls.Add(Me.btnPermisos)
+        Me.Controls.Add(Me.btnImprimir)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.dtpFechaVencimiento)
         Me.Controls.Add(Me.Label2)
@@ -324,14 +342,10 @@ Partial Class frmControl
         Me.Controls.Add(Me.txtRM)
         Me.Controls.Add(Me.lblEntrada)
         Me.Controls.Add(Me.txtEntrada)
-        Me.Controls.Add(Me.btnPagar)
-        Me.Controls.Add(Me.pbLogo)
-        Me.Controls.Add(Me.gbPagos)
         Me.Controls.Add(Me.ShapeContainer1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmControl"
         Me.Text = "Formulario"
-        CType(Me.pbLogo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -355,13 +369,12 @@ Partial Class frmControl
     Friend WithEvents txtObservaciones As System.Windows.Forms.TextBox
     Friend WithEvents dtpFechaVencimiento As System.Windows.Forms.DateTimePicker
     Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents gbPagos As System.Windows.Forms.GroupBox
-    Friend WithEvents pbLogo As System.Windows.Forms.PictureBox
+    Friend WithEvents btnImprimir As System.Windows.Forms.Button
+    Friend WithEvents RectangleShape1 As Microsoft.VisualBasic.PowerPacks.RectangleShape
     Friend WithEvents ShapeContainer1 As Microsoft.VisualBasic.PowerPacks.ShapeContainer
-    Friend WithEvents LineShape1 As Microsoft.VisualBasic.PowerPacks.LineShape
-    Friend WithEvents LineShape3 As Microsoft.VisualBasic.PowerPacks.LineShape
-    Friend WithEvents LineShape2 As Microsoft.VisualBasic.PowerPacks.LineShape
-    Friend WithEvents btnPagar As System.Windows.Forms.Button
-    Friend WithEvents btnVolver As System.Windows.Forms.Button
+    Friend WithEvents RectangleShape2 As Microsoft.VisualBasic.PowerPacks.RectangleShape
+    Friend WithEvents btnPermisos As System.Windows.Forms.Button
+    Friend WithEvents btnModificarPagos As System.Windows.Forms.Button
+    Friend WithEvents Button1 As System.Windows.Forms.Button
 
 End Class

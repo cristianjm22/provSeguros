@@ -97,7 +97,7 @@ Public Class ComprontesDA
             MsgBox("Mensaje: " & e.Message)
         End Try
 
-        Return dt.Rows.Count
+        Return dt.Rows(0)(0)
 
     End Function
 
