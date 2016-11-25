@@ -103,7 +103,7 @@ Public Class ComprobantesAct
     ''' <param name="ConsultaDGW"></param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Function GridAExcel(ByVal ConsultaDGW As DataGridView) As Boolean
+    Public Shared Function GridAExcel(ByVal ConsultaDGW As DataGridView) As Boolean
 
 
         'Creamos las variables

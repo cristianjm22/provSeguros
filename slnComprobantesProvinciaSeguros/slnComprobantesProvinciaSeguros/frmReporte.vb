@@ -19,4 +19,8 @@ Public Class frmReporte
 
         dgvReporte.DataSource = table
     End Sub
+
+    Private Sub btnExport_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnExport.Click
+        ComprobantesAct.GridAExcel(dgvReporte)
+    End Sub
 End Class
