@@ -164,21 +164,6 @@
     <None Include="Resources\logotipo.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\lassists.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\edit_group.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\kdvi.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\kedit.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\fileprint.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\button_ok.ico" />
   </ItemGroup>
   <ItemGroup>
@@ -241,12 +226,6 @@
     <None Include="Resources\appbar.user.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\appbar.check.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\appbar.close.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\right-arrow.png" />
   </ItemGroup>
   <ItemGroup>
@@ -256,19 +235,16 @@
     <None Include="Resources\appbar.lock.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\appbar.coupon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\cancelar %281%29.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\flecha-indicando-hacia-la-derecha-en-un-circulo.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\appbar.calendar.dollar.png" />
+    <None Include="Resources\Sin.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\appbar.group.png" />
+    <None Include="Resources\Very-Basic-Ok-icon%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\downwards-arrow.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

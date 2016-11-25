@@ -42,13 +42,14 @@ Partial Class frmControl
         Me.txtObservaciones = New System.Windows.Forms.TextBox()
         Me.dtpFechaVencimiento = New System.Windows.Forms.DateTimePicker()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.btnImprimir = New System.Windows.Forms.Button()
         Me.RectangleShape1 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.ShapeContainer1 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
+        Me.RectangleShape3 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.RectangleShape2 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.btnPermisos = New System.Windows.Forms.Button()
         Me.btnModificarPagos = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnGuardar = New System.Windows.Forms.Button()
+        Me.btnReporte = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'txtEntrada
@@ -84,9 +85,9 @@ Partial Class frmControl
         Me.lblRM.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.lblRM.Location = New System.Drawing.Point(24, 275)
         Me.lblRM.Name = "lblRM"
-        Me.lblRM.Size = New System.Drawing.Size(23, 14)
+        Me.lblRM.Size = New System.Drawing.Size(37, 14)
         Me.lblRM.TabIndex = 7
-        Me.lblRM.Text = "RM"
+        Me.lblRM.Text = "Ramo"
         '
         'lblPoliza
         '
@@ -123,7 +124,7 @@ Partial Class frmControl
         Me.txtEndoso.Enabled = False
         Me.txtEndoso.Location = New System.Drawing.Point(24, 338)
         Me.txtEndoso.Name = "txtEndoso"
-        Me.txtEndoso.Size = New System.Drawing.Size(100, 20)
+        Me.txtEndoso.Size = New System.Drawing.Size(108, 20)
         Me.txtEndoso.TabIndex = 10
         '
         'lblNroCuota
@@ -142,7 +143,7 @@ Partial Class frmControl
         Me.txtNroCuota.Enabled = False
         Me.txtNroCuota.Location = New System.Drawing.Point(198, 387)
         Me.txtNroCuota.Name = "txtNroCuota"
-        Me.txtNroCuota.Size = New System.Drawing.Size(100, 20)
+        Me.txtNroCuota.Size = New System.Drawing.Size(35, 20)
         Me.txtNroCuota.TabIndex = 12
         '
         'lblFechaVto
@@ -191,7 +192,7 @@ Partial Class frmControl
         Me.txtImporte.Enabled = False
         Me.txtImporte.Location = New System.Drawing.Point(22, 440)
         Me.txtImporte.Name = "txtImporte"
-        Me.txtImporte.Size = New System.Drawing.Size(100, 20)
+        Me.txtImporte.Size = New System.Drawing.Size(110, 20)
         Me.txtImporte.TabIndex = 18
         '
         'Label2
@@ -209,7 +210,7 @@ Partial Class frmControl
         '
         Me.txtObservaciones.Location = New System.Drawing.Point(198, 291)
         Me.txtObservaciones.Name = "txtObservaciones"
-        Me.txtObservaciones.Size = New System.Drawing.Size(228, 20)
+        Me.txtObservaciones.Size = New System.Drawing.Size(230, 20)
         Me.txtObservaciones.TabIndex = 20
         '
         'dtpFechaVencimiento
@@ -218,30 +219,19 @@ Partial Class frmControl
         Me.dtpFechaVencimiento.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpFechaVencimiento.Location = New System.Drawing.Point(22, 387)
         Me.dtpFechaVencimiento.Name = "dtpFechaVencimiento"
-        Me.dtpFechaVencimiento.Size = New System.Drawing.Size(97, 20)
+        Me.dtpFechaVencimiento.Size = New System.Drawing.Size(110, 20)
         Me.dtpFechaVencimiento.TabIndex = 22
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label3.Location = New System.Drawing.Point(12, 178)
+        Me.Label3.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
+        Me.Label3.Location = New System.Drawing.Point(23, 186)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(189, 24)
+        Me.Label3.Size = New System.Drawing.Size(151, 19)
         Me.Label3.TabIndex = 24
         Me.Label3.Text = "Entrada de pagos"
-        '
-        'btnImprimir
-        '
-        Me.btnImprimir.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.fileprint
-        Me.btnImprimir.Location = New System.Drawing.Point(336, 489)
-        Me.btnImprimir.Name = "btnImprimir"
-        Me.btnImprimir.Size = New System.Drawing.Size(90, 68)
-        Me.btnImprimir.TabIndex = 29
-        Me.btnImprimir.Text = "Imprimir"
-        Me.btnImprimir.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btnImprimir.UseVisualStyleBackColor = True
         '
         'RectangleShape1
         '
@@ -261,10 +251,19 @@ Partial Class frmControl
         Me.ShapeContainer1.Location = New System.Drawing.Point(0, 0)
         Me.ShapeContainer1.Margin = New System.Windows.Forms.Padding(0)
         Me.ShapeContainer1.Name = "ShapeContainer1"
-        Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape2, Me.RectangleShape1})
+        Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape3, Me.RectangleShape2, Me.RectangleShape1})
         Me.ShapeContainer1.Size = New System.Drawing.Size(456, 569)
         Me.ShapeContainer1.TabIndex = 30
         Me.ShapeContainer1.TabStop = False
+        '
+        'RectangleShape3
+        '
+        Me.RectangleShape3.BackgroundImage = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.Sin
+        Me.RectangleShape3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.RectangleShape3.BorderColor = System.Drawing.Color.Transparent
+        Me.RectangleShape3.Location = New System.Drawing.Point(265, -3)
+        Me.RectangleShape3.Name = "RectangleShape3"
+        Me.RectangleShape3.Size = New System.Drawing.Size(176, 103)
         '
         'RectangleShape2
         '
@@ -296,22 +295,48 @@ Partial Class frmControl
         Me.btnModificarPagos.BackColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
         Me.btnModificarPagos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnModificarPagos.ForeColor = System.Drawing.SystemColors.Control
-        Me.btnModificarPagos.Location = New System.Drawing.Point(233, 109)
+        Me.btnModificarPagos.Location = New System.Drawing.Point(251, 109)
         Me.btnModificarPagos.Name = "btnModificarPagos"
         Me.btnModificarPagos.Size = New System.Drawing.Size(106, 23)
         Me.btnModificarPagos.TabIndex = 34
         Me.btnModificarPagos.Text = "Modificar Pagos"
         Me.btnModificarPagos.UseVisualStyleBackColor = False
         '
-        'Button1
+        'btnGuardar
         '
-        Me.Button1.Location = New System.Drawing.Point(224, 489)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(90, 68)
-        Me.Button1.TabIndex = 35
-        Me.Button1.Text = "Reporte"
-        Me.Button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnGuardar.BackColor = System.Drawing.SystemColors.Control
+        Me.btnGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btnGuardar.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.btnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
+        Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnGuardar.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnGuardar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
+        Me.btnGuardar.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.Very_Basic_Ok_icon_1_
+        Me.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnGuardar.Location = New System.Drawing.Point(289, 525)
+        Me.btnGuardar.Name = "btnGuardar"
+        Me.btnGuardar.Size = New System.Drawing.Size(153, 29)
+        Me.btnGuardar.TabIndex = 37
+        Me.btnGuardar.Text = "Registrar Pago"
+        Me.btnGuardar.UseVisualStyleBackColor = False
+        '
+        'btnReporte
+        '
+        Me.btnReporte.BackColor = System.Drawing.SystemColors.Control
+        Me.btnReporte.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btnReporte.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.btnReporte.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
+        Me.btnReporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnReporte.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnReporte.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
+        Me.btnReporte.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.downwards_arrow
+        Me.btnReporte.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnReporte.Location = New System.Drawing.Point(145, 525)
+        Me.btnReporte.Name = "btnReporte"
+        Me.btnReporte.Size = New System.Drawing.Size(138, 29)
+        Me.btnReporte.TabIndex = 36
+        Me.btnReporte.Text = "Reporte Diario"
+        Me.btnReporte.UseVisualStyleBackColor = False
         '
         'frmControl
         '
@@ -319,10 +344,10 @@ Partial Class frmControl
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
         Me.ClientSize = New System.Drawing.Size(456, 569)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.btnGuardar)
+        Me.Controls.Add(Me.btnReporte)
         Me.Controls.Add(Me.btnModificarPagos)
         Me.Controls.Add(Me.btnPermisos)
-        Me.Controls.Add(Me.btnImprimir)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.dtpFechaVencimiento)
         Me.Controls.Add(Me.Label2)
@@ -345,7 +370,7 @@ Partial Class frmControl
         Me.Controls.Add(Me.ShapeContainer1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmControl"
-        Me.Text = "Formulario"
+        Me.Text = "Pagos"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -369,12 +394,13 @@ Partial Class frmControl
     Friend WithEvents txtObservaciones As System.Windows.Forms.TextBox
     Friend WithEvents dtpFechaVencimiento As System.Windows.Forms.DateTimePicker
     Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents btnImprimir As System.Windows.Forms.Button
     Friend WithEvents RectangleShape1 As Microsoft.VisualBasic.PowerPacks.RectangleShape
     Friend WithEvents ShapeContainer1 As Microsoft.VisualBasic.PowerPacks.ShapeContainer
     Friend WithEvents RectangleShape2 As Microsoft.VisualBasic.PowerPacks.RectangleShape
     Friend WithEvents btnPermisos As System.Windows.Forms.Button
     Friend WithEvents btnModificarPagos As System.Windows.Forms.Button
-    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents RectangleShape3 As Microsoft.VisualBasic.PowerPacks.RectangleShape
+    Friend WithEvents btnReporte As System.Windows.Forms.Button
+    Friend WithEvents btnGuardar As System.Windows.Forms.Button
 
 End Class

@@ -5,9 +5,6 @@ Imports System.Globalization
 
 Public Class frmControl
 
-
-
-
     Private Sub txtEntrada_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtEntrada.TextChanged
         If txtEntrada.Text = String.Empty Then
             MsgBox("Ingrese el codigo", MsgBoxStyle.Exclamation, "Aviso")
@@ -90,7 +87,22 @@ Public Class frmControl
 
     End Sub
 
-    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnImprimir.Click
+    Private Sub frmControl_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        If ComprobantesAct.AccesoMenu(Usuario, "frmPermisos") Then
+
+            btnPermisos.Show()
+            btnModificarPagos.Show()
+        Else
+            btnPermisos.Hide()
+            btnModificarPagos.Hide()
+        End If
+    End Sub
+
+    Private Sub btnReporte_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnReporte.Click
+        frmReporte.Show()
+    End Sub
+
+    Private Sub btnGuardar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnGuardar.Click
         If txtEntrada.Text = String.Empty Then
             MsgBox("Ingrese el codigo", MsgBoxStyle.Exclamation, "Aviso")
         Else
@@ -99,27 +111,5 @@ Public Class frmControl
         End If
 
         txtEntrada.Focus()
-    End Sub
-
-    Private Sub btnModificarPagos_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnModificarPagos.Click
-
-    End Sub
-
-    Private Sub btnPermisos_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnPermisos.Click
-
-    End Sub
-
-    Private Sub frmControl_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        If ComprobantesAct.AccesoMenu(Usuario, "frmPermisos") Then
-
-            btnPermisos.Show()
-        Else
-            btnPermisos.Hide()
-
-        End If
-    End Sub
-
-    Private Sub Button1_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
-        frmReporte.Show()
     End Sub
 End Class
