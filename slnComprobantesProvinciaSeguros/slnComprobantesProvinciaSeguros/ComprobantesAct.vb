@@ -196,7 +196,7 @@ Public Class ComprobantesAct
     ''' <remarks></remarks>
     Public Shared Function AccesoMenu(ByVal UserName As String, ByVal MenuName As String) As Boolean
         Try
-            Dim dtPermiso As DataTable = ComprontesDA.verificaPermisos(UserName, MenuName)
+            Dim dtPermiso As DataTable = ComprobantesDA.verificaPermisos(UserName, MenuName)
 
             If dtPermiso.Rows.Count > 0 Then
                 Return Convert.ToBoolean(dtPermiso.Rows.Item(0)(0))

@@ -43,7 +43,7 @@ Public Class frmControl
 
         txtEndoso.Text = endoso.ToString()
 
-        If (ComprontesDA.verificaPagoAnticipado(txtEndoso.Text) > 0) Then
+        If (ComprobantesDA.verificaPagoAnticipado(txtEndoso.Text) > 0) Then
 
             habilitarControles(True)
 
@@ -106,7 +106,7 @@ Public Class frmControl
         If txtEntrada.Text = String.Empty Then
             MsgBox("Ingrese el codigo", MsgBoxStyle.Exclamation, "Aviso")
         Else
-            ComprontesDA.InsertarDetalleComprobante(txtEntrada.Text, txtRM.Text, txtPoliza.Text, txtEndoso.Text, txtNroCuota.Text, dtpFechaVencimiento.Text, txtMoneda.Text, Convert.ToDecimal(txtImporte.Text), txtObservaciones.Text, "Pepito")
+            ComprobantesDA.InsertarDetalleComprobante(txtEntrada.Text, txtRM.Text, txtPoliza.Text, txtEndoso.Text, txtNroCuota.Text, dtpFechaVencimiento.Text, txtMoneda.Text, Convert.ToDecimal(txtImporte.Text), txtObservaciones.Text, "Pepito")
             'ComprobantesAct.PrintTicket(txtPoliza.Text, txtNroCuota.Text, txtMoneda.Text, txtImporte.Text, "12313123132")
         End If
 

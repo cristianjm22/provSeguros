@@ -13,52 +13,41 @@ Public Class frmLogin
         Usuario = Usuario.ToUpper
         Clave = Login_Pass_Txt.Text
 
-        If Usuario = "ADM" And Clave = "ADM123" Then
-            frmControl.Show()
-        Else
-            'Ejecuto tareas con el usuario
-            Dim sSel As String = "SELECT TOP 1 PASSWORD FROM USUARIOS WHERE  USUARIO='" & Usuario & "'"
-            conn = New SqlConnection(sCnn)
-            conn.Open()
-            cmd = conn.CreateCommand()
-            cmd.CommandText = sSel
-            cmd.ExecuteNonQuery()
-            SQLread = cmd.ExecuteReader
-            If SQLread.HasRows = True Then
-                SQLread.Read()
-                Clave_old = SQLread.GetString(0)
-                Clave_old = Trim(Clave_old)
-                If Clave_old <> Clave Then
-                    'Actualizo la clave en BD
-                    conn.Close()
-                    cmd = conn.CreateCommand()
-                    cmd.CommandText = "UPDATE USUARIOS SET PASSWORD='" & Clave & "',FECHA_ACT_LOGIN=GETDATE(), FECHA_ULT_LOGIN=GETDATE()"
-                    cmd.CommandText = cmd.CommandText & "WHERE USUARIO='" & Usuario & "'"
-                    conn.Open()
-                    cmd.ExecuteNonQuery()
-                Else
-                    conn.Close()
-                    cmd = conn.CreateCommand()
-                    cmd.CommandText = "UPDATE USUARIOS SET FECHA_ULT_LOGIN=GETDATE()"
-                    cmd.CommandText = cmd.CommandText & "WHERE USUARIO='" & Usuario & "'"
-                    conn.Open()
-                    cmd.ExecuteNonQuery()
-                End If  
-                'Permisos(Usuario)
-                frmControl.Show()
-                Me.Close()
+        'Ejecuto tareas con el usuario
+        Dim sSel As String = "SELECT TOP 1 PASSWORD FROM USUARIOS WHERE  USUARIO='" & Usuario & "'"
+        conn = New SqlConnection(sCnn)
+        conn.Open()
+        cmd = conn.CreateCommand()
+        cmd.CommandText = sSel
+        cmd.ExecuteNonQuery()
+        SQLread = cmd.ExecuteReader
+        If SQLread.HasRows = True Then
+            SQLread.Read()
+            Clave_old = SQLread.GetString(0)
+            Clave_old = Trim(Clave_old)
+            If Clave_old <> Clave Then
+                'Actualizo la clave en BD
+                conn.Close()
+                cmd = conn.CreateCommand()
+                cmd.CommandText = "UPDATE USUARIOS SET PASSWORD='" & Clave & "',FECHA_ACT_LOGIN=GETDATE(), FECHA_ULT_LOGIN=GETDATE()"
+                cmd.CommandText = cmd.CommandText & "WHERE USUARIO='" & Usuario & "'"
+                conn.Open()
+                cmd.ExecuteNonQuery()
             Else
-                'conn.Close()
-                'cmd = conn.CreateCommand()
-                'cmd.CommandText = "INSERT INTO USUARIOS VALUES (UPPER('" & Usuario & "'),'" & Clave & "',GETDATE(),GETDATE())"
-                'conn.Open()
-                'cmd.ExecuteNonQuery()
-
-                MsgBox("El Usuario o contraseña son incorrectos", MsgBoxStyle.Exclamation, "Aviso")
-                Login_Pass_Txt.Text = ""
-
-
+                conn.Close()
+                cmd = conn.CreateCommand()
+                cmd.CommandText = "UPDATE USUARIOS SET FECHA_ULT_LOGIN=GETDATE()"
+                cmd.CommandText = cmd.CommandText & "WHERE USUARIO='" & Usuario & "'"
+                conn.Open()
+                cmd.ExecuteNonQuery()
             End If
+            'Permisos(Usuario)
+            frmControl.Show()
+            Me.Close()
+        Else
+            MsgBox("El Usuario o contraseña son incorrectos", MsgBoxStyle.Exclamation, "Aviso")
+            Login_Pass_Txt.Text = ""
+
 
         End If
 
@@ -75,5 +64,9 @@ Public Class frmLogin
 
     Private Sub btnCancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCancelar.Click
         Me.Close()
+    End Sub
+
+    Private Sub lnkChange_LinkClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.LinkLabelLinkClickedEventArgs) Handles lnkChange.LinkClicked
+        frmChange.Show()
     End Sub
 End Class

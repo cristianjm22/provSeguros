@@ -35,6 +35,8 @@ Partial Class frmLogin
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.btnIngresar = New System.Windows.Forms.Button()
+        Me.lnkChange = New System.Windows.Forms.LinkLabel()
+        Me.lnkRegistrar = New System.Windows.Forms.LinkLabel()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -152,7 +154,7 @@ Partial Class frmLogin
         Me.btnCancelar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
         Me.btnCancelar.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.cancelar
         Me.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnCancelar.Location = New System.Drawing.Point(207, 291)
+        Me.btnCancelar.Location = New System.Drawing.Point(210, 302)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(108, 29)
         Me.btnCancelar.TabIndex = 14
@@ -170,18 +172,40 @@ Partial Class frmLogin
         Me.btnIngresar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
         Me.btnIngresar.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.right_arrow
         Me.btnIngresar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnIngresar.Location = New System.Drawing.Point(92, 291)
+        Me.btnIngresar.Location = New System.Drawing.Point(92, 302)
         Me.btnIngresar.Name = "btnIngresar"
         Me.btnIngresar.Size = New System.Drawing.Size(109, 29)
         Me.btnIngresar.TabIndex = 15
         Me.btnIngresar.Text = "   Ingresar"
         Me.btnIngresar.UseVisualStyleBackColor = False
         '
+        'lnkChange
+        '
+        Me.lnkChange.AutoSize = True
+        Me.lnkChange.Location = New System.Drawing.Point(216, 263)
+        Me.lnkChange.Name = "lnkChange"
+        Me.lnkChange.Size = New System.Drawing.Size(102, 13)
+        Me.lnkChange.TabIndex = 19
+        Me.lnkChange.TabStop = True
+        Me.lnkChange.Text = "Cambiar Contraseña"
+        '
+        'lnkRegistrar
+        '
+        Me.lnkRegistrar.AutoSize = True
+        Me.lnkRegistrar.Location = New System.Drawing.Point(216, 276)
+        Me.lnkRegistrar.Name = "lnkRegistrar"
+        Me.lnkRegistrar.Size = New System.Drawing.Size(60, 13)
+        Me.lnkRegistrar.TabIndex = 20
+        Me.lnkRegistrar.TabStop = True
+        Me.lnkRegistrar.Text = "Registrarse"
+        '
         'frmLogin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(391, 383)
+        Me.Controls.Add(Me.lnkRegistrar)
+        Me.Controls.Add(Me.lnkChange)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Pass_Lbl)
@@ -214,4 +238,6 @@ Partial Class frmLogin
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
     Friend WithEvents RectangleShape2 As Microsoft.VisualBasic.PowerPacks.RectangleShape
+    Friend WithEvents lnkChange As System.Windows.Forms.LinkLabel
+    Friend WithEvents lnkRegistrar As System.Windows.Forms.LinkLabel
 End Class
