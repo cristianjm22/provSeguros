@@ -40,4 +40,40 @@ Public Class UsuarioDA
         Return result
     End Function
 
+    Public Shared Function getUsuario(ByVal sUser As String)
+        Dim result As String = ""
+        Dim sSel As String = "SELECT TOP 1 USUARIO FROM USUARIOS WHERE  USUARIO='" & sUser & "'"
+        conn = New SqlConnection(sCnn)
+        conn.Open()
+        cmd = conn.CreateCommand()
+        cmd.CommandText = sSel
+        cmd.ExecuteNonQuery()
+        SQLread = cmd.ExecuteReader
+        If SQLread.HasRows = True Then
+            SQLread.Read()
+            result = SQLread.GetString(0)
+        End If
+        Return result
+    End Function
+
+    Public Shared Sub insertarUsuario(ByVal sUser As String, ByVal sPass As String)
+        Try
+            conn = New SqlConnection(sCnn)
+            conn.Open()
+            Dim cmd As New SqlCommand("SP_INSERT_USUARIOS", conn)
+            cmd.CommandType = CommandType.StoredProcedure
+            Dim param As New SqlParameter
+
+            cmd.Parameters.AddWithValue("@USUARIO", sUser)
+            cmd.Parameters.AddWithValue("@PASSWORD", sPass)
+
+            cmd.ExecuteNonQuery()
+
+            conn.Close()
+        Catch e As SqlException
+            MsgBox("Mensaje: " & e.Message)
+
+        End Try
+    End Sub
+
 End Class

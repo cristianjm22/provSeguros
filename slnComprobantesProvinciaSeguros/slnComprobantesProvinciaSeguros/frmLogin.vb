@@ -62,11 +62,15 @@ Public Class frmLogin
         Aceptar()
     End Sub
 
-    Private Sub btnCancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCancelar.Click
+    Private Sub btnCancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         Me.Close()
     End Sub
 
     Private Sub lnkChange_LinkClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.LinkLabelLinkClickedEventArgs) Handles lnkChange.LinkClicked
         frmChange.Show()
+    End Sub
+
+    Private Sub lnkRegistrar_LinkClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.LinkLabelLinkClickedEventArgs) Handles lnkRegistrar.LinkClicked
+        frmRegistro.Show()
     End Sub
 End Class

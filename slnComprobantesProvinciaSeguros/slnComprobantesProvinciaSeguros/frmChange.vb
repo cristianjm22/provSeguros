@@ -3,7 +3,7 @@
 Public Class frmChange
 
     Private Sub btnChange_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnChange.Click
-        If (txtUser.Text <> "" Or txtOldPass.Text <> "" Or txtNewPass.Text <> "") Then
+        If ((txtUser.Text <> "") And (txtOldPass.Text <> "") And (txtNewPass.Text <> "")) Then
             Dim Usuario As String = txtUser.Text
             Dim ClaveUsuario = UsuarioDA.getPassword(Usuario).ToString.Trim
             If (ClaveUsuario <> "") Then

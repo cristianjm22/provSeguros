@@ -24,19 +24,18 @@ Partial Class frmLogin
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmLogin))
         Me.ShapeContainer1 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
-        Me.RectangleShape2 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.RectangleShape1 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.Login_Usr_Txt = New System.Windows.Forms.TextBox()
         Me.User_Lbl = New System.Windows.Forms.Label()
         Me.Pass_Lbl = New System.Windows.Forms.Label()
         Me.Login_Pass_Txt = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.btnCancelar = New System.Windows.Forms.Button()
-        Me.btnIngresar = New System.Windows.Forms.Button()
         Me.lnkChange = New System.Windows.Forms.LinkLabel()
         Me.lnkRegistrar = New System.Windows.Forms.LinkLabel()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.btnIngresar = New System.Windows.Forms.Button()
+        Me.RectangleShape2 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -50,15 +49,6 @@ Partial Class frmLogin
         Me.ShapeContainer1.Size = New System.Drawing.Size(391, 383)
         Me.ShapeContainer1.TabIndex = 16
         Me.ShapeContainer1.TabStop = False
-        '
-        'RectangleShape2
-        '
-        Me.RectangleShape2.BackgroundImage = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.Sin
-        Me.RectangleShape2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.RectangleShape2.BorderColor = System.Drawing.Color.Transparent
-        Me.RectangleShape2.Location = New System.Drawing.Point(205, -3)
-        Me.RectangleShape2.Name = "RectangleShape2"
-        Me.RectangleShape2.Size = New System.Drawing.Size(176, 103)
         '
         'RectangleShape1
         '
@@ -108,9 +98,9 @@ Partial Class frmLogin
         Me.Login_Pass_Txt.Location = New System.Drawing.Point(89, 231)
         Me.Login_Pass_Txt.MaxLength = 50
         Me.Login_Pass_Txt.Name = "Login_Pass_Txt"
-        Me.Login_Pass_Txt.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.Login_Pass_Txt.Size = New System.Drawing.Size(226, 20)
         Me.Login_Pass_Txt.TabIndex = 10
+        Me.Login_Pass_Txt.UseSystemPasswordChar = True
         '
         'Label1
         '
@@ -122,6 +112,26 @@ Partial Class frmLogin
         Me.Label1.Size = New System.Drawing.Size(71, 19)
         Me.Label1.TabIndex = 17
         Me.Label1.Text = "Ingreso"
+        '
+        'lnkChange
+        '
+        Me.lnkChange.AutoSize = True
+        Me.lnkChange.Location = New System.Drawing.Point(52, 266)
+        Me.lnkChange.Name = "lnkChange"
+        Me.lnkChange.Size = New System.Drawing.Size(102, 13)
+        Me.lnkChange.TabIndex = 19
+        Me.lnkChange.TabStop = True
+        Me.lnkChange.Text = "Cambiar Contraseña"
+        '
+        'lnkRegistrar
+        '
+        Me.lnkRegistrar.AutoSize = True
+        Me.lnkRegistrar.Location = New System.Drawing.Point(52, 290)
+        Me.lnkRegistrar.Name = "lnkRegistrar"
+        Me.lnkRegistrar.Size = New System.Drawing.Size(60, 13)
+        Me.lnkRegistrar.TabIndex = 20
+        Me.lnkRegistrar.TabStop = True
+        Me.lnkRegistrar.Text = "Registrarse"
         '
         'PictureBox2
         '
@@ -143,24 +153,6 @@ Partial Class frmLogin
         Me.PictureBox1.TabIndex = 15
         Me.PictureBox1.TabStop = False
         '
-        'btnCancelar
-        '
-        Me.btnCancelar.BackColor = System.Drawing.SystemColors.Control
-        Me.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btnCancelar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
-        Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCancelar.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCancelar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
-        Me.btnCancelar.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.cancelar
-        Me.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnCancelar.Location = New System.Drawing.Point(210, 302)
-        Me.btnCancelar.Name = "btnCancelar"
-        Me.btnCancelar.Size = New System.Drawing.Size(108, 29)
-        Me.btnCancelar.TabIndex = 14
-        Me.btnCancelar.Text = "Cancelar"
-        Me.btnCancelar.UseVisualStyleBackColor = False
-        '
         'btnIngresar
         '
         Me.btnIngresar.BackColor = System.Drawing.SystemColors.Control
@@ -172,32 +164,21 @@ Partial Class frmLogin
         Me.btnIngresar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
         Me.btnIngresar.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.right_arrow
         Me.btnIngresar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnIngresar.Location = New System.Drawing.Point(92, 302)
+        Me.btnIngresar.Location = New System.Drawing.Point(206, 299)
         Me.btnIngresar.Name = "btnIngresar"
         Me.btnIngresar.Size = New System.Drawing.Size(109, 29)
         Me.btnIngresar.TabIndex = 15
         Me.btnIngresar.Text = "   Ingresar"
         Me.btnIngresar.UseVisualStyleBackColor = False
         '
-        'lnkChange
+        'RectangleShape2
         '
-        Me.lnkChange.AutoSize = True
-        Me.lnkChange.Location = New System.Drawing.Point(216, 263)
-        Me.lnkChange.Name = "lnkChange"
-        Me.lnkChange.Size = New System.Drawing.Size(102, 13)
-        Me.lnkChange.TabIndex = 19
-        Me.lnkChange.TabStop = True
-        Me.lnkChange.Text = "Cambiar Contraseña"
-        '
-        'lnkRegistrar
-        '
-        Me.lnkRegistrar.AutoSize = True
-        Me.lnkRegistrar.Location = New System.Drawing.Point(216, 276)
-        Me.lnkRegistrar.Name = "lnkRegistrar"
-        Me.lnkRegistrar.Size = New System.Drawing.Size(60, 13)
-        Me.lnkRegistrar.TabIndex = 20
-        Me.lnkRegistrar.TabStop = True
-        Me.lnkRegistrar.Text = "Registrarse"
+        Me.RectangleShape2.BackgroundImage = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.Sin
+        Me.RectangleShape2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.RectangleShape2.BorderColor = System.Drawing.Color.Transparent
+        Me.RectangleShape2.Location = New System.Drawing.Point(205, -3)
+        Me.RectangleShape2.Name = "RectangleShape2"
+        Me.RectangleShape2.Size = New System.Drawing.Size(176, 103)
         '
         'frmLogin
         '
@@ -213,7 +194,6 @@ Partial Class frmLogin
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Login_Usr_Txt)
         Me.Controls.Add(Me.Login_Pass_Txt)
-        Me.Controls.Add(Me.btnCancelar)
         Me.Controls.Add(Me.btnIngresar)
         Me.Controls.Add(Me.ShapeContainer1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -229,7 +209,6 @@ Partial Class frmLogin
     Friend WithEvents ShapeContainer1 As Microsoft.VisualBasic.PowerPacks.ShapeContainer
     Friend WithEvents RectangleShape1 As Microsoft.VisualBasic.PowerPacks.RectangleShape
     Friend WithEvents Login_Usr_Txt As System.Windows.Forms.TextBox
-    Friend WithEvents btnCancelar As System.Windows.Forms.Button
     Friend WithEvents btnIngresar As System.Windows.Forms.Button
     Friend WithEvents User_Lbl As System.Windows.Forms.Label
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
