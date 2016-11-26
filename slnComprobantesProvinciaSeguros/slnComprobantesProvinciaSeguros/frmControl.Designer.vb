@@ -44,12 +44,13 @@ Partial Class frmControl
         Me.Label3 = New System.Windows.Forms.Label()
         Me.RectangleShape1 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.ShapeContainer1 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
-        Me.RectangleShape3 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.RectangleShape2 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.btnPermisos = New System.Windows.Forms.Button()
         Me.btnModificarPagos = New System.Windows.Forms.Button()
-        Me.btnGuardar = New System.Windows.Forms.Button()
+        Me.BtnReimpresion = New System.Windows.Forms.Button()
         Me.btnReporte = New System.Windows.Forms.Button()
+        Me.RectangleShape3 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
+        Me.btnGuardar = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'txtEntrada
@@ -256,15 +257,6 @@ Partial Class frmControl
         Me.ShapeContainer1.TabIndex = 30
         Me.ShapeContainer1.TabStop = False
         '
-        'RectangleShape3
-        '
-        Me.RectangleShape3.BackgroundImage = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.Sin
-        Me.RectangleShape3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.RectangleShape3.BorderColor = System.Drawing.Color.Transparent
-        Me.RectangleShape3.Location = New System.Drawing.Point(265, -3)
-        Me.RectangleShape3.Name = "RectangleShape3"
-        Me.RectangleShape3.Size = New System.Drawing.Size(176, 103)
-        '
         'RectangleShape2
         '
         Me.RectangleShape2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
@@ -302,23 +294,17 @@ Partial Class frmControl
         Me.btnModificarPagos.Text = "Modificar Pagos"
         Me.btnModificarPagos.UseVisualStyleBackColor = False
         '
-        'btnGuardar
+        'BtnReimpresion
         '
-        Me.btnGuardar.BackColor = System.Drawing.SystemColors.Control
-        Me.btnGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.btnGuardar.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
-        Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnGuardar.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnGuardar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
-        Me.btnGuardar.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.Very_Basic_Ok_icon_1_
-        Me.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnGuardar.Location = New System.Drawing.Point(289, 525)
-        Me.btnGuardar.Name = "btnGuardar"
-        Me.btnGuardar.Size = New System.Drawing.Size(153, 29)
-        Me.btnGuardar.TabIndex = 37
-        Me.btnGuardar.Text = "Registrar Pago"
-        Me.btnGuardar.UseVisualStyleBackColor = False
+        Me.BtnReimpresion.BackColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
+        Me.BtnReimpresion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnReimpresion.ForeColor = System.Drawing.SystemColors.Control
+        Me.BtnReimpresion.Location = New System.Drawing.Point(169, 109)
+        Me.BtnReimpresion.Name = "BtnReimpresion"
+        Me.BtnReimpresion.Size = New System.Drawing.Size(85, 23)
+        Me.BtnReimpresion.TabIndex = 38
+        Me.BtnReimpresion.Text = "Reimpresion"
+        Me.BtnReimpresion.UseVisualStyleBackColor = False
         '
         'btnReporte
         '
@@ -338,12 +324,40 @@ Partial Class frmControl
         Me.btnReporte.Text = "Reporte Diario"
         Me.btnReporte.UseVisualStyleBackColor = False
         '
+        'RectangleShape3
+        '
+        Me.RectangleShape3.BackgroundImage = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.Sin
+        Me.RectangleShape3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.RectangleShape3.BorderColor = System.Drawing.Color.Transparent
+        Me.RectangleShape3.Location = New System.Drawing.Point(265, -3)
+        Me.RectangleShape3.Name = "RectangleShape3"
+        Me.RectangleShape3.Size = New System.Drawing.Size(176, 103)
+        '
+        'btnGuardar
+        '
+        Me.btnGuardar.BackColor = System.Drawing.SystemColors.Control
+        Me.btnGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btnGuardar.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.btnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
+        Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnGuardar.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnGuardar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
+        Me.btnGuardar.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.Very_Basic_Ok_icon_1_
+        Me.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnGuardar.Location = New System.Drawing.Point(289, 525)
+        Me.btnGuardar.Name = "btnGuardar"
+        Me.btnGuardar.Size = New System.Drawing.Size(153, 29)
+        Me.btnGuardar.TabIndex = 37
+        Me.btnGuardar.Text = "Registrar Pago"
+        Me.btnGuardar.UseVisualStyleBackColor = False
+        '
         'frmControl
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
         Me.ClientSize = New System.Drawing.Size(456, 569)
+        Me.Controls.Add(Me.BtnReimpresion)
         Me.Controls.Add(Me.btnGuardar)
         Me.Controls.Add(Me.btnReporte)
         Me.Controls.Add(Me.btnModificarPagos)
@@ -401,6 +415,7 @@ Partial Class frmControl
     Friend WithEvents btnModificarPagos As System.Windows.Forms.Button
     Friend WithEvents RectangleShape3 As Microsoft.VisualBasic.PowerPacks.RectangleShape
     Friend WithEvents btnReporte As System.Windows.Forms.Button
+    Friend WithEvents BtnReimpresion As System.Windows.Forms.Button
     Friend WithEvents btnGuardar As System.Windows.Forms.Button
 
 End Class

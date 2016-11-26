@@ -10,6 +10,7 @@ Public Class ComprobantesAct
     Public Shared Importe As String
     Public Shared FechaPago As Date
     Public Shared NroComprobante As String
+    Public Shared Ramo As String
 
     ''' <summary>
     ''' Autor:Walter Morales
@@ -26,11 +27,12 @@ Public Class ComprobantesAct
            ByVal pCuota As String,
            ByVal pMoneda As String,
            ByVal pImporte As String,
-           ByVal pNroComprobante As String)
+           ByVal pNroComprobante As String,
+           ByVal pRamo As String)
 
         Try
             Try
-                SetData(pPoliza, pCuota, pMoneda, pImporte, pNroComprobante)
+                SetData(pPoliza, pCuota, pMoneda, pImporte, pNroComprobante, pRamo)
                 Dim PrintDoc As New PrintDocument()
                 AddHandler PrintDoc.PrintPage, AddressOf BuildData
                 PrintDoc.Print()
@@ -56,7 +58,8 @@ Public Class ComprobantesAct
            ByVal pCuota As String,
            ByVal pMoneda As String,
            ByVal pImporte As String,
-           ByVal pNroComprobante As String)
+           ByVal pNroComprobante As String,
+           ByVal pRamo As String)
 
         FechaPago = Date.Now
         NroComprobante = pNroComprobante
@@ -70,6 +73,7 @@ Public Class ComprobantesAct
         Importe = pMoneda + pImporte
         Poliza = pPoliza
         Cuota = pCuota
+        Ramo = pRamo
 
     End Sub
 
@@ -90,6 +94,7 @@ Public Class ComprobantesAct
         e.Graphics.DrawString("CUOTA: " + Cuota, PrintFont, Brushes.Black, 15, 160, New StringFormat())
         e.Graphics.DrawString("IMPORTE PAGADO: " + Importe, PrintFont, Brushes.Black, 15, 180, New StringFormat())
         e.Graphics.DrawString("POLIZA: " + Poliza, PrintFont, Brushes.Black, 15, 200, New StringFormat())
+        e.Graphics.DrawString("RAMO: " + Poliza, PrintFont, Brushes.Black, 15, 220, New StringFormat())
         e.Graphics.DrawString("---------------------------------------------------------------", PrintFontBold, Brushes.Black, 15, 250, New StringFormat())
 
         e.HasMorePages = False

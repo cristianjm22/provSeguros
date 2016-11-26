@@ -6,33 +6,15 @@ Public Class frmLogin
     Private Sub Aceptar()
 
         Dim Clave As String
-        Dim Clave_old As String = ""
+        Dim ClaveFounded As String = ""
 
-        Usuario = Login_Usr_Txt.Text
-
-        Usuario = Usuario.ToUpper
         Clave = Login_Pass_Txt.Text
-
-        'Ejecuto tareas con el usuario
-        Dim sSel As String = "SELECT TOP 1 PASSWORD FROM USUARIOS WHERE  USUARIO='" & Usuario & "'"
-        conn = New SqlConnection(sCnn)
-        conn.Open()
-        cmd = conn.CreateCommand()
-        cmd.CommandText = sSel
-        cmd.ExecuteNonQuery()
-        SQLread = cmd.ExecuteReader
-        If SQLread.HasRows = True Then
-            SQLread.Read()
-            Clave_old = SQLread.GetString(0)
-            Clave_old = Trim(Clave_old)
-            If Clave_old <> Clave Then
-                'Actualizo la clave en BD
-                conn.Close()
-                cmd = conn.CreateCommand()
-                cmd.CommandText = "UPDATE USUARIOS SET PASSWORD='" & Clave & "',FECHA_ACT_LOGIN=GETDATE(), FECHA_ULT_LOGIN=GETDATE()"
-                cmd.CommandText = cmd.CommandText & "WHERE USUARIO='" & Usuario & "'"
-                conn.Open()
-                cmd.ExecuteNonQuery()
+        Usuario = Login_Usr_Txt.Text
+        ClaveFounded = UsuarioDA.getPassword(Usuario).ToString.Trim
+        If (ClaveFounded <> "") Then
+            If (ClaveFounded <> Clave) Then
+                MsgBox("El Usuario o contraseña son incorrectos", MsgBoxStyle.Exclamation, "Aviso")
+                Login_Pass_Txt.Text = ""
             Else
                 conn.Close()
                 cmd = conn.CreateCommand()
@@ -40,15 +22,12 @@ Public Class frmLogin
                 cmd.CommandText = cmd.CommandText & "WHERE USUARIO='" & Usuario & "'"
                 conn.Open()
                 cmd.ExecuteNonQuery()
+                frmControl.Show()
+                Me.Close()
             End If
-            'Permisos(Usuario)
-            frmControl.Show()
-            Me.Close()
         Else
-            MsgBox("El Usuario o contraseña son incorrectos", MsgBoxStyle.Exclamation, "Aviso")
+            MsgBox("Usuario inexistente", MsgBoxStyle.Exclamation, "Aviso")
             Login_Pass_Txt.Text = ""
-
-
         End If
 
     End Sub

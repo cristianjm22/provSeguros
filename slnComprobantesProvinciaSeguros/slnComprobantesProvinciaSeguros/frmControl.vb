@@ -89,7 +89,6 @@ Public Class frmControl
 
     Private Sub frmControl_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         If ComprobantesAct.AccesoMenu(Usuario, "frmPermisos") Then
-
             btnPermisos.Show()
             btnModificarPagos.Show()
         Else
@@ -111,5 +110,9 @@ Public Class frmControl
         End If
 
         txtEntrada.Focus()
+    End Sub
+
+    Private Sub BtnReimpresion_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnReimpresion.Click
+        frmReimpresion.Show()
     End Sub
 End Class
