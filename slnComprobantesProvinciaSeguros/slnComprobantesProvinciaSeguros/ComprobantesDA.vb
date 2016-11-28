@@ -33,6 +33,7 @@ Public Class ComprobantesDA
         Try
             conn = New SqlConnection(sCnn)
             conn.Open()
+            Dim val As Integer
             Dim cmd As New SqlCommand("SP_INSERT_DETALLE_COMPROBANTE", conn)
             cmd.CommandType = CommandType.StoredProcedure
             Dim param As New SqlParameter
@@ -49,16 +50,16 @@ Public Class ComprobantesDA
             cmd.Parameters.AddWithValue("@USUARIO_ALTA", USR_ALTA)
             cmd.Parameters.AddWithValue("@OBSERVACIONES", OBSERVACIONES)
 
-            'param.ParameterName = "@EXISTE"
-            'param.SqlDbType = SqlDbType.Int
-            'param.Direction = ParameterDirection.Output
-            'cmd.Parameters.Add(param)
+            param.ParameterName = "@ID_COMPROBANTE"
+            param.SqlDbType = SqlDbType.Int
+            param.Direction = ParameterDirection.Output
+            cmd.Parameters.Add(param)
 
 
 
             cmd.ExecuteNonQuery()
-            'val = cmd.Parameters("@EXISTE").Value
-            'Return (val)
+            Val = cmd.Parameters("@ID_COMPROBANTE").Value
+            Return (val)
 
             conn.Close()
         Catch e As SqlException
