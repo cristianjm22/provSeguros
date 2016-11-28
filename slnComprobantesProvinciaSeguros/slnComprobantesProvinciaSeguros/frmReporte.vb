@@ -18,9 +18,19 @@ Public Class frmReporte
         End Try
 
         dgvReporte.DataSource = table
+
+
+        lblTotalDia.Text = lblTotalDia.Text + " $" + ComprobantesAct.ObtenerTotaldeldia()
+
+        lblTotalQuincena.Text = lblTotalQuincena.Text + " $" + ComprobantesAct.ObtenerTotalporQuincena()
+
     End Sub
 
     Private Sub btnExport_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnExport.Click
         ComprobantesAct.GridAExcel(dgvReporte)
+    End Sub
+
+    Private Sub dgvReporte_CellContentClick(sender As System.Object, e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvReporte.CellContentClick
+
     End Sub
 End Class

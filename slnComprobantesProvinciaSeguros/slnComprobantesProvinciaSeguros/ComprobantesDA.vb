@@ -315,4 +315,65 @@ Public Class ComprobantesDA
 
     End Function
 
+
+
+    ''' <summary>
+    ''' Autor: Morales Cristian
+    ''' Devuelve datos de los comprobantes no informados
+    ''' </summary>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    Public Shared Function obtenerTotalporDia()
+
+        Dim dt As New DataTable
+
+        Try
+            conn = New SqlConnection(sCnn)
+            conn.Open()
+            Dim cmd As New SqlCommand("SP_OBTENER_TOTAL_POR_DIA", conn)
+            cmd.CommandTimeout = 300 'Especifico que lance un error de time out  despues de 5 min.
+            cmd.CommandType = CommandType.StoredProcedure
+
+            Dim da As New SqlDataAdapter(cmd)
+            da.Fill(dt)
+            conn.Close()
+
+        Catch e As SqlException
+            MsgBox("Mensaje: " & e.Message)
+        End Try
+
+        Return dt
+
+    End Function
+
+
+    ''' <summary>
+    ''' Autor: Morales Cristian
+    ''' Devuelve datos de los comprobantes no informados
+    ''' </summary>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    Public Shared Function obtenerTotalporQuincena()
+
+        Dim dt As New DataTable
+
+        Try
+            conn = New SqlConnection(sCnn)
+            conn.Open()
+            Dim cmd As New SqlCommand("SP_OBTENER_TOTAL_POR_QUINCENA", conn)
+            cmd.CommandTimeout = 300 'Especifico que lance un error de time out  despues de 5 min.
+            cmd.CommandType = CommandType.StoredProcedure
+
+            Dim da As New SqlDataAdapter(cmd)
+            da.Fill(dt)
+            conn.Close()
+
+        Catch e As SqlException
+            MsgBox("Mensaje: " & e.Message)
+        End Try
+
+        Return dt
+
+    End Function
+
 End Class

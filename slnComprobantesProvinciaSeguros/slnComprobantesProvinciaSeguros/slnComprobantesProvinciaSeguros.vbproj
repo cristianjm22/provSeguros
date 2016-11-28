@@ -85,6 +85,12 @@
     <Compile Include="frmReimpresion.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmReporte2.Designer.vb">
+      <DependentUpon>frmReporte2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmReporte2.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="UsuarioDA.vb" />
     <Compile Include="ComprobantesAct.vb" />
     <Compile Include="ComprobantesDA.vb" />
@@ -160,6 +166,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReporte2.resx">
+      <DependentUpon>frmReporte2.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

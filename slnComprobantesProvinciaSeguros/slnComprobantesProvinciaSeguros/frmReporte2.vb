@@ -66,7 +66,7 @@
     ''' <remarks></remarks>
     Private Sub CargarCombo()
         Dim ds As New DataTable
-        Dim Query As String = "Select [ID_ESTADO],[ESTADO] FROM [dbPoyPS].[dbo].[TIPOS_ESTADOS]"
+        Dim Query As String = "Select [ID_ESTADO],[ESTADO] FROM [dbo].[TIPOS_ESTADOS]"
 
         ds = ComprobantesDA.EjecutaQuery(Query)
         If ds.Rows.Count > 0 Then
@@ -128,6 +128,10 @@
     Private Sub btnFiltrar_Click(sender As Object, e As EventArgs) Handles btnFiltrar.Click
 
         cargarGrillaReporte(cboEstado.SelectedValue)
+
+    End Sub
+
+    Private Sub btnExportar_Click(sender As System.Object, e As System.EventArgs) Handles btnExportar.Click
 
     End Sub
 End Class

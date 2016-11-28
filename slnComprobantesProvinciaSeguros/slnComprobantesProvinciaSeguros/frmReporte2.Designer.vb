@@ -40,6 +40,8 @@ Partial Class frmReporte2
         Me.ID_ESTADO = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ESTADO = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ELIMINAR = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.btnExportar = New System.Windows.Forms.Button()
         CType(Me.dgvReporte, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -87,7 +89,7 @@ Partial Class frmReporte2
         Me.dgvReporte.ReadOnly = True
         Me.dgvReporte.ShowEditingIcon = False
         Me.dgvReporte.ShowRowErrors = False
-        Me.dgvReporte.Size = New System.Drawing.Size(1025, 199)
+        Me.dgvReporte.Size = New System.Drawing.Size(950, 199)
         Me.dgvReporte.TabIndex = 31
         '
         'ID_COMPROBANTE
@@ -191,11 +193,33 @@ Partial Class frmReporte2
         Me.ELIMINAR.ReadOnly = True
         Me.ELIMINAR.Width = 64
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label1.Location = New System.Drawing.Point(26, 397)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(58, 24)
+        Me.Label1.TabIndex = 35
+        Me.Label1.Text = "Total"
+        '
+        'btnExportar
+        '
+        Me.btnExportar.Location = New System.Drawing.Point(884, 397)
+        Me.btnExportar.Name = "btnExportar"
+        Me.btnExportar.Size = New System.Drawing.Size(75, 23)
+        Me.btnExportar.TabIndex = 36
+        Me.btnExportar.Text = "Exportar"
+        Me.btnExportar.UseVisualStyleBackColor = True
+        '
         'frmReporte2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1059, 449)
+        Me.ClientSize = New System.Drawing.Size(967, 449)
+        Me.Controls.Add(Me.btnExportar)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.cboEstado)
         Me.Controls.Add(Me.btnFiltrar)
         Me.Controls.Add(Me.Label3)
@@ -225,4 +249,6 @@ Partial Class frmReporte2
     Friend WithEvents ID_ESTADO As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents ESTADO As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents ELIMINAR As System.Windows.Forms.DataGridViewImageColumn
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents btnExportar As System.Windows.Forms.Button
 End Class

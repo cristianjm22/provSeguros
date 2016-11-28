@@ -22,13 +22,15 @@ Partial Class frmReporte
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.dgvReporte = New System.Windows.Forms.DataGridView()
         Me.lblReporte = New System.Windows.Forms.Label()
         Me.RectangleShape1 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.ShapeContainer1 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
-        Me.btnExport = New System.Windows.Forms.Button()
         Me.RectangleShape2 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
+        Me.btnExport = New System.Windows.Forms.Button()
+        Me.lblTotalDia = New System.Windows.Forms.Label()
+        Me.lblTotalQuincena = New System.Windows.Forms.Label()
         CType(Me.dgvReporte, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -41,14 +43,14 @@ Partial Class frmReporte
         Me.dgvReporte.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.dgvReporte.BackgroundColor = System.Drawing.SystemColors.Control
         Me.dgvReporte.BorderStyle = System.Windows.Forms.BorderStyle.None
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ActiveBorder
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvReporte.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveBorder
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvReporte.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvReporte.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvReporte.Location = New System.Drawing.Point(58, 216)
         Me.dgvReporte.Name = "dgvReporte"
@@ -72,7 +74,7 @@ Partial Class frmReporte
         'RectangleShape1
         '
         Me.RectangleShape1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.RectangleShape1.BorderColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
         Me.RectangleShape1.FillColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(60, Byte), Integer))
         Me.RectangleShape1.FillGradientColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
@@ -92,6 +94,15 @@ Partial Class frmReporte
         Me.ShapeContainer1.TabIndex = 31
         Me.ShapeContainer1.TabStop = False
         '
+        'RectangleShape2
+        '
+        Me.RectangleShape2.BackgroundImage = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.Sin
+        Me.RectangleShape2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.RectangleShape2.BorderColor = System.Drawing.Color.Transparent
+        Me.RectangleShape2.Location = New System.Drawing.Point(1095, -5)
+        Me.RectangleShape2.Name = "RectangleShape2"
+        Me.RectangleShape2.Size = New System.Drawing.Size(176, 103)
+        '
         'btnExport
         '
         Me.btnExport.BackColor = System.Drawing.SystemColors.Control
@@ -110,20 +121,35 @@ Partial Class frmReporte
         Me.btnExport.Text = "Exportar"
         Me.btnExport.UseVisualStyleBackColor = False
         '
-        'RectangleShape2
+        'lblTotalDia
         '
-        Me.RectangleShape2.BackgroundImage = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.Sin
-        Me.RectangleShape2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.RectangleShape2.BorderColor = System.Drawing.Color.Transparent
-        Me.RectangleShape2.Location = New System.Drawing.Point(1095, -5)
-        Me.RectangleShape2.Name = "RectangleShape2"
-        Me.RectangleShape2.Size = New System.Drawing.Size(176, 103)
+        Me.lblTotalDia.AutoSize = True
+        Me.lblTotalDia.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTotalDia.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
+        Me.lblTotalDia.Location = New System.Drawing.Point(54, 444)
+        Me.lblTotalDia.Name = "lblTotalDia"
+        Me.lblTotalDia.Size = New System.Drawing.Size(118, 19)
+        Me.lblTotalDia.TabIndex = 38
+        Me.lblTotalDia.Text = "Total del dia:"
+        '
+        'lblTotalQuincena
+        '
+        Me.lblTotalQuincena.AutoSize = True
+        Me.lblTotalQuincena.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTotalQuincena.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
+        Me.lblTotalQuincena.Location = New System.Drawing.Point(374, 444)
+        Me.lblTotalQuincena.Name = "lblTotalQuincena"
+        Me.lblTotalQuincena.Size = New System.Drawing.Size(161, 19)
+        Me.lblTotalQuincena.TabIndex = 39
+        Me.lblTotalQuincena.Text = "Total de quincena:"
         '
         'frmReporte
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1284, 500)
+        Me.Controls.Add(Me.lblTotalQuincena)
+        Me.Controls.Add(Me.lblTotalDia)
         Me.Controls.Add(Me.btnExport)
         Me.Controls.Add(Me.lblReporte)
         Me.Controls.Add(Me.dgvReporte)
@@ -141,4 +167,6 @@ Partial Class frmReporte
     Friend WithEvents ShapeContainer1 As Microsoft.VisualBasic.PowerPacks.ShapeContainer
     Friend WithEvents btnExport As System.Windows.Forms.Button
     Friend WithEvents RectangleShape2 As Microsoft.VisualBasic.PowerPacks.RectangleShape
+    Friend WithEvents lblTotalDia As System.Windows.Forms.Label
+    Friend WithEvents lblTotalQuincena As System.Windows.Forms.Label
 End Class
