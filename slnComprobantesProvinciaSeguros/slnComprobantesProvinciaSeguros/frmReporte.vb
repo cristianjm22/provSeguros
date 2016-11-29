@@ -27,7 +27,8 @@ Public Class frmReporte
     End Sub
 
     Private Sub btnExport_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnExport.Click
-        ComprobantesAct.GridAExcel(dgvReporte)
+        'ComprobantesAct.GridAExcel(dgvReporte)
+        ComprobantesAct.GridAExcel555(dgvReporte)
     End Sub
 
     Private Sub dgvReporte_CellContentClick(sender As System.Object, e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvReporte.CellContentClick

@@ -31,41 +31,45 @@ Public Class ComprobantesDA
 
 
         Try
-            conn = New SqlConnection(sCnn)
-            conn.Open()
-            Dim val As Integer
-            Dim cmd As New SqlCommand("SP_INSERT_DETALLE_COMPROBANTE", conn)
-            cmd.CommandType = CommandType.StoredProcedure
-            Dim param As New SqlParameter
+
+        Dim Cnx As New SqlConnection(sCnn)
+        Dim Cmd As New SqlCommand("SP_INSERT_DETALLE_COMPROBANTE", Cnx)
+        Dim param As New SqlParameter
+        Dim val As Integer
+        With Cmd
+            .CommandType = CommandType.StoredProcedure
 
 
-            cmd.Parameters.AddWithValue("@E_LAPIZ_OPTICO", ENTRADA)
-            cmd.Parameters.AddWithValue("@RM", RM)
-            cmd.Parameters.AddWithValue("@POLIZA", POLIZA)
-            cmd.Parameters.AddWithValue("@ENDOSO", ENDOSO)
-            cmd.Parameters.AddWithValue("@NRO_CUOTA", NROCUENTA)
-            cmd.Parameters.AddWithValue("@FECHA_VTO", FECHAVTO)
-            cmd.Parameters.AddWithValue("@MONEDA", MONEDA)
-            cmd.Parameters.AddWithValue("@IMPORTE", IMPORTE)
-            cmd.Parameters.AddWithValue("@USUARIO_ALTA", USR_ALTA)
-            cmd.Parameters.AddWithValue("@OBSERVACIONES", OBSERVACIONES)
+            .Parameters.Add(New SqlParameter("@E_LAPIZ_OPTICO", SqlDbType.NChar, 30)).Value = ENTRADA
+            .Parameters.Add(New SqlParameter("@RM", SqlDbType.NChar)).Value = RM
+            .Parameters.Add(New SqlParameter("@POLIZA", SqlDbType.NChar, 20)).Value = POLIZA
+            .Parameters.Add(New SqlParameter("@ENDOSO", SqlDbType.NChar, 20)).Value = ENDOSO
+            .Parameters.Add(New SqlParameter("@NRO_CUOTA", SqlDbType.NChar, 20)).Value = NROCUENTA
+            .Parameters.Add(New SqlParameter("@FECHA_VTO", SqlDbType.DateTime)).Value = FECHAVTO
+            .Parameters.Add(New SqlParameter("@MONEDA", SqlDbType.NChar, 20)).Value = MONEDA
+
+            .Parameters.Add(New SqlParameter("@IMPORTE", SqlDbType.Decimal)).Value = IMPORTE
+            .Parameters.Add(New SqlParameter("@USUARIO_ALTA", SqlDbType.NChar)).Value = Usuario
+            .Parameters.Add(New SqlParameter("@OBSERVACIONES", SqlDbType.VarChar)).Value = OBSERVACIONES
+         
 
             param.ParameterName = "@ID_COMPROBANTE"
             param.SqlDbType = SqlDbType.Int
             param.Direction = ParameterDirection.Output
-            cmd.Parameters.Add(param)
+            .Parameters.Add(param)
 
+        End With
+        Cnx.Open()
+        Cmd.ExecuteNonQuery()
+        val = Cmd.Parameters("@ID_COMPROBANTE").Value
+        Return (val)
+        Cnx.Close()
 
-
-            cmd.ExecuteNonQuery()
-            Val = cmd.Parameters("@ID_COMPROBANTE").Value
-            Return (val)
-
-            conn.Close()
         Catch e As SqlException
             MsgBox("Mensaje: " & e.Message)
-
+            Return 0
         End Try
+
 
     End Function
 
