@@ -91,6 +91,11 @@ Public Class frmControl
     End Sub
 
     Private Sub btnGuardar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnGuardar.Click
+
+        Dim tipomoneda As String
+        Dim idComprobante As Integer
+
+
         If txtEntrada.Text = String.Empty Then
             MsgBox("Ingrese el codigo", MsgBoxStyle.Exclamation, "Aviso")
         ElseIf (txtEntrada.Text.Length = 38) Then
@@ -98,7 +103,17 @@ Public Class frmControl
             If (cantPagos <> 0) Then
                 MsgBox("El pago correspondiente a este código de barras ya fue realizado " + cantPagos.ToString + " vez/veces." + vbCrLf + "El mismo será marcado como " + ComprobantesAct.getDetalleRepeticion(cantPagos), MsgBoxStyle.Exclamation, "Aviso")
             End If
-            Dim idComprobante As Integer = ComprobantesDA.InsertarDetalleComprobante(txtEntrada.Text, txtRM.Text, txtPoliza.Text, txtEndoso.Text, txtNroCuota.Text, dtpFechaVencimiento.Text, txtMoneda.Text, Convert.ToDecimal(txtImporte.Text), txtObservaciones.Text, "Pepito")
+
+
+            If (txtMoneda.Text = "$") Then
+                tipomoneda = "1"
+            Else
+                tipomoneda = "2"
+            End If
+
+
+
+            idComprobante = ComprobantesDA.InsertarDetalleComprobante(txtEntrada.Text, txtRM.Text, txtPoliza.Text, txtEndoso.Text, txtNroCuota.Text, dtpFechaVencimiento.Text, tipomoneda, Convert.ToDecimal(txtImporte.Text), txtObservaciones.Text, Usuario)
             'ComprobantesAct.PrintTicket(txtPoliza.Text, txtNroCuota.Text, txtMoneda.Text, txtImporte.Text, idComprobante, txtRM.Text)
         Else
             MsgBox("El codigo de barra ingresado es invalido", MsgBoxStyle.Exclamation, "Aviso")
