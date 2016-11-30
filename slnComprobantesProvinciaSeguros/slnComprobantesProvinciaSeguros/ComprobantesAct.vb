@@ -9,7 +9,7 @@ Public Class ComprobantesAct
     Public Shared Moneda As String
     Public Shared Importe As String
     Public Shared FechaPago As Date
-    Public Shared NroComprobante As String
+    Public Shared NroComprobante As Integer
     Public Shared Ramo As String
 
     ''' <summary>
@@ -27,7 +27,7 @@ Public Class ComprobantesAct
            ByVal pCuota As String,
            ByVal pMoneda As String,
            ByVal pImporte As String,
-           ByVal pNroComprobante As String,
+           ByVal pNroComprobante As Integer,
            ByVal pRamo As String)
 
         Try
@@ -58,17 +58,13 @@ Public Class ComprobantesAct
            ByVal pCuota As String,
            ByVal pMoneda As String,
            ByVal pImporte As String,
-           ByVal pNroComprobante As String,
+           ByVal pNroComprobante As Integer,
            ByVal pRamo As String)
 
         FechaPago = Date.Now
         NroComprobante = pNroComprobante
 
-        If (pMoneda = "1") Then
-            pMoneda = "$"
-        Else
-            pMoneda = "US$"
-        End If
+        pMoneda = getMonedaByCode(pMoneda)
 
         Importe = pMoneda + pImporte
         Poliza = pPoliza
@@ -76,6 +72,23 @@ Public Class ComprobantesAct
         Ramo = pRamo
 
     End Sub
+
+    ''' <summary>
+    ''' Autor:Walter Morales
+    ''' Devuelve el valor de la moneda
+    ''' </summary>
+    ''' <param name="codeMoneda"></param>
+    ''' <remarks></remarks>
+    Public Shared Function getMonedaByCode(ByVal codeMoneda As String)
+        Dim moneda As String
+        If (codeMoneda = "1") Then
+            moneda = "$"
+        Else
+            moneda = "US$"
+        End If
+        Return moneda
+    End Function
+
 
     ''' <summary>
     ''' Autor:Walter Morales
@@ -90,7 +103,7 @@ Public Class ComprobantesAct
         e.Graphics.DrawImage(newImage, destRect)
         e.Graphics.DrawString("FECHA: " + FechaPago.ToString("dd/MM/yyyy"), PrintFont, Brushes.Black, 15, 120, New StringFormat())
         e.Graphics.DrawString("HORA: " + FechaPago.ToString("HH:mm:ss"), PrintFont, Brushes.Black, 160, 120, New StringFormat())
-        e.Graphics.DrawString("NRO COMPROBANTE: " + NroComprobante, PrintFont, Brushes.Black, 15, 140, New StringFormat())
+        e.Graphics.DrawString("NRO COMPROBANTE: " + NroComprobante.ToString, PrintFont, Brushes.Black, 15, 140, New StringFormat())
         e.Graphics.DrawString("CUOTA: " + Cuota, PrintFont, Brushes.Black, 15, 160, New StringFormat())
         e.Graphics.DrawString("IMPORTE PAGADO: " + Importe, PrintFont, Brushes.Black, 15, 180, New StringFormat())
         e.Graphics.DrawString("POLIZA: " + Poliza, PrintFont, Brushes.Black, 15, 200, New StringFormat())
@@ -314,4 +327,22 @@ Public Class ComprobantesAct
         Return True
     End Function
 
+    Shared Function getDetalleRepeticion(ByVal cantPagos As Integer) As String
+        Dim result As String = ""
+        Select Case (cantPagos)
+            Case 1
+                result = "DUPLICADO"
+            Case 2
+                result = "TRIPLICADO"
+            Case 3
+                result = "CUADRUPLICADO"
+            Case 4
+                result = "QUINTUPLICADO"
+            Case 5
+                result = "SEXTUPLICADO"
+            Case 5
+                result = "SECTUPLICADO"
+        End Select
+        Return result
+    End Function
 End Class

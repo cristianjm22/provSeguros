@@ -5,17 +5,6 @@ Imports System.Globalization
 
 Public Class frmControl
 
-    Private Sub txtEntrada_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtEntrada.TextChanged
-        If txtEntrada.Text = String.Empty Then
-            MsgBox("Ingrese el codigo", MsgBoxStyle.Exclamation, "Aviso")
-        ElseIf (txtEntrada.Text.Length = 38) Then
-            DesgloseCodigoComprobante(txtEntrada.Text)
-        Else
-            MsgBox("El codigo ingresado no es correcto", MsgBoxStyle.Exclamation, "Aviso")
-        End If
-
-    End Sub
-
     ''' <summary>
     ''' Autor: Morales Cristian
     ''' Desgloso el codigo obtenido del lector, para obtener todos los demas datos
@@ -63,7 +52,7 @@ Public Class frmControl
             dtpFechaVencimiento.Text = Date.ParseExact(fechaVtoString, "ddMMyy", CultureInfo.InvariantCulture)
         End If
 
-        txtMoneda.Text = entrada.Substring(3, 1)
+        txtMoneda.Text = ComprobantesAct.getMonedaByCode(entrada.Substring(3, 1))
 
         txtImporte.Text = entrada.Substring(22, 9)
 
@@ -92,21 +81,27 @@ Public Class frmControl
             btnPermisos.Show()
             btnModificarPagos.Show()
         Else
-            btnPermisos.Hide()
+            'btnPermisos.Hide()
             btnModificarPagos.Hide()
         End If
     End Sub
 
-    Private Sub btnReporte_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnReporte.Click
+    Private Sub btnReporte_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         frmReporte.Show()
     End Sub
 
     Private Sub btnGuardar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnGuardar.Click
         If txtEntrada.Text = String.Empty Then
             MsgBox("Ingrese el codigo", MsgBoxStyle.Exclamation, "Aviso")
+        ElseIf (txtEntrada.Text.Length = 38) Then
+            Dim cantPagos = ComprobantesDA.verificarExistenciaPago(txtEntrada.Text)
+            If (cantPagos <> 0) Then
+                MsgBox("El pago correspondiente a este código de barras ya fue realizado " + cantPagos.ToString + " vez/veces." + vbCrLf + "El mismo será marcado como " + ComprobantesAct.getDetalleRepeticion(cantPagos), MsgBoxStyle.Exclamation, "Aviso")
+            End If
+            Dim idComprobante As Integer = ComprobantesDA.InsertarDetalleComprobante(txtEntrada.Text, txtRM.Text, txtPoliza.Text, txtEndoso.Text, txtNroCuota.Text, dtpFechaVencimiento.Text, txtMoneda.Text, Convert.ToDecimal(txtImporte.Text), txtObservaciones.Text, "Pepito")
+            'ComprobantesAct.PrintTicket(txtPoliza.Text, txtNroCuota.Text, txtMoneda.Text, txtImporte.Text, idComprobante, txtRM.Text)
         Else
-            ComprobantesDA.InsertarDetalleComprobante(txtEntrada.Text, txtRM.Text, txtPoliza.Text, txtEndoso.Text, txtNroCuota.Text, dtpFechaVencimiento.Text, txtMoneda.Text, Convert.ToDecimal(txtImporte.Text), txtObservaciones.Text, "Pepito")
-            'ComprobantesAct.PrintTicket(txtPoliza.Text, txtNroCuota.Text, txtMoneda.Text, txtImporte.Text, "12313123132")
+            MsgBox("El codigo de barra ingresado es invalido", MsgBoxStyle.Exclamation, "Aviso")
         End If
 
         txtEntrada.Focus()
@@ -115,4 +110,21 @@ Public Class frmControl
     Private Sub BtnReimpresion_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnReimpresion.Click
         frmReimpresion.Show()
     End Sub
+
+    Private Sub btnPermisos_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnPermisos.Click
+        frmPermisos.Show()
+    End Sub
+
+    Private Sub txtEntrada_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtEntrada.KeyPress
+        If (e.KeyChar = ChrW(13)) Then
+            If txtEntrada.Text = String.Empty Then
+                MsgBox("Ingrese el codigo", MsgBoxStyle.Exclamation, "Aviso")
+            ElseIf (txtEntrada.Text.Length = 38) Then
+                DesgloseCodigoComprobante(txtEntrada.Text)
+            Else
+                MsgBox("El codigo ingresado no es correcto", MsgBoxStyle.Exclamation, "Aviso")
+            End If
+        End If
+    End Sub
+
 End Class

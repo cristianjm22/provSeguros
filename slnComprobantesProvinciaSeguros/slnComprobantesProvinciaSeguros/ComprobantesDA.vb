@@ -141,7 +141,6 @@ Public Class ComprobantesDA
 
         Dim dt As New DataTable
 
-
         Try
             conn = New SqlConnection(sCnn)
             conn.Open()
@@ -379,6 +378,34 @@ Public Class ComprobantesDA
 
         Return dt
 
+    End Function
+
+    Public Shared Function verificarExistenciaPago(ByVal entrada As String) As Integer
+        Dim count As Integer
+        Try
+            conn = New SqlConnection(sCnn)
+            conn.Open()
+
+            Dim cmd As New SqlCommand("SP_VERIFICA_PAGOS_EXISTENTES", conn)
+            cmd.CommandType = CommandType.StoredProcedure
+            Dim param As New SqlParameter
+
+
+            cmd.Parameters.AddWithValue("@E_LAPIZ_OPTICO", entrada)
+
+            param.ParameterName = "@COUNT_PAGOS"
+            param.SqlDbType = SqlDbType.Int
+            param.Direction = ParameterDirection.Output
+            cmd.Parameters.Add(param)
+
+            cmd.ExecuteNonQuery()
+            count = cmd.Parameters("@COUNT_PAGOS").Value
+            conn.Close()
+        Catch e As SqlException
+            MsgBox("Mensaje: " & e.Message)
+            count = 0
+        End Try
+        Return count
     End Function
 
 End Class
