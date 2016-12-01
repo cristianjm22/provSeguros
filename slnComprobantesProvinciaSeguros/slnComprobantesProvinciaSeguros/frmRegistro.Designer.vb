@@ -160,6 +160,7 @@ Partial Class frmRegistro
         Me.Controls.Add(Me.lblRegistro)
         Me.Controls.Add(Me.ShapeContainer1)
         Me.Name = "frmRegistro"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Registro"
         Me.ResumeLayout(False)
         Me.PerformLayout()

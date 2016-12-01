@@ -17,6 +17,10 @@ Public Class frmReimpresion
         End Try
 
         dgvReimpresion.DataSource = table
+        If (table.Rows.Count = 0) Then
+            lblSinRegistros.Show()
+            btnImprimir.Hide()
+        End If
     End Sub
 
     Private Sub txtPoliza_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtPoliza.TextChanged
@@ -39,5 +43,9 @@ Public Class frmReimpresion
         Else
             MsgBox("Debe seleccionar un registro para poder imprimir", MsgBoxStyle.Exclamation, "Aviso")
         End If
+    End Sub
+
+    Private Sub btnVolver_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnVolver.Click
+        Me.Close()
     End Sub
 End Class

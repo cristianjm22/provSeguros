@@ -255,7 +255,7 @@ Partial Class frmControl
         Me.ShapeContainer1.Margin = New System.Windows.Forms.Padding(0)
         Me.ShapeContainer1.Name = "ShapeContainer1"
         Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape3, Me.RectangleShape2, Me.RectangleShape1})
-        Me.ShapeContainer1.Size = New System.Drawing.Size(456, 569)
+        Me.ShapeContainer1.Size = New System.Drawing.Size(456, 530)
         Me.ShapeContainer1.TabIndex = 30
         Me.ShapeContainer1.TabStop = False
         '
@@ -328,11 +328,12 @@ Partial Class frmControl
         Me.btnGuardar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
         Me.btnGuardar.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.aceptar
         Me.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnGuardar.Location = New System.Drawing.Point(303, 525)
+        Me.btnGuardar.Location = New System.Drawing.Point(316, 492)
         Me.btnGuardar.Name = "btnGuardar"
-        Me.btnGuardar.Size = New System.Drawing.Size(139, 29)
+        Me.btnGuardar.Size = New System.Drawing.Size(112, 29)
         Me.btnGuardar.TabIndex = 37
         Me.btnGuardar.Text = "Registrar Pago"
+        Me.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnGuardar.UseVisualStyleBackColor = False
         '
         'btnReporte
@@ -358,11 +359,12 @@ Partial Class frmControl
         Me.btnLimpiar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
         Me.btnLimpiar.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.cancelar
         Me.btnLimpiar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnLimpiar.Location = New System.Drawing.Point(159, 525)
+        Me.btnLimpiar.Location = New System.Drawing.Point(187, 492)
         Me.btnLimpiar.Name = "btnLimpiar"
-        Me.btnLimpiar.Size = New System.Drawing.Size(139, 29)
+        Me.btnLimpiar.Size = New System.Drawing.Size(123, 29)
         Me.btnLimpiar.TabIndex = 40
         Me.btnLimpiar.Text = "Limpiar Entrada"
+        Me.btnLimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnLimpiar.UseVisualStyleBackColor = False
         '
         'frmControl
@@ -370,7 +372,7 @@ Partial Class frmControl
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
-        Me.ClientSize = New System.Drawing.Size(456, 569)
+        Me.ClientSize = New System.Drawing.Size(456, 530)
         Me.Controls.Add(Me.btnLimpiar)
         Me.Controls.Add(Me.btnReporte)
         Me.Controls.Add(Me.BtnReimpresion)

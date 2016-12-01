@@ -47,7 +47,7 @@ Partial Class frmChange
         Me.RectangleShape1.FillStyle = Microsoft.VisualBasic.PowerPacks.FillStyle.Solid
         Me.RectangleShape1.Location = New System.Drawing.Point(-46, 0)
         Me.RectangleShape1.Name = "RectangleShape1"
-        Me.RectangleShape1.Size = New System.Drawing.Size(457, 94)
+        Me.RectangleShape1.Size = New System.Drawing.Size(439, 94)
         '
         'ShapeContainer1
         '
@@ -55,7 +55,7 @@ Partial Class frmChange
         Me.ShapeContainer1.Margin = New System.Windows.Forms.Padding(0)
         Me.ShapeContainer1.Name = "ShapeContainer1"
         Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape2, Me.RectangleShape1})
-        Me.ShapeContainer1.Size = New System.Drawing.Size(413, 317)
+        Me.ShapeContainer1.Size = New System.Drawing.Size(390, 317)
         Me.ShapeContainer1.TabIndex = 0
         Me.ShapeContainer1.TabStop = False
         '
@@ -64,14 +64,14 @@ Partial Class frmChange
         Me.RectangleShape2.BackgroundImage = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.Sin
         Me.RectangleShape2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.RectangleShape2.BorderColor = System.Drawing.Color.Transparent
-        Me.RectangleShape2.Location = New System.Drawing.Point(224, -14)
+        Me.RectangleShape2.Location = New System.Drawing.Point(210, -13)
         Me.RectangleShape2.Name = "RectangleShape2"
         Me.RectangleShape2.Size = New System.Drawing.Size(176, 103)
         '
         'lblUser
         '
         Me.lblUser.AutoSize = True
-        Me.lblUser.Location = New System.Drawing.Point(75, 159)
+        Me.lblUser.Location = New System.Drawing.Point(75, 170)
         Me.lblUser.Name = "lblUser"
         Me.lblUser.Size = New System.Drawing.Size(43, 13)
         Me.lblUser.TabIndex = 1
@@ -80,7 +80,7 @@ Partial Class frmChange
         'lblClaveOld
         '
         Me.lblClaveOld.AutoSize = True
-        Me.lblClaveOld.Location = New System.Drawing.Point(75, 188)
+        Me.lblClaveOld.Location = New System.Drawing.Point(75, 199)
         Me.lblClaveOld.Name = "lblClaveOld"
         Me.lblClaveOld.Size = New System.Drawing.Size(66, 13)
         Me.lblClaveOld.TabIndex = 2
@@ -88,14 +88,14 @@ Partial Class frmChange
         '
         'txtUser
         '
-        Me.txtUser.Location = New System.Drawing.Point(160, 156)
+        Me.txtUser.Location = New System.Drawing.Point(160, 167)
         Me.txtUser.Name = "txtUser"
         Me.txtUser.Size = New System.Drawing.Size(141, 20)
         Me.txtUser.TabIndex = 3
         '
         'txtOldPass
         '
-        Me.txtOldPass.Location = New System.Drawing.Point(160, 185)
+        Me.txtOldPass.Location = New System.Drawing.Point(160, 196)
         Me.txtOldPass.Name = "txtOldPass"
         Me.txtOldPass.Size = New System.Drawing.Size(141, 20)
         Me.txtOldPass.TabIndex = 4
@@ -104,7 +104,7 @@ Partial Class frmChange
         'lblClabeNew
         '
         Me.lblClabeNew.AutoSize = True
-        Me.lblClabeNew.Location = New System.Drawing.Point(75, 218)
+        Me.lblClabeNew.Location = New System.Drawing.Point(75, 229)
         Me.lblClabeNew.Name = "lblClabeNew"
         Me.lblClabeNew.Size = New System.Drawing.Size(68, 13)
         Me.lblClabeNew.TabIndex = 5
@@ -112,7 +112,7 @@ Partial Class frmChange
         '
         'txtNewPass
         '
-        Me.txtNewPass.Location = New System.Drawing.Point(160, 215)
+        Me.txtNewPass.Location = New System.Drawing.Point(160, 226)
         Me.txtNewPass.Name = "txtNewPass"
         Me.txtNewPass.Size = New System.Drawing.Size(141, 20)
         Me.txtNewPass.TabIndex = 6
@@ -140,11 +140,12 @@ Partial Class frmChange
         Me.btnCancelar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
         Me.btnCancelar.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.cancelar
         Me.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnCancelar.Location = New System.Drawing.Point(193, 266)
+        Me.btnCancelar.Location = New System.Drawing.Point(124, 276)
         Me.btnCancelar.Name = "btnCancelar"
-        Me.btnCancelar.Size = New System.Drawing.Size(108, 29)
+        Me.btnCancelar.Size = New System.Drawing.Size(87, 29)
         Me.btnCancelar.TabIndex = 19
         Me.btnCancelar.Text = "Cancelar"
+        Me.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnCancelar.UseVisualStyleBackColor = False
         '
         'btnChange
@@ -156,20 +157,21 @@ Partial Class frmChange
         Me.btnChange.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnChange.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnChange.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
-        Me.btnChange.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.right
+        Me.btnChange.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.aceptar
         Me.btnChange.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnChange.Location = New System.Drawing.Point(78, 266)
+        Me.btnChange.Location = New System.Drawing.Point(217, 276)
         Me.btnChange.Name = "btnChange"
-        Me.btnChange.Size = New System.Drawing.Size(109, 29)
+        Me.btnChange.Size = New System.Drawing.Size(84, 29)
         Me.btnChange.TabIndex = 20
         Me.btnChange.Text = "Cambiar"
+        Me.btnChange.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnChange.UseVisualStyleBackColor = False
         '
         'frmChange
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(413, 317)
+        Me.ClientSize = New System.Drawing.Size(390, 317)
         Me.Controls.Add(Me.btnCancelar)
         Me.Controls.Add(Me.btnChange)
         Me.Controls.Add(Me.Label4)
@@ -181,6 +183,7 @@ Partial Class frmChange
         Me.Controls.Add(Me.lblUser)
         Me.Controls.Add(Me.ShapeContainer1)
         Me.Name = "frmChange"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Cambio de Clave"
         Me.ResumeLayout(False)
         Me.PerformLayout()
