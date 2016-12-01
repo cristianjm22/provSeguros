@@ -137,7 +137,7 @@ Partial Class frmRegistro
         Me.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnRegistrar.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnRegistrar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
-        Me.btnRegistrar.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.Very_Basic_Ok_icon_1_
+        Me.btnRegistrar.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.aceptar
         Me.btnRegistrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnRegistrar.Location = New System.Drawing.Point(77, 258)
         Me.btnRegistrar.Name = "btnRegistrar"

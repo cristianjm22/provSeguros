@@ -86,24 +86,20 @@ Public Class frmControl
         End If
     End Sub
 
-    Private Sub btnReporte_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        frmReporte.Show()
-    End Sub
-
     Private Sub btnGuardar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnGuardar.Click
 
         Dim tipomoneda As String
         Dim idComprobante As Integer
-
+        Dim repeticion As String = ""
 
         If txtEntrada.Text = String.Empty Then
             MsgBox("Ingrese el codigo", MsgBoxStyle.Exclamation, "Aviso")
         ElseIf (txtEntrada.Text.Length = 38) Then
             Dim cantPagos = ComprobantesDA.verificarExistenciaPago(txtEntrada.Text)
             If (cantPagos <> 0) Then
-                MsgBox("El pago correspondiente a este código de barras ya fue realizado " + cantPagos.ToString + " vez/veces." + vbCrLf + "El mismo será marcado como " + ComprobantesAct.getDetalleRepeticion(cantPagos), MsgBoxStyle.Exclamation, "Aviso")
+                repeticion = ComprobantesAct.getDetalleRepeticion(cantPagos)
+                MsgBox("El pago correspondiente a este código de barras ya fue realizado " + cantPagos.ToString + " vez/veces." + vbCrLf + "El mismo será marcado como " + repeticion, MsgBoxStyle.Exclamation, "Aviso") 
             End If
-
 
             If (txtMoneda.Text = "$") Then
                 tipomoneda = "1"
@@ -111,10 +107,11 @@ Public Class frmControl
                 tipomoneda = "2"
             End If
 
+            idComprobante = ComprobantesDA.InsertarDetalleComprobante(txtEntrada.Text, txtRM.Text, txtPoliza.Text, txtEndoso.Text, txtNroCuota.Text, dtpFechaVencimiento.Text, tipomoneda, Convert.ToDecimal(txtImporte.Text), txtObservaciones.Text, Usuario, repeticion)
 
-
-            idComprobante = ComprobantesDA.InsertarDetalleComprobante(txtEntrada.Text, txtRM.Text, txtPoliza.Text, txtEndoso.Text, txtNroCuota.Text, dtpFechaVencimiento.Text, tipomoneda, Convert.ToDecimal(txtImporte.Text), txtObservaciones.Text, Usuario)
-            'ComprobantesAct.PrintTicket(txtPoliza.Text, txtNroCuota.Text, txtMoneda.Text, txtImporte.Text, idComprobante, txtRM.Text)
+            If MsgBox("El pago ha sido registrado correctamente." + vbCrLf + "¿Desea imprimir el comprobante?", MsgBoxStyle.YesNo, "Pago Registrado") = MsgBoxResult.Yes Then
+                ComprobantesAct.PrintTicket(txtPoliza.Text, txtNroCuota.Text, txtMoneda.Text, txtImporte.Text, idComprobante, txtRM.Text)
+            End If
         Else
             MsgBox("El codigo de barra ingresado es invalido", MsgBoxStyle.Exclamation, "Aviso")
         End If
@@ -136,10 +133,36 @@ Public Class frmControl
                 MsgBox("Ingrese el codigo", MsgBoxStyle.Exclamation, "Aviso")
             ElseIf (txtEntrada.Text.Length = 38) Then
                 DesgloseCodigoComprobante(txtEntrada.Text)
+                txtObservaciones.Enabled = True
             Else
                 MsgBox("El codigo ingresado no es correcto", MsgBoxStyle.Exclamation, "Aviso")
             End If
         End If
     End Sub
 
+    Private Sub btnReporte_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnReporte.Click
+        frmReporte.Show()
+    End Sub
+
+    Private Sub btnLimpiar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnLimpiar.Click
+        clean()
+        txtEntrada.Text = ""
+        txtEntrada.Focus()
+    End Sub
+
+    Private Sub clean()
+        txtEndoso.Text = ""
+        txtImporte.Text = ""
+        txtMoneda.Text = ""
+        txtNroCuota.Text = ""
+        txtObservaciones.Text = ""
+        txtObservaciones.Enabled = False
+        txtPoliza.Text = ""
+        txtRM.Text = ""
+        dtpFechaVencimiento.ResetText()
+    End Sub
+
+    Private Sub txtEntrada_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtEntrada.TextChanged
+        clean()
+    End Sub
 End Class

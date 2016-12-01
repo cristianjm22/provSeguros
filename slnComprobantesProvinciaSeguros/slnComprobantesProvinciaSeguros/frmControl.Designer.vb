@@ -51,6 +51,7 @@ Partial Class frmControl
         Me.BtnReimpresion = New System.Windows.Forms.Button()
         Me.btnGuardar = New System.Windows.Forms.Button()
         Me.btnReporte = New System.Windows.Forms.Button()
+        Me.btnLimpiar = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'txtEntrada
@@ -209,6 +210,7 @@ Partial Class frmControl
         '
         'txtObservaciones
         '
+        Me.txtObservaciones.Enabled = False
         Me.txtObservaciones.Location = New System.Drawing.Point(198, 291)
         Me.txtObservaciones.Name = "txtObservaciones"
         Me.txtObservaciones.Size = New System.Drawing.Size(230, 20)
@@ -324,7 +326,7 @@ Partial Class frmControl
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnGuardar.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnGuardar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
-        Me.btnGuardar.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.Very_Basic_Ok_icon_1_
+        Me.btnGuardar.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.aceptar
         Me.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnGuardar.Location = New System.Drawing.Point(303, 525)
         Me.btnGuardar.Name = "btnGuardar"
@@ -345,12 +347,31 @@ Partial Class frmControl
         Me.btnReporte.Text = "Reporte Diario"
         Me.btnReporte.UseVisualStyleBackColor = False
         '
+        'btnLimpiar
+        '
+        Me.btnLimpiar.BackColor = System.Drawing.SystemColors.Control
+        Me.btnLimpiar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btnLimpiar.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.btnLimpiar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
+        Me.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnLimpiar.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnLimpiar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
+        Me.btnLimpiar.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.cancelar
+        Me.btnLimpiar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnLimpiar.Location = New System.Drawing.Point(159, 525)
+        Me.btnLimpiar.Name = "btnLimpiar"
+        Me.btnLimpiar.Size = New System.Drawing.Size(139, 29)
+        Me.btnLimpiar.TabIndex = 40
+        Me.btnLimpiar.Text = "Limpiar Entrada"
+        Me.btnLimpiar.UseVisualStyleBackColor = False
+        '
         'frmControl
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
         Me.ClientSize = New System.Drawing.Size(456, 569)
+        Me.Controls.Add(Me.btnLimpiar)
         Me.Controls.Add(Me.btnReporte)
         Me.Controls.Add(Me.BtnReimpresion)
         Me.Controls.Add(Me.btnGuardar)
@@ -378,6 +399,7 @@ Partial Class frmControl
         Me.Controls.Add(Me.ShapeContainer1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmControl"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Pagos"
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -411,5 +433,6 @@ Partial Class frmControl
     Friend WithEvents BtnReimpresion As System.Windows.Forms.Button
     Friend WithEvents btnGuardar As System.Windows.Forms.Button
     Friend WithEvents btnReporte As System.Windows.Forms.Button
+    Friend WithEvents btnLimpiar As System.Windows.Forms.Button
 
 End Class

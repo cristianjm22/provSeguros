@@ -27,43 +27,43 @@ Public Class ComprobantesDA
            ByVal MONEDA As String,
            ByVal IMPORTE As Decimal,
            ByVal OBSERVACIONES As String,
-           ByVal USR_ALTA As String)
-
+           ByVal USR_ALTA As String,
+           ByVal COPIA As String)
 
         Try
 
-        Dim Cnx As New SqlConnection(sCnn)
-        Dim Cmd As New SqlCommand("SP_INSERT_DETALLE_COMPROBANTE", Cnx)
-        Dim param As New SqlParameter
-        Dim val As Integer
-        With Cmd
-            .CommandType = CommandType.StoredProcedure
+            Dim Cnx As New SqlConnection(sCnn)
+            Dim Cmd As New SqlCommand("SP_INSERT_DETALLE_COMPROBANTE", Cnx)
+            Dim param As New SqlParameter
+            Dim val As Integer
+            With Cmd
+                .CommandType = CommandType.StoredProcedure
 
 
-            .Parameters.Add(New SqlParameter("@E_LAPIZ_OPTICO", SqlDbType.NChar, 30)).Value = ENTRADA
-            .Parameters.Add(New SqlParameter("@RM", SqlDbType.NChar)).Value = RM
-            .Parameters.Add(New SqlParameter("@POLIZA", SqlDbType.NChar, 20)).Value = POLIZA
-            .Parameters.Add(New SqlParameter("@ENDOSO", SqlDbType.NChar, 20)).Value = ENDOSO
-            .Parameters.Add(New SqlParameter("@NRO_CUOTA", SqlDbType.NChar, 20)).Value = NROCUENTA
-            .Parameters.Add(New SqlParameter("@FECHA_VTO", SqlDbType.DateTime)).Value = FECHAVTO
-            .Parameters.Add(New SqlParameter("@MONEDA", SqlDbType.NChar, 20)).Value = MONEDA
+                .Parameters.Add(New SqlParameter("@E_LAPIZ_OPTICO", SqlDbType.NChar, 50)).Value = ENTRADA
+                .Parameters.Add(New SqlParameter("@RM", SqlDbType.NChar)).Value = RM
+                .Parameters.Add(New SqlParameter("@POLIZA", SqlDbType.NChar, 20)).Value = POLIZA
+                .Parameters.Add(New SqlParameter("@ENDOSO", SqlDbType.NChar, 20)).Value = ENDOSO
+                .Parameters.Add(New SqlParameter("@NRO_CUOTA", SqlDbType.NChar, 20)).Value = NROCUENTA
+                .Parameters.Add(New SqlParameter("@FECHA_VTO", SqlDbType.DateTime)).Value = FECHAVTO
+                .Parameters.Add(New SqlParameter("@MONEDA", SqlDbType.NChar, 20)).Value = MONEDA
 
-            .Parameters.Add(New SqlParameter("@IMPORTE", SqlDbType.Decimal)).Value = IMPORTE
-            .Parameters.Add(New SqlParameter("@USUARIO_ALTA", SqlDbType.NChar)).Value = Usuario
-            .Parameters.Add(New SqlParameter("@OBSERVACIONES", SqlDbType.VarChar)).Value = OBSERVACIONES
-         
+                .Parameters.Add(New SqlParameter("@IMPORTE", SqlDbType.Decimal)).Value = IMPORTE
+                .Parameters.Add(New SqlParameter("@USUARIO_ALTA", SqlDbType.NChar)).Value = Usuario
+                .Parameters.Add(New SqlParameter("@OBSERVACIONES", SqlDbType.VarChar)).Value = OBSERVACIONES
+                .Parameters.Add(New SqlParameter("@COPIA", SqlDbType.NChar, 20)).Value = COPIA
 
-            param.ParameterName = "@ID_COMPROBANTE"
-            param.SqlDbType = SqlDbType.Int
-            param.Direction = ParameterDirection.Output
-            .Parameters.Add(param)
+                param.ParameterName = "@ID_COMPROBANTE"
+                param.SqlDbType = SqlDbType.Int
+                param.Direction = ParameterDirection.Output
+                .Parameters.Add(param)
 
-        End With
-        Cnx.Open()
-        Cmd.ExecuteNonQuery()
-        val = Cmd.Parameters("@ID_COMPROBANTE").Value
-        Return (val)
-        Cnx.Close()
+            End With
+            Cnx.Open()
+            Cmd.ExecuteNonQuery()
+            val = Cmd.Parameters("@ID_COMPROBANTE").Value
+            Return (val)
+            Cnx.Close()
 
         Catch e As SqlException
             MsgBox("Mensaje: " & e.Message)
@@ -406,6 +406,28 @@ Public Class ComprobantesDA
             count = 0
         End Try
         Return count
+    End Function
+
+    ''' <summary>
+    ''' Autor: Walter Morales
+    ''' </summary>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    Public Shared Function ActualizarEstadoPagoFuturo()
+
+        Try
+            conn = New SqlConnection(sCnn)
+            conn.Open()
+            Dim cmd As New SqlCommand("SP_ACTUALIZAR_PAGO_FUTURO", conn)
+            cmd.CommandType = CommandType.StoredProcedure
+
+            Return cmd.ExecuteNonQuery()
+            conn.Close()
+        Catch e As SqlException
+            MsgBox("Mensaje: " & e.Message)
+            Return 0
+        End Try
+
     End Function
 
 End Class

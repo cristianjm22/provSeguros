@@ -24,6 +24,7 @@ Partial Class frmChange
     Private Sub InitializeComponent()
         Me.RectangleShape1 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.ShapeContainer1 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
+        Me.RectangleShape2 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.lblUser = New System.Windows.Forms.Label()
         Me.lblClaveOld = New System.Windows.Forms.Label()
         Me.txtUser = New System.Windows.Forms.TextBox()
@@ -33,7 +34,6 @@ Partial Class frmChange
         Me.Label4 = New System.Windows.Forms.Label()
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.btnChange = New System.Windows.Forms.Button()
-        Me.RectangleShape2 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.SuspendLayout()
         '
         'RectangleShape1
@@ -58,6 +58,15 @@ Partial Class frmChange
         Me.ShapeContainer1.Size = New System.Drawing.Size(413, 317)
         Me.ShapeContainer1.TabIndex = 0
         Me.ShapeContainer1.TabStop = False
+        '
+        'RectangleShape2
+        '
+        Me.RectangleShape2.BackgroundImage = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.Sin
+        Me.RectangleShape2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.RectangleShape2.BorderColor = System.Drawing.Color.Transparent
+        Me.RectangleShape2.Location = New System.Drawing.Point(224, -14)
+        Me.RectangleShape2.Name = "RectangleShape2"
+        Me.RectangleShape2.Size = New System.Drawing.Size(176, 103)
         '
         'lblUser
         '
@@ -147,7 +156,7 @@ Partial Class frmChange
         Me.btnChange.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnChange.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnChange.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
-        Me.btnChange.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.right_arrow
+        Me.btnChange.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.right
         Me.btnChange.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnChange.Location = New System.Drawing.Point(78, 266)
         Me.btnChange.Name = "btnChange"
@@ -155,15 +164,6 @@ Partial Class frmChange
         Me.btnChange.TabIndex = 20
         Me.btnChange.Text = "Cambiar"
         Me.btnChange.UseVisualStyleBackColor = False
-        '
-        'RectangleShape2
-        '
-        Me.RectangleShape2.BackgroundImage = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.Sin
-        Me.RectangleShape2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.RectangleShape2.BorderColor = System.Drawing.Color.Transparent
-        Me.RectangleShape2.Location = New System.Drawing.Point(224, -14)
-        Me.RectangleShape2.Name = "RectangleShape2"
-        Me.RectangleShape2.Size = New System.Drawing.Size(176, 103)
         '
         'frmChange
         '

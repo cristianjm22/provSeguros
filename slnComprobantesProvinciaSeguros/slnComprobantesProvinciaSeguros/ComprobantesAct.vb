@@ -331,17 +331,13 @@ Public Class ComprobantesAct
         Dim result As String = ""
         Select Case (cantPagos)
             Case 1
-                result = "DUPLICADO"
+                result = "duplicado"
             Case 2
-                result = "TRIPLICADO"
+                result = "triplicado"
             Case 3
-                result = "CUADRUPLICADO"
+                result = "cuadruplicado"
             Case 4
-                result = "QUINTUPLICADO"
-            Case 5
-                result = "SEXTUPLICADO"
-            Case 5
-                result = "SECTUPLICADO"
+                result = "quintuplicado"
         End Select
         Return result
     End Function

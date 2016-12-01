@@ -24,6 +24,7 @@ Partial Class frmLogin
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmLogin))
         Me.ShapeContainer1 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
+        Me.RectangleShape2 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.RectangleShape1 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.Login_Usr_Txt = New System.Windows.Forms.TextBox()
         Me.User_Lbl = New System.Windows.Forms.Label()
@@ -35,7 +36,6 @@ Partial Class frmLogin
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.btnIngresar = New System.Windows.Forms.Button()
-        Me.RectangleShape2 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -49,6 +49,15 @@ Partial Class frmLogin
         Me.ShapeContainer1.Size = New System.Drawing.Size(391, 383)
         Me.ShapeContainer1.TabIndex = 16
         Me.ShapeContainer1.TabStop = False
+        '
+        'RectangleShape2
+        '
+        Me.RectangleShape2.BackgroundImage = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.Sin
+        Me.RectangleShape2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.RectangleShape2.BorderColor = System.Drawing.Color.Transparent
+        Me.RectangleShape2.Location = New System.Drawing.Point(205, -3)
+        Me.RectangleShape2.Name = "RectangleShape2"
+        Me.RectangleShape2.Size = New System.Drawing.Size(176, 103)
         '
         'RectangleShape1
         '
@@ -162,7 +171,7 @@ Partial Class frmLogin
         Me.btnIngresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnIngresar.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnIngresar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
-        Me.btnIngresar.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.right_arrow
+        Me.btnIngresar.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.right
         Me.btnIngresar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnIngresar.Location = New System.Drawing.Point(206, 299)
         Me.btnIngresar.Name = "btnIngresar"
@@ -170,15 +179,6 @@ Partial Class frmLogin
         Me.btnIngresar.TabIndex = 15
         Me.btnIngresar.Text = "   Ingresar"
         Me.btnIngresar.UseVisualStyleBackColor = False
-        '
-        'RectangleShape2
-        '
-        Me.RectangleShape2.BackgroundImage = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.Sin
-        Me.RectangleShape2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.RectangleShape2.BorderColor = System.Drawing.Color.Transparent
-        Me.RectangleShape2.Location = New System.Drawing.Point(205, -3)
-        Me.RectangleShape2.Name = "RectangleShape2"
-        Me.RectangleShape2.Size = New System.Drawing.Size(176, 103)
         '
         'frmLogin
         '
