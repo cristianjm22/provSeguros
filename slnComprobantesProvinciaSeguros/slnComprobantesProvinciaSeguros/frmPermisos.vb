@@ -71,9 +71,8 @@ Public Class frmPermisos
         End If
 
     End Sub
-    Private Sub DataGridView1_CellEndEdit(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles PermisosDGV.CellEndEdit
-        bEdit = True
-    End Sub
+
+
 
     Private Sub User_Txt_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles User_Txt.TextChanged
         Actualizar()
@@ -95,11 +94,15 @@ Public Class frmPermisos
         End If
     End Sub
 
-    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnGuardar.Click
+    Private Sub btnVolver_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnVolver.Click
+        Me.Close()
+    End Sub
+
+    Private Sub btnGuardar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnGuardar.Click
         Actualizar()
     End Sub
 
-    Private Sub btnVolver_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnVolver.Click
-        Me.Close()
+    Private Sub PermisosDGV_CellEndEdit(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles PermisosDGV.CellEndEdit
+        bEdit = True
     End Sub
 End Class

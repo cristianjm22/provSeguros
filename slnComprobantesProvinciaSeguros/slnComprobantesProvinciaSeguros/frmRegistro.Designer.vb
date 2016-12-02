@@ -95,18 +95,22 @@ Partial Class frmRegistro
         'lblClave
         '
         Me.lblClave.AutoSize = True
+        Me.lblClave.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblClave.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.lblClave.Location = New System.Drawing.Point(74, 202)
         Me.lblClave.Name = "lblClave"
-        Me.lblClave.Size = New System.Drawing.Size(34, 13)
+        Me.lblClave.Size = New System.Drawing.Size(35, 14)
         Me.lblClave.TabIndex = 20
         Me.lblClave.Text = "Clave"
         '
         'lblUser
         '
         Me.lblUser.AutoSize = True
+        Me.lblUser.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblUser.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.lblUser.Location = New System.Drawing.Point(71, 173)
         Me.lblUser.Name = "lblUser"
-        Me.lblUser.Size = New System.Drawing.Size(43, 13)
+        Me.lblUser.Size = New System.Drawing.Size(46, 14)
         Me.lblUser.TabIndex = 19
         Me.lblUser.Text = "Usuario"
         '

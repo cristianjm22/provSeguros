@@ -55,7 +55,7 @@ Partial Class frmChange
         Me.ShapeContainer1.Margin = New System.Windows.Forms.Padding(0)
         Me.ShapeContainer1.Name = "ShapeContainer1"
         Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape2, Me.RectangleShape1})
-        Me.ShapeContainer1.Size = New System.Drawing.Size(390, 317)
+        Me.ShapeContainer1.Size = New System.Drawing.Size(395, 364)
         Me.ShapeContainer1.TabIndex = 0
         Me.ShapeContainer1.TabStop = False
         '
@@ -71,31 +71,35 @@ Partial Class frmChange
         'lblUser
         '
         Me.lblUser.AutoSize = True
-        Me.lblUser.Location = New System.Drawing.Point(75, 170)
+        Me.lblUser.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.lblUser.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.lblUser.Location = New System.Drawing.Point(75, 172)
         Me.lblUser.Name = "lblUser"
-        Me.lblUser.Size = New System.Drawing.Size(43, 13)
+        Me.lblUser.Size = New System.Drawing.Size(46, 14)
         Me.lblUser.TabIndex = 1
         Me.lblUser.Text = "Usuario"
         '
         'lblClaveOld
         '
         Me.lblClaveOld.AutoSize = True
-        Me.lblClaveOld.Location = New System.Drawing.Point(75, 199)
+        Me.lblClaveOld.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.lblClaveOld.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.lblClaveOld.Location = New System.Drawing.Point(75, 198)
         Me.lblClaveOld.Name = "lblClaveOld"
-        Me.lblClaveOld.Size = New System.Drawing.Size(66, 13)
+        Me.lblClaveOld.Size = New System.Drawing.Size(71, 14)
         Me.lblClaveOld.TabIndex = 2
         Me.lblClaveOld.Text = "Clave actual"
         '
         'txtUser
         '
-        Me.txtUser.Location = New System.Drawing.Point(160, 167)
+        Me.txtUser.Location = New System.Drawing.Point(160, 170)
         Me.txtUser.Name = "txtUser"
         Me.txtUser.Size = New System.Drawing.Size(141, 20)
         Me.txtUser.TabIndex = 3
         '
         'txtOldPass
         '
-        Me.txtOldPass.Location = New System.Drawing.Point(160, 196)
+        Me.txtOldPass.Location = New System.Drawing.Point(160, 198)
         Me.txtOldPass.Name = "txtOldPass"
         Me.txtOldPass.Size = New System.Drawing.Size(141, 20)
         Me.txtOldPass.TabIndex = 4
@@ -104,9 +108,11 @@ Partial Class frmChange
         'lblClabeNew
         '
         Me.lblClabeNew.AutoSize = True
-        Me.lblClabeNew.Location = New System.Drawing.Point(75, 229)
+        Me.lblClabeNew.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.lblClabeNew.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.lblClabeNew.Location = New System.Drawing.Point(75, 228)
         Me.lblClabeNew.Name = "lblClabeNew"
-        Me.lblClabeNew.Size = New System.Drawing.Size(68, 13)
+        Me.lblClabeNew.Size = New System.Drawing.Size(72, 14)
         Me.lblClabeNew.TabIndex = 5
         Me.lblClabeNew.Text = "Nueva clave"
         '
@@ -171,7 +177,7 @@ Partial Class frmChange
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(390, 317)
+        Me.ClientSize = New System.Drawing.Size(395, 364)
         Me.Controls.Add(Me.btnCancelar)
         Me.Controls.Add(Me.btnChange)
         Me.Controls.Add(Me.Label4)

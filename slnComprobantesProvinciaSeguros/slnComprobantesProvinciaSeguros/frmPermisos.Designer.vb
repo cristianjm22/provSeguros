@@ -24,13 +24,13 @@ Partial Class frmPermisos
         Me.User_Txt = New System.Windows.Forms.TextBox()
         Me.RectangleShape1 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.ShapeContainer1 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
+        Me.RectangleShape3 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
+        Me.RectangleShape2 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.lblReporte = New System.Windows.Forms.Label()
         Me.PermisosDGV = New System.Windows.Forms.DataGridView()
         Me.btnGuardar = New System.Windows.Forms.Button()
         Me.btnEliminar = New System.Windows.Forms.Button()
         Me.btnNuevo = New System.Windows.Forms.Button()
-        Me.RectangleShape3 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
-        Me.RectangleShape2 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.btnVolver = New System.Windows.Forms.Button()
         CType(Me.PermisosDGV, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -38,12 +38,13 @@ Partial Class frmPermisos
         'User_Lbl
         '
         Me.User_Lbl.AutoSize = True
-        Me.User_Lbl.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.User_Lbl.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.User_Lbl.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.User_Lbl.Location = New System.Drawing.Point(51, 202)
         Me.User_Lbl.Name = "User_Lbl"
-        Me.User_Lbl.Size = New System.Drawing.Size(56, 16)
+        Me.User_Lbl.Size = New System.Drawing.Size(46, 14)
         Me.User_Lbl.TabIndex = 8
-        Me.User_Lbl.Text = "Usuario:"
+        Me.User_Lbl.Text = "Usuario"
         '
         'User_Txt
         '
@@ -77,6 +78,24 @@ Partial Class frmPermisos
         Me.ShapeContainer1.Size = New System.Drawing.Size(896, 418)
         Me.ShapeContainer1.TabIndex = 41
         Me.ShapeContainer1.TabStop = False
+        '
+        'RectangleShape3
+        '
+        Me.RectangleShape3.BackgroundImage = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.Sin
+        Me.RectangleShape3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.RectangleShape3.BorderColor = System.Drawing.Color.Transparent
+        Me.RectangleShape3.Location = New System.Drawing.Point(709, -9)
+        Me.RectangleShape3.Name = "RectangleShape3"
+        Me.RectangleShape3.Size = New System.Drawing.Size(176, 103)
+        '
+        'RectangleShape2
+        '
+        Me.RectangleShape2.BackgroundImage = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.Sin
+        Me.RectangleShape2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.RectangleShape2.BorderColor = System.Drawing.Color.Transparent
+        Me.RectangleShape2.Location = New System.Drawing.Point(1094, -5)
+        Me.RectangleShape2.Name = "RectangleShape2"
+        Me.RectangleShape2.Size = New System.Drawing.Size(176, 103)
         '
         'lblReporte
         '
@@ -159,24 +178,6 @@ Partial Class frmPermisos
         Me.btnNuevo.Text = "Nuevo"
         Me.btnNuevo.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnNuevo.UseVisualStyleBackColor = False
-        '
-        'RectangleShape3
-        '
-        Me.RectangleShape3.BackgroundImage = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.Sin
-        Me.RectangleShape3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.RectangleShape3.BorderColor = System.Drawing.Color.Transparent
-        Me.RectangleShape3.Location = New System.Drawing.Point(709, -9)
-        Me.RectangleShape3.Name = "RectangleShape3"
-        Me.RectangleShape3.Size = New System.Drawing.Size(176, 103)
-        '
-        'RectangleShape2
-        '
-        Me.RectangleShape2.BackgroundImage = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.Sin
-        Me.RectangleShape2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.RectangleShape2.BorderColor = System.Drawing.Color.Transparent
-        Me.RectangleShape2.Location = New System.Drawing.Point(1094, -5)
-        Me.RectangleShape2.Name = "RectangleShape2"
-        Me.RectangleShape2.Size = New System.Drawing.Size(176, 103)
         '
         'btnVolver
         '

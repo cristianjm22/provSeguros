@@ -22,17 +22,17 @@ Partial Class frmReimpresion
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.lblPoliza = New System.Windows.Forms.Label()
         Me.txtPoliza = New System.Windows.Forms.TextBox()
         Me.dgvReimpresion = New System.Windows.Forms.DataGridView()
         Me.RectangleShape1 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.ShapeContainer1 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
+        Me.RectangleShape2 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.lblReimpresion = New System.Windows.Forms.Label()
         Me.lblSinRegistros = New System.Windows.Forms.Label()
         Me.btnImprimir = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.RectangleShape2 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.btnVolver = New System.Windows.Forms.Button()
         CType(Me.dgvReimpresion, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -41,11 +41,13 @@ Partial Class frmReimpresion
         'lblPoliza
         '
         Me.lblPoliza.AutoSize = True
+        Me.lblPoliza.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPoliza.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.lblPoliza.Location = New System.Drawing.Point(62, 179)
         Me.lblPoliza.Name = "lblPoliza"
-        Me.lblPoliza.Size = New System.Drawing.Size(38, 13)
+        Me.lblPoliza.Size = New System.Drawing.Size(36, 14)
         Me.lblPoliza.TabIndex = 0
-        Me.lblPoliza.Text = "Poliza:"
+        Me.lblPoliza.Text = "Poliza"
         '
         'txtPoliza
         '
@@ -63,14 +65,14 @@ Partial Class frmReimpresion
         Me.dgvReimpresion.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.dgvReimpresion.BackgroundColor = System.Drawing.SystemColors.Control
         Me.dgvReimpresion.BorderStyle = System.Windows.Forms.BorderStyle.None
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ActiveBorder
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvReimpresion.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveBorder
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvReimpresion.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvReimpresion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvReimpresion.Enabled = False
         Me.dgvReimpresion.Location = New System.Drawing.Point(65, 207)
@@ -105,6 +107,15 @@ Partial Class frmReimpresion
         Me.ShapeContainer1.Size = New System.Drawing.Size(1284, 500)
         Me.ShapeContainer1.TabIndex = 3
         Me.ShapeContainer1.TabStop = False
+        '
+        'RectangleShape2
+        '
+        Me.RectangleShape2.BackgroundImage = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.Sin
+        Me.RectangleShape2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.RectangleShape2.BorderColor = System.Drawing.Color.Transparent
+        Me.RectangleShape2.Location = New System.Drawing.Point(1086, -9)
+        Me.RectangleShape2.Name = "RectangleShape2"
+        Me.RectangleShape2.Size = New System.Drawing.Size(176, 103)
         '
         'lblReimpresion
         '
@@ -155,15 +166,6 @@ Partial Class frmReimpresion
         Me.PictureBox1.Size = New System.Drawing.Size(27, 22)
         Me.PictureBox1.TabIndex = 30
         Me.PictureBox1.TabStop = False
-        '
-        'RectangleShape2
-        '
-        Me.RectangleShape2.BackgroundImage = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.Sin
-        Me.RectangleShape2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.RectangleShape2.BorderColor = System.Drawing.Color.Transparent
-        Me.RectangleShape2.Location = New System.Drawing.Point(1086, -9)
-        Me.RectangleShape2.Name = "RectangleShape2"
-        Me.RectangleShape2.Size = New System.Drawing.Size(176, 103)
         '
         'btnVolver
         '

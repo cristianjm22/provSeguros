@@ -49,330 +49,224 @@ Partial Class frmControl
         Me.btnPermisos = New System.Windows.Forms.Button()
         Me.btnModificarPagos = New System.Windows.Forms.Button()
         Me.BtnReimpresion = New System.Windows.Forms.Button()
-        Me.btnGuardar = New System.Windows.Forms.Button()
         Me.btnReporte = New System.Windows.Forms.Button()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.txtDeuda = New System.Windows.Forms.TextBox()
+        Me.btnDeudas = New System.Windows.Forms.Button()
         Me.btnLimpiar = New System.Windows.Forms.Button()
+        Me.btnGuardar = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'txtEntrada
         '
-        Me.txtEntrada.Location = New System.Drawing.Point(24, 246)
+        resources.ApplyResources(Me.txtEntrada, "txtEntrada")
         Me.txtEntrada.Name = "txtEntrada"
-        Me.txtEntrada.Size = New System.Drawing.Size(404, 20)
-        Me.txtEntrada.TabIndex = 4
         '
         'lblEntrada
         '
-        Me.lblEntrada.AutoSize = True
-        Me.lblEntrada.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        resources.ApplyResources(Me.lblEntrada, "lblEntrada")
         Me.lblEntrada.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.lblEntrada.Location = New System.Drawing.Point(24, 227)
         Me.lblEntrada.Name = "lblEntrada"
-        Me.lblEntrada.Size = New System.Drawing.Size(49, 14)
-        Me.lblEntrada.TabIndex = 5
-        Me.lblEntrada.Text = "Entrada"
         '
         'txtRM
         '
-        Me.txtRM.Enabled = False
-        Me.txtRM.Location = New System.Drawing.Point(24, 291)
+        resources.ApplyResources(Me.txtRM, "txtRM")
         Me.txtRM.Name = "txtRM"
-        Me.txtRM.Size = New System.Drawing.Size(44, 20)
-        Me.txtRM.TabIndex = 6
         '
         'lblRM
         '
-        Me.lblRM.AutoSize = True
-        Me.lblRM.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        resources.ApplyResources(Me.lblRM, "lblRM")
         Me.lblRM.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.lblRM.Location = New System.Drawing.Point(24, 275)
         Me.lblRM.Name = "lblRM"
-        Me.lblRM.Size = New System.Drawing.Size(37, 14)
-        Me.lblRM.TabIndex = 7
-        Me.lblRM.Text = "Ramo"
         '
         'lblPoliza
         '
-        Me.lblPoliza.AutoSize = True
-        Me.lblPoliza.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        resources.ApplyResources(Me.lblPoliza, "lblPoliza")
         Me.lblPoliza.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.lblPoliza.Location = New System.Drawing.Point(197, 322)
         Me.lblPoliza.Name = "lblPoliza"
-        Me.lblPoliza.Size = New System.Drawing.Size(36, 14)
-        Me.lblPoliza.TabIndex = 9
-        Me.lblPoliza.Text = "Poliza"
         '
         'txtPoliza
         '
-        Me.txtPoliza.Enabled = False
-        Me.txtPoliza.Location = New System.Drawing.Point(198, 338)
+        resources.ApplyResources(Me.txtPoliza, "txtPoliza")
         Me.txtPoliza.Name = "txtPoliza"
-        Me.txtPoliza.Size = New System.Drawing.Size(100, 20)
-        Me.txtPoliza.TabIndex = 8
         '
         'Label1
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        resources.ApplyResources(Me.Label1, "Label1")
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(24, 322)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(47, 14)
-        Me.Label1.TabIndex = 11
-        Me.Label1.Text = "Endoso"
         '
         'txtEndoso
         '
-        Me.txtEndoso.Enabled = False
-        Me.txtEndoso.Location = New System.Drawing.Point(24, 338)
+        resources.ApplyResources(Me.txtEndoso, "txtEndoso")
         Me.txtEndoso.Name = "txtEndoso"
-        Me.txtEndoso.Size = New System.Drawing.Size(108, 20)
-        Me.txtEndoso.TabIndex = 10
         '
         'lblNroCuota
         '
-        Me.lblNroCuota.AutoSize = True
-        Me.lblNroCuota.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        resources.ApplyResources(Me.lblNroCuota, "lblNroCuota")
         Me.lblNroCuota.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.lblNroCuota.Location = New System.Drawing.Point(197, 371)
         Me.lblNroCuota.Name = "lblNroCuota"
-        Me.lblNroCuota.Size = New System.Drawing.Size(86, 14)
-        Me.lblNroCuota.TabIndex = 13
-        Me.lblNroCuota.Text = "Numero Cuota"
         '
         'txtNroCuota
         '
-        Me.txtNroCuota.Enabled = False
-        Me.txtNroCuota.Location = New System.Drawing.Point(198, 387)
+        resources.ApplyResources(Me.txtNroCuota, "txtNroCuota")
         Me.txtNroCuota.Name = "txtNroCuota"
-        Me.txtNroCuota.Size = New System.Drawing.Size(35, 20)
-        Me.txtNroCuota.TabIndex = 12
         '
         'lblFechaVto
         '
-        Me.lblFechaVto.AutoSize = True
-        Me.lblFechaVto.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        resources.ApplyResources(Me.lblFechaVto, "lblFechaVto")
         Me.lblFechaVto.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.lblFechaVto.Location = New System.Drawing.Point(21, 371)
         Me.lblFechaVto.Name = "lblFechaVto"
-        Me.lblFechaVto.Size = New System.Drawing.Size(111, 14)
-        Me.lblFechaVto.TabIndex = 15
-        Me.lblFechaVto.Text = "Fecha Vencimiento"
         '
         'lblMoneda
         '
-        Me.lblMoneda.AutoSize = True
-        Me.lblMoneda.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        resources.ApplyResources(Me.lblMoneda, "lblMoneda")
         Me.lblMoneda.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.lblMoneda.Location = New System.Drawing.Point(195, 424)
         Me.lblMoneda.Name = "lblMoneda"
-        Me.lblMoneda.Size = New System.Drawing.Size(50, 14)
-        Me.lblMoneda.TabIndex = 17
-        Me.lblMoneda.Text = "Moneda"
         '
         'txtMoneda
         '
-        Me.txtMoneda.Enabled = False
-        Me.txtMoneda.Location = New System.Drawing.Point(198, 440)
+        resources.ApplyResources(Me.txtMoneda, "txtMoneda")
         Me.txtMoneda.Name = "txtMoneda"
-        Me.txtMoneda.Size = New System.Drawing.Size(100, 20)
-        Me.txtMoneda.TabIndex = 16
         '
         'lblImporte
         '
-        Me.lblImporte.AutoSize = True
-        Me.lblImporte.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        resources.ApplyResources(Me.lblImporte, "lblImporte")
         Me.lblImporte.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.lblImporte.Location = New System.Drawing.Point(19, 424)
         Me.lblImporte.Name = "lblImporte"
-        Me.lblImporte.Size = New System.Drawing.Size(51, 14)
-        Me.lblImporte.TabIndex = 19
-        Me.lblImporte.Text = "Importe"
         '
         'txtImporte
         '
-        Me.txtImporte.Enabled = False
-        Me.txtImporte.Location = New System.Drawing.Point(22, 440)
+        resources.ApplyResources(Me.txtImporte, "txtImporte")
         Me.txtImporte.Name = "txtImporte"
-        Me.txtImporte.Size = New System.Drawing.Size(110, 20)
-        Me.txtImporte.TabIndex = 18
         '
         'Label2
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        resources.ApplyResources(Me.Label2, "Label2")
         Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Label2.Location = New System.Drawing.Point(197, 275)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(85, 14)
-        Me.Label2.TabIndex = 21
-        Me.Label2.Text = "Observaciones"
         '
         'txtObservaciones
         '
-        Me.txtObservaciones.Enabled = False
-        Me.txtObservaciones.Location = New System.Drawing.Point(198, 291)
+        resources.ApplyResources(Me.txtObservaciones, "txtObservaciones")
         Me.txtObservaciones.Name = "txtObservaciones"
-        Me.txtObservaciones.Size = New System.Drawing.Size(230, 20)
-        Me.txtObservaciones.TabIndex = 20
         '
         'dtpFechaVencimiento
         '
-        Me.dtpFechaVencimiento.Enabled = False
+        resources.ApplyResources(Me.dtpFechaVencimiento, "dtpFechaVencimiento")
         Me.dtpFechaVencimiento.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpFechaVencimiento.Location = New System.Drawing.Point(22, 387)
         Me.dtpFechaVencimiento.Name = "dtpFechaVencimiento"
-        Me.dtpFechaVencimiento.Size = New System.Drawing.Size(110, 20)
-        Me.dtpFechaVencimiento.TabIndex = 22
         '
         'Label3
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        resources.ApplyResources(Me.Label3, "Label3")
         Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
-        Me.Label3.Location = New System.Drawing.Point(23, 186)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(151, 19)
-        Me.Label3.TabIndex = 24
-        Me.Label3.Text = "Entrada de pagos"
         '
         'RectangleShape1
         '
-        Me.RectangleShape1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.RectangleShape1.BorderColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
-        Me.RectangleShape1.FillColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(60, Byte), Integer))
-        Me.RectangleShape1.FillGradientColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
-        Me.RectangleShape1.FillGradientStyle = Microsoft.VisualBasic.PowerPacks.FillGradientStyle.Horizontal
-        Me.RectangleShape1.FillStyle = Microsoft.VisualBasic.PowerPacks.FillStyle.Solid
-        Me.RectangleShape1.Location = New System.Drawing.Point(0, 0)
+        resources.ApplyResources(Me.RectangleShape1, "RectangleShape1")
         Me.RectangleShape1.Name = "RectangleShape1"
-        Me.RectangleShape1.Size = New System.Drawing.Size(454, 97)
         '
         'ShapeContainer1
         '
-        Me.ShapeContainer1.Location = New System.Drawing.Point(0, 0)
-        Me.ShapeContainer1.Margin = New System.Windows.Forms.Padding(0)
+        resources.ApplyResources(Me.ShapeContainer1, "ShapeContainer1")
         Me.ShapeContainer1.Name = "ShapeContainer1"
         Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape3, Me.RectangleShape2, Me.RectangleShape1})
-        Me.ShapeContainer1.Size = New System.Drawing.Size(456, 530)
-        Me.ShapeContainer1.TabIndex = 30
         Me.ShapeContainer1.TabStop = False
         '
         'RectangleShape3
         '
         Me.RectangleShape3.BackgroundImage = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.Sin
-        Me.RectangleShape3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.RectangleShape3.BorderColor = System.Drawing.Color.Transparent
-        Me.RectangleShape3.Location = New System.Drawing.Point(265, -3)
+        resources.ApplyResources(Me.RectangleShape3, "RectangleShape3")
         Me.RectangleShape3.Name = "RectangleShape3"
-        Me.RectangleShape3.Size = New System.Drawing.Size(176, 103)
         '
         'RectangleShape2
         '
-        Me.RectangleShape2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.RectangleShape2.BorderColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
-        Me.RectangleShape2.FillColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(60, Byte), Integer))
-        Me.RectangleShape2.FillGradientColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
-        Me.RectangleShape2.FillGradientStyle = Microsoft.VisualBasic.PowerPacks.FillGradientStyle.Horizontal
-        Me.RectangleShape2.FillStyle = Microsoft.VisualBasic.PowerPacks.FillStyle.Solid
-        Me.RectangleShape2.Location = New System.Drawing.Point(0, 97)
+        resources.ApplyResources(Me.RectangleShape2, "RectangleShape2")
         Me.RectangleShape2.Name = "RectangleShape2"
-        Me.RectangleShape2.Size = New System.Drawing.Size(454, 38)
         '
         'btnPermisos
         '
         Me.btnPermisos.BackColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
-        Me.btnPermisos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        resources.ApplyResources(Me.btnPermisos, "btnPermisos")
         Me.btnPermisos.ForeColor = System.Drawing.SystemColors.Control
-        Me.btnPermisos.Location = New System.Drawing.Point(200, 109)
         Me.btnPermisos.Name = "btnPermisos"
-        Me.btnPermisos.Size = New System.Drawing.Size(82, 23)
-        Me.btnPermisos.TabIndex = 32
-        Me.btnPermisos.Text = "Permisos"
         Me.btnPermisos.UseVisualStyleBackColor = False
         '
         'btnModificarPagos
         '
         Me.btnModificarPagos.BackColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
-        Me.btnModificarPagos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        resources.ApplyResources(Me.btnModificarPagos, "btnModificarPagos")
         Me.btnModificarPagos.ForeColor = System.Drawing.SystemColors.Control
-        Me.btnModificarPagos.Location = New System.Drawing.Point(110, 109)
         Me.btnModificarPagos.Name = "btnModificarPagos"
-        Me.btnModificarPagos.Size = New System.Drawing.Size(91, 23)
-        Me.btnModificarPagos.TabIndex = 34
-        Me.btnModificarPagos.Text = "Modificar Pagos"
         Me.btnModificarPagos.UseVisualStyleBackColor = False
         '
         'BtnReimpresion
         '
         Me.BtnReimpresion.BackColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
-        Me.BtnReimpresion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        resources.ApplyResources(Me.BtnReimpresion, "BtnReimpresion")
         Me.BtnReimpresion.ForeColor = System.Drawing.SystemColors.Control
-        Me.BtnReimpresion.Location = New System.Drawing.Point(275, 109)
         Me.BtnReimpresion.Name = "BtnReimpresion"
-        Me.BtnReimpresion.Size = New System.Drawing.Size(85, 23)
-        Me.BtnReimpresion.TabIndex = 38
-        Me.BtnReimpresion.Text = "Reimpresion"
         Me.BtnReimpresion.UseVisualStyleBackColor = False
-        '
-        'btnGuardar
-        '
-        Me.btnGuardar.BackColor = System.Drawing.SystemColors.Control
-        Me.btnGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.btnGuardar.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
-        Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnGuardar.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnGuardar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
-        Me.btnGuardar.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.aceptar
-        Me.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnGuardar.Location = New System.Drawing.Point(316, 492)
-        Me.btnGuardar.Name = "btnGuardar"
-        Me.btnGuardar.Size = New System.Drawing.Size(112, 29)
-        Me.btnGuardar.TabIndex = 37
-        Me.btnGuardar.Text = "Registrar Pago"
-        Me.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnGuardar.UseVisualStyleBackColor = False
         '
         'btnReporte
         '
         Me.btnReporte.BackColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
-        Me.btnReporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        resources.ApplyResources(Me.btnReporte, "btnReporte")
         Me.btnReporte.ForeColor = System.Drawing.SystemColors.Control
-        Me.btnReporte.Location = New System.Drawing.Point(357, 109)
         Me.btnReporte.Name = "btnReporte"
-        Me.btnReporte.Size = New System.Drawing.Size(96, 23)
-        Me.btnReporte.TabIndex = 39
-        Me.btnReporte.Text = "Reporte Diario"
         Me.btnReporte.UseVisualStyleBackColor = False
+        '
+        'Label4
+        '
+        resources.ApplyResources(Me.Label4, "Label4")
+        Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Label4.Name = "Label4"
+        '
+        'txtDeuda
+        '
+        resources.ApplyResources(Me.txtDeuda, "txtDeuda")
+        Me.txtDeuda.Name = "txtDeuda"
+        '
+        'btnDeudas
+        '
+        Me.btnDeudas.BackColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
+        resources.ApplyResources(Me.btnDeudas, "btnDeudas")
+        Me.btnDeudas.ForeColor = System.Drawing.SystemColors.Control
+        Me.btnDeudas.Name = "btnDeudas"
+        Me.btnDeudas.UseVisualStyleBackColor = False
         '
         'btnLimpiar
         '
         Me.btnLimpiar.BackColor = System.Drawing.SystemColors.Control
-        Me.btnLimpiar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        resources.ApplyResources(Me.btnLimpiar, "btnLimpiar")
         Me.btnLimpiar.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.btnLimpiar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
-        Me.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnLimpiar.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnLimpiar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
         Me.btnLimpiar.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.cancelar
-        Me.btnLimpiar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnLimpiar.Location = New System.Drawing.Point(187, 492)
         Me.btnLimpiar.Name = "btnLimpiar"
-        Me.btnLimpiar.Size = New System.Drawing.Size(123, 29)
-        Me.btnLimpiar.TabIndex = 40
-        Me.btnLimpiar.Text = "Limpiar Entrada"
-        Me.btnLimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnLimpiar.UseVisualStyleBackColor = False
+        '
+        'btnGuardar
+        '
+        Me.btnGuardar.BackColor = System.Drawing.SystemColors.Control
+        resources.ApplyResources(Me.btnGuardar, "btnGuardar")
+        Me.btnGuardar.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.btnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
+        Me.btnGuardar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
+        Me.btnGuardar.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.aceptar
+        Me.btnGuardar.Name = "btnGuardar"
+        Me.btnGuardar.UseVisualStyleBackColor = False
         '
         'frmControl
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
-        Me.ClientSize = New System.Drawing.Size(456, 530)
+        Me.Controls.Add(Me.btnDeudas)
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.txtDeuda)
         Me.Controls.Add(Me.btnLimpiar)
         Me.Controls.Add(Me.btnReporte)
         Me.Controls.Add(Me.BtnReimpresion)
@@ -399,10 +293,7 @@ Partial Class frmControl
         Me.Controls.Add(Me.lblEntrada)
         Me.Controls.Add(Me.txtEntrada)
         Me.Controls.Add(Me.ShapeContainer1)
-        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmControl"
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Pagos"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -436,5 +327,8 @@ Partial Class frmControl
     Friend WithEvents btnGuardar As System.Windows.Forms.Button
     Friend WithEvents btnReporte As System.Windows.Forms.Button
     Friend WithEvents btnLimpiar As System.Windows.Forms.Button
+    Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents txtDeuda As System.Windows.Forms.TextBox
+    Friend WithEvents btnDeudas As System.Windows.Forms.Button
 
 End Class

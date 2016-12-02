@@ -430,4 +430,29 @@ Public Class ComprobantesDA
 
     End Function
 
+    Public Shared Function InsertDeuda(ByVal ID_COMPROBANTE As Integer,
+       ByVal POLIZA As String,
+       ByVal NRO_CUOTA As String,
+       ByVal IMPORTE As Decimal)
+
+        Try
+            conn = New SqlConnection(sCnn)
+            conn.Open()
+            Dim cmd As New SqlCommand("SP_INSERT_DEUDAS", conn)
+            cmd.CommandType = CommandType.StoredProcedure
+
+            cmd.Parameters.AddWithValue("@ID_COMPROBANTE", ID_COMPROBANTE)
+            cmd.Parameters.AddWithValue("@POLIZA", POLIZA)
+            cmd.Parameters.AddWithValue("@CUOTA_ENDEUDADA", NRO_CUOTA)
+            cmd.Parameters.AddWithValue("@IMPORTE_DEUDA", IMPORTE)
+
+            Return cmd.ExecuteNonQuery()
+            conn.Close()
+
+        Catch e As SqlException
+            MsgBox("Mensaje: " & e.Message)
+            Return 0
+        End Try
+    End Function
+
 End Class

@@ -84,7 +84,7 @@ Partial Class frmLogin
         '
         Me.User_Lbl.AutoSize = True
         Me.User_Lbl.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.User_Lbl.ForeColor = System.Drawing.SystemColors.InactiveCaptionText
+        Me.User_Lbl.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.User_Lbl.Location = New System.Drawing.Point(89, 163)
         Me.User_Lbl.Name = "User_Lbl"
         Me.User_Lbl.Size = New System.Drawing.Size(46, 14)
@@ -95,7 +95,7 @@ Partial Class frmLogin
         '
         Me.Pass_Lbl.AutoSize = True
         Me.Pass_Lbl.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Pass_Lbl.ForeColor = System.Drawing.SystemColors.InactiveCaptionText
+        Me.Pass_Lbl.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.Pass_Lbl.Location = New System.Drawing.Point(86, 215)
         Me.Pass_Lbl.Name = "Pass_Lbl"
         Me.Pass_Lbl.Size = New System.Drawing.Size(68, 14)
