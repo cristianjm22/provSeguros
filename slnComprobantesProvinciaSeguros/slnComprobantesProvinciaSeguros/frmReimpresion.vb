@@ -1,11 +1,12 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class frmReimpresion
-    Public Shared table As New DataTable
+    Public Shared table
 
     Private Sub frmReimpresion_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        table = New DataTable
         conn = New SqlConnection(sCnn)
-        Dim cmd As New SqlCommand("dbo.SP_FIND_COMPROBANTES_INFORMADOS", conn)
+        Dim cmd As New SqlCommand("dbo.SP_FIND_COMPROBANTES_REIMPRESION", conn)
         cmd.CommandType = CommandType.StoredProcedure
         Dim Adpt As New SqlDataAdapter(cmd)
         conn.Open()
@@ -20,13 +21,24 @@ Public Class frmReimpresion
         If (table.Rows.Count = 0) Then
             lblSinRegistros.Show()
             btnImprimir.Hide()
+        Else
+            lblSinRegistros.Hide()
+            btnImprimir.Show()
         End If
+
     End Sub
 
     Private Sub txtPoliza_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtPoliza.TextChanged
         Dim dv As DataView
         dv = New DataView(table, "POLIZA like '%" + txtPoliza.Text + "%'", "POLIZA Desc", DataViewRowState.CurrentRows)
         dgvReimpresion.DataSource = dv
+        If (dv.Count = 0) Then
+            lblSinRegistros.Show()
+            btnImprimir.Hide()
+        Else
+            lblSinRegistros.Hide()
+            btnImprimir.Show()
+        End If
     End Sub
 
     Private Sub btnImprimir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnImprimir.Click
@@ -45,7 +57,7 @@ Public Class frmReimpresion
         End If
     End Sub
 
-    Private Sub btnVolver_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnVolver.Click
+    Private Sub btnVolver_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         Me.Close()
     End Sub
 End Class

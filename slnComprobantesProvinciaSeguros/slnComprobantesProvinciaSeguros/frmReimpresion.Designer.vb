@@ -22,7 +22,7 @@ Partial Class frmReimpresion
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.lblPoliza = New System.Windows.Forms.Label()
         Me.txtPoliza = New System.Windows.Forms.TextBox()
         Me.dgvReimpresion = New System.Windows.Forms.DataGridView()
@@ -33,7 +33,6 @@ Partial Class frmReimpresion
         Me.lblSinRegistros = New System.Windows.Forms.Label()
         Me.btnImprimir = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.btnVolver = New System.Windows.Forms.Button()
         CType(Me.dgvReimpresion, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -65,14 +64,14 @@ Partial Class frmReimpresion
         Me.dgvReimpresion.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.dgvReimpresion.BackgroundColor = System.Drawing.SystemColors.Control
         Me.dgvReimpresion.BorderStyle = System.Windows.Forms.BorderStyle.None
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveBorder
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvReimpresion.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ActiveBorder
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvReimpresion.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.dgvReimpresion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvReimpresion.Enabled = False
         Me.dgvReimpresion.Location = New System.Drawing.Point(65, 207)
@@ -150,7 +149,7 @@ Partial Class frmReimpresion
         Me.btnImprimir.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
         Me.btnImprimir.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.Very_Basic_Ok_icon_1_
         Me.btnImprimir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnImprimir.Location = New System.Drawing.Point(1139, 425)
+        Me.btnImprimir.Location = New System.Drawing.Point(1104, 425)
         Me.btnImprimir.Name = "btnImprimir"
         Me.btnImprimir.Size = New System.Drawing.Size(108, 29)
         Me.btnImprimir.TabIndex = 38
@@ -167,31 +166,11 @@ Partial Class frmReimpresion
         Me.PictureBox1.TabIndex = 30
         Me.PictureBox1.TabStop = False
         '
-        'btnVolver
-        '
-        Me.btnVolver.BackColor = System.Drawing.SystemColors.Control
-        Me.btnVolver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.btnVolver.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btnVolver.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
-        Me.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnVolver.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnVolver.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
-        Me.btnVolver.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.back_1_
-        Me.btnVolver.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnVolver.Location = New System.Drawing.Point(1057, 425)
-        Me.btnVolver.Name = "btnVolver"
-        Me.btnVolver.Size = New System.Drawing.Size(76, 29)
-        Me.btnVolver.TabIndex = 44
-        Me.btnVolver.Text = "Volver"
-        Me.btnVolver.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnVolver.UseVisualStyleBackColor = False
-        '
         'frmReimpresion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1284, 500)
-        Me.Controls.Add(Me.btnVolver)
         Me.Controls.Add(Me.lblSinRegistros)
         Me.Controls.Add(Me.btnImprimir)
         Me.Controls.Add(Me.PictureBox1)
@@ -219,5 +198,4 @@ Partial Class frmReimpresion
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents btnImprimir As System.Windows.Forms.Button
     Friend WithEvents lblSinRegistros As System.Windows.Forms.Label
-    Friend WithEvents btnVolver As System.Windows.Forms.Button
 End Class

@@ -30,8 +30,8 @@ Partial Class frmDeudas
         Me.lblSinRegistros = New System.Windows.Forms.Label()
         Me.RectangleShape1 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.ShapeContainer1 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.RectangleShape3 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         CType(Me.dgvReimpresion, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -96,7 +96,7 @@ Partial Class frmDeudas
         '
         Me.lblSinRegistros.AutoSize = True
         Me.lblSinRegistros.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblSinRegistros.Location = New System.Drawing.Point(340, 252)
+        Me.lblSinRegistros.Location = New System.Drawing.Point(340, 258)
         Me.lblSinRegistros.Name = "lblSinRegistros"
         Me.lblSinRegistros.Size = New System.Drawing.Size(191, 16)
         Me.lblSinRegistros.TabIndex = 40
@@ -126,6 +126,15 @@ Partial Class frmDeudas
         Me.ShapeContainer1.TabIndex = 41
         Me.ShapeContainer1.TabStop = False
         '
+        'RectangleShape3
+        '
+        Me.RectangleShape3.BackgroundImage = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.Sin
+        Me.RectangleShape3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.RectangleShape3.BorderColor = System.Drawing.Color.Transparent
+        Me.RectangleShape3.Location = New System.Drawing.Point(655, -5)
+        Me.RectangleShape3.Name = "RectangleShape3"
+        Me.RectangleShape3.Size = New System.Drawing.Size(176, 103)
+        '
         'PictureBox1
         '
         Me.PictureBox1.BackgroundImage = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.appbar_filter
@@ -135,15 +144,6 @@ Partial Class frmDeudas
         Me.PictureBox1.Size = New System.Drawing.Size(27, 22)
         Me.PictureBox1.TabIndex = 35
         Me.PictureBox1.TabStop = False
-        '
-        'RectangleShape3
-        '
-        Me.RectangleShape3.BackgroundImage = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.Sin
-        Me.RectangleShape3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.RectangleShape3.BorderColor = System.Drawing.Color.Transparent
-        Me.RectangleShape3.Location = New System.Drawing.Point(655, -5)
-        Me.RectangleShape3.Name = "RectangleShape3"
-        Me.RectangleShape3.Size = New System.Drawing.Size(176, 103)
         '
         'frmDeudas
         '
