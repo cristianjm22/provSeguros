@@ -278,7 +278,7 @@ Public Class ComprobantesAct
     ''' <param name="DGV"></param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Shared Function GridAExcel555(ByVal DGV As DataGridView) As Boolean
+    Public Shared Function GridAExcel555(ByVal DGV As DataGridView, ByVal importeDia As String, ByVal importeQuincena As String) As Boolean
 
         'Creamos las variables
 
@@ -290,7 +290,8 @@ Public Class ComprobantesAct
 
             exLibro = exApp.Workbooks.Add
             exHoja = exLibro.Worksheets.Add()
-
+            Dim Fila As Integer
+            Dim Col As Integer
             ' ¿Cuantas columnas y cuantas filas?
             Dim NCol As Integer = DGV.ColumnCount
             Dim NRow As Integer = DGV.RowCount
@@ -300,13 +301,28 @@ Public Class ComprobantesAct
                 exHoja.Cells.Item(1, i) = DGV.Columns(i - 1).Name.ToString
             Next
 
-            For Fila As Integer = 0 To NRow - 1
-                For Col As Integer = 0 To NCol - 1
+            For Fila = 0 To NRow - 1
+                For Col = 0 To NCol - 1
                     exHoja.Cells.Item(Fila + 2, Col + 1) =
                     DGV.Rows(Fila).Cells(Col).Value()
                 Next
 
             Next
+
+            exHoja.Cells.Item(Fila + 3, Col - 2) = "TOTAL DEL DIA"
+
+
+            exHoja.Cells.Item(Fila + 4, Col - 2) = "TOTAL DE QUINCENA"
+
+
+            exHoja.Cells.Item(Fila + 3, Col - 1) = "$" + importeDia
+
+
+            exHoja.Cells.Item(Fila + 4, Col - 1) = "$" + importeQuincena
+
+            exHoja.Rows.Item(Fila + 3).Font.Bold = 1
+            exHoja.Rows.Item(Fila + 4).Font.Bold = 1
+
 
             'Titulo en negrita, Alineado
             exHoja.Rows.Item(1).Font.Bold = 1
