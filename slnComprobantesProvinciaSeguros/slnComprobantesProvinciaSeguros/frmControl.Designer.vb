@@ -55,6 +55,7 @@ Partial Class frmControl
         Me.btnDeudas = New System.Windows.Forms.Button()
         Me.btnLimpiar = New System.Windows.Forms.Button()
         Me.btnGuardar = New System.Windows.Forms.Button()
+        Me.btnInformarPagos = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'txtEntrada
@@ -259,11 +260,20 @@ Partial Class frmControl
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.UseVisualStyleBackColor = False
         '
+        'btnInformarPagos
+        '
+        Me.btnInformarPagos.BackColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
+        resources.ApplyResources(Me.btnInformarPagos, "btnInformarPagos")
+        Me.btnInformarPagos.ForeColor = System.Drawing.SystemColors.Control
+        Me.btnInformarPagos.Name = "btnInformarPagos"
+        Me.btnInformarPagos.UseVisualStyleBackColor = False
+        '
         'frmControl
         '
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
+        Me.Controls.Add(Me.btnInformarPagos)
         Me.Controls.Add(Me.btnDeudas)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.txtDeuda)
@@ -330,5 +340,6 @@ Partial Class frmControl
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents txtDeuda As System.Windows.Forms.TextBox
     Friend WithEvents btnDeudas As System.Windows.Forms.Button
+    Friend WithEvents btnInformarPagos As System.Windows.Forms.Button
 
 End Class

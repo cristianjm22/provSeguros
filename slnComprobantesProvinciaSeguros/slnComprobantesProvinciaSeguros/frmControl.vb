@@ -179,4 +179,8 @@ Public Class frmControl
     Private Sub btnDeudas_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnDeudas.Click
         frmDeudas.Show()
     End Sub
+
+    Private Sub btnInformarPagos_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnInformarPagos.Click
+        frmInforme.Show()
+    End Sub
 End Class
