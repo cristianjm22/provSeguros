@@ -305,6 +305,8 @@ Public Class ComprobantesAct
                 For Col = 0 To NCol - 1
                     exHoja.Cells.Item(Fila + 2, Col + 1) =
                     DGV.Rows(Fila).Cells(Col).Value()
+
+                    'exHoja.Cells.Item(Fila + 2, Col + 1).Style = "Text"
                 Next
 
             Next
@@ -312,17 +314,24 @@ Public Class ComprobantesAct
             exHoja.Cells.Item(Fila + 3, Col - 2) = "TOTAL DEL DIA"
 
 
-            exHoja.Cells.Item(Fila + 4, Col - 2) = "TOTAL DE QUINCENA"
+            exHoja.Cells.Item(Fila + 5, Col - 2) = "TOTAL DE QUINCENA"
 
 
             exHoja.Cells.Item(Fila + 3, Col - 1) = "$" + importeDia
 
 
-            exHoja.Cells.Item(Fila + 4, Col - 1) = "$" + importeQuincena
+            exHoja.Cells.Item(Fila + 5, Col - 1) = "$" + importeQuincena
 
             exHoja.Rows.Item(Fila + 3).Font.Bold = 1
-            exHoja.Rows.Item(Fila + 4).Font.Bold = 1
+            exHoja.Rows.Item(Fila + 5).Font.Bold = 1
 
+
+
+
+
+            exHoja.Rows.Item(Fila + 3).Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Gray)
+
+            exHoja.Rows.Item(Fila + 5).Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Gray)
 
             'Titulo en negrita, Alineado
             exHoja.Rows.Item(1).Font.Bold = 1
