@@ -10,7 +10,13 @@ Public Class frmDeudas
     Private Sub txtPoliza_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtPoliza.TextChanged
         Dim dv As DataView
         dv = New DataView(table, "POLIZA like '%" + txtPoliza.Text + "%'", "POLIZA Desc", DataViewRowState.CurrentRows)
+
+        dgvReimpresion.Rows.Clear()  'para limpiarlo
+
+        dgvReimpresion.DataSource = Nothing
+
         dgvReimpresion.DataSource = dv
+
         If (dv.Count = 0) Then
             lblSinRegistros.Show()
         Else
@@ -78,7 +84,7 @@ Public Class frmDeudas
         If table.Rows.Count > 0 Then
             For Each row As DataRow In table.Rows
 
-                dgvReimpresion.Rows.Add(row("ID_DEUDA").ToString(), row("IMPORTE_DEUDA").ToString(), row("POLIZA").ToString(), row("FECHA_INGRESO").ToString(), row("ID_COMPROBANTE").ToString())
+                dgvReimpresion.Rows.Add(row("ID_DEUDA").ToString(), row("IMPORTE_DEUDA").ToString(), row("POLIZA").ToString(), row("NRO_CUOTA").ToString(), row("FECHA_INGRESO").ToString(), row("ID_COMPROBANTE").ToString())
 
             Next
         End If
