@@ -31,6 +31,7 @@ Partial Class frmReporte
         Me.btnExport = New System.Windows.Forms.Button()
         Me.lblTotalDia = New System.Windows.Forms.Label()
         Me.lblTotalQuincena = New System.Windows.Forms.Label()
+        Me.lblSinRegistros = New System.Windows.Forms.Label()
         CType(Me.dgvReporte, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -143,11 +144,23 @@ Partial Class frmReporte
         Me.lblTotalQuincena.TabIndex = 39
         Me.lblTotalQuincena.Text = "Total de quincena:"
         '
+        'lblSinRegistros
+        '
+        Me.lblSinRegistros.AutoSize = True
+        Me.lblSinRegistros.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSinRegistros.Location = New System.Drawing.Point(547, 242)
+        Me.lblSinRegistros.Name = "lblSinRegistros"
+        Me.lblSinRegistros.Size = New System.Drawing.Size(191, 16)
+        Me.lblSinRegistros.TabIndex = 40
+        Me.lblSinRegistros.Text = "No se encontraron registros"
+        Me.lblSinRegistros.Visible = False
+        '
         'frmReporte
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1284, 500)
+        Me.Controls.Add(Me.lblSinRegistros)
         Me.Controls.Add(Me.lblTotalQuincena)
         Me.Controls.Add(Me.lblTotalDia)
         Me.Controls.Add(Me.btnExport)
@@ -170,4 +183,5 @@ Partial Class frmReporte
     Friend WithEvents RectangleShape2 As Microsoft.VisualBasic.PowerPacks.RectangleShape
     Friend WithEvents lblTotalDia As System.Windows.Forms.Label
     Friend WithEvents lblTotalQuincena As System.Windows.Forms.Label
+    Friend WithEvents lblSinRegistros As System.Windows.Forms.Label
 End Class

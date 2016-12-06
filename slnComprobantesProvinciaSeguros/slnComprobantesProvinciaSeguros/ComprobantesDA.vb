@@ -476,4 +476,27 @@ Public Class ComprobantesDA
         End Try
 
     End Function
+
+    ''' <summary>
+    ''' Autor: Walter Morales
+    ''' </summary>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    Public Shared Function InformarPago()
+
+        Try
+            conn = New SqlConnection(sCnn)
+            conn.Open()
+            Dim cmd As New SqlCommand("SP_INFORMAR_PAGO", conn)
+            cmd.CommandType = CommandType.StoredProcedure
+
+            Return cmd.ExecuteNonQuery()
+            conn.Close()
+        Catch e As SqlException
+            MsgBox("Mensaje: " & e.Message)
+            Return 0
+        End Try
+
+    End Function
+
 End Class

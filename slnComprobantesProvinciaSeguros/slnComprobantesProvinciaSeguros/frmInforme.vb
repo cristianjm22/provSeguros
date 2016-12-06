@@ -26,6 +26,7 @@ Public Class frmInforme
 
     Private Sub btnInformar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnInformar.Click
         ComprobantesDA.ActualizarToPagoFinalizado()
+        MsgBox("El pago realizado a Provincia Seguros fue informado correctamente", MsgBoxStyle.Information, "OK")
         Me.frmInforme_Load(sender, e)
     End Sub
 End Class

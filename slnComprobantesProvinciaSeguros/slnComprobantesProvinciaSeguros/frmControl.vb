@@ -74,9 +74,14 @@ Public Class frmControl
 
         txtImporte.Enabled = estado
 
+        txtNroCuota.Enabled = estado
+
+        txtRM.Enabled = estado
+
     End Sub
 
     Private Sub frmControl_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        ComprobantesDA.ActualizarEstadoPagoFuturo()
         If ComprobantesAct.AccesoMenu(Usuario, "PERMISOS") Then
             btnPermisos.Show()
         Else
@@ -119,6 +124,7 @@ Public Class frmControl
             If MsgBox("El pago ha sido registrado correctamente." + vbCrLf + "¿Desea imprimir el comprobante?", MsgBoxStyle.YesNo, "Pago Registrado") = MsgBoxResult.Yes Then
                 ComprobantesAct.PrintTicket(txtPoliza.Text, txtNroCuota.Text, txtMoneda.Text, txtImporte.Text, idComprobante, txtRM.Text)
             End If
+            Me.btnLimpiar_Click(sender, e)
         Else
             MsgBox("El codigo de barra ingresado es invalido", MsgBoxStyle.Exclamation, "Aviso")
         End If
@@ -170,6 +176,10 @@ Public Class frmControl
         txtPoliza.Text = ""
         txtRM.Text = ""
         dtpFechaVencimiento.ResetText()
+        dtpFechaVencimiento.Enabled = False
+        txtImporte.Enabled = False
+        txtNroCuota.Enabled = False
+        txtRM.Enabled = False
     End Sub
 
     Private Sub txtEntrada_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtEntrada.TextChanged

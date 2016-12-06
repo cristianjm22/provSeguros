@@ -19,19 +19,30 @@ Public Class frmReporte
 
         dgvReporte.DataSource = table
 
-
-        lblTotalDia.Text = lblTotalDia.Text + " $" + ComprobantesAct.ObtenerTotaldeldia()
-
-        lblTotalQuincena.Text = lblTotalQuincena.Text + " $" + ComprobantesAct.ObtenerTotalporQuincena()
+        If (table.Rows.Count = 0) Then
+            lblSinRegistros.Show()
+            btnExport.Hide()
+            lblTotalDia.Hide()
+            lblTotalQuincena.Hide()
+        Else
+            lblSinRegistros.Hide()
+            btnExport.Show()
+            lblTotalDia.Text = lblTotalDia.Text + " $" + ComprobantesAct.ObtenerTotaldeldia()
+            lblTotalQuincena.Text = lblTotalQuincena.Text + " $" + ComprobantesAct.ObtenerTotalporQuincena()
+            lblTotalDia.Show()
+            lblTotalQuincena.Show()
+        End If
 
     End Sub
 
     Private Sub btnExport_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnExport.Click
-        'ComprobantesAct.GridAExcel(dgvReporte)
-        ComprobantesAct.GridAExcel555(dgvReporte, ComprobantesAct.ObtenerTotaldeldia(), ComprobantesAct.ObtenerTotalporQuincena())
-    End Sub
-
-    Private Sub dgvReporte_CellContentClick(sender As System.Object, e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvReporte.CellContentClick
+        If (MsgBox("¿Desea exportar los pagos? " + vbCrLf + "Tenga en cuenta que esta accion modifica el estado de los mismos.", MsgBoxStyle.YesNo, "Exportar")) = MsgBoxResult.Yes Then
+            Dim result = ComprobantesAct.GridAExcel555(dgvReporte, ComprobantesAct.ObtenerTotaldeldia(), ComprobantesAct.ObtenerTotalporQuincena())
+            If (result) Then
+                ComprobantesDA.InformarPago()
+                Me.frmReporte_Load(sender, e)
+            End If
+        End If
 
     End Sub
 End Class
