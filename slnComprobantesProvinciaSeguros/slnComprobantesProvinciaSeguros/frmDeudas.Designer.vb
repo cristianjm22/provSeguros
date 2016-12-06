@@ -22,16 +22,9 @@ Partial Class frmDeudas
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.lblDeudas = New System.Windows.Forms.Label()
         Me.dgvReimpresion = New System.Windows.Forms.DataGridView()
-        Me.txtPoliza = New System.Windows.Forms.TextBox()
-        Me.lblPoliza = New System.Windows.Forms.Label()
-        Me.RectangleShape1 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
-        Me.ShapeContainer1 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
-        Me.lblSinRegistros = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.RectangleShape3 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.ID_DEUDA = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.IMPORTE_DEUDA = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.POLIZA = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -40,6 +33,13 @@ Partial Class frmDeudas
         Me.ID_COMPROBANTE = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.MODIFICAR = New System.Windows.Forms.DataGridViewImageColumn()
         Me.ELIMINAR = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.txtPoliza = New System.Windows.Forms.TextBox()
+        Me.lblPoliza = New System.Windows.Forms.Label()
+        Me.RectangleShape1 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
+        Me.ShapeContainer1 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
+        Me.RectangleShape3 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
+        Me.lblSinRegistros = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         CType(Me.dgvReimpresion, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -63,14 +63,14 @@ Partial Class frmDeudas
         Me.dgvReimpresion.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.dgvReimpresion.BackgroundColor = System.Drawing.SystemColors.Control
         Me.dgvReimpresion.BorderStyle = System.Windows.Forms.BorderStyle.None
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ActiveBorder
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvReimpresion.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveBorder
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvReimpresion.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvReimpresion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvReimpresion.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID_DEUDA, Me.IMPORTE_DEUDA, Me.POLIZA, Me.NRO_CUOTA, Me.FECHA_INGRESO, Me.ID_COMPROBANTE, Me.MODIFICAR, Me.ELIMINAR})
         Me.dgvReimpresion.Location = New System.Drawing.Point(32, 198)
@@ -80,79 +80,8 @@ Partial Class frmDeudas
         Me.dgvReimpresion.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvReimpresion.ShowEditingIcon = False
         Me.dgvReimpresion.ShowRowErrors = False
-        Me.dgvReimpresion.Size = New System.Drawing.Size(790, 212)
+        Me.dgvReimpresion.Size = New System.Drawing.Size(874, 212)
         Me.dgvReimpresion.TabIndex = 33
-        '
-        'txtPoliza
-        '
-        Me.txtPoliza.Location = New System.Drawing.Point(70, 172)
-        Me.txtPoliza.Name = "txtPoliza"
-        Me.txtPoliza.Size = New System.Drawing.Size(100, 20)
-        Me.txtPoliza.TabIndex = 32
-        '
-        'lblPoliza
-        '
-        Me.lblPoliza.AutoSize = True
-        Me.lblPoliza.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPoliza.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.lblPoliza.Location = New System.Drawing.Point(29, 175)
-        Me.lblPoliza.Name = "lblPoliza"
-        Me.lblPoliza.Size = New System.Drawing.Size(36, 14)
-        Me.lblPoliza.TabIndex = 31
-        Me.lblPoliza.Text = "Poliza"
-        '
-        'RectangleShape1
-        '
-        Me.RectangleShape1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.RectangleShape1.BorderColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
-        Me.RectangleShape1.FillColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(60, Byte), Integer))
-        Me.RectangleShape1.FillGradientColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
-        Me.RectangleShape1.FillGradientStyle = Microsoft.VisualBasic.PowerPacks.FillGradientStyle.Horizontal
-        Me.RectangleShape1.FillStyle = Microsoft.VisualBasic.PowerPacks.FillStyle.Solid
-        Me.RectangleShape1.Location = New System.Drawing.Point(-1, 0)
-        Me.RectangleShape1.Name = "RectangleShape1"
-        Me.RectangleShape1.Size = New System.Drawing.Size(843, 94)
-        '
-        'ShapeContainer1
-        '
-        Me.ShapeContainer1.Location = New System.Drawing.Point(0, 0)
-        Me.ShapeContainer1.Margin = New System.Windows.Forms.Padding(0)
-        Me.ShapeContainer1.Name = "ShapeContainer1"
-        Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape3, Me.RectangleShape1})
-        Me.ShapeContainer1.Size = New System.Drawing.Size(930, 478)
-        Me.ShapeContainer1.TabIndex = 41
-        Me.ShapeContainer1.TabStop = False
-        '
-        'lblSinRegistros
-        '
-        Me.lblSinRegistros.AutoSize = True
-        Me.lblSinRegistros.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblSinRegistros.Location = New System.Drawing.Point(340, 258)
-        Me.lblSinRegistros.Name = "lblSinRegistros"
-        Me.lblSinRegistros.Size = New System.Drawing.Size(191, 16)
-        Me.lblSinRegistros.TabIndex = 40
-        Me.lblSinRegistros.Text = "No se encontraron registros"
-        Me.lblSinRegistros.Visible = False
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.BackgroundImage = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.appbar_filter
-        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.PictureBox1.Location = New System.Drawing.Point(176, 170)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(27, 22)
-        Me.PictureBox1.TabIndex = 35
-        Me.PictureBox1.TabStop = False
-        '
-        'RectangleShape3
-        '
-        Me.RectangleShape3.BackgroundImage = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.Sin
-        Me.RectangleShape3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.RectangleShape3.BorderColor = System.Drawing.Color.Transparent
-        Me.RectangleShape3.Location = New System.Drawing.Point(655, -5)
-        Me.RectangleShape3.Name = "RectangleShape3"
-        Me.RectangleShape3.Size = New System.Drawing.Size(176, 103)
         '
         'ID_DEUDA
         '
@@ -212,6 +141,77 @@ Partial Class frmDeudas
         Me.ELIMINAR.Name = "ELIMINAR"
         Me.ELIMINAR.ReadOnly = True
         Me.ELIMINAR.Width = 68
+        '
+        'txtPoliza
+        '
+        Me.txtPoliza.Location = New System.Drawing.Point(70, 172)
+        Me.txtPoliza.Name = "txtPoliza"
+        Me.txtPoliza.Size = New System.Drawing.Size(100, 20)
+        Me.txtPoliza.TabIndex = 32
+        '
+        'lblPoliza
+        '
+        Me.lblPoliza.AutoSize = True
+        Me.lblPoliza.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPoliza.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.lblPoliza.Location = New System.Drawing.Point(29, 175)
+        Me.lblPoliza.Name = "lblPoliza"
+        Me.lblPoliza.Size = New System.Drawing.Size(36, 14)
+        Me.lblPoliza.TabIndex = 31
+        Me.lblPoliza.Text = "Poliza"
+        '
+        'RectangleShape1
+        '
+        Me.RectangleShape1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.RectangleShape1.BorderColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
+        Me.RectangleShape1.FillColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.RectangleShape1.FillGradientColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
+        Me.RectangleShape1.FillGradientStyle = Microsoft.VisualBasic.PowerPacks.FillGradientStyle.Horizontal
+        Me.RectangleShape1.FillStyle = Microsoft.VisualBasic.PowerPacks.FillStyle.Solid
+        Me.RectangleShape1.Location = New System.Drawing.Point(-1, 0)
+        Me.RectangleShape1.Name = "RectangleShape1"
+        Me.RectangleShape1.Size = New System.Drawing.Size(930, 94)
+        '
+        'ShapeContainer1
+        '
+        Me.ShapeContainer1.Location = New System.Drawing.Point(0, 0)
+        Me.ShapeContainer1.Margin = New System.Windows.Forms.Padding(0)
+        Me.ShapeContainer1.Name = "ShapeContainer1"
+        Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape3, Me.RectangleShape1})
+        Me.ShapeContainer1.Size = New System.Drawing.Size(930, 478)
+        Me.ShapeContainer1.TabIndex = 41
+        Me.ShapeContainer1.TabStop = False
+        '
+        'RectangleShape3
+        '
+        Me.RectangleShape3.BackgroundImage = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.Sin
+        Me.RectangleShape3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.RectangleShape3.BorderColor = System.Drawing.Color.Transparent
+        Me.RectangleShape3.Location = New System.Drawing.Point(746, -4)
+        Me.RectangleShape3.Name = "RectangleShape3"
+        Me.RectangleShape3.Size = New System.Drawing.Size(176, 103)
+        '
+        'lblSinRegistros
+        '
+        Me.lblSinRegistros.AutoSize = True
+        Me.lblSinRegistros.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSinRegistros.Location = New System.Drawing.Point(340, 258)
+        Me.lblSinRegistros.Name = "lblSinRegistros"
+        Me.lblSinRegistros.Size = New System.Drawing.Size(191, 16)
+        Me.lblSinRegistros.TabIndex = 40
+        Me.lblSinRegistros.Text = "No se encontraron registros"
+        Me.lblSinRegistros.Visible = False
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackgroundImage = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.appbar_filter
+        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.PictureBox1.Location = New System.Drawing.Point(176, 170)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(27, 22)
+        Me.PictureBox1.TabIndex = 35
+        Me.PictureBox1.TabStop = False
         '
         'frmDeudas
         '

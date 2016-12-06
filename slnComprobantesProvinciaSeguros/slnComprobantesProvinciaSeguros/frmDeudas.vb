@@ -11,8 +11,6 @@ Public Class frmDeudas
         Dim dv As DataView
         dv = New DataView(table, "POLIZA like '%" + txtPoliza.Text + "%'", "POLIZA Desc", DataViewRowState.CurrentRows)
 
-        dgvReimpresion.Rows.Clear()  'para limpiarlo
-
         dgvReimpresion.DataSource = Nothing
 
         dgvReimpresion.DataSource = dv
