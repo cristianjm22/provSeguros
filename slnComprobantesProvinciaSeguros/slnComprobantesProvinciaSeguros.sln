@@ -3,16 +3,34 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "slnComprobantesProvinciaSeguros", "slnComprobantesProvinciaSeguros\slnComprobantesProvinciaSeguros.vbproj", "{D5BBF20E-C3EC-4F85-BE92-C9C2666ED5FC}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup1", "..\..\..\..\..\instaladorProvSeg\Setup1\Setup1.vdproj", "{E0AD51A5-F217-4B9D-9D95-7EC758742EEE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
 		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D5BBF20E-C3EC-4F85-BE92-C9C2666ED5FC}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{D5BBF20E-C3EC-4F85-BE92-C9C2666ED5FC}.Debug|Mixed Platforms.ActiveCfg = Release|x86
+		{D5BBF20E-C3EC-4F85-BE92-C9C2666ED5FC}.Debug|Mixed Platforms.Build.0 = Release|x86
 		{D5BBF20E-C3EC-4F85-BE92-C9C2666ED5FC}.Debug|x86.ActiveCfg = Debug|x86
 		{D5BBF20E-C3EC-4F85-BE92-C9C2666ED5FC}.Debug|x86.Build.0 = Debug|x86
+		{D5BBF20E-C3EC-4F85-BE92-C9C2666ED5FC}.Release|Any CPU.ActiveCfg = Release|x86
+		{D5BBF20E-C3EC-4F85-BE92-C9C2666ED5FC}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{D5BBF20E-C3EC-4F85-BE92-C9C2666ED5FC}.Release|Mixed Platforms.Build.0 = Release|x86
 		{D5BBF20E-C3EC-4F85-BE92-C9C2666ED5FC}.Release|x86.ActiveCfg = Release|x86
 		{D5BBF20E-C3EC-4F85-BE92-C9C2666ED5FC}.Release|x86.Build.0 = Release|x86
+		{E0AD51A5-F217-4B9D-9D95-7EC758742EEE}.Debug|Any CPU.ActiveCfg = Debug
+		{E0AD51A5-F217-4B9D-9D95-7EC758742EEE}.Debug|Mixed Platforms.ActiveCfg = Debug
+		{E0AD51A5-F217-4B9D-9D95-7EC758742EEE}.Debug|x86.ActiveCfg = Debug
+		{E0AD51A5-F217-4B9D-9D95-7EC758742EEE}.Release|Any CPU.ActiveCfg = Release
+		{E0AD51A5-F217-4B9D-9D95-7EC758742EEE}.Release|Mixed Platforms.ActiveCfg = Release
+		{E0AD51A5-F217-4B9D-9D95-7EC758742EEE}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
