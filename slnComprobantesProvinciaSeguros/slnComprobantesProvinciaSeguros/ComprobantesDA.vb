@@ -171,7 +171,7 @@ Public Class ComprobantesDA
     ''' </summary>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Shared Function obtenerDetalleComprobantesPorEstado(ByVal Estado As Integer)
+    Public Shared Function obtenerDetalleComprobantesPorEstado(ByVal Estado As Integer, ByVal poliza As String)
 
         Dim dt As New DataTable
 
@@ -182,6 +182,7 @@ Public Class ComprobantesDA
             cmd.CommandTimeout = 300 'Especifico que lance un error de time out  despues de 5 min.
             cmd.CommandType = CommandType.StoredProcedure
             cmd.Parameters.AddWithValue("@ESTADO", Estado)
+            cmd.Parameters.AddWithValue("@POLIZA", poliza)
             Dim da As New SqlDataAdapter(cmd)
             da.Fill(dt)
             conn.Close()

@@ -39,9 +39,8 @@ Partial Class frmDeudas
         Me.ShapeContainer1 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
         Me.RectangleShape3 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.lblSinRegistros = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.btnBuscar = New System.Windows.Forms.Button()
         CType(Me.dgvReimpresion, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lblDeudas
@@ -163,7 +162,7 @@ Partial Class frmDeudas
         'RectangleShape1
         '
         Me.RectangleShape1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.RectangleShape1.BorderColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
         Me.RectangleShape1.FillColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(60, Byte), Integer))
         Me.RectangleShape1.FillGradientColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
@@ -203,23 +202,22 @@ Partial Class frmDeudas
         Me.lblSinRegistros.Text = "No se encontraron registros"
         Me.lblSinRegistros.Visible = False
         '
-        'PictureBox1
+        'btnBuscar
         '
-        Me.PictureBox1.BackgroundImage = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.appbar_filter
-        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.PictureBox1.Location = New System.Drawing.Point(176, 170)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(27, 22)
-        Me.PictureBox1.TabIndex = 35
-        Me.PictureBox1.TabStop = False
+        Me.btnBuscar.Location = New System.Drawing.Point(186, 169)
+        Me.btnBuscar.Name = "btnBuscar"
+        Me.btnBuscar.Size = New System.Drawing.Size(75, 23)
+        Me.btnBuscar.TabIndex = 42
+        Me.btnBuscar.Text = "Buscar"
+        Me.btnBuscar.UseVisualStyleBackColor = True
         '
         'frmDeudas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(930, 478)
+        Me.Controls.Add(Me.btnBuscar)
         Me.Controls.Add(Me.lblSinRegistros)
-        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.lblDeudas)
         Me.Controls.Add(Me.dgvReimpresion)
         Me.Controls.Add(Me.txtPoliza)
@@ -228,12 +226,10 @@ Partial Class frmDeudas
         Me.Name = "frmDeudas"
         Me.Text = "Deudas"
         CType(Me.dgvReimpresion, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents lblDeudas As System.Windows.Forms.Label
     Friend WithEvents dgvReimpresion As System.Windows.Forms.DataGridView
     Friend WithEvents txtPoliza As System.Windows.Forms.TextBox
@@ -250,4 +246,5 @@ Partial Class frmDeudas
     Friend WithEvents ID_COMPROBANTE As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents MODIFICAR As System.Windows.Forms.DataGridViewImageColumn
     Friend WithEvents ELIMINAR As System.Windows.Forms.DataGridViewImageColumn
+    Friend WithEvents btnBuscar As System.Windows.Forms.Button
 End Class

@@ -56,4 +56,34 @@ Public Class DeudasDA
         End Try
 
     End Function
+
+
+
+    ''' <summary>
+    ''' Autor: Morales Cristian
+    ''' </summary>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    Public Shared Function obtenerDeudas(ByVal Poliza As Integer)
+
+        Dim dt As New DataTable
+
+        Try
+            conn = New SqlConnection(sCnn)
+            conn.Open()
+            Dim cmd As New SqlCommand("SP_FIND_DEUDAS", conn)
+            cmd.CommandTimeout = 300 'Especifico que lance un error de time out  despues de 5 min.
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.AddWithValue("@POLIZA", Poliza)
+            Dim da As New SqlDataAdapter(cmd)
+            da.Fill(dt)
+            conn.Close()
+
+        Catch e As SqlException
+            MsgBox("Mensaje: " & e.Message)
+        End Try
+
+        Return dt
+
+    End Function
 End Class

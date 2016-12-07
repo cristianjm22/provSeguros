@@ -193,4 +193,8 @@ Public Class frmControl
     Private Sub btnInformarPagos_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnInformarPagos.Click
         frmInforme.Show()
     End Sub
+
+    Private Sub btnModificarPagos_Click(sender As System.Object, e As System.EventArgs) Handles btnModificarPagos.Click
+        frmEliminarModPagos.Show()
+    End Sub
 End Class
