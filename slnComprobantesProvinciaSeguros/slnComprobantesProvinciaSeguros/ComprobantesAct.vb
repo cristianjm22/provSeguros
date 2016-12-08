@@ -82,11 +82,27 @@ Public Class ComprobantesAct
     Public Shared Function getMonedaByCode(ByVal codeMoneda As String)
         Dim moneda As String
         If (codeMoneda = "1") Then
-            moneda = "$"
+            moneda = "PESOS"
         Else
-            moneda = "US$"
+            moneda = "DOLAR"
         End If
         Return moneda
+    End Function
+
+    ''' <summary>
+    ''' Autor:Walter Morales
+    ''' Devuelve el codigo de la moneda
+    ''' </summary>
+    ''' <param name="moneda"></param>
+    ''' <remarks></remarks>
+    Public Shared Function getCodMonedaByDescription(ByVal moneda As String)
+        Dim codMoneda As String
+        If (moneda = "PESOS") Then
+            codMoneda = "1"
+        Else
+            codMoneda = "2"
+        End If
+        Return codMoneda
     End Function
 
 
@@ -107,7 +123,7 @@ Public Class ComprobantesAct
         e.Graphics.DrawString("CUOTA: " + Cuota, PrintFont, Brushes.Black, 15, 160, New StringFormat())
         e.Graphics.DrawString("IMPORTE PAGADO: " + Importe, PrintFont, Brushes.Black, 15, 180, New StringFormat())
         e.Graphics.DrawString("POLIZA: " + Poliza, PrintFont, Brushes.Black, 15, 200, New StringFormat())
-        e.Graphics.DrawString("RAMO: " + Poliza, PrintFont, Brushes.Black, 15, 220, New StringFormat())
+        e.Graphics.DrawString("RAMO: " + Ramo, PrintFont, Brushes.Black, 15, 220, New StringFormat())
         e.Graphics.DrawString("---------------------------------------------------------------", PrintFontBold, Brushes.Black, 15, 250, New StringFormat())
 
         e.HasMorePages = False

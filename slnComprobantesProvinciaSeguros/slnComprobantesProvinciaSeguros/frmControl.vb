@@ -110,7 +110,7 @@ Public Class frmControl
                 MsgBox("Este pago ya ha sido realizado " + cantPagos.ToString + " vez/veces." + vbCrLf + "El mismo será marcado como " + repeticion, MsgBoxStyle.Information, "Informacion")
             End If
 
-            If (txtMoneda.Text = "$") Then
+            If (txtMoneda.Text = "PESOS") Then
                 tipomoneda = "1"
             Else
                 tipomoneda = "2"

@@ -49,7 +49,7 @@ Public Class frmReimpresion
             Dim ramo = row.Item(3)
             Dim poliza = row.Item(4)
             Dim cuota = row.Item(6)
-            Dim moneda = row.Item(8)
+            Dim moneda = ComprobantesAct.getCodMonedaByDescription(row.Item(8).ToString)
             Dim importe = row.Item(9)
             ComprobantesAct.PrintTicket(poliza.Value, cuota.Value, moneda.Value, importe.Value, comprobante.Value, ramo.Value)
         Else
