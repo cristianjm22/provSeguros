@@ -23,6 +23,8 @@ Partial Class frmReimpresion
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmReimpresion))
         Me.lblPoliza = New System.Windows.Forms.Label()
         Me.txtPoliza = New System.Windows.Forms.TextBox()
         Me.dgvReimpresion = New System.Windows.Forms.DataGridView()
@@ -60,23 +62,29 @@ Partial Class frmReimpresion
         Me.dgvReimpresion.AllowUserToAddRows = False
         Me.dgvReimpresion.AllowUserToDeleteRows = False
         Me.dgvReimpresion.AllowUserToOrderColumns = True
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.dgvReimpresion.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvReimpresion.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.dgvReimpresion.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.dgvReimpresion.BackgroundColor = System.Drawing.SystemColors.Control
         Me.dgvReimpresion.BorderStyle = System.Windows.Forms.BorderStyle.None
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveBorder
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvReimpresion.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        Me.dgvReimpresion.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
+        Me.dgvReimpresion.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvReimpresion.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvReimpresion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvReimpresion.EnableHeadersVisualStyles = False
         Me.dgvReimpresion.Location = New System.Drawing.Point(65, 207)
         Me.dgvReimpresion.MultiSelect = False
         Me.dgvReimpresion.Name = "dgvReimpresion"
         Me.dgvReimpresion.ReadOnly = True
+        Me.dgvReimpresion.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.dgvReimpresion.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvReimpresion.ShowEditingIcon = False
         Me.dgvReimpresion.ShowRowErrors = False
@@ -94,6 +102,7 @@ Partial Class frmReimpresion
         Me.RectangleShape1.FillStyle = Microsoft.VisualBasic.PowerPacks.FillStyle.Solid
         Me.RectangleShape1.Location = New System.Drawing.Point(0, 0)
         Me.RectangleShape1.Name = "RectangleShape1"
+        Me.RectangleShape1.SelectionColor = System.Drawing.Color.Transparent
         Me.RectangleShape1.Size = New System.Drawing.Size(1606, 94)
         '
         'ShapeContainer1
@@ -113,6 +122,7 @@ Partial Class frmReimpresion
         Me.RectangleShape2.BorderColor = System.Drawing.Color.Transparent
         Me.RectangleShape2.Location = New System.Drawing.Point(1086, -9)
         Me.RectangleShape2.Name = "RectangleShape2"
+        Me.RectangleShape2.SelectionColor = System.Drawing.Color.Transparent
         Me.RectangleShape2.Size = New System.Drawing.Size(176, 103)
         '
         'lblReimpresion
@@ -148,7 +158,7 @@ Partial Class frmReimpresion
         Me.btnImprimir.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
         Me.btnImprimir.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.Very_Basic_Ok_icon_1_
         Me.btnImprimir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnImprimir.Location = New System.Drawing.Point(1104, 425)
+        Me.btnImprimir.Location = New System.Drawing.Point(1048, 425)
         Me.btnImprimir.Name = "btnImprimir"
         Me.btnImprimir.Size = New System.Drawing.Size(108, 29)
         Me.btnImprimir.TabIndex = 38
@@ -178,6 +188,9 @@ Partial Class frmReimpresion
         Me.Controls.Add(Me.txtPoliza)
         Me.Controls.Add(Me.lblPoliza)
         Me.Controls.Add(Me.ShapeContainer1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
         Me.Name = "frmReimpresion"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Reimpresion de Ticket"

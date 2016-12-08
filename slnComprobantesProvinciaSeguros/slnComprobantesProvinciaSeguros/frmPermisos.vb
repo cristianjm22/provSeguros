@@ -25,9 +25,6 @@ Public Class frmPermisos
 
             ' '''''''''''''''''''''''''''''''''''''   
             With PermisosDGV
-                ' alternar color de filas   
-                .AlternatingRowsDefaultCellStyle.BackColor = Color.FloralWhite
-                .DefaultCellStyle.BackColor = Color.Beige
                 ' Establecer el origen de datos para el DataGridview   
                 .DataSource = bs
             End With
@@ -128,7 +125,7 @@ Public Class frmPermisos
       
     End Sub
 
-    Private Sub btnVolver_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnVolver.Click
+    Private Sub btnVolver_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         Try
             Me.Close()
         Catch ex As Exception

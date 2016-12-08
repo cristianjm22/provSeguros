@@ -46,7 +46,7 @@ Partial Class frmLogin
         Me.ShapeContainer1.Margin = New System.Windows.Forms.Padding(0)
         Me.ShapeContainer1.Name = "ShapeContainer1"
         Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape2, Me.RectangleShape1})
-        Me.ShapeContainer1.Size = New System.Drawing.Size(391, 383)
+        Me.ShapeContainer1.Size = New System.Drawing.Size(355, 348)
         Me.ShapeContainer1.TabIndex = 16
         Me.ShapeContainer1.TabStop = False
         '
@@ -55,8 +55,9 @@ Partial Class frmLogin
         Me.RectangleShape2.BackgroundImage = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.Sin
         Me.RectangleShape2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.RectangleShape2.BorderColor = System.Drawing.Color.Transparent
-        Me.RectangleShape2.Location = New System.Drawing.Point(205, -3)
+        Me.RectangleShape2.Location = New System.Drawing.Point(170, 0)
         Me.RectangleShape2.Name = "RectangleShape2"
+        Me.RectangleShape2.SelectionColor = System.Drawing.Color.Transparent
         Me.RectangleShape2.Size = New System.Drawing.Size(176, 103)
         '
         'RectangleShape1
@@ -68,24 +69,25 @@ Partial Class frmLogin
         Me.RectangleShape1.FillGradientColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
         Me.RectangleShape1.FillGradientStyle = Microsoft.VisualBasic.PowerPacks.FillGradientStyle.Horizontal
         Me.RectangleShape1.FillStyle = Microsoft.VisualBasic.PowerPacks.FillStyle.Solid
-        Me.RectangleShape1.Location = New System.Drawing.Point(1, 1)
+        Me.RectangleShape1.Location = New System.Drawing.Point(1, 0)
         Me.RectangleShape1.Name = "RectangleShape1"
-        Me.RectangleShape1.Size = New System.Drawing.Size(388, 94)
+        Me.RectangleShape1.SelectionColor = System.Drawing.Color.Transparent
+        Me.RectangleShape1.Size = New System.Drawing.Size(361, 94)
         '
         'Login_Usr_Txt
         '
-        Me.Login_Usr_Txt.Location = New System.Drawing.Point(89, 181)
+        Me.Login_Usr_Txt.Location = New System.Drawing.Point(71, 180)
         Me.Login_Usr_Txt.MaxLength = 50
         Me.Login_Usr_Txt.Name = "Login_Usr_Txt"
         Me.Login_Usr_Txt.Size = New System.Drawing.Size(226, 20)
-        Me.Login_Usr_Txt.TabIndex = 9
+        Me.Login_Usr_Txt.TabIndex = 1
         '
         'User_Lbl
         '
         Me.User_Lbl.AutoSize = True
         Me.User_Lbl.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.User_Lbl.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.User_Lbl.Location = New System.Drawing.Point(89, 163)
+        Me.User_Lbl.Location = New System.Drawing.Point(71, 162)
         Me.User_Lbl.Name = "User_Lbl"
         Me.User_Lbl.Size = New System.Drawing.Size(46, 14)
         Me.User_Lbl.TabIndex = 11
@@ -96,7 +98,7 @@ Partial Class frmLogin
         Me.Pass_Lbl.AutoSize = True
         Me.Pass_Lbl.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Pass_Lbl.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Pass_Lbl.Location = New System.Drawing.Point(86, 215)
+        Me.Pass_Lbl.Location = New System.Drawing.Point(68, 206)
         Me.Pass_Lbl.Name = "Pass_Lbl"
         Me.Pass_Lbl.Size = New System.Drawing.Size(68, 14)
         Me.Pass_Lbl.TabIndex = 12
@@ -104,11 +106,11 @@ Partial Class frmLogin
         '
         'Login_Pass_Txt
         '
-        Me.Login_Pass_Txt.Location = New System.Drawing.Point(89, 231)
+        Me.Login_Pass_Txt.Location = New System.Drawing.Point(71, 222)
         Me.Login_Pass_Txt.MaxLength = 50
         Me.Login_Pass_Txt.Name = "Login_Pass_Txt"
         Me.Login_Pass_Txt.Size = New System.Drawing.Size(226, 20)
-        Me.Login_Pass_Txt.TabIndex = 10
+        Me.Login_Pass_Txt.TabIndex = 2
         Me.Login_Pass_Txt.UseSystemPasswordChar = True
         '
         'Label1
@@ -116,7 +118,7 @@ Partial Class frmLogin
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(51, 125)
+        Me.Label1.Location = New System.Drawing.Point(33, 124)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(71, 19)
         Me.Label1.TabIndex = 17
@@ -125,27 +127,27 @@ Partial Class frmLogin
         'lnkChange
         '
         Me.lnkChange.AutoSize = True
-        Me.lnkChange.Location = New System.Drawing.Point(52, 266)
+        Me.lnkChange.Location = New System.Drawing.Point(43, 265)
         Me.lnkChange.Name = "lnkChange"
         Me.lnkChange.Size = New System.Drawing.Size(102, 13)
-        Me.lnkChange.TabIndex = 19
+        Me.lnkChange.TabIndex = 3
         Me.lnkChange.TabStop = True
         Me.lnkChange.Text = "Cambiar Contraseña"
         '
         'lnkRegistrar
         '
         Me.lnkRegistrar.AutoSize = True
-        Me.lnkRegistrar.Location = New System.Drawing.Point(52, 290)
+        Me.lnkRegistrar.Location = New System.Drawing.Point(65, 278)
         Me.lnkRegistrar.Name = "lnkRegistrar"
         Me.lnkRegistrar.Size = New System.Drawing.Size(60, 13)
-        Me.lnkRegistrar.TabIndex = 20
+        Me.lnkRegistrar.TabIndex = 4
         Me.lnkRegistrar.TabStop = True
         Me.lnkRegistrar.Text = "Registrarse"
         '
         'PictureBox2
         '
         Me.PictureBox2.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.appbar_lock
-        Me.PictureBox2.Location = New System.Drawing.Point(55, 225)
+        Me.PictureBox2.Location = New System.Drawing.Point(37, 216)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(28, 26)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -155,7 +157,7 @@ Partial Class frmLogin
         'PictureBox1
         '
         Me.PictureBox1.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.appbar_user
-        Me.PictureBox1.Location = New System.Drawing.Point(55, 175)
+        Me.PictureBox1.Location = New System.Drawing.Point(37, 174)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(28, 26)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -173,18 +175,19 @@ Partial Class frmLogin
         Me.btnIngresar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
         Me.btnIngresar.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.right
         Me.btnIngresar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnIngresar.Location = New System.Drawing.Point(206, 299)
+        Me.btnIngresar.Location = New System.Drawing.Point(188, 270)
         Me.btnIngresar.Name = "btnIngresar"
         Me.btnIngresar.Size = New System.Drawing.Size(109, 29)
-        Me.btnIngresar.TabIndex = 15
+        Me.btnIngresar.TabIndex = 5
         Me.btnIngresar.Text = "   Ingresar"
         Me.btnIngresar.UseVisualStyleBackColor = False
         '
         'frmLogin
         '
+        Me.AcceptButton = Me.btnIngresar
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(391, 383)
+        Me.ClientSize = New System.Drawing.Size(355, 348)
         Me.Controls.Add(Me.lnkRegistrar)
         Me.Controls.Add(Me.lnkChange)
         Me.Controls.Add(Me.PictureBox2)
@@ -196,7 +199,9 @@ Partial Class frmLogin
         Me.Controls.Add(Me.Login_Pass_Txt)
         Me.Controls.Add(Me.btnIngresar)
         Me.Controls.Add(Me.ShapeContainer1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
         Me.Name = "frmLogin"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Login"
@@ -216,7 +221,7 @@ Partial Class frmLogin
     Friend WithEvents Login_Pass_Txt As System.Windows.Forms.TextBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
-    Friend WithEvents RectangleShape2 As Microsoft.VisualBasic.PowerPacks.RectangleShape
     Friend WithEvents lnkChange As System.Windows.Forms.LinkLabel
     Friend WithEvents lnkRegistrar As System.Windows.Forms.LinkLabel
+    Friend WithEvents RectangleShape2 As Microsoft.VisualBasic.PowerPacks.RectangleShape
 End Class

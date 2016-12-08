@@ -22,6 +22,7 @@ Partial Class frmChange
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmChange))
         Me.RectangleShape1 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.ShapeContainer1 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
         Me.RectangleShape2 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
@@ -29,7 +30,7 @@ Partial Class frmChange
         Me.lblClaveOld = New System.Windows.Forms.Label()
         Me.txtUser = New System.Windows.Forms.TextBox()
         Me.txtOldPass = New System.Windows.Forms.TextBox()
-        Me.lblClabeNew = New System.Windows.Forms.Label()
+        Me.lblClaveNew = New System.Windows.Forms.Label()
         Me.txtNewPass = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.btnCancelar = New System.Windows.Forms.Button()
@@ -45,9 +46,10 @@ Partial Class frmChange
         Me.RectangleShape1.FillGradientColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
         Me.RectangleShape1.FillGradientStyle = Microsoft.VisualBasic.PowerPacks.FillGradientStyle.Horizontal
         Me.RectangleShape1.FillStyle = Microsoft.VisualBasic.PowerPacks.FillStyle.Solid
-        Me.RectangleShape1.Location = New System.Drawing.Point(-46, 0)
+        Me.RectangleShape1.Location = New System.Drawing.Point(1, 0)
         Me.RectangleShape1.Name = "RectangleShape1"
-        Me.RectangleShape1.Size = New System.Drawing.Size(439, 94)
+        Me.RectangleShape1.SelectionColor = System.Drawing.Color.Transparent
+        Me.RectangleShape1.Size = New System.Drawing.Size(361, 94)
         '
         'ShapeContainer1
         '
@@ -55,7 +57,7 @@ Partial Class frmChange
         Me.ShapeContainer1.Margin = New System.Windows.Forms.Padding(0)
         Me.ShapeContainer1.Name = "ShapeContainer1"
         Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape2, Me.RectangleShape1})
-        Me.ShapeContainer1.Size = New System.Drawing.Size(395, 364)
+        Me.ShapeContainer1.Size = New System.Drawing.Size(355, 348)
         Me.ShapeContainer1.TabIndex = 0
         Me.ShapeContainer1.TabStop = False
         '
@@ -64,8 +66,9 @@ Partial Class frmChange
         Me.RectangleShape2.BackgroundImage = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.Sin
         Me.RectangleShape2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.RectangleShape2.BorderColor = System.Drawing.Color.Transparent
-        Me.RectangleShape2.Location = New System.Drawing.Point(210, -13)
+        Me.RectangleShape2.Location = New System.Drawing.Point(170, 0)
         Me.RectangleShape2.Name = "RectangleShape2"
+        Me.RectangleShape2.SelectionColor = System.Drawing.Color.Transparent
         Me.RectangleShape2.Size = New System.Drawing.Size(176, 103)
         '
         'lblUser
@@ -73,7 +76,7 @@ Partial Class frmChange
         Me.lblUser.AutoSize = True
         Me.lblUser.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.lblUser.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.lblUser.Location = New System.Drawing.Point(75, 172)
+        Me.lblUser.Location = New System.Drawing.Point(34, 174)
         Me.lblUser.Name = "lblUser"
         Me.lblUser.Size = New System.Drawing.Size(46, 14)
         Me.lblUser.TabIndex = 1
@@ -84,7 +87,7 @@ Partial Class frmChange
         Me.lblClaveOld.AutoSize = True
         Me.lblClaveOld.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.lblClaveOld.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.lblClaveOld.Location = New System.Drawing.Point(75, 198)
+        Me.lblClaveOld.Location = New System.Drawing.Point(34, 200)
         Me.lblClaveOld.Name = "lblClaveOld"
         Me.lblClaveOld.Size = New System.Drawing.Size(71, 14)
         Me.lblClaveOld.TabIndex = 2
@@ -92,36 +95,36 @@ Partial Class frmChange
         '
         'txtUser
         '
-        Me.txtUser.Location = New System.Drawing.Point(160, 170)
+        Me.txtUser.Location = New System.Drawing.Point(119, 172)
         Me.txtUser.Name = "txtUser"
-        Me.txtUser.Size = New System.Drawing.Size(141, 20)
-        Me.txtUser.TabIndex = 3
+        Me.txtUser.Size = New System.Drawing.Size(177, 20)
+        Me.txtUser.TabIndex = 1
         '
         'txtOldPass
         '
-        Me.txtOldPass.Location = New System.Drawing.Point(160, 198)
+        Me.txtOldPass.Location = New System.Drawing.Point(119, 200)
         Me.txtOldPass.Name = "txtOldPass"
-        Me.txtOldPass.Size = New System.Drawing.Size(141, 20)
-        Me.txtOldPass.TabIndex = 4
+        Me.txtOldPass.Size = New System.Drawing.Size(177, 20)
+        Me.txtOldPass.TabIndex = 2
         Me.txtOldPass.UseSystemPasswordChar = True
         '
-        'lblClabeNew
+        'lblClaveNew
         '
-        Me.lblClabeNew.AutoSize = True
-        Me.lblClabeNew.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.lblClabeNew.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.lblClabeNew.Location = New System.Drawing.Point(75, 228)
-        Me.lblClabeNew.Name = "lblClabeNew"
-        Me.lblClabeNew.Size = New System.Drawing.Size(72, 14)
-        Me.lblClabeNew.TabIndex = 5
-        Me.lblClabeNew.Text = "Nueva clave"
+        Me.lblClaveNew.AutoSize = True
+        Me.lblClaveNew.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.lblClaveNew.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.lblClaveNew.Location = New System.Drawing.Point(34, 230)
+        Me.lblClaveNew.Name = "lblClaveNew"
+        Me.lblClaveNew.Size = New System.Drawing.Size(72, 14)
+        Me.lblClaveNew.TabIndex = 5
+        Me.lblClaveNew.Text = "Nueva clave"
         '
         'txtNewPass
         '
-        Me.txtNewPass.Location = New System.Drawing.Point(160, 226)
+        Me.txtNewPass.Location = New System.Drawing.Point(119, 228)
         Me.txtNewPass.Name = "txtNewPass"
-        Me.txtNewPass.Size = New System.Drawing.Size(141, 20)
-        Me.txtNewPass.TabIndex = 6
+        Me.txtNewPass.Size = New System.Drawing.Size(177, 20)
+        Me.txtNewPass.TabIndex = 3
         Me.txtNewPass.UseSystemPasswordChar = True
         '
         'Label4
@@ -129,7 +132,7 @@ Partial Class frmChange
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
-        Me.Label4.Location = New System.Drawing.Point(74, 122)
+        Me.Label4.Location = New System.Drawing.Point(33, 124)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(150, 19)
         Me.Label4.TabIndex = 18
@@ -146,10 +149,10 @@ Partial Class frmChange
         Me.btnCancelar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
         Me.btnCancelar.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.cancelar
         Me.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnCancelar.Location = New System.Drawing.Point(124, 276)
+        Me.btnCancelar.Location = New System.Drawing.Point(209, 282)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(87, 29)
-        Me.btnCancelar.TabIndex = 19
+        Me.btnCancelar.TabIndex = 5
         Me.btnCancelar.Text = "Cancelar"
         Me.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnCancelar.UseVisualStyleBackColor = False
@@ -165,29 +168,34 @@ Partial Class frmChange
         Me.btnChange.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
         Me.btnChange.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.aceptar
         Me.btnChange.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnChange.Location = New System.Drawing.Point(217, 276)
+        Me.btnChange.Location = New System.Drawing.Point(119, 282)
         Me.btnChange.Name = "btnChange"
         Me.btnChange.Size = New System.Drawing.Size(84, 29)
-        Me.btnChange.TabIndex = 20
+        Me.btnChange.TabIndex = 4
         Me.btnChange.Text = "Cambiar"
         Me.btnChange.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnChange.UseVisualStyleBackColor = False
         '
         'frmChange
         '
+        Me.AcceptButton = Me.btnChange
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(395, 364)
+        Me.CancelButton = Me.btnCancelar
+        Me.ClientSize = New System.Drawing.Size(355, 348)
         Me.Controls.Add(Me.btnCancelar)
         Me.Controls.Add(Me.btnChange)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.txtNewPass)
-        Me.Controls.Add(Me.lblClabeNew)
+        Me.Controls.Add(Me.lblClaveNew)
         Me.Controls.Add(Me.txtOldPass)
         Me.Controls.Add(Me.txtUser)
         Me.Controls.Add(Me.lblClaveOld)
         Me.Controls.Add(Me.lblUser)
         Me.Controls.Add(Me.ShapeContainer1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
         Me.Name = "frmChange"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Cambio de Clave"
@@ -202,7 +210,7 @@ Partial Class frmChange
     Friend WithEvents lblClaveOld As System.Windows.Forms.Label
     Friend WithEvents txtUser As System.Windows.Forms.TextBox
     Friend WithEvents txtOldPass As System.Windows.Forms.TextBox
-    Friend WithEvents lblClabeNew As System.Windows.Forms.Label
+    Friend WithEvents lblClaveNew As System.Windows.Forms.Label
     Friend WithEvents txtNewPass As System.Windows.Forms.TextBox
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents btnCancelar As System.Windows.Forms.Button

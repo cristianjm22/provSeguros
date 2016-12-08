@@ -1,8 +1,8 @@
 ﻿Imports System.Data.SqlClient
 Module Variables
 
-    Public SERVIDOR As String = "NatyCris-PC"
-    'Public SERVIDOR As String = "MC0XGCTC"
+    'Public SERVIDOR As String = "NatyCris-PC"
+    Public SERVIDOR As String = "MC0XGCTC"
     Public BASE As String = "dbPoyCPS" ' tuve que cambiar el nombre de la base!
     Public sCnn As String = "Data Source=" & SERVIDOR & ";Initial Catalog=" & BASE & ";Integrated Security=True"
     Public conn As SqlConnection = Nothing

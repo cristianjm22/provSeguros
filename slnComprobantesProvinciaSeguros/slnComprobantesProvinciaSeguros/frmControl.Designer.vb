@@ -45,7 +45,6 @@ Partial Class frmControl
         Me.RectangleShape1 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.ShapeContainer1 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
         Me.RectangleShape3 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
-        Me.RectangleShape2 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.btnPermisos = New System.Windows.Forms.Button()
         Me.btnModificarPagos = New System.Windows.Forms.Button()
         Me.BtnReimpresion = New System.Windows.Forms.Button()
@@ -173,7 +172,7 @@ Partial Class frmControl
         '
         resources.ApplyResources(Me.ShapeContainer1, "ShapeContainer1")
         Me.ShapeContainer1.Name = "ShapeContainer1"
-        Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape3, Me.RectangleShape2, Me.RectangleShape1})
+        Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape3, Me.RectangleShape1})
         Me.ShapeContainer1.TabStop = False
         '
         'RectangleShape3
@@ -182,17 +181,13 @@ Partial Class frmControl
         resources.ApplyResources(Me.RectangleShape3, "RectangleShape3")
         Me.RectangleShape3.Name = "RectangleShape3"
         '
-        'RectangleShape2
-        '
-        resources.ApplyResources(Me.RectangleShape2, "RectangleShape2")
-        Me.RectangleShape2.Name = "RectangleShape2"
-        '
         'btnPermisos
         '
         Me.btnPermisos.BackColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
         resources.ApplyResources(Me.btnPermisos, "btnPermisos")
         Me.btnPermisos.ForeColor = System.Drawing.SystemColors.Control
         Me.btnPermisos.Name = "btnPermisos"
+        Me.btnPermisos.TabStop = False
         Me.btnPermisos.UseVisualStyleBackColor = False
         '
         'btnModificarPagos
@@ -201,6 +196,7 @@ Partial Class frmControl
         resources.ApplyResources(Me.btnModificarPagos, "btnModificarPagos")
         Me.btnModificarPagos.ForeColor = System.Drawing.SystemColors.Control
         Me.btnModificarPagos.Name = "btnModificarPagos"
+        Me.btnModificarPagos.TabStop = False
         Me.btnModificarPagos.UseVisualStyleBackColor = False
         '
         'BtnReimpresion
@@ -209,6 +205,7 @@ Partial Class frmControl
         resources.ApplyResources(Me.BtnReimpresion, "BtnReimpresion")
         Me.BtnReimpresion.ForeColor = System.Drawing.SystemColors.Control
         Me.BtnReimpresion.Name = "BtnReimpresion"
+        Me.BtnReimpresion.TabStop = False
         Me.BtnReimpresion.UseVisualStyleBackColor = False
         '
         'btnReporte
@@ -217,6 +214,7 @@ Partial Class frmControl
         resources.ApplyResources(Me.btnReporte, "btnReporte")
         Me.btnReporte.ForeColor = System.Drawing.SystemColors.Control
         Me.btnReporte.Name = "btnReporte"
+        Me.btnReporte.TabStop = False
         Me.btnReporte.UseVisualStyleBackColor = False
         '
         'Label4
@@ -236,6 +234,7 @@ Partial Class frmControl
         resources.ApplyResources(Me.btnDeudas, "btnDeudas")
         Me.btnDeudas.ForeColor = System.Drawing.SystemColors.Control
         Me.btnDeudas.Name = "btnDeudas"
+        Me.btnDeudas.TabStop = False
         Me.btnDeudas.UseVisualStyleBackColor = False
         '
         'btnLimpiar
@@ -266,6 +265,7 @@ Partial Class frmControl
         resources.ApplyResources(Me.btnInformarPagos, "btnInformarPagos")
         Me.btnInformarPagos.ForeColor = System.Drawing.SystemColors.Control
         Me.btnInformarPagos.Name = "btnInformarPagos"
+        Me.btnInformarPagos.TabStop = False
         Me.btnInformarPagos.UseVisualStyleBackColor = False
         '
         'frmControl
@@ -303,6 +303,8 @@ Partial Class frmControl
         Me.Controls.Add(Me.lblEntrada)
         Me.Controls.Add(Me.txtEntrada)
         Me.Controls.Add(Me.ShapeContainer1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.MaximizeBox = False
         Me.Name = "frmControl"
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -329,7 +331,6 @@ Partial Class frmControl
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents RectangleShape1 As Microsoft.VisualBasic.PowerPacks.RectangleShape
     Friend WithEvents ShapeContainer1 As Microsoft.VisualBasic.PowerPacks.ShapeContainer
-    Friend WithEvents RectangleShape2 As Microsoft.VisualBasic.PowerPacks.RectangleShape
     Friend WithEvents btnPermisos As System.Windows.Forms.Button
     Friend WithEvents btnModificarPagos As System.Windows.Forms.Button
     Friend WithEvents RectangleShape3 As Microsoft.VisualBasic.PowerPacks.RectangleShape

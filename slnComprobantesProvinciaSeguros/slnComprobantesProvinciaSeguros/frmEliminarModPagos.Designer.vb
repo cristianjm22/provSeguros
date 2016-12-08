@@ -22,10 +22,20 @@ Partial Class frmEliminarModPagos
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmEliminarModPagos))
         Me.cboEstado = New System.Windows.Forms.ComboBox()
-        Me.btnFiltrar = New System.Windows.Forms.Button()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.dgvReporte = New System.Windows.Forms.DataGridView()
+        Me.lblPoliza = New System.Windows.Forms.Label()
+        Me.txtPoliza = New System.Windows.Forms.TextBox()
+        Me.lblEstado = New System.Windows.Forms.Label()
+        Me.RectangleShape1 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
+        Me.ShapeContainer1 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
+        Me.RectangleShape3 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.lblSinRegistros = New System.Windows.Forms.Label()
         Me.ID_COMPROBANTE = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.E_LAPIZ_OPTICO = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FECHA_INGRESO = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -40,116 +50,194 @@ Partial Class frmEliminarModPagos
         Me.ID_ESTADO = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ESTADO = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ELIMINAR = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.btnExportar = New System.Windows.Forms.Button()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.txtPoliza = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
         CType(Me.dgvReporte, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'cboEstado
         '
         Me.cboEstado.FormattingEnabled = True
-        Me.cboEstado.Location = New System.Drawing.Point(82, 58)
+        Me.cboEstado.Location = New System.Drawing.Point(91, 169)
         Me.cboEstado.Name = "cboEstado"
         Me.cboEstado.Size = New System.Drawing.Size(121, 21)
-        Me.cboEstado.TabIndex = 34
-        '
-        'btnFiltrar
-        '
-        Me.btnFiltrar.Location = New System.Drawing.Point(436, 56)
-        Me.btnFiltrar.Name = "btnFiltrar"
-        Me.btnFiltrar.Size = New System.Drawing.Size(75, 23)
-        Me.btnFiltrar.TabIndex = 33
-        Me.btnFiltrar.Text = "Filtrar"
-        Me.btnFiltrar.UseVisualStyleBackColor = True
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label3.Location = New System.Drawing.Point(19, 13)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(152, 24)
-        Me.Label3.TabIndex = 32
-        Me.Label3.Text = "Reporte diario"
+        Me.cboEstado.TabIndex = 1
         '
         'dgvReporte
         '
         Me.dgvReporte.AllowUserToAddRows = False
         Me.dgvReporte.AllowUserToDeleteRows = False
         Me.dgvReporte.AllowUserToOrderColumns = True
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.dgvReporte.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvReporte.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.dgvReporte.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.dgvReporte.BackgroundColor = System.Drawing.SystemColors.Control
         Me.dgvReporte.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.dgvReporte.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
+        Me.dgvReporte.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Transparent
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvReporte.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvReporte.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvReporte.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID_COMPROBANTE, Me.E_LAPIZ_OPTICO, Me.FECHA_INGRESO, Me.RM, Me.POLIZA, Me.ENDOSO, Me.NRO_CUOTA, Me.FECHA_VTO, Me.ID_MONEDA, Me.MONEDA, Me.IMPORTE, Me.ID_ESTADO, Me.ESTADO, Me.ELIMINAR})
-        Me.dgvReporte.Location = New System.Drawing.Point(9, 112)
+        Me.dgvReporte.EnableHeadersVisualStyles = False
+        Me.dgvReporte.Location = New System.Drawing.Point(44, 208)
         Me.dgvReporte.Name = "dgvReporte"
         Me.dgvReporte.ReadOnly = True
         Me.dgvReporte.ShowEditingIcon = False
         Me.dgvReporte.ShowRowErrors = False
-        Me.dgvReporte.Size = New System.Drawing.Size(950, 199)
+        Me.dgvReporte.Size = New System.Drawing.Size(1241, 199)
         Me.dgvReporte.TabIndex = 31
+        '
+        'lblPoliza
+        '
+        Me.lblPoliza.AutoSize = True
+        Me.lblPoliza.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPoliza.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.lblPoliza.Location = New System.Drawing.Point(252, 174)
+        Me.lblPoliza.Name = "lblPoliza"
+        Me.lblPoliza.Size = New System.Drawing.Size(36, 14)
+        Me.lblPoliza.TabIndex = 37
+        Me.lblPoliza.Text = "Poliza"
+        '
+        'txtPoliza
+        '
+        Me.txtPoliza.Location = New System.Drawing.Point(294, 170)
+        Me.txtPoliza.Name = "txtPoliza"
+        Me.txtPoliza.Size = New System.Drawing.Size(100, 20)
+        Me.txtPoliza.TabIndex = 2
+        '
+        'lblEstado
+        '
+        Me.lblEstado.AutoSize = True
+        Me.lblEstado.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblEstado.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.lblEstado.Location = New System.Drawing.Point(41, 174)
+        Me.lblEstado.Name = "lblEstado"
+        Me.lblEstado.Size = New System.Drawing.Size(44, 14)
+        Me.lblEstado.TabIndex = 39
+        Me.lblEstado.Text = "Estado"
+        '
+        'RectangleShape1
+        '
+        Me.RectangleShape1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.RectangleShape1.BorderColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
+        Me.RectangleShape1.FillColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.RectangleShape1.FillGradientColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
+        Me.RectangleShape1.FillGradientStyle = Microsoft.VisualBasic.PowerPacks.FillGradientStyle.Horizontal
+        Me.RectangleShape1.FillStyle = Microsoft.VisualBasic.PowerPacks.FillStyle.Solid
+        Me.RectangleShape1.Location = New System.Drawing.Point(1, 0)
+        Me.RectangleShape1.Name = "RectangleShape1"
+        Me.RectangleShape1.SelectionColor = System.Drawing.Color.Transparent
+        Me.RectangleShape1.Size = New System.Drawing.Size(1304, 97)
+        '
+        'ShapeContainer1
+        '
+        Me.ShapeContainer1.Location = New System.Drawing.Point(0, 0)
+        Me.ShapeContainer1.Margin = New System.Windows.Forms.Padding(0)
+        Me.ShapeContainer1.Name = "ShapeContainer1"
+        Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape3, Me.RectangleShape1})
+        Me.ShapeContainer1.Size = New System.Drawing.Size(1288, 508)
+        Me.ShapeContainer1.TabIndex = 40
+        Me.ShapeContainer1.TabStop = False
+        '
+        'RectangleShape3
+        '
+        Me.RectangleShape3.BackgroundImage = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.Sin
+        Me.RectangleShape3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.RectangleShape3.BorderColor = System.Drawing.Color.Transparent
+        Me.RectangleShape3.Location = New System.Drawing.Point(1105, -4)
+        Me.RectangleShape3.Name = "RectangleShape3"
+        Me.RectangleShape3.SelectionColor = System.Drawing.Color.Transparent
+        Me.RectangleShape3.Size = New System.Drawing.Size(176, 103)
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
+        Me.Label3.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.Label3.Location = New System.Drawing.Point(40, 133)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(130, 19)
+        Me.Label3.TabIndex = 41
+        Me.Label3.Text = "Eliminar Pagos"
+        '
+        'lblSinRegistros
+        '
+        Me.lblSinRegistros.AutoSize = True
+        Me.lblSinRegistros.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSinRegistros.Location = New System.Drawing.Point(460, 251)
+        Me.lblSinRegistros.Name = "lblSinRegistros"
+        Me.lblSinRegistros.Size = New System.Drawing.Size(191, 16)
+        Me.lblSinRegistros.TabIndex = 42
+        Me.lblSinRegistros.Text = "No se encontraron registros"
+        Me.lblSinRegistros.Visible = False
         '
         'ID_COMPROBANTE
         '
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.White
+        Me.ID_COMPROBANTE.DefaultCellStyle = DataGridViewCellStyle3
         Me.ID_COMPROBANTE.HeaderText = "ID_COMPROBANTE"
         Me.ID_COMPROBANTE.Name = "ID_COMPROBANTE"
         Me.ID_COMPROBANTE.ReadOnly = True
         Me.ID_COMPROBANTE.Visible = False
-        Me.ID_COMPROBANTE.Width = 132
+        Me.ID_COMPROBANTE.Width = 134
         '
         'E_LAPIZ_OPTICO
         '
         Me.E_LAPIZ_OPTICO.HeaderText = "ENTRADA"
         Me.E_LAPIZ_OPTICO.Name = "E_LAPIZ_OPTICO"
         Me.E_LAPIZ_OPTICO.ReadOnly = True
-        Me.E_LAPIZ_OPTICO.Width = 84
+        Me.E_LAPIZ_OPTICO.Width = 78
         '
         'FECHA_INGRESO
         '
         Me.FECHA_INGRESO.HeaderText = "FECHA DE INGRESO"
         Me.FECHA_INGRESO.Name = "FECHA_INGRESO"
         Me.FECHA_INGRESO.ReadOnly = True
-        Me.FECHA_INGRESO.Width = 125
+        Me.FECHA_INGRESO.Width = 117
         '
         'RM
         '
         Me.RM.HeaderText = "RM"
         Me.RM.Name = "RM"
         Me.RM.ReadOnly = True
-        Me.RM.Width = 49
+        Me.RM.Width = 46
         '
         'POLIZA
         '
         Me.POLIZA.HeaderText = "POLIZA"
         Me.POLIZA.Name = "POLIZA"
         Me.POLIZA.ReadOnly = True
-        Me.POLIZA.Width = 70
+        Me.POLIZA.Width = 67
         '
         'ENDOSO
         '
         Me.ENDOSO.HeaderText = "ENDOSO"
         Me.ENDOSO.Name = "ENDOSO"
         Me.ENDOSO.ReadOnly = True
-        Me.ENDOSO.Width = 78
+        Me.ENDOSO.Width = 73
         '
         'NRO_CUOTA
         '
         Me.NRO_CUOTA.HeaderText = "CUOTA"
         Me.NRO_CUOTA.Name = "NRO_CUOTA"
         Me.NRO_CUOTA.ReadOnly = True
-        Me.NRO_CUOTA.Width = 69
+        Me.NRO_CUOTA.Width = 66
         '
         'FECHA_VTO
         '
         Me.FECHA_VTO.HeaderText = "FECHA VENCIMIENTO"
         Me.FECHA_VTO.Name = "FECHA_VTO"
         Me.FECHA_VTO.ReadOnly = True
-        Me.FECHA_VTO.Width = 132
+        Me.FECHA_VTO.Width = 124
         '
         'ID_MONEDA
         '
@@ -157,21 +245,21 @@ Partial Class frmEliminarModPagos
         Me.ID_MONEDA.Name = "ID_MONEDA"
         Me.ID_MONEDA.ReadOnly = True
         Me.ID_MONEDA.Visible = False
-        Me.ID_MONEDA.Width = 96
+        Me.ID_MONEDA.Width = 98
         '
         'MONEDA
         '
         Me.MONEDA.HeaderText = "MONEDA"
         Me.MONEDA.Name = "MONEDA"
         Me.MONEDA.ReadOnly = True
-        Me.MONEDA.Width = 79
+        Me.MONEDA.Width = 74
         '
         'IMPORTE
         '
         Me.IMPORTE.HeaderText = "IMPORTE"
         Me.IMPORTE.Name = "IMPORTE"
         Me.IMPORTE.ReadOnly = True
-        Me.IMPORTE.Width = 81
+        Me.IMPORTE.Width = 76
         '
         'ID_ESTADO
         '
@@ -179,80 +267,57 @@ Partial Class frmEliminarModPagos
         Me.ID_ESTADO.Name = "ID_ESTADO"
         Me.ID_ESTADO.ReadOnly = True
         Me.ID_ESTADO.Visible = False
-        Me.ID_ESTADO.Width = 93
+        Me.ID_ESTADO.Width = 95
         '
         'ESTADO
         '
         Me.ESTADO.HeaderText = "ESTADO"
         Me.ESTADO.Name = "ESTADO"
         Me.ESTADO.ReadOnly = True
-        Me.ESTADO.Width = 76
+        Me.ESTADO.Width = 71
         '
         'ELIMINAR
         '
         Me.ELIMINAR.HeaderText = "ELIMINAR"
+        Me.ELIMINAR.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.remove
         Me.ELIMINAR.Name = "ELIMINAR"
         Me.ELIMINAR.ReadOnly = True
-        Me.ELIMINAR.Width = 64
+        Me.ELIMINAR.Width = 60
         '
-        'btnExportar
-        '
-        Me.btnExportar.Location = New System.Drawing.Point(884, 397)
-        Me.btnExportar.Name = "btnExportar"
-        Me.btnExportar.Size = New System.Drawing.Size(75, 23)
-        Me.btnExportar.TabIndex = 36
-        Me.btnExportar.Text = "Exportar"
-        Me.btnExportar.UseVisualStyleBackColor = True
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(247, 66)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(35, 13)
-        Me.Label1.TabIndex = 37
-        Me.Label1.Text = "Poliza"
-        '
-        'txtPoliza
-        '
-        Me.txtPoliza.Location = New System.Drawing.Point(298, 58)
-        Me.txtPoliza.Name = "txtPoliza"
-        Me.txtPoliza.Size = New System.Drawing.Size(100, 20)
-        Me.txtPoliza.TabIndex = 38
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(36, 66)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(40, 13)
-        Me.Label2.TabIndex = 39
-        Me.Label2.Text = "Estado"
-        '
-        'frmReporte2
+        'frmEliminarModPagos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(967, 449)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.txtPoliza)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.btnExportar)
-        Me.Controls.Add(Me.cboEstado)
-        Me.Controls.Add(Me.btnFiltrar)
+        Me.ClientSize = New System.Drawing.Size(1288, 508)
+        Me.Controls.Add(Me.lblSinRegistros)
         Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.lblEstado)
+        Me.Controls.Add(Me.txtPoliza)
+        Me.Controls.Add(Me.lblPoliza)
+        Me.Controls.Add(Me.cboEstado)
         Me.Controls.Add(Me.dgvReporte)
-        Me.Name = "frmReporte2"
-        Me.Text = "frmReporte2"
+        Me.Controls.Add(Me.ShapeContainer1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
+        Me.Name = "frmEliminarModPagos"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "Eliminar Pagos"
         CType(Me.dgvReporte, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
     Friend WithEvents cboEstado As System.Windows.Forms.ComboBox
-    Friend WithEvents btnFiltrar As System.Windows.Forms.Button
-    Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents dgvReporte As System.Windows.Forms.DataGridView
+    Friend WithEvents lblPoliza As System.Windows.Forms.Label
+    Friend WithEvents txtPoliza As System.Windows.Forms.TextBox
+    Friend WithEvents lblEstado As System.Windows.Forms.Label
+    Friend WithEvents RectangleShape1 As Microsoft.VisualBasic.PowerPacks.RectangleShape
+    Friend WithEvents ShapeContainer1 As Microsoft.VisualBasic.PowerPacks.ShapeContainer
+    Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents RectangleShape3 As Microsoft.VisualBasic.PowerPacks.RectangleShape
+    Friend WithEvents lblSinRegistros As System.Windows.Forms.Label
     Friend WithEvents ID_COMPROBANTE As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents E_LAPIZ_OPTICO As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents FECHA_INGRESO As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -267,8 +332,4 @@ Partial Class frmEliminarModPagos
     Friend WithEvents ID_ESTADO As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents ESTADO As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents ELIMINAR As System.Windows.Forms.DataGridViewImageColumn
-    Friend WithEvents btnExportar As System.Windows.Forms.Button
-    Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents txtPoliza As System.Windows.Forms.TextBox
-    Friend WithEvents Label2 As System.Windows.Forms.Label
 End Class

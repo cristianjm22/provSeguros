@@ -119,14 +119,14 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="txtEntrada.Location" type="System.Drawing.Point, System.Drawing">
-    <value>66, 238</value>
+    <value>46, 212</value>
   </data>
   <data name="txtEntrada.Size" type="System.Drawing.Size, System.Drawing">
     <value>392, 20</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="txtEntrada.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;txtEntrada.Name" xml:space="preserve">
     <value>txtEntrada</value>
@@ -147,7 +147,7 @@
     <value>Tahoma, 9pt</value>
   </data>
   <data name="lblEntrada.Location" type="System.Drawing.Point, System.Drawing">
-    <value>66, 219</value>
+    <value>46, 193</value>
   </data>
   <data name="lblEntrada.Size" type="System.Drawing.Size, System.Drawing">
     <value>49, 14</value>
@@ -174,13 +174,13 @@
     <value>False</value>
   </data>
   <data name="txtRM.Location" type="System.Drawing.Point, System.Drawing">
-    <value>66, 283</value>
+    <value>46, 257</value>
   </data>
   <data name="txtRM.Size" type="System.Drawing.Size, System.Drawing">
     <value>44, 20</value>
   </data>
   <data name="txtRM.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>2</value>
   </data>
   <data name="&gt;&gt;txtRM.Name" xml:space="preserve">
     <value>txtRM</value>
@@ -201,7 +201,7 @@
     <value>Tahoma, 9pt</value>
   </data>
   <data name="lblRM.Location" type="System.Drawing.Point, System.Drawing">
-    <value>66, 267</value>
+    <value>46, 241</value>
   </data>
   <data name="lblRM.Size" type="System.Drawing.Size, System.Drawing">
     <value>37, 14</value>
@@ -231,7 +231,7 @@
     <value>Tahoma, 9pt</value>
   </data>
   <data name="lblPoliza.Location" type="System.Drawing.Point, System.Drawing">
-    <value>212, 314</value>
+    <value>192, 288</value>
   </data>
   <data name="lblPoliza.Size" type="System.Drawing.Size, System.Drawing">
     <value>36, 14</value>
@@ -258,13 +258,13 @@
     <value>False</value>
   </data>
   <data name="txtPoliza.Location" type="System.Drawing.Point, System.Drawing">
-    <value>213, 330</value>
+    <value>193, 304</value>
   </data>
   <data name="txtPoliza.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 20</value>
   </data>
   <data name="txtPoliza.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>5</value>
   </data>
   <data name="&gt;&gt;txtPoliza.Name" xml:space="preserve">
     <value>txtPoliza</value>
@@ -285,7 +285,7 @@
     <value>Tahoma, 9pt</value>
   </data>
   <data name="Label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>66, 314</value>
+    <value>46, 288</value>
   </data>
   <data name="Label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>47, 14</value>
@@ -312,13 +312,13 @@
     <value>False</value>
   </data>
   <data name="txtEndoso.Location" type="System.Drawing.Point, System.Drawing">
-    <value>66, 330</value>
+    <value>46, 304</value>
   </data>
   <data name="txtEndoso.Size" type="System.Drawing.Size, System.Drawing">
     <value>108, 20</value>
   </data>
   <data name="txtEndoso.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+    <value>4</value>
   </data>
   <data name="&gt;&gt;txtEndoso.Name" xml:space="preserve">
     <value>txtEndoso</value>
@@ -339,7 +339,7 @@
     <value>Tahoma, 9pt</value>
   </data>
   <data name="lblNroCuota.Location" type="System.Drawing.Point, System.Drawing">
-    <value>212, 363</value>
+    <value>192, 337</value>
   </data>
   <data name="lblNroCuota.Size" type="System.Drawing.Size, System.Drawing">
     <value>86, 14</value>
@@ -366,13 +366,13 @@
     <value>False</value>
   </data>
   <data name="txtNroCuota.Location" type="System.Drawing.Point, System.Drawing">
-    <value>213, 379</value>
+    <value>193, 353</value>
   </data>
   <data name="txtNroCuota.Size" type="System.Drawing.Size, System.Drawing">
     <value>35, 20</value>
   </data>
   <data name="txtNroCuota.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
+    <value>7</value>
   </data>
   <data name="&gt;&gt;txtNroCuota.Name" xml:space="preserve">
     <value>txtNroCuota</value>
@@ -393,7 +393,7 @@
     <value>Tahoma, 9pt</value>
   </data>
   <data name="lblFechaVto.Location" type="System.Drawing.Point, System.Drawing">
-    <value>63, 363</value>
+    <value>43, 337</value>
   </data>
   <data name="lblFechaVto.Size" type="System.Drawing.Size, System.Drawing">
     <value>111, 14</value>
@@ -423,7 +423,7 @@
     <value>Tahoma, 9pt</value>
   </data>
   <data name="lblMoneda.Location" type="System.Drawing.Point, System.Drawing">
-    <value>212, 415</value>
+    <value>192, 389</value>
   </data>
   <data name="lblMoneda.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 14</value>
@@ -450,13 +450,13 @@
     <value>False</value>
   </data>
   <data name="txtMoneda.Location" type="System.Drawing.Point, System.Drawing">
-    <value>215, 432</value>
+    <value>195, 406</value>
   </data>
   <data name="txtMoneda.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 20</value>
   </data>
   <data name="txtMoneda.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
+    <value>9</value>
   </data>
   <data name="&gt;&gt;txtMoneda.Name" xml:space="preserve">
     <value>txtMoneda</value>
@@ -477,7 +477,7 @@
     <value>Tahoma, 9pt</value>
   </data>
   <data name="lblImporte.Location" type="System.Drawing.Point, System.Drawing">
-    <value>61, 416</value>
+    <value>41, 390</value>
   </data>
   <data name="lblImporte.Size" type="System.Drawing.Size, System.Drawing">
     <value>51, 14</value>
@@ -504,13 +504,13 @@
     <value>False</value>
   </data>
   <data name="txtImporte.Location" type="System.Drawing.Point, System.Drawing">
-    <value>64, 432</value>
+    <value>44, 406</value>
   </data>
   <data name="txtImporte.Size" type="System.Drawing.Size, System.Drawing">
     <value>110, 20</value>
   </data>
   <data name="txtImporte.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
+    <value>8</value>
   </data>
   <data name="&gt;&gt;txtImporte.Name" xml:space="preserve">
     <value>txtImporte</value>
@@ -531,7 +531,7 @@
     <value>Tahoma, 9pt</value>
   </data>
   <data name="Label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>212, 267</value>
+    <value>192, 241</value>
   </data>
   <data name="Label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>85, 14</value>
@@ -558,13 +558,13 @@
     <value>False</value>
   </data>
   <data name="txtObservaciones.Location" type="System.Drawing.Point, System.Drawing">
-    <value>213, 283</value>
+    <value>193, 257</value>
   </data>
   <data name="txtObservaciones.Size" type="System.Drawing.Size, System.Drawing">
     <value>245, 20</value>
   </data>
   <data name="txtObservaciones.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;txtObservaciones.Name" xml:space="preserve">
     <value>txtObservaciones</value>
@@ -582,13 +582,13 @@
     <value>False</value>
   </data>
   <data name="dtpFechaVencimiento.Location" type="System.Drawing.Point, System.Drawing">
-    <value>64, 379</value>
+    <value>44, 353</value>
   </data>
   <data name="dtpFechaVencimiento.Size" type="System.Drawing.Size, System.Drawing">
     <value>110, 20</value>
   </data>
   <data name="dtpFechaVencimiento.TabIndex" type="System.Int32, mscorlib">
-    <value>22</value>
+    <value>6</value>
   </data>
   <data name="&gt;&gt;dtpFechaVencimiento.Name" xml:space="preserve">
     <value>dtpFechaVencimiento</value>
@@ -609,7 +609,7 @@
     <value>Tahoma, 12pt, style=Bold</value>
   </data>
   <data name="Label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>65, 178</value>
+    <value>45, 152</value>
   </data>
   <data name="Label3.Size" type="System.Drawing.Size, System.Drawing">
     <value>151, 19</value>
@@ -655,8 +655,11 @@
   <data name="RectangleShape1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
+  <data name="RectangleShape1.SelectionColor" type="System.Drawing.Color, System.Drawing">
+    <value>Transparent</value>
+  </data>
   <data name="RectangleShape1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>516, 97</value>
+    <value>493, 117</value>
   </data>
   <data name="ShapeContainer1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
@@ -671,37 +674,16 @@
     <value>Transparent</value>
   </data>
   <data name="RectangleShape3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>326, -3</value>
+    <value>313, -4</value>
+  </data>
+  <data name="RectangleShape3.SelectionColor" type="System.Drawing.Color, System.Drawing">
+    <value>Transparent</value>
   </data>
   <data name="RectangleShape3.Size" type="System.Drawing.Size, System.Drawing">
     <value>176, 103</value>
   </data>
-  <data name="RectangleShape2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="RectangleShape2.BorderColor" type="System.Drawing.Color, System.Drawing">
-    <value>1, 56, 131</value>
-  </data>
-  <data name="RectangleShape2.FillColor" type="System.Drawing.Color, System.Drawing">
-    <value>0, 20, 60</value>
-  </data>
-  <data name="RectangleShape2.FillGradientColor" type="System.Drawing.Color, System.Drawing">
-    <value>1, 56, 131</value>
-  </data>
-  <data name="RectangleShape2.FillGradientStyle" type="Microsoft.VisualBasic.PowerPacks.FillGradientStyle, Microsoft.VisualBasic.PowerPacks.Vs">
-    <value>Horizontal</value>
-  </data>
-  <data name="RectangleShape2.FillStyle" type="Microsoft.VisualBasic.PowerPacks.FillStyle, Microsoft.VisualBasic.PowerPacks.Vs">
-    <value>Solid</value>
-  </data>
-  <data name="RectangleShape2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 97</value>
-  </data>
-  <data name="RectangleShape2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>516, 38</value>
-  </data>
   <data name="ShapeContainer1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>518, 530</value>
+    <value>495, 530</value>
   </data>
   <data name="ShapeContainer1.TabIndex" type="System.Int32, mscorlib">
     <value>30</value>
@@ -725,7 +707,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnPermisos.Location" type="System.Drawing.Point, System.Drawing">
-    <value>99, 113</value>
+    <value>99, 93</value>
   </data>
   <data name="btnPermisos.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 23</value>
@@ -755,7 +737,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnModificarPagos.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 113</value>
+    <value>7, 93</value>
   </data>
   <data name="btnModificarPagos.Size" type="System.Drawing.Size, System.Drawing">
     <value>93, 23</value>
@@ -785,10 +767,10 @@
     <value>NoControl</value>
   </data>
   <data name="BtnReimpresion.Location" type="System.Drawing.Point, System.Drawing">
-    <value>233, 113</value>
+    <value>233, 93</value>
   </data>
   <data name="BtnReimpresion.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 23</value>
+    <value>85, 23</value>
   </data>
   <data name="BtnReimpresion.TabIndex" type="System.Int32, mscorlib">
     <value>38</value>
@@ -815,10 +797,10 @@
     <value>NoControl</value>
   </data>
   <data name="btnReporte.Location" type="System.Drawing.Point, System.Drawing">
-    <value>312, 113</value>
+    <value>312, 93</value>
   </data>
   <data name="btnReporte.Size" type="System.Drawing.Size, System.Drawing">
-    <value>96, 23</value>
+    <value>89, 23</value>
   </data>
   <data name="btnReporte.TabIndex" type="System.Int32, mscorlib">
     <value>39</value>
@@ -845,7 +827,7 @@
     <value>Tahoma, 9pt</value>
   </data>
   <data name="Label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>355, 415</value>
+    <value>335, 389</value>
   </data>
   <data name="Label4.Size" type="System.Drawing.Size, System.Drawing">
     <value>42, 14</value>
@@ -875,13 +857,13 @@
     <value>On</value>
   </data>
   <data name="txtDeuda.Location" type="System.Drawing.Point, System.Drawing">
-    <value>358, 432</value>
+    <value>338, 406</value>
   </data>
   <data name="txtDeuda.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 20</value>
   </data>
   <data name="txtDeuda.TabIndex" type="System.Int32, mscorlib">
-    <value>41</value>
+    <value>10</value>
   </data>
   <data name="&gt;&gt;txtDeuda.Name" xml:space="preserve">
     <value>txtDeuda</value>
@@ -902,7 +884,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnDeudas.Location" type="System.Drawing.Point, System.Drawing">
-    <value>168, 113</value>
+    <value>168, 93</value>
   </data>
   <data name="btnDeudas.Size" type="System.Drawing.Size, System.Drawing">
     <value>66, 23</value>
@@ -938,13 +920,13 @@
     <value>MiddleLeft</value>
   </data>
   <data name="btnLimpiar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>215, 489</value>
+    <value>195, 460</value>
   </data>
   <data name="btnLimpiar.Size" type="System.Drawing.Size, System.Drawing">
     <value>123, 29</value>
   </data>
   <data name="btnLimpiar.TabIndex" type="System.Int32, mscorlib">
-    <value>40</value>
+    <value>11</value>
   </data>
   <data name="btnLimpiar.Text" xml:space="preserve">
     <value>Limpiar Entrada</value>
@@ -980,13 +962,13 @@
     <value>NoControl</value>
   </data>
   <data name="btnGuardar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>346, 489</value>
+    <value>326, 460</value>
   </data>
   <data name="btnGuardar.Size" type="System.Drawing.Size, System.Drawing">
     <value>112, 29</value>
   </data>
   <data name="btnGuardar.TabIndex" type="System.Int32, mscorlib">
-    <value>37</value>
+    <value>12</value>
   </data>
   <data name="btnGuardar.Text" xml:space="preserve">
     <value>Registrar Pago</value>
@@ -1013,10 +995,10 @@
     <value>NoControl</value>
   </data>
   <data name="btnInformarPagos.Location" type="System.Drawing.Point, System.Drawing">
-    <value>407, 113</value>
+    <value>400, 93</value>
   </data>
   <data name="btnInformarPagos.Size" type="System.Drawing.Size, System.Drawing">
-    <value>102, 23</value>
+    <value>90, 23</value>
   </data>
   <data name="btnInformarPagos.TabIndex" type="System.Int32, mscorlib">
     <value>44</value>
@@ -1043,7 +1025,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>518, 530</value>
+    <value>495, 530</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1599,12 +1581,6 @@
     <value>RectangleShape3</value>
   </data>
   <data name="&gt;&gt;RectangleShape3.Type" xml:space="preserve">
-    <value>Microsoft.VisualBasic.PowerPacks.RectangleShape, Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="&gt;&gt;RectangleShape2.Name" xml:space="preserve">
-    <value>RectangleShape2</value>
-  </data>
-  <data name="&gt;&gt;RectangleShape2.Type" xml:space="preserve">
     <value>Microsoft.VisualBasic.PowerPacks.RectangleShape, Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

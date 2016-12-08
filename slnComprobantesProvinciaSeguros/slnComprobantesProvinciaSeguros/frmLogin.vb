@@ -13,7 +13,7 @@ Public Class frmLogin
         ClaveFounded = UsuarioDA.getPassword(Usuario).ToString.Trim
         If (ClaveFounded <> "") Then
             If (ClaveFounded <> Clave) Then
-                MsgBox("El Usuario o contraseña son incorrectos", MsgBoxStyle.Exclamation, "Aviso")
+                MsgBox("Usuario o contraseña incorrectos", MsgBoxStyle.Exclamation, "Aviso")
                 Login_Pass_Txt.Text = ""
             Else
                 conn.Close()

@@ -27,10 +27,6 @@ Public Class DeudasDA
 
     End Function
 
-
-
-
-
     Public Shared Function UpdateDeudas(ByVal ID_DEUDA As Integer, ByVal IMPORTE_DEUDA As Decimal)
 
         Try
@@ -42,14 +38,8 @@ Public Class DeudasDA
             cmd.Parameters.AddWithValue("@ID_DEUDA", ID_DEUDA)
             cmd.Parameters.AddWithValue("@IMPORTE_DEUDA", IMPORTE_DEUDA)
 
-
-
-
-
             Return cmd.ExecuteNonQuery()
             conn.Close()
-
-
         Catch e As SqlException
             MsgBox("Mensaje: " & e.Message)
             Return 0
@@ -64,7 +54,7 @@ Public Class DeudasDA
     ''' </summary>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Shared Function obtenerDeudas(ByVal Poliza As Integer)
+    Public Shared Function obtenerDeudas(ByVal Poliza As String)
 
         Dim dt As New DataTable
 
