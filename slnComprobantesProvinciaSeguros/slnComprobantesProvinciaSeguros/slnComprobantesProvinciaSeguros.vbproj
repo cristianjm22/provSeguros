@@ -89,6 +89,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DeudasDA.vb" />
+    <Compile Include="frmAltaModPermisos.Designer.vb">
+      <DependentUpon>frmAltaModPermisos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAltaModPermisos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmDeudas.Designer.vb">
       <DependentUpon>frmDeudas.vb</DependentUpon>
     </Compile>
@@ -183,6 +189,9 @@
     <Compile Include="Variables.vb" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmAltaModPermisos.resx">
+      <DependentUpon>frmAltaModPermisos.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmChange.resx">
       <DependentUpon>frmChange.vb</DependentUpon>
     </EmbeddedResource>

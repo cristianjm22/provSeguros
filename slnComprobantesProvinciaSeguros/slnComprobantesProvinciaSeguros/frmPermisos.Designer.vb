@@ -28,16 +28,21 @@ Partial Class frmPermisos
         Me.RectangleShape2 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.lblReporte = New System.Windows.Forms.Label()
         Me.PermisosDGV = New System.Windows.Forms.DataGridView()
-        Me.btnGuardar = New System.Windows.Forms.Button()
-        Me.btnEliminar = New System.Windows.Forms.Button()
         Me.btnNuevo = New System.Windows.Forms.Button()
+        Me.ID_PERMISO = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.USUARIO = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NOMBRE_MENU = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.MENU_DESCRIPCION = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.HABILITADO = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.MODIFICAR = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.ELIMINAR = New System.Windows.Forms.DataGridViewImageColumn()
         CType(Me.PermisosDGV, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'RectangleShape1
         '
         Me.RectangleShape1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.RectangleShape1.BorderColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
         Me.RectangleShape1.FillColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(60, Byte), Integer))
         Me.RectangleShape1.FillGradientColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
@@ -63,7 +68,7 @@ Partial Class frmPermisos
         Me.RectangleShape3.BackgroundImage = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.Sin
         Me.RectangleShape3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.RectangleShape3.BorderColor = System.Drawing.Color.Transparent
-        Me.RectangleShape3.Location = New System.Drawing.Point(742, -4)
+        Me.RectangleShape3.Location = New System.Drawing.Point(709, -9)
         Me.RectangleShape3.Name = "RectangleShape3"
         Me.RectangleShape3.SelectionColor = System.Drawing.Color.Transparent
         Me.RectangleShape3.Size = New System.Drawing.Size(176, 103)
@@ -108,50 +113,12 @@ Partial Class frmPermisos
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.PermisosDGV.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.PermisosDGV.ColumnHeadersHeight = 30
-        Me.PermisosDGV.Cursor = System.Windows.Forms.Cursors.Default
+        Me.PermisosDGV.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID_PERMISO, Me.USUARIO, Me.NOMBRE_MENU, Me.MENU_DESCRIPCION, Me.HABILITADO, Me.MODIFICAR, Me.ELIMINAR})
         Me.PermisosDGV.EnableHeadersVisualStyles = False
-        Me.PermisosDGV.Location = New System.Drawing.Point(53, 171)
+        Me.PermisosDGV.Location = New System.Drawing.Point(53, 182)
         Me.PermisosDGV.Name = "PermisosDGV"
-        Me.PermisosDGV.Size = New System.Drawing.Size(868, 214)
+        Me.PermisosDGV.Size = New System.Drawing.Size(711, 131)
         Me.PermisosDGV.TabIndex = 0
-        '
-        'btnGuardar
-        '
-        Me.btnGuardar.BackColor = System.Drawing.SystemColors.Control
-        Me.btnGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.btnGuardar.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
-        Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnGuardar.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnGuardar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
-        Me.btnGuardar.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.aceptar
-        Me.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnGuardar.Location = New System.Drawing.Point(755, 125)
-        Me.btnGuardar.Name = "btnGuardar"
-        Me.btnGuardar.Size = New System.Drawing.Size(77, 29)
-        Me.btnGuardar.TabIndex = 40
-        Me.btnGuardar.Text = "Guardar"
-        Me.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnGuardar.UseVisualStyleBackColor = False
-        '
-        'btnEliminar
-        '
-        Me.btnEliminar.BackColor = System.Drawing.SystemColors.Control
-        Me.btnEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.btnEliminar.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btnEliminar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
-        Me.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnEliminar.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnEliminar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
-        Me.btnEliminar.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.remove
-        Me.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnEliminar.Location = New System.Drawing.Point(674, 125)
-        Me.btnEliminar.Name = "btnEliminar"
-        Me.btnEliminar.Size = New System.Drawing.Size(75, 29)
-        Me.btnEliminar.TabIndex = 39
-        Me.btnEliminar.Text = "Eliminar"
-        Me.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnEliminar.UseVisualStyleBackColor = False
         '
         'btnNuevo
         '
@@ -164,13 +131,56 @@ Partial Class frmPermisos
         Me.btnNuevo.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
         Me.btnNuevo.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.add
         Me.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnNuevo.Location = New System.Drawing.Point(592, 125)
+        Me.btnNuevo.Location = New System.Drawing.Point(506, 147)
         Me.btnNuevo.Name = "btnNuevo"
         Me.btnNuevo.Size = New System.Drawing.Size(76, 29)
         Me.btnNuevo.TabIndex = 38
         Me.btnNuevo.Text = "Nuevo"
         Me.btnNuevo.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnNuevo.UseVisualStyleBackColor = False
+        '
+        'ID_PERMISO
+        '
+        Me.ID_PERMISO.HeaderText = "ID_PERMISO"
+        Me.ID_PERMISO.Name = "ID_PERMISO"
+        Me.ID_PERMISO.ReadOnly = True
+        Me.ID_PERMISO.Visible = False
+        Me.ID_PERMISO.Width = 93
+        '
+        'USUARIO
+        '
+        Me.USUARIO.HeaderText = "USUARIO"
+        Me.USUARIO.Name = "USUARIO"
+        Me.USUARIO.Width = 77
+        '
+        'NOMBRE_MENU
+        '
+        Me.NOMBRE_MENU.HeaderText = "NOMBRE_MENU"
+        Me.NOMBRE_MENU.Name = "NOMBRE_MENU"
+        Me.NOMBRE_MENU.Width = 107
+        '
+        'MENU_DESCRIPCION
+        '
+        Me.MENU_DESCRIPCION.HeaderText = "DESCRIPCION"
+        Me.MENU_DESCRIPCION.Name = "MENU_DESCRIPCION"
+        '
+        'HABILITADO
+        '
+        Me.HABILITADO.HeaderText = "HABILITADO"
+        Me.HABILITADO.Name = "HABILITADO"
+        Me.HABILITADO.Width = 73
+        '
+        'MODIFICAR
+        '
+        Me.MODIFICAR.HeaderText = "MODIFICAR"
+        Me.MODIFICAR.Name = "MODIFICAR"
+        Me.MODIFICAR.Width = 70
+        '
+        'ELIMINAR
+        '
+        Me.ELIMINAR.HeaderText = "ELIMINAR"
+        Me.ELIMINAR.Name = "ELIMINAR"
+        Me.ELIMINAR.Width = 60
         '
         'frmPermisos
         '
@@ -179,8 +189,6 @@ Partial Class frmPermisos
         Me.AutoSize = True
         Me.ClientSize = New System.Drawing.Size(834, 418)
         Me.Controls.Add(Me.lblReporte)
-        Me.Controls.Add(Me.btnGuardar)
-        Me.Controls.Add(Me.btnEliminar)
         Me.Controls.Add(Me.btnNuevo)
         Me.Controls.Add(Me.PermisosDGV)
         Me.Controls.Add(Me.ShapeContainer1)
@@ -195,13 +203,18 @@ Partial Class frmPermisos
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents btnNuevo As System.Windows.Forms.Button
-    Friend WithEvents btnEliminar As System.Windows.Forms.Button
-    Friend WithEvents btnGuardar As System.Windows.Forms.Button
     Friend WithEvents RectangleShape1 As Microsoft.VisualBasic.PowerPacks.RectangleShape
     Friend WithEvents RectangleShape2 As Microsoft.VisualBasic.PowerPacks.RectangleShape
     Friend WithEvents ShapeContainer1 As Microsoft.VisualBasic.PowerPacks.ShapeContainer
     Friend WithEvents lblReporte As System.Windows.Forms.Label
     Friend WithEvents PermisosDGV As System.Windows.Forms.DataGridView
     Friend WithEvents RectangleShape3 As Microsoft.VisualBasic.PowerPacks.RectangleShape
+    Friend WithEvents btnNuevo As System.Windows.Forms.Button
+    Friend WithEvents ID_PERMISO As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents USUARIO As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents NOMBRE_MENU As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents MENU_DESCRIPCION As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents HABILITADO As System.Windows.Forms.DataGridViewCheckBoxColumn
+    Friend WithEvents MODIFICAR As System.Windows.Forms.DataGridViewImageColumn
+    Friend WithEvents ELIMINAR As System.Windows.Forms.DataGridViewImageColumn
 End Class

@@ -23,13 +23,7 @@ Public Class frmPermisos
     Private Sub Permisos_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Try
 
-            ' '''''''''''''''''''''''''''''''''''''   
-            With PermisosDGV
-                ' Establecer el origen de datos para el DataGridview   
-                .DataSource = bs
-            End With
-            ' cagar los datos   
-            cargar_registros("SELECT  USUARIO, MENU, LTRIM(RTRIM(MENU_DESCRIPCION)) AS MENU_DESCRIPCION, HABILITADO FROM PERMISOS ORDER BY USUARIO,MENU_DESCRIPCION", PermisosDGV)
+            cargarGrilla()
 
         Catch ex As Exception
             MsgBox(ex.Message.ToString())
@@ -76,7 +70,7 @@ Public Class frmPermisos
             If Not bs.DataSource Is Nothing Then
                 SqlDataAdapter.Update(CType(bs.DataSource, DataTable))
                 If bCargar Then
-                    cargar_registros("SELECT  USUARIO, MENU,MENU_DESCRIPCION, HABILITADO FROM PERMISOS ORDER BY USUARIO,MENU_DESCRIPCION", PermisosDGV)
+                    cargar_registros("SELECT  USUARIO, MENU,MENU_DESCRIPCION, HABILITADO FROM PERMISOS", PermisosDGV)
                 End If
             End If
         Catch ex As Exception
@@ -100,14 +94,19 @@ Public Class frmPermisos
     Private Sub btnNuevo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnNuevo.Click
 
         Try
-            bs.AddNew()
+            'bs.AddNew()
+            frmAltaModPermisos.ShowDialog()
+            modificarPermisos = False
+
+
+
         Catch ex As Exception
             MsgBox(ex.Message.ToString())
         End Try
 
     End Sub
 
-    Private Sub btnEliminar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnEliminar.Click
+    Private Sub btnEliminar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
 
         Try
             If Not bs.Current Is Nothing Then
@@ -122,7 +121,7 @@ Public Class frmPermisos
         Catch ex As Exception
             MsgBox(ex.Message.ToString())
         End Try
-      
+
     End Sub
 
     Private Sub btnVolver_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
@@ -134,7 +133,7 @@ Public Class frmPermisos
 
     End Sub
 
-    Private Sub btnGuardar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnGuardar.Click
+    Private Sub btnGuardar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         Try
             Actualizar()
         Catch ex As Exception
@@ -150,5 +149,63 @@ Public Class frmPermisos
             MsgBox(ex.Message.ToString())
         End Try
 
+    End Sub
+
+
+    Private Sub cargarGrilla()
+
+        Dim dt As DataTable = ComprobantesDA.obtenerPermisos()
+
+
+        PermisosDGV.Rows.Clear()  'para limpiarlo
+
+        PermisosDGV.DataSource = Nothing              'para limpiar cualquier registro internamente y desenlazar el control de la BD
+
+        If dt.Rows.Count > 0 Then
+            For Each row As DataRow In dt.Rows
+
+                PermisosDGV.Rows.Add(row("ID_PERMISO").ToString(), row("USUARIO").ToString(), row("NOMBRE_MENU").ToString(), row("MENU_DESCRIPCION").ToString(), row("HABILITADO").ToString())
+
+            Next
+        End If
+
+
+    End Sub
+
+    Private Sub PermisosDGV_CellContentClick(sender As System.Object, e As System.Windows.Forms.DataGridViewCellEventArgs) Handles PermisosDGV.CellContentClick
+        If e.ColumnIndex = 5 Then
+            If PermisosDGV.Rows(PermisosDGV.CurrentRow.Index).Cells("USUARIO").Value IsNot Nothing Then
+
+                indexPermisos = PermisosDGV.CurrentRow.Index
+
+                iDPermiso = PermisosDGV.Rows(indexPermisos).Cells("ID_PERMISO").Value.ToString()
+                frmAltaModPermisos.cboUsuario.SelectedValue = PermisosDGV.Rows(indexPermisos).Cells("USUARIO").Value.ToString()
+                frmAltaModPermisos.txtMenu.Text = PermisosDGV.Rows(indexPermisos).Cells("NOMBRE_MENU").Value.ToString()
+                frmAltaModPermisos.txtMenuDesc.Text = PermisosDGV.Rows(indexPermisos).Cells("MENU_DESCRIPCION").Value.ToString()
+                frmAltaModPermisos.chbHabilitado.Checked = PermisosDGV.Rows(indexPermisos).Cells("HABILITADO").Value.ToString()
+
+                modificarPermisos = True
+
+                frmAltaModPermisos.ShowDialog()
+
+                cargarGrilla()
+            End If
+
+        End If
+
+
+        If e.ColumnIndex = 6 Then
+            If PermisosDGV.Rows(PermisosDGV.CurrentRow.Index).Cells("USUARIO").Value IsNot Nothing Then
+
+
+                If MessageBox.Show("¿Desea eliminar este registro?" _
+ , "AVISO", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
+                    ComprobantesDA.deletePermisos(Convert.ToInt32(PermisosDGV.Rows(PermisosDGV.CurrentRow.Index).Cells("ID_PERMISO").Value)) ' Usuario
+                    cargarGrilla()
+                    MsgBox("Registro eliminado", MsgBoxStyle.Information, "Aviso")
+                End If
+
+            End If
+        End If
     End Sub
 End Class

@@ -12,9 +12,12 @@ Module Variables
 
     Public indexdgvReporte As Integer
     Public indexdgvdeuda As Integer
+    Public indexPermisos As Integer
     Public ModificacionReporte As Boolean = False
+    Public modificarPermisos As Boolean = False
     Public idComprobante As Integer
     Public idDeuda As Integer
+    Public iDPermiso As Integer
 
 
 End Module

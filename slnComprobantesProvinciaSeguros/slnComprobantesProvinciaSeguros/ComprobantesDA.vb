@@ -500,4 +500,108 @@ Public Class ComprobantesDA
 
     End Function
 
+
+    ''' <summary>
+    ''' Autor: Morales Cristian
+    ''' </summary>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    Public Shared Function obtenerPermisos()
+
+        Dim dt As New DataTable
+
+        Try
+            conn = New SqlConnection(sCnn)
+            conn.Open()
+            Dim cmd As New SqlCommand("SP_FIND_PERMISOS", conn)
+            cmd.CommandTimeout = 300 'Especifico que lance un error de time out  despues de 5 min.
+            cmd.CommandType = CommandType.StoredProcedure
+            Dim da As New SqlDataAdapter(cmd)
+            da.Fill(dt)
+            conn.Close()
+
+        Catch e As SqlException
+            MsgBox("Mensaje: " & e.Message)
+        End Try
+
+        Return dt
+
+    End Function
+
+    Public Shared Function InsertPermisos(ByVal USUARIO As String,
+      ByVal MENU As String,
+      ByVal DESCRIPCION As String,
+      ByVal HABILITADO As Boolean)
+
+        Try
+            conn = New SqlConnection(sCnn)
+            conn.Open()
+            Dim cmd As New SqlCommand("SP_INSERT_PERMISOS", conn)
+            cmd.CommandType = CommandType.StoredProcedure
+
+            cmd.Parameters.AddWithValue("@USUARIO", USUARIO)
+            cmd.Parameters.AddWithValue("@MENU", MENU)
+            cmd.Parameters.AddWithValue("@MENU_DESCRIPCION", DESCRIPCION)
+            cmd.Parameters.AddWithValue("@HABILITADO", HABILITADO)
+
+            Return cmd.ExecuteNonQuery()
+            conn.Close()
+
+        Catch e As SqlException
+            MsgBox("Mensaje: " & e.Message)
+            Return 0
+        End Try
+    End Function
+
+
+    Public Shared Function updatePermisos(ByVal ID_PERMISO As String, ByVal USUARIO As String,
+  ByVal MENU As String,
+  ByVal DESCRIPCION As String,
+  ByVal HABILITADO As Boolean)
+
+        Try
+            conn = New SqlConnection(sCnn)
+            conn.Open()
+            Dim cmd As New SqlCommand("SP_UPDATE_PERMISOS", conn)
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.AddWithValue("@ID_PERMISO", ID_PERMISO)
+            cmd.Parameters.AddWithValue("@USUARIO", USUARIO)
+            cmd.Parameters.AddWithValue("@MENU", MENU)
+            cmd.Parameters.AddWithValue("@MENU_DESCRIPCION", DESCRIPCION)
+            cmd.Parameters.AddWithValue("@HABILITADO", HABILITADO)
+
+            Return cmd.ExecuteNonQuery()
+            conn.Close()
+
+        Catch e As SqlException
+            MsgBox("Mensaje: " & e.Message)
+            Return 0
+        End Try
+    End Function
+
+    Public Shared Function deletePermisos(ByVal ID_PERMISO As String)
+
+        Dim dt As New DataTable
+        Try
+            conn = New SqlConnection(sCnn)
+            conn.Open()
+            Dim cmd As New SqlCommand("SP_DELETE_PERMISOS", conn)
+            cmd.CommandTimeout = 300 'Especifico que lance un error de time out  despues de 5 min.
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandTimeout = 300
+            cmd.Parameters.AddWithValue("@ID_PERMISO", ID_PERMISO)
+
+
+            Dim da As New SqlDataAdapter(cmd)
+            da.Fill(dt)
+            conn.Close()
+
+        Catch e As SqlException
+            MsgBox("Mensaje: " & e.Message)
+        End Try
+
+        Return dt
+
+    End Function
+
 End Class
