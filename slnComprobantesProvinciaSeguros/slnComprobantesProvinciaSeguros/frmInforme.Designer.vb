@@ -32,6 +32,7 @@ Partial Class frmInforme
         Me.RectangleShape1 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.lblInforme = New System.Windows.Forms.Label()
         Me.btnInformar = New System.Windows.Forms.Button()
+        Me.btnCerrar = New System.Windows.Forms.Button()
         CType(Me.dgvReimpresion, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -109,6 +110,7 @@ Partial Class frmInforme
         Me.RectangleShape1.FillStyle = Microsoft.VisualBasic.PowerPacks.FillStyle.Solid
         Me.RectangleShape1.Location = New System.Drawing.Point(0, 0)
         Me.RectangleShape1.Name = "RectangleShape1"
+        Me.RectangleShape1.SelectionColor = System.Drawing.Color.Transparent
         Me.RectangleShape1.Size = New System.Drawing.Size(1169, 94)
         '
         'lblInforme
@@ -140,16 +142,39 @@ Partial Class frmInforme
         Me.btnInformar.Text = "Informar"
         Me.btnInformar.UseVisualStyleBackColor = False
         '
+        'btnCerrar
+        '
+        Me.btnCerrar.BackColor = System.Drawing.SystemColors.Control
+        Me.btnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btnCerrar.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.btnCerrar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
+        Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCerrar.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.btnCerrar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
+        Me.btnCerrar.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.back_1_
+        Me.btnCerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnCerrar.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.btnCerrar.Location = New System.Drawing.Point(47, 402)
+        Me.btnCerrar.Name = "btnCerrar"
+        Me.btnCerrar.Size = New System.Drawing.Size(74, 29)
+        Me.btnCerrar.TabIndex = 47
+        Me.btnCerrar.Text = "Volver"
+        Me.btnCerrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnCerrar.UseVisualStyleBackColor = False
+        '
         'frmInforme
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.CancelButton = Me.btnCerrar
         Me.ClientSize = New System.Drawing.Size(1170, 462)
+        Me.Controls.Add(Me.btnCerrar)
         Me.Controls.Add(Me.btnInformar)
         Me.Controls.Add(Me.lblInforme)
         Me.Controls.Add(Me.lblSinRegistros)
         Me.Controls.Add(Me.dgvReimpresion)
         Me.Controls.Add(Me.ShapeContainer1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "frmInforme"
@@ -167,4 +192,5 @@ Partial Class frmInforme
     Friend WithEvents RectangleShape3 As Microsoft.VisualBasic.PowerPacks.RectangleShape
     Friend WithEvents lblInforme As System.Windows.Forms.Label
     Friend WithEvents btnInformar As System.Windows.Forms.Button
+    Friend WithEvents btnCerrar As System.Windows.Forms.Button
 End Class

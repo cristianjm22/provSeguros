@@ -28,14 +28,6 @@ Partial Class frmEliminarModPagos
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmEliminarModPagos))
         Me.cboEstado = New System.Windows.Forms.ComboBox()
         Me.dgvReporte = New System.Windows.Forms.DataGridView()
-        Me.lblPoliza = New System.Windows.Forms.Label()
-        Me.txtPoliza = New System.Windows.Forms.TextBox()
-        Me.lblEstado = New System.Windows.Forms.Label()
-        Me.RectangleShape1 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
-        Me.ShapeContainer1 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
-        Me.RectangleShape3 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.lblSinRegistros = New System.Windows.Forms.Label()
         Me.ID_COMPROBANTE = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.E_LAPIZ_OPTICO = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FECHA_INGRESO = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -50,7 +42,20 @@ Partial Class frmEliminarModPagos
         Me.ID_ESTADO = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ESTADO = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ELIMINAR = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.lblPoliza = New System.Windows.Forms.Label()
+        Me.txtPoliza = New System.Windows.Forms.TextBox()
+        Me.lblEstado = New System.Windows.Forms.Label()
+        Me.RectangleShape1 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
+        Me.ShapeContainer1 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
+        Me.RectangleShape3 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.lblSinRegistros = New System.Windows.Forms.Label()
+        Me.btnCerrar = New System.Windows.Forms.Button()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         CType(Me.dgvReporte, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'cboEstado
@@ -88,96 +93,11 @@ Partial Class frmEliminarModPagos
         Me.dgvReporte.Location = New System.Drawing.Point(44, 208)
         Me.dgvReporte.Name = "dgvReporte"
         Me.dgvReporte.ReadOnly = True
+        Me.dgvReporte.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvReporte.ShowEditingIcon = False
         Me.dgvReporte.ShowRowErrors = False
-        Me.dgvReporte.Size = New System.Drawing.Size(1241, 199)
+        Me.dgvReporte.Size = New System.Drawing.Size(1241, 152)
         Me.dgvReporte.TabIndex = 31
-        '
-        'lblPoliza
-        '
-        Me.lblPoliza.AutoSize = True
-        Me.lblPoliza.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPoliza.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.lblPoliza.Location = New System.Drawing.Point(252, 174)
-        Me.lblPoliza.Name = "lblPoliza"
-        Me.lblPoliza.Size = New System.Drawing.Size(36, 14)
-        Me.lblPoliza.TabIndex = 37
-        Me.lblPoliza.Text = "Poliza"
-        '
-        'txtPoliza
-        '
-        Me.txtPoliza.Location = New System.Drawing.Point(294, 170)
-        Me.txtPoliza.Name = "txtPoliza"
-        Me.txtPoliza.Size = New System.Drawing.Size(100, 20)
-        Me.txtPoliza.TabIndex = 2
-        '
-        'lblEstado
-        '
-        Me.lblEstado.AutoSize = True
-        Me.lblEstado.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblEstado.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.lblEstado.Location = New System.Drawing.Point(41, 174)
-        Me.lblEstado.Name = "lblEstado"
-        Me.lblEstado.Size = New System.Drawing.Size(44, 14)
-        Me.lblEstado.TabIndex = 39
-        Me.lblEstado.Text = "Estado"
-        '
-        'RectangleShape1
-        '
-        Me.RectangleShape1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.RectangleShape1.BorderColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
-        Me.RectangleShape1.FillColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(60, Byte), Integer))
-        Me.RectangleShape1.FillGradientColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
-        Me.RectangleShape1.FillGradientStyle = Microsoft.VisualBasic.PowerPacks.FillGradientStyle.Horizontal
-        Me.RectangleShape1.FillStyle = Microsoft.VisualBasic.PowerPacks.FillStyle.Solid
-        Me.RectangleShape1.Location = New System.Drawing.Point(1, 0)
-        Me.RectangleShape1.Name = "RectangleShape1"
-        Me.RectangleShape1.SelectionColor = System.Drawing.Color.Transparent
-        Me.RectangleShape1.Size = New System.Drawing.Size(1304, 97)
-        '
-        'ShapeContainer1
-        '
-        Me.ShapeContainer1.Location = New System.Drawing.Point(0, 0)
-        Me.ShapeContainer1.Margin = New System.Windows.Forms.Padding(0)
-        Me.ShapeContainer1.Name = "ShapeContainer1"
-        Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape3, Me.RectangleShape1})
-        Me.ShapeContainer1.Size = New System.Drawing.Size(1288, 508)
-        Me.ShapeContainer1.TabIndex = 40
-        Me.ShapeContainer1.TabStop = False
-        '
-        'RectangleShape3
-        '
-        Me.RectangleShape3.BackgroundImage = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.Sin
-        Me.RectangleShape3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.RectangleShape3.BorderColor = System.Drawing.Color.Transparent
-        Me.RectangleShape3.Location = New System.Drawing.Point(1105, -4)
-        Me.RectangleShape3.Name = "RectangleShape3"
-        Me.RectangleShape3.SelectionColor = System.Drawing.Color.Transparent
-        Me.RectangleShape3.Size = New System.Drawing.Size(176, 103)
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
-        Me.Label3.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label3.Location = New System.Drawing.Point(40, 133)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(130, 19)
-        Me.Label3.TabIndex = 41
-        Me.Label3.Text = "Eliminar Pagos"
-        '
-        'lblSinRegistros
-        '
-        Me.lblSinRegistros.AutoSize = True
-        Me.lblSinRegistros.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblSinRegistros.Location = New System.Drawing.Point(460, 251)
-        Me.lblSinRegistros.Name = "lblSinRegistros"
-        Me.lblSinRegistros.Size = New System.Drawing.Size(191, 16)
-        Me.lblSinRegistros.TabIndex = 42
-        Me.lblSinRegistros.Text = "No se encontraron registros"
-        Me.lblSinRegistros.Visible = False
         '
         'ID_COMPROBANTE
         '
@@ -284,11 +204,141 @@ Partial Class frmEliminarModPagos
         Me.ELIMINAR.ReadOnly = True
         Me.ELIMINAR.Width = 60
         '
+        'lblPoliza
+        '
+        Me.lblPoliza.AutoSize = True
+        Me.lblPoliza.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPoliza.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.lblPoliza.Location = New System.Drawing.Point(252, 174)
+        Me.lblPoliza.Name = "lblPoliza"
+        Me.lblPoliza.Size = New System.Drawing.Size(36, 14)
+        Me.lblPoliza.TabIndex = 37
+        Me.lblPoliza.Text = "Poliza"
+        '
+        'txtPoliza
+        '
+        Me.txtPoliza.Location = New System.Drawing.Point(294, 170)
+        Me.txtPoliza.Name = "txtPoliza"
+        Me.txtPoliza.Size = New System.Drawing.Size(100, 20)
+        Me.txtPoliza.TabIndex = 2
+        '
+        'lblEstado
+        '
+        Me.lblEstado.AutoSize = True
+        Me.lblEstado.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblEstado.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.lblEstado.Location = New System.Drawing.Point(41, 174)
+        Me.lblEstado.Name = "lblEstado"
+        Me.lblEstado.Size = New System.Drawing.Size(44, 14)
+        Me.lblEstado.TabIndex = 39
+        Me.lblEstado.Text = "Estado"
+        '
+        'RectangleShape1
+        '
+        Me.RectangleShape1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.RectangleShape1.BorderColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
+        Me.RectangleShape1.FillColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.RectangleShape1.FillGradientColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
+        Me.RectangleShape1.FillGradientStyle = Microsoft.VisualBasic.PowerPacks.FillGradientStyle.Horizontal
+        Me.RectangleShape1.FillStyle = Microsoft.VisualBasic.PowerPacks.FillStyle.Solid
+        Me.RectangleShape1.Location = New System.Drawing.Point(1, 0)
+        Me.RectangleShape1.Name = "RectangleShape1"
+        Me.RectangleShape1.SelectionColor = System.Drawing.Color.Transparent
+        Me.RectangleShape1.Size = New System.Drawing.Size(1304, 97)
+        '
+        'ShapeContainer1
+        '
+        Me.ShapeContainer1.Location = New System.Drawing.Point(0, 0)
+        Me.ShapeContainer1.Margin = New System.Windows.Forms.Padding(0)
+        Me.ShapeContainer1.Name = "ShapeContainer1"
+        Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape3, Me.RectangleShape1})
+        Me.ShapeContainer1.Size = New System.Drawing.Size(1288, 424)
+        Me.ShapeContainer1.TabIndex = 40
+        Me.ShapeContainer1.TabStop = False
+        '
+        'RectangleShape3
+        '
+        Me.RectangleShape3.BackgroundImage = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.Sin
+        Me.RectangleShape3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.RectangleShape3.BorderColor = System.Drawing.Color.Transparent
+        Me.RectangleShape3.Location = New System.Drawing.Point(1105, -4)
+        Me.RectangleShape3.Name = "RectangleShape3"
+        Me.RectangleShape3.SelectionColor = System.Drawing.Color.Transparent
+        Me.RectangleShape3.Size = New System.Drawing.Size(176, 103)
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
+        Me.Label3.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.Label3.Location = New System.Drawing.Point(40, 133)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(130, 19)
+        Me.Label3.TabIndex = 41
+        Me.Label3.Text = "Eliminar Pagos"
+        '
+        'lblSinRegistros
+        '
+        Me.lblSinRegistros.AutoSize = True
+        Me.lblSinRegistros.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSinRegistros.Location = New System.Drawing.Point(460, 251)
+        Me.lblSinRegistros.Name = "lblSinRegistros"
+        Me.lblSinRegistros.Size = New System.Drawing.Size(191, 16)
+        Me.lblSinRegistros.TabIndex = 42
+        Me.lblSinRegistros.Text = "No se encontraron registros"
+        Me.lblSinRegistros.Visible = False
+        '
+        'btnCerrar
+        '
+        Me.btnCerrar.BackColor = System.Drawing.SystemColors.Control
+        Me.btnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btnCerrar.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.btnCerrar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
+        Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCerrar.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.btnCerrar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
+        Me.btnCerrar.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.back_1_
+        Me.btnCerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnCerrar.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.btnCerrar.Location = New System.Drawing.Point(44, 366)
+        Me.btnCerrar.Name = "btnCerrar"
+        Me.btnCerrar.Size = New System.Drawing.Size(74, 29)
+        Me.btnCerrar.TabIndex = 47
+        Me.btnCerrar.Text = "Volver"
+        Me.btnCerrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnCerrar.UseVisualStyleBackColor = False
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackgroundImage = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.appbar_filter
+        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.PictureBox1.Location = New System.Drawing.Point(400, 166)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(27, 22)
+        Me.PictureBox1.TabIndex = 48
+        Me.PictureBox1.TabStop = False
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.BackgroundImage = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.appbar_filter
+        Me.PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.PictureBox2.Location = New System.Drawing.Point(218, 166)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(27, 22)
+        Me.PictureBox2.TabIndex = 49
+        Me.PictureBox2.TabStop = False
+        '
         'frmEliminarModPagos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1288, 508)
+        Me.CancelButton = Me.btnCerrar
+        Me.ClientSize = New System.Drawing.Size(1288, 424)
+        Me.Controls.Add(Me.PictureBox2)
+        Me.Controls.Add(Me.PictureBox1)
+        Me.Controls.Add(Me.btnCerrar)
         Me.Controls.Add(Me.lblSinRegistros)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.lblEstado)
@@ -304,6 +354,8 @@ Partial Class frmEliminarModPagos
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Eliminar Pagos"
         CType(Me.dgvReporte, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -332,4 +384,7 @@ Partial Class frmEliminarModPagos
     Friend WithEvents ID_ESTADO As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents ESTADO As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents ELIMINAR As System.Windows.Forms.DataGridViewImageColumn
+    Friend WithEvents btnCerrar As System.Windows.Forms.Button
+    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
+    Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
 End Class

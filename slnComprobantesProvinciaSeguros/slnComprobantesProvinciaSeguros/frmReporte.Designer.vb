@@ -34,6 +34,7 @@ Partial Class frmReporte
         Me.lblTotalDia = New System.Windows.Forms.Label()
         Me.lblTotalQuincena = New System.Windows.Forms.Label()
         Me.lblSinRegistros = New System.Windows.Forms.Label()
+        Me.btnCerrar = New System.Windows.Forms.Button()
         CType(Me.dgvReporte, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -65,7 +66,7 @@ Partial Class frmReporte
         Me.dgvReporte.ReadOnly = True
         Me.dgvReporte.ShowEditingIcon = False
         Me.dgvReporte.ShowRowErrors = False
-        Me.dgvReporte.Size = New System.Drawing.Size(1165, 212)
+        Me.dgvReporte.Size = New System.Drawing.Size(1185, 212)
         Me.dgvReporte.TabIndex = 0
         '
         'lblReporte
@@ -136,7 +137,7 @@ Partial Class frmReporte
         Me.lblTotalDia.AutoSize = True
         Me.lblTotalDia.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTotalDia.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
-        Me.lblTotalDia.Location = New System.Drawing.Point(54, 444)
+        Me.lblTotalDia.Location = New System.Drawing.Point(230, 444)
         Me.lblTotalDia.Name = "lblTotalDia"
         Me.lblTotalDia.Size = New System.Drawing.Size(118, 19)
         Me.lblTotalDia.TabIndex = 38
@@ -147,7 +148,7 @@ Partial Class frmReporte
         Me.lblTotalQuincena.AutoSize = True
         Me.lblTotalQuincena.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTotalQuincena.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
-        Me.lblTotalQuincena.Location = New System.Drawing.Point(374, 444)
+        Me.lblTotalQuincena.Location = New System.Drawing.Point(469, 444)
         Me.lblTotalQuincena.Name = "lblTotalQuincena"
         Me.lblTotalQuincena.Size = New System.Drawing.Size(161, 19)
         Me.lblTotalQuincena.TabIndex = 39
@@ -164,11 +165,33 @@ Partial Class frmReporte
         Me.lblSinRegistros.Text = "No se encontraron registros"
         Me.lblSinRegistros.Visible = False
         '
+        'btnCerrar
+        '
+        Me.btnCerrar.BackColor = System.Drawing.SystemColors.Control
+        Me.btnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btnCerrar.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.btnCerrar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
+        Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCerrar.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.btnCerrar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
+        Me.btnCerrar.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.back_1_
+        Me.btnCerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnCerrar.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.btnCerrar.Location = New System.Drawing.Point(58, 434)
+        Me.btnCerrar.Name = "btnCerrar"
+        Me.btnCerrar.Size = New System.Drawing.Size(74, 29)
+        Me.btnCerrar.TabIndex = 47
+        Me.btnCerrar.Text = "Volver"
+        Me.btnCerrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnCerrar.UseVisualStyleBackColor = False
+        '
         'frmReporte
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.CancelButton = Me.btnCerrar
         Me.ClientSize = New System.Drawing.Size(1284, 500)
+        Me.Controls.Add(Me.btnCerrar)
         Me.Controls.Add(Me.lblSinRegistros)
         Me.Controls.Add(Me.lblTotalQuincena)
         Me.Controls.Add(Me.lblTotalDia)
@@ -196,4 +219,5 @@ Partial Class frmReporte
     Friend WithEvents lblTotalDia As System.Windows.Forms.Label
     Friend WithEvents lblTotalQuincena As System.Windows.Forms.Label
     Friend WithEvents lblSinRegistros As System.Windows.Forms.Label
+    Friend WithEvents btnCerrar As System.Windows.Forms.Button
 End Class

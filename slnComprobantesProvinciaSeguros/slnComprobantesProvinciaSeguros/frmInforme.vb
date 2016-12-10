@@ -29,4 +29,8 @@ Public Class frmInforme
         MsgBox("El pago realizado a Provincia Seguros fue informado correctamente", MsgBoxStyle.Information, "OK")
         Me.frmInforme_Load(sender, e)
     End Sub
+
+    Private Sub btnCerrar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCerrar.Click
+        Me.Close()
+    End Sub
 End Class

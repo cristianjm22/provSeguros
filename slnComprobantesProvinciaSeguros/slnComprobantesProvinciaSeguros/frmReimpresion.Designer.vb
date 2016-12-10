@@ -35,6 +35,7 @@ Partial Class frmReimpresion
         Me.lblSinRegistros = New System.Windows.Forms.Label()
         Me.btnImprimir = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.btnCerrar = New System.Windows.Forms.Button()
         CType(Me.dgvReimpresion, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -111,7 +112,7 @@ Partial Class frmReimpresion
         Me.ShapeContainer1.Margin = New System.Windows.Forms.Padding(0)
         Me.ShapeContainer1.Name = "ShapeContainer1"
         Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape2, Me.RectangleShape1})
-        Me.ShapeContainer1.Size = New System.Drawing.Size(1284, 500)
+        Me.ShapeContainer1.Size = New System.Drawing.Size(1284, 489)
         Me.ShapeContainer1.TabIndex = 3
         Me.ShapeContainer1.TabStop = False
         '
@@ -175,11 +176,33 @@ Partial Class frmReimpresion
         Me.PictureBox1.TabIndex = 30
         Me.PictureBox1.TabStop = False
         '
+        'btnCerrar
+        '
+        Me.btnCerrar.BackColor = System.Drawing.SystemColors.Control
+        Me.btnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btnCerrar.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.btnCerrar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
+        Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCerrar.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.btnCerrar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
+        Me.btnCerrar.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.back_1_
+        Me.btnCerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnCerrar.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.btnCerrar.Location = New System.Drawing.Point(65, 425)
+        Me.btnCerrar.Name = "btnCerrar"
+        Me.btnCerrar.Size = New System.Drawing.Size(74, 29)
+        Me.btnCerrar.TabIndex = 47
+        Me.btnCerrar.Text = "Volver"
+        Me.btnCerrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnCerrar.UseVisualStyleBackColor = False
+        '
         'frmReimpresion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1284, 500)
+        Me.CancelButton = Me.btnCerrar
+        Me.ClientSize = New System.Drawing.Size(1284, 489)
+        Me.Controls.Add(Me.btnCerrar)
         Me.Controls.Add(Me.lblSinRegistros)
         Me.Controls.Add(Me.btnImprimir)
         Me.Controls.Add(Me.PictureBox1)
@@ -210,4 +233,5 @@ Partial Class frmReimpresion
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents btnImprimir As System.Windows.Forms.Button
     Friend WithEvents lblSinRegistros As System.Windows.Forms.Label
+    Friend WithEvents btnCerrar As System.Windows.Forms.Button
 End Class

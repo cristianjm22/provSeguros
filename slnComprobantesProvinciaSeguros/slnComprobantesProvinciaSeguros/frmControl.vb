@@ -52,7 +52,7 @@ Public Class frmControl
             dtpFechaVencimiento.Text = Date.ParseExact(fechaVtoString, "ddMMyy", CultureInfo.InvariantCulture)
         End If
 
-        txtMoneda.Text = ComprobantesAct.getMonedaByCode(entrada.Substring(3, 1))
+        txtMoneda.Text = ComprobantesAct.getMonedaById(entrada.Substring(3, 1))
 
         txtImporte.Text = entrada.Substring(22, 9)
 
@@ -80,8 +80,7 @@ Public Class frmControl
 
     End Sub
 
-    Private Sub frmControl_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        ComprobantesDA.ActualizarEstadoPagoFuturo()
+    Public Sub VerificarPermisos()
         If ComprobantesAct.AccesoMenu(Usuario, "PERMISOS") Then
             btnPermisos.Show()
         Else
@@ -93,6 +92,11 @@ Public Class frmControl
         Else
             btnModificarPagos.Hide()
         End If
+    End Sub
+
+    Private Sub frmControl_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        ComprobantesDA.ActualizarEstadoPagoFuturo()
+        VerificarPermisos()
     End Sub
 
     Private Sub btnGuardar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnGuardar.Click
@@ -110,19 +114,16 @@ Public Class frmControl
                 MsgBox("Este pago ya ha sido realizado " + cantPagos.ToString + " vez/veces." + vbCrLf + "El mismo será marcado como " + repeticion, MsgBoxStyle.Information, "Informacion")
             End If
 
-            If (txtMoneda.Text = "PESOS") Then
-                tipomoneda = "1"
-            Else
-                tipomoneda = "2"
-            End If
+            tipomoneda = ComprobantesAct.getIdMonedaByDescription(txtMoneda.Text)
 
+            Dim codigoMoneda = ComprobantesAct.getCodMonedaByDescription(txtMoneda.Text)
             idComprobante = ComprobantesDA.InsertarDetalleComprobante(txtEntrada.Text, txtRM.Text, txtPoliza.Text, txtEndoso.Text, txtNroCuota.Text, dtpFechaVencimiento.Text, tipomoneda, Convert.ToDecimal(txtImporte.Text), txtObservaciones.Text, Usuario, repeticion)
 
             If txtDeuda.Text <> String.Empty Then
                 ComprobantesDA.InsertDeuda(idComprobante, txtPoliza.Text, txtNroCuota.Text, txtDeuda.Text)
             End If
             If MsgBox("El pago ha sido registrado correctamente." + vbCrLf + "¿Desea imprimir el comprobante?", MsgBoxStyle.YesNo, "Pago Registrado") = MsgBoxResult.Yes Then
-                ComprobantesAct.PrintTicket(txtPoliza.Text, txtNroCuota.Text, txtMoneda.Text, txtImporte.Text, idComprobante, txtRM.Text)
+                ComprobantesAct.PrintTicket(txtPoliza.Text, txtNroCuota.Text, codigoMoneda, txtImporte.Text, idComprobante, txtRM.Text)
             End If
             Me.btnLimpiar_Click(sender, e)
         Else
@@ -148,6 +149,10 @@ Public Class frmControl
                 DesgloseCodigoComprobante(txtEntrada.Text)
                 txtObservaciones.Enabled = True
                 txtDeuda.Enabled = True
+                Dim dt As DataTable = DeudasDA.obtenerDeudas(txtPoliza.Text.ToString)
+                If dt.Rows.Count > 0 Then
+                    MsgBox("Tenga en cuenta que esta poliza posee deudas. (ver menu Deudas)", MsgBoxStyle.Exclamation, "Aviso")
+                End If
             Else
                 MsgBox("El codigo ingresado no es correcto", MsgBoxStyle.Exclamation, "Aviso")
             End If
@@ -196,5 +201,10 @@ Public Class frmControl
 
     Private Sub btnModificarPagos_Click(sender As System.Object, e As System.EventArgs) Handles btnModificarPagos.Click
         frmEliminarModPagos.Show()
+    End Sub
+
+    Private Sub btnCerrar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCerrar.Click
+        frmLogin.Show()
+        Me.Close()
     End Sub
 End Class

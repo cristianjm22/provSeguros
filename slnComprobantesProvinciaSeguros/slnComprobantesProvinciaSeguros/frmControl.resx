@@ -138,7 +138,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtEntrada.ZOrder" xml:space="preserve">
-    <value>28</value>
+    <value>29</value>
   </data>
   <data name="lblEntrada.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -168,7 +168,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblEntrada.ZOrder" xml:space="preserve">
-    <value>27</value>
+    <value>28</value>
   </data>
   <data name="txtRM.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -192,7 +192,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtRM.ZOrder" xml:space="preserve">
-    <value>26</value>
+    <value>27</value>
   </data>
   <data name="lblRM.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -222,7 +222,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblRM.ZOrder" xml:space="preserve">
-    <value>25</value>
+    <value>26</value>
   </data>
   <data name="lblPoliza.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -252,7 +252,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblPoliza.ZOrder" xml:space="preserve">
-    <value>23</value>
+    <value>24</value>
   </data>
   <data name="txtPoliza.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -276,7 +276,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtPoliza.ZOrder" xml:space="preserve">
-    <value>24</value>
+    <value>25</value>
   </data>
   <data name="Label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -306,7 +306,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Label1.ZOrder" xml:space="preserve">
-    <value>21</value>
+    <value>22</value>
   </data>
   <data name="txtEndoso.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -330,7 +330,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtEndoso.ZOrder" xml:space="preserve">
-    <value>22</value>
+    <value>23</value>
   </data>
   <data name="lblNroCuota.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -360,7 +360,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblNroCuota.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>20</value>
   </data>
   <data name="txtNroCuota.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -384,7 +384,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtNroCuota.ZOrder" xml:space="preserve">
-    <value>20</value>
+    <value>21</value>
   </data>
   <data name="lblFechaVto.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -414,7 +414,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblFechaVto.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>19</value>
   </data>
   <data name="lblMoneda.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -444,7 +444,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblMoneda.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>17</value>
   </data>
   <data name="txtMoneda.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -468,7 +468,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtMoneda.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>18</value>
   </data>
   <data name="lblImporte.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -498,7 +498,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblImporte.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>15</value>
   </data>
   <data name="txtImporte.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -522,7 +522,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtImporte.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>16</value>
   </data>
   <data name="Label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -552,7 +552,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Label2.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>13</value>
   </data>
   <data name="txtObservaciones.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -576,7 +576,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtObservaciones.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>14</value>
   </data>
   <data name="dtpFechaVencimiento.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -600,7 +600,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;dtpFechaVencimiento.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="Label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -630,7 +630,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Label3.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="RectangleShape1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
@@ -698,7 +698,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ShapeContainer1.ZOrder" xml:space="preserve">
-    <value>29</value>
+    <value>30</value>
   </data>
   <data name="btnPermisos.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -728,7 +728,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnPermisos.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="btnModificarPagos.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -758,7 +758,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnModificarPagos.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="BtnReimpresion.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -788,7 +788,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;BtnReimpresion.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="btnReporte.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -818,7 +818,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnReporte.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="Label4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -848,7 +848,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Label4.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="txtDeuda.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -875,7 +875,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtDeuda.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="btnDeudas.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -905,7 +905,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnDeudas.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="btnLimpiar.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Center</value>
@@ -920,7 +920,7 @@
     <value>MiddleLeft</value>
   </data>
   <data name="btnLimpiar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>195, 460</value>
+    <value>196, 460</value>
   </data>
   <data name="btnLimpiar.Size" type="System.Drawing.Size, System.Drawing">
     <value>123, 29</value>
@@ -944,7 +944,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnLimpiar.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="btnGuardar.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Center</value>
@@ -986,7 +986,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnGuardar.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="btnInformarPagos.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -1016,6 +1016,48 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnInformarPagos.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btnCerrar.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="btnCerrar.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnCerrar.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 9pt</value>
+  </data>
+  <data name="btnCerrar.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="btnCerrar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnCerrar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>46, 460</value>
+  </data>
+  <data name="btnCerrar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 29</value>
+  </data>
+  <data name="btnCerrar.TabIndex" type="System.Int32, mscorlib">
+    <value>45</value>
+  </data>
+  <data name="btnCerrar.Text" xml:space="preserve">
+    <value>Salir</value>
+  </data>
+  <data name="btnCerrar.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;btnCerrar.Name" xml:space="preserve">
+    <value>btnCerrar</value>
+  </data>
+  <data name="&gt;&gt;btnCerrar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnCerrar.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnCerrar.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

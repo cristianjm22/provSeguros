@@ -9,10 +9,11 @@ Public Class frmPermisos
         Try
             If bEdit Then
                 'preguntar si se desea guardar   
-                If (MsgBox("Guardar cambios ?", MsgBoxStyle.YesNo, "Guardar")) = MsgBoxResult.Yes Then
+                If (MsgBox("¿Guardar cambios?", MsgBoxStyle.YesNo, "Guardar")) = MsgBoxResult.Yes Then
                     Actualizar(False)
                 End If
             End If
+            frmControl.VerificarPermisos()
         Catch ex As Exception
             MsgBox(ex.Message.ToString())
         End Try
@@ -29,7 +30,8 @@ Public Class frmPermisos
             MsgBox(ex.Message.ToString())
         End Try
         ' propiedades del datagrid   
-          End Sub
+    End Sub
+
     Private Sub cargar_registros( _
     ByVal sql As String, _
     ByVal dv As DataGridView)
@@ -92,13 +94,13 @@ Public Class frmPermisos
     End Sub
 
     Private Sub btnNuevo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnNuevo.Click
-
         Try
-            'bs.AddNew()
-            frmAltaModPermisos.ShowDialog()
+            Cargarusuario()
+            frmAltaModPermisos.txtMenu.Text = Nothing
+            frmAltaModPermisos.txtMenuDesc.Text = Nothing
+            frmAltaModPermisos.chbHabilitado.Checked = False
             modificarPermisos = False
-
-
+            frmAltaModPermisos.ShowDialog()
 
         Catch ex As Exception
             MsgBox(ex.Message.ToString())
@@ -152,7 +154,7 @@ Public Class frmPermisos
     End Sub
 
 
-    Private Sub cargarGrilla()
+    Public Sub cargarGrilla()
 
         Dim dt As DataTable = ComprobantesDA.obtenerPermisos()
 
@@ -172,8 +174,31 @@ Public Class frmPermisos
 
     End Sub
 
+    Private Sub Cargarusuario()
+
+        Dim Query As String
+        Dim Resultado As String
+
+        Resultado = String.Empty
+
+        Dim dt As DataTable
+
+        Query = "SELECT  [USUARIO] FROM [dbPoyCPS].[dbo].[USUARIOS]"
+
+        dt = ComprobantesDA.EjecutaQuery(Query)
+
+        frmAltaModPermisos.cboUsuario.DataSource = dt
+
+        frmAltaModPermisos.cboUsuario.DisplayMember = "USUARIO"
+        frmAltaModPermisos.cboUsuario.ValueMember = "USUARIO"
+
+    End Sub
+
     Private Sub PermisosDGV_CellContentClick(sender As System.Object, e As System.Windows.Forms.DataGridViewCellEventArgs) Handles PermisosDGV.CellContentClick
+
         If e.ColumnIndex = 5 Then
+            Cargarusuario()
+            modificarPermisos = True
             If PermisosDGV.Rows(PermisosDGV.CurrentRow.Index).Cells("USUARIO").Value IsNot Nothing Then
 
                 indexPermisos = PermisosDGV.CurrentRow.Index
@@ -184,8 +209,6 @@ Public Class frmPermisos
                 frmAltaModPermisos.txtMenuDesc.Text = PermisosDGV.Rows(indexPermisos).Cells("MENU_DESCRIPCION").Value.ToString()
                 frmAltaModPermisos.chbHabilitado.Checked = PermisosDGV.Rows(indexPermisos).Cells("HABILITADO").Value.ToString()
 
-                modificarPermisos = True
-
                 frmAltaModPermisos.ShowDialog()
 
                 cargarGrilla()
@@ -195,6 +218,7 @@ Public Class frmPermisos
 
 
         If e.ColumnIndex = 6 Then
+            modificarPermisos = False
             If PermisosDGV.Rows(PermisosDGV.CurrentRow.Index).Cells("USUARIO").Value IsNot Nothing Then
 
 
@@ -207,5 +231,9 @@ Public Class frmPermisos
 
             End If
         End If
+    End Sub
+
+    Private Sub btnCerrar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCerrar.Click
+        Me.Close()
     End Sub
 End Class

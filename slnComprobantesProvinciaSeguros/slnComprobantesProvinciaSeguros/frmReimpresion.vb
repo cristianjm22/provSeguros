@@ -49,15 +49,15 @@ Public Class frmReimpresion
             Dim ramo = row.Item(3)
             Dim poliza = row.Item(4)
             Dim cuota = row.Item(6)
-            Dim moneda = ComprobantesAct.getCodMonedaByDescription(row.Item(8).ToString)
+            Dim moneda = ComprobantesAct.getCodMonedaByDescription(row.Item(8).Value)
             Dim importe = row.Item(9)
-            ComprobantesAct.PrintTicket(poliza.Value, cuota.Value, moneda.Value, importe.Value, comprobante.Value, ramo.Value)
+            ComprobantesAct.PrintTicket(poliza.Value, cuota.Value, moneda, importe.Value, comprobante.Value, ramo.Value)
         Else
             MsgBox("Debe seleccionar un registro para poder imprimir", MsgBoxStyle.Exclamation, "Aviso")
         End If
     End Sub
 
-    Private Sub btnVolver_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+    Private Sub btnCerrar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCerrar.Click
         Me.Close()
     End Sub
 End Class

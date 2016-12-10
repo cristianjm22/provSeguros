@@ -42,7 +42,10 @@ Partial Class frmDeudas
         Me.ShapeContainer1 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
         Me.RectangleShape3 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.lblSinRegistros = New System.Windows.Forms.Label()
+        Me.btnCerrar = New System.Windows.Forms.Button()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         CType(Me.dgvDeudas, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lblDeudas
@@ -83,9 +86,10 @@ Partial Class frmDeudas
         Me.dgvDeudas.MultiSelect = False
         Me.dgvDeudas.Name = "dgvDeudas"
         Me.dgvDeudas.ReadOnly = True
+        Me.dgvDeudas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvDeudas.ShowEditingIcon = False
         Me.dgvDeudas.ShowRowErrors = False
-        Me.dgvDeudas.Size = New System.Drawing.Size(874, 212)
+        Me.dgvDeudas.Size = New System.Drawing.Size(804, 142)
         Me.dgvDeudas.TabIndex = 33
         '
         'ID_DEUDA
@@ -139,8 +143,7 @@ Partial Class frmDeudas
         Me.MODIFICAR.Name = "MODIFICAR"
         Me.MODIFICAR.ReadOnly = True
         Me.MODIFICAR.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.MODIFICAR.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        Me.MODIFICAR.Width = 89
+        Me.MODIFICAR.Width = 70
         '
         'ELIMINAR
         '
@@ -188,7 +191,7 @@ Partial Class frmDeudas
         Me.ShapeContainer1.Margin = New System.Windows.Forms.Padding(0)
         Me.ShapeContainer1.Name = "ShapeContainer1"
         Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape3, Me.RectangleShape1})
-        Me.ShapeContainer1.Size = New System.Drawing.Size(903, 478)
+        Me.ShapeContainer1.Size = New System.Drawing.Size(903, 456)
         Me.ShapeContainer1.TabIndex = 41
         Me.ShapeContainer1.TabStop = False
         '
@@ -213,11 +216,44 @@ Partial Class frmDeudas
         Me.lblSinRegistros.Text = "No se encontraron registros"
         Me.lblSinRegistros.Visible = False
         '
+        'btnCerrar
+        '
+        Me.btnCerrar.BackColor = System.Drawing.SystemColors.Control
+        Me.btnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btnCerrar.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.btnCerrar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
+        Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCerrar.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.btnCerrar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
+        Me.btnCerrar.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.back_1_
+        Me.btnCerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnCerrar.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.btnCerrar.Location = New System.Drawing.Point(56, 403)
+        Me.btnCerrar.Name = "btnCerrar"
+        Me.btnCerrar.Size = New System.Drawing.Size(74, 29)
+        Me.btnCerrar.TabIndex = 46
+        Me.btnCerrar.Text = "Volver"
+        Me.btnCerrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnCerrar.UseVisualStyleBackColor = False
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackgroundImage = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.appbar_filter
+        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.PictureBox1.Location = New System.Drawing.Point(200, 189)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(27, 22)
+        Me.PictureBox1.TabIndex = 47
+        Me.PictureBox1.TabStop = False
+        '
         'frmDeudas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(903, 478)
+        Me.CancelButton = Me.btnCerrar
+        Me.ClientSize = New System.Drawing.Size(903, 456)
+        Me.Controls.Add(Me.PictureBox1)
+        Me.Controls.Add(Me.btnCerrar)
         Me.Controls.Add(Me.lblSinRegistros)
         Me.Controls.Add(Me.lblDeudas)
         Me.Controls.Add(Me.dgvDeudas)
@@ -231,6 +267,7 @@ Partial Class frmDeudas
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Deudas"
         CType(Me.dgvDeudas, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -243,6 +280,7 @@ Partial Class frmDeudas
     Friend WithEvents ShapeContainer1 As Microsoft.VisualBasic.PowerPacks.ShapeContainer
     Friend WithEvents RectangleShape3 As Microsoft.VisualBasic.PowerPacks.RectangleShape
     Friend WithEvents lblSinRegistros As System.Windows.Forms.Label
+    Friend WithEvents btnCerrar As System.Windows.Forms.Button
     Friend WithEvents ID_DEUDA As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents IMPORTE_DEUDA As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents POLIZA As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -251,4 +289,5 @@ Partial Class frmDeudas
     Friend WithEvents ID_COMPROBANTE As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents MODIFICAR As System.Windows.Forms.DataGridViewImageColumn
     Friend WithEvents ELIMINAR As System.Windows.Forms.DataGridViewImageColumn
+    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
 End Class

@@ -55,6 +55,7 @@ Partial Class frmControl
         Me.btnLimpiar = New System.Windows.Forms.Button()
         Me.btnGuardar = New System.Windows.Forms.Button()
         Me.btnInformarPagos = New System.Windows.Forms.Button()
+        Me.btnCerrar = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'txtEntrada
@@ -268,11 +269,24 @@ Partial Class frmControl
         Me.btnInformarPagos.TabStop = False
         Me.btnInformarPagos.UseVisualStyleBackColor = False
         '
+        'btnCerrar
+        '
+        Me.btnCerrar.BackColor = System.Drawing.SystemColors.Control
+        resources.ApplyResources(Me.btnCerrar, "btnCerrar")
+        Me.btnCerrar.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.btnCerrar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
+        Me.btnCerrar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
+        Me.btnCerrar.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.back_1_
+        Me.btnCerrar.Name = "btnCerrar"
+        Me.btnCerrar.UseVisualStyleBackColor = False
+        '
         'frmControl
         '
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
+        Me.CancelButton = Me.btnCerrar
+        Me.Controls.Add(Me.btnCerrar)
         Me.Controls.Add(Me.btnInformarPagos)
         Me.Controls.Add(Me.btnDeudas)
         Me.Controls.Add(Me.Label4)
@@ -342,5 +356,6 @@ Partial Class frmControl
     Friend WithEvents txtDeuda As System.Windows.Forms.TextBox
     Friend WithEvents btnDeudas As System.Windows.Forms.Button
     Friend WithEvents btnInformarPagos As System.Windows.Forms.Button
+    Friend WithEvents btnCerrar As System.Windows.Forms.Button
 
 End Class

@@ -84,7 +84,7 @@ Partial Class frmModDeuda
         Me.btnCancelar.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.cancelar
         Me.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnCancelar.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.btnCancelar.Location = New System.Drawing.Point(122, 275)
+        Me.btnCancelar.Location = New System.Drawing.Point(75, 258)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(85, 29)
         Me.btnCancelar.TabIndex = 42
@@ -104,7 +104,7 @@ Partial Class frmModDeuda
         Me.btnAceptar.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.aceptar
         Me.btnAceptar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnAceptar.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.btnAceptar.Location = New System.Drawing.Point(213, 275)
+        Me.btnAceptar.Location = New System.Drawing.Point(166, 258)
         Me.btnAceptar.Name = "btnAceptar"
         Me.btnAceptar.Size = New System.Drawing.Size(84, 29)
         Me.btnAceptar.TabIndex = 41
@@ -175,6 +175,7 @@ Partial Class frmModDeuda
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "frmModDeuda"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Modificacion Deudas"
         Me.ResumeLayout(False)
         Me.PerformLayout()

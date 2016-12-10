@@ -28,7 +28,7 @@ Public Class frmDeudas
 
     Private Sub dgvDeudas_CellClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvDeudas.CellClick
         If e.ColumnIndex = 7 Then
-            If dgvDeudas.Rows(e.RowIndex).Cells(0).Value.ToString() <> Nothing Then
+            If e.RowIndex >= 0 AndAlso dgvDeudas.Rows(e.RowIndex).Cells(0).Value.ToString() <> Nothing Then
 
 
                 If MessageBox.Show("¿Desea eliminar este registro?" _
@@ -42,7 +42,7 @@ Public Class frmDeudas
         End If
 
         If e.ColumnIndex = 6 Then
-            If dgvDeudas.Rows(dgvDeudas.CurrentRow.Index).Cells("ID_DEUDA").Value IsNot Nothing Then
+            If e.RowIndex >= 0 AndAlso dgvDeudas.Rows(dgvDeudas.CurrentRow.Index).Cells("ID_DEUDA").Value IsNot Nothing Then
 
                 indexdgvdeuda = dgvDeudas.CurrentRow.Index
 
@@ -66,5 +66,9 @@ Public Class frmDeudas
 
     Private Sub txtPoliza_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtPoliza.TextChanged
         cargarGrilla(txtPoliza.Text)
+    End Sub
+
+    Private Sub btnCerrar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCerrar.Click
+        Me.Close()
     End Sub
 End Class

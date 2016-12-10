@@ -64,8 +64,6 @@ Public Class ComprobantesAct
         FechaPago = Date.Now
         NroComprobante = pNroComprobante
 
-        pMoneda = getMonedaByCode(pMoneda)
-
         Importe = pMoneda + pImporte
         Poliza = pPoliza
         Cuota = pCuota
@@ -77,16 +75,32 @@ Public Class ComprobantesAct
     ''' Autor:Walter Morales
     ''' Devuelve el valor de la moneda
     ''' </summary>
-    ''' <param name="codeMoneda"></param>
+    ''' <param name="idMoneda"></param>
     ''' <remarks></remarks>
-    Public Shared Function getMonedaByCode(ByVal codeMoneda As String)
+    Public Shared Function getMonedaById(ByVal idMoneda As String)
         Dim moneda As String
-        If (codeMoneda = "1") Then
+        If (idMoneda = "1") Then
             moneda = "PESOS"
         Else
             moneda = "DOLAR"
         End If
         Return moneda
+    End Function
+
+    ''' <summary>
+    ''' Autor:Walter Morales
+    ''' Devuelve el id de la moneda
+    ''' </summary>
+    ''' <param name="moneda"></param>
+    ''' <remarks></remarks>
+    Public Shared Function getIdMonedaByDescription(ByVal moneda As String)
+        Dim codMoneda As String
+        If (moneda = "PESOS") Then
+            codMoneda = "1"
+        Else
+            codMoneda = "2"
+        End If
+        Return codMoneda
     End Function
 
     ''' <summary>
@@ -98,9 +112,9 @@ Public Class ComprobantesAct
     Public Shared Function getCodMonedaByDescription(ByVal moneda As String)
         Dim codMoneda As String
         If (moneda = "PESOS") Then
-            codMoneda = "1"
+            codMoneda = "$"
         Else
-            codMoneda = "2"
+            codMoneda = "US$"
         End If
         Return codMoneda
     End Function
@@ -128,97 +142,6 @@ Public Class ComprobantesAct
 
         e.HasMorePages = False
     End Sub
-
-
-    ''' <summary>
-    ''' Autor: Cristian Morales
-    ''' Exporta un grid a un excel
-    ''' </summary>
-    ''' <param name="ConsultaDGW"></param>
-    ''' <returns></returns>
-    ''' <remarks></remarks>
-    Public Shared Function GridAExcel(ByVal ConsultaDGW As DataGridView) As Boolean
-
-
-        'Creamos las variables
-        Dim exApp As New Microsoft.Office.Interop.Excel.Application
-        Dim exLibro As Microsoft.Office.Interop.Excel.Workbook
-        Dim exHoja As Microsoft.Office.Interop.Excel.Worksheet
-
-        Try
-            'Añadimos el Libro al programa, y la hoja al libro
-            exLibro = exApp.Workbooks.Add
-            exHoja = exLibro.Worksheets.Add()
-
-            ' ¿Cuantas columnas y cuantas filas?
-            Dim NCol As Integer = ConsultaDGW.ColumnCount
-            Dim NRow As Integer = ConsultaDGW.RowCount
-            '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-            Dim colu, row As Integer
-            Dim rawData(ConsultaDGW.Rows.Count, ConsultaDGW.Columns.Count) As Object
-
-            'Copy the column names to the first row of the object array
-            For colu = 0 To ConsultaDGW.Columns.Count - 1
-                rawData(0, colu) = ConsultaDGW.Columns(colu).HeaderText
-            Next
-            ' Inicio Barra de Progreso
-            ProcBar.Visible = True
-            ProcBar.Enabled = True
-            ProcBar.Show()
-            ProcBar.ProgressBar1.Maximum = NRow
-            ProcBar.Update()
-
-            For row = 0 To ConsultaDGW.Rows.Count - 1
-                ProcBar.ProgressBar1.Value = row
-                ProcBar.Top_Lbl.Text = "Total: " & row & "/" & NRow
-                ProcBar.Update()
-                For colu = 0 To ConsultaDGW.Columns.Count - 1
-                    rawData(row + 1, colu) = System.Convert.ToString(ConsultaDGW.Rows(row).Cells(colu).Value)
-                Next
-            Next
-
-            ProcBar.Visible = False
-
-            ' Calculate the final column letter
-            Dim finalColLetter As String = String.Empty
-            Dim colCharset As String = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-            Dim colCharsetLen As Integer = colCharset.Length
-
-            If ConsultaDGW.Columns.Count > colCharsetLen Then
-                finalColLetter = colCharset.Substring( _
-                 (ConsultaDGW.Columns.Count - 1) \ colCharsetLen - 1, 1)
-            End If
-
-            finalColLetter += colCharset.Substring( _
-              (ConsultaDGW.Columns.Count - 1) Mod colCharsetLen, 1)
-
-            ' Fast data export to Excel
-            Dim excelRange As String = String.Format("A1:{0}{1}", finalColLetter, ConsultaDGW.Rows.Count)
-            exHoja.Range(excelRange, Type.Missing).Value2 = rawData
-            '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-            'Titulo en negrita, Alineado al centro y que el tamaño de la columna se ajuste al texto
-            exHoja.Rows.Item(1).Font.Bold = 1
-            exHoja.Rows.Item(1).HorizontalAlignment = 3
-            exHoja.Columns.AutoFit()
-
-
-            'Aplicación visible
-            exApp.Application.Visible = True
-
-            exHoja = Nothing
-            exLibro = Nothing
-            exApp = Nothing
-
-        Catch ex As Exception
-            MsgBox(ex.Message, MsgBoxStyle.Critical, "Error al exportar a Excel")
-            Return False
-        End Try
-
-        Return True
-
-
-    End Function
-
 
     ''' <summary>
     ''' Autor: Cristian Morales

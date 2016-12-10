@@ -36,13 +36,14 @@ Partial Class frmPermisos
         Me.HABILITADO = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.MODIFICAR = New System.Windows.Forms.DataGridViewImageColumn()
         Me.ELIMINAR = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.btnCerrar = New System.Windows.Forms.Button()
         CType(Me.PermisosDGV, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'RectangleShape1
         '
         Me.RectangleShape1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.RectangleShape1.BorderColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
         Me.RectangleShape1.FillColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(60, Byte), Integer))
         Me.RectangleShape1.FillGradientColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
@@ -51,7 +52,7 @@ Partial Class frmPermisos
         Me.RectangleShape1.Location = New System.Drawing.Point(-1, 0)
         Me.RectangleShape1.Name = "RectangleShape1"
         Me.RectangleShape1.SelectionColor = System.Drawing.Color.Transparent
-        Me.RectangleShape1.Size = New System.Drawing.Size(1185, 94)
+        Me.RectangleShape1.Size = New System.Drawing.Size(613, 94)
         '
         'ShapeContainer1
         '
@@ -59,7 +60,7 @@ Partial Class frmPermisos
         Me.ShapeContainer1.Margin = New System.Windows.Forms.Padding(0)
         Me.ShapeContainer1.Name = "ShapeContainer1"
         Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape3, Me.RectangleShape2, Me.RectangleShape1})
-        Me.ShapeContainer1.Size = New System.Drawing.Size(834, 418)
+        Me.ShapeContainer1.Size = New System.Drawing.Size(607, 404)
         Me.ShapeContainer1.TabIndex = 41
         Me.ShapeContainer1.TabStop = False
         '
@@ -68,7 +69,7 @@ Partial Class frmPermisos
         Me.RectangleShape3.BackgroundImage = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.Sin
         Me.RectangleShape3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.RectangleShape3.BorderColor = System.Drawing.Color.Transparent
-        Me.RectangleShape3.Location = New System.Drawing.Point(709, -9)
+        Me.RectangleShape3.Location = New System.Drawing.Point(400, -2)
         Me.RectangleShape3.Name = "RectangleShape3"
         Me.RectangleShape3.SelectionColor = System.Drawing.Color.Transparent
         Me.RectangleShape3.Size = New System.Drawing.Size(176, 103)
@@ -95,6 +96,9 @@ Partial Class frmPermisos
         '
         'PermisosDGV
         '
+        Me.PermisosDGV.AllowUserToAddRows = False
+        Me.PermisosDGV.AllowUserToDeleteRows = False
+        Me.PermisosDGV.AllowUserToResizeColumns = False
         DataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke
         Me.PermisosDGV.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.PermisosDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
@@ -114,10 +118,16 @@ Partial Class frmPermisos
         Me.PermisosDGV.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.PermisosDGV.ColumnHeadersHeight = 30
         Me.PermisosDGV.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID_PERMISO, Me.USUARIO, Me.NOMBRE_MENU, Me.MENU_DESCRIPCION, Me.HABILITADO, Me.MODIFICAR, Me.ELIMINAR})
+        Me.PermisosDGV.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
         Me.PermisosDGV.EnableHeadersVisualStyles = False
         Me.PermisosDGV.Location = New System.Drawing.Point(53, 182)
+        Me.PermisosDGV.MultiSelect = False
         Me.PermisosDGV.Name = "PermisosDGV"
-        Me.PermisosDGV.Size = New System.Drawing.Size(711, 131)
+        Me.PermisosDGV.ReadOnly = True
+        Me.PermisosDGV.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
+        Me.PermisosDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.PermisosDGV.ShowEditingIcon = False
+        Me.PermisosDGV.Size = New System.Drawing.Size(529, 131)
         Me.PermisosDGV.TabIndex = 0
         '
         'btnNuevo
@@ -141,6 +151,7 @@ Partial Class frmPermisos
         '
         'ID_PERMISO
         '
+        Me.ID_PERMISO.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
         Me.ID_PERMISO.HeaderText = "ID_PERMISO"
         Me.ID_PERMISO.Name = "ID_PERMISO"
         Me.ID_PERMISO.ReadOnly = True
@@ -149,45 +160,81 @@ Partial Class frmPermisos
         '
         'USUARIO
         '
+        Me.USUARIO.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
         Me.USUARIO.HeaderText = "USUARIO"
         Me.USUARIO.Name = "USUARIO"
+        Me.USUARIO.ReadOnly = True
         Me.USUARIO.Width = 77
         '
         'NOMBRE_MENU
         '
+        Me.NOMBRE_MENU.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
         Me.NOMBRE_MENU.HeaderText = "NOMBRE_MENU"
         Me.NOMBRE_MENU.Name = "NOMBRE_MENU"
+        Me.NOMBRE_MENU.ReadOnly = True
         Me.NOMBRE_MENU.Width = 107
         '
         'MENU_DESCRIPCION
         '
+        Me.MENU_DESCRIPCION.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
         Me.MENU_DESCRIPCION.HeaderText = "DESCRIPCION"
         Me.MENU_DESCRIPCION.Name = "MENU_DESCRIPCION"
+        Me.MENU_DESCRIPCION.ReadOnly = True
         '
         'HABILITADO
         '
+        Me.HABILITADO.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
         Me.HABILITADO.HeaderText = "HABILITADO"
         Me.HABILITADO.Name = "HABILITADO"
+        Me.HABILITADO.ReadOnly = True
         Me.HABILITADO.Width = 73
         '
         'MODIFICAR
         '
+        Me.MODIFICAR.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
         Me.MODIFICAR.HeaderText = "MODIFICAR"
+        Me.MODIFICAR.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.pencil
         Me.MODIFICAR.Name = "MODIFICAR"
+        Me.MODIFICAR.ReadOnly = True
         Me.MODIFICAR.Width = 70
         '
         'ELIMINAR
         '
+        Me.ELIMINAR.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
         Me.ELIMINAR.HeaderText = "ELIMINAR"
+        Me.ELIMINAR.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.remove
         Me.ELIMINAR.Name = "ELIMINAR"
+        Me.ELIMINAR.ReadOnly = True
         Me.ELIMINAR.Width = 60
+        '
+        'btnCerrar
+        '
+        Me.btnCerrar.BackColor = System.Drawing.SystemColors.Control
+        Me.btnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btnCerrar.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.btnCerrar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
+        Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCerrar.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.btnCerrar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
+        Me.btnCerrar.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.back_1_
+        Me.btnCerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnCerrar.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.btnCerrar.Location = New System.Drawing.Point(53, 344)
+        Me.btnCerrar.Name = "btnCerrar"
+        Me.btnCerrar.Size = New System.Drawing.Size(74, 29)
+        Me.btnCerrar.TabIndex = 47
+        Me.btnCerrar.Text = "Volver"
+        Me.btnCerrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnCerrar.UseVisualStyleBackColor = False
         '
         'frmPermisos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
-        Me.ClientSize = New System.Drawing.Size(834, 418)
+        Me.CancelButton = Me.btnCerrar
+        Me.ClientSize = New System.Drawing.Size(607, 404)
+        Me.Controls.Add(Me.btnCerrar)
         Me.Controls.Add(Me.lblReporte)
         Me.Controls.Add(Me.btnNuevo)
         Me.Controls.Add(Me.PermisosDGV)
@@ -217,4 +264,5 @@ Partial Class frmPermisos
     Friend WithEvents HABILITADO As System.Windows.Forms.DataGridViewCheckBoxColumn
     Friend WithEvents MODIFICAR As System.Windows.Forms.DataGridViewImageColumn
     Friend WithEvents ELIMINAR As System.Windows.Forms.DataGridViewImageColumn
+    Friend WithEvents btnCerrar As System.Windows.Forms.Button
 End Class
