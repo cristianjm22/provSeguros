@@ -197,10 +197,9 @@ Public Class frmPermisos
     Private Sub PermisosDGV_CellContentClick(sender As System.Object, e As System.Windows.Forms.DataGridViewCellEventArgs) Handles PermisosDGV.CellContentClick
 
         If e.ColumnIndex = 5 Then
-            Cargarusuario()
-            modificarPermisos = True
-            If PermisosDGV.Rows(PermisosDGV.CurrentRow.Index).Cells("USUARIO").Value IsNot Nothing Then
-
+            If e.RowIndex >= 0 AndAlso PermisosDGV.Rows(PermisosDGV.CurrentRow.Index).Cells("USUARIO").Value IsNot Nothing Then
+                Cargarusuario()
+                modificarPermisos = True
                 indexPermisos = PermisosDGV.CurrentRow.Index
 
                 iDPermiso = PermisosDGV.Rows(indexPermisos).Cells("ID_PERMISO").Value.ToString()
@@ -218,9 +217,8 @@ Public Class frmPermisos
 
 
         If e.ColumnIndex = 6 Then
-            modificarPermisos = False
-            If PermisosDGV.Rows(PermisosDGV.CurrentRow.Index).Cells("USUARIO").Value IsNot Nothing Then
-
+            If e.RowIndex >= 0 AndAlso PermisosDGV.Rows(PermisosDGV.CurrentRow.Index).Cells("USUARIO").Value IsNot Nothing Then
+                modificarPermisos = False
 
                 If MessageBox.Show("¿Desea eliminar este registro?" _
  , "AVISO", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then

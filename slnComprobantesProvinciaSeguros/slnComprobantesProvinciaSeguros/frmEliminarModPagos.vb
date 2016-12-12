@@ -8,10 +8,10 @@
 
     Private Sub dgvReporte_CellClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvReporte.CellClick
         If e.ColumnIndex = 13 Then
-            If dgvReporte.Rows(e.RowIndex).Cells(0).Value.ToString() <> Nothing Then
+            If e.RowIndex >= 0 AndAlso dgvReporte.Rows(e.RowIndex).Cells(0).Value.ToString() <> Nothing Then
 
 
-                If MessageBox.Show("Desea eliminar este registro?" _
+                If MessageBox.Show("¿Desea eliminar este registro?" _
  , "AVISO", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
                     ComprobantesDA.deleteComprobantesPagos(Convert.ToInt32(dgvReporte.Rows(dgvReporte.CurrentRow.Index).Cells("ID_COMPROBANTE").Value), Usuario) ' Usuario
                     cargarGrillaReporte(cboEstado.SelectedValue, txtPoliza.Text)

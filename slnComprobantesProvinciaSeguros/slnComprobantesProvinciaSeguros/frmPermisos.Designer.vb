@@ -29,6 +29,7 @@ Partial Class frmPermisos
         Me.lblReporte = New System.Windows.Forms.Label()
         Me.PermisosDGV = New System.Windows.Forms.DataGridView()
         Me.btnNuevo = New System.Windows.Forms.Button()
+        Me.btnCerrar = New System.Windows.Forms.Button()
         Me.ID_PERMISO = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.USUARIO = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NOMBRE_MENU = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -36,7 +37,6 @@ Partial Class frmPermisos
         Me.HABILITADO = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.MODIFICAR = New System.Windows.Forms.DataGridViewImageColumn()
         Me.ELIMINAR = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.btnCerrar = New System.Windows.Forms.Button()
         CType(Me.PermisosDGV, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -149,6 +149,26 @@ Partial Class frmPermisos
         Me.btnNuevo.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnNuevo.UseVisualStyleBackColor = False
         '
+        'btnCerrar
+        '
+        Me.btnCerrar.BackColor = System.Drawing.SystemColors.Control
+        Me.btnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btnCerrar.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.btnCerrar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
+        Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCerrar.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.btnCerrar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
+        Me.btnCerrar.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.back_1_
+        Me.btnCerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnCerrar.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.btnCerrar.Location = New System.Drawing.Point(53, 344)
+        Me.btnCerrar.Name = "btnCerrar"
+        Me.btnCerrar.Size = New System.Drawing.Size(74, 29)
+        Me.btnCerrar.TabIndex = 47
+        Me.btnCerrar.Text = "Volver"
+        Me.btnCerrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnCerrar.UseVisualStyleBackColor = False
+        '
         'ID_PERMISO
         '
         Me.ID_PERMISO.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
@@ -207,26 +227,6 @@ Partial Class frmPermisos
         Me.ELIMINAR.ReadOnly = True
         Me.ELIMINAR.Width = 60
         '
-        'btnCerrar
-        '
-        Me.btnCerrar.BackColor = System.Drawing.SystemColors.Control
-        Me.btnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.btnCerrar.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btnCerrar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
-        Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCerrar.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnCerrar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
-        Me.btnCerrar.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.back_1_
-        Me.btnCerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnCerrar.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.btnCerrar.Location = New System.Drawing.Point(53, 344)
-        Me.btnCerrar.Name = "btnCerrar"
-        Me.btnCerrar.Size = New System.Drawing.Size(74, 29)
-        Me.btnCerrar.TabIndex = 47
-        Me.btnCerrar.Text = "Volver"
-        Me.btnCerrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnCerrar.UseVisualStyleBackColor = False
-        '
         'frmPermisos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -257,6 +257,7 @@ Partial Class frmPermisos
     Friend WithEvents PermisosDGV As System.Windows.Forms.DataGridView
     Friend WithEvents RectangleShape3 As Microsoft.VisualBasic.PowerPacks.RectangleShape
     Friend WithEvents btnNuevo As System.Windows.Forms.Button
+    Friend WithEvents btnCerrar As System.Windows.Forms.Button
     Friend WithEvents ID_PERMISO As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents USUARIO As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents NOMBRE_MENU As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -264,5 +265,4 @@ Partial Class frmPermisos
     Friend WithEvents HABILITADO As System.Windows.Forms.DataGridViewCheckBoxColumn
     Friend WithEvents MODIFICAR As System.Windows.Forms.DataGridViewImageColumn
     Friend WithEvents ELIMINAR As System.Windows.Forms.DataGridViewImageColumn
-    Friend WithEvents btnCerrar As System.Windows.Forms.Button
 End Class

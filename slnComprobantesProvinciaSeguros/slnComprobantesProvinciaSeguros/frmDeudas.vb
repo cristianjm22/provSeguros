@@ -26,7 +26,19 @@ Public Class frmDeudas
         End If
     End Sub
 
-    Private Sub dgvDeudas_CellClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvDeudas.CellClick
+    Private Sub frmDeudas_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        cargarGrilla(txtPoliza.Text)
+    End Sub
+
+    Private Sub txtPoliza_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtPoliza.TextChanged
+        cargarGrilla(txtPoliza.Text)
+    End Sub
+
+    Private Sub btnCerrar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCerrar.Click
+        Me.Close()
+    End Sub
+
+    Private Sub dgvDeudas_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvDeudas.CellContentClick
         If e.ColumnIndex = 7 Then
             If e.RowIndex >= 0 AndAlso dgvDeudas.Rows(e.RowIndex).Cells(0).Value.ToString() <> Nothing Then
 
@@ -58,17 +70,5 @@ Public Class frmDeudas
             End If
 
         End If
-    End Sub
-
-    Private Sub frmDeudas_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        cargarGrilla(txtPoliza.Text)
-    End Sub
-
-    Private Sub txtPoliza_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtPoliza.TextChanged
-        cargarGrilla(txtPoliza.Text)
-    End Sub
-
-    Private Sub btnCerrar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCerrar.Click
-        Me.Close()
     End Sub
 End Class

@@ -135,7 +135,7 @@ Partial Class frmInforme
         Me.btnInformar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
         Me.btnInformar.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.Very_Basic_Ok_icon_1_
         Me.btnInformar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnInformar.Location = New System.Drawing.Point(1031, 421)
+        Me.btnInformar.Location = New System.Drawing.Point(1027, 402)
         Me.btnInformar.Name = "btnInformar"
         Me.btnInformar.Size = New System.Drawing.Size(108, 29)
         Me.btnInformar.TabIndex = 45

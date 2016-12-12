@@ -28,14 +28,6 @@ Partial Class frmDeudas
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmDeudas))
         Me.lblDeudas = New System.Windows.Forms.Label()
         Me.dgvDeudas = New System.Windows.Forms.DataGridView()
-        Me.ID_DEUDA = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.IMPORTE_DEUDA = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.POLIZA = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NRO_CUOTA = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FECHA_INGRESO = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ID_COMPROBANTE = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.MODIFICAR = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.ELIMINAR = New System.Windows.Forms.DataGridViewImageColumn()
         Me.txtPoliza = New System.Windows.Forms.TextBox()
         Me.lblPoliza = New System.Windows.Forms.Label()
         Me.RectangleShape1 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
@@ -44,6 +36,14 @@ Partial Class frmDeudas
         Me.lblSinRegistros = New System.Windows.Forms.Label()
         Me.btnCerrar = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.ID_DEUDA = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.IMPORTE_DEUDA = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.POLIZA = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NRO_CUOTA = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FECHA_INGRESO = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ID_COMPROBANTE = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.MODIFICAR = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.ELIMINAR = New System.Windows.Forms.DataGridViewImageColumn()
         CType(Me.dgvDeudas, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -91,67 +91,6 @@ Partial Class frmDeudas
         Me.dgvDeudas.ShowRowErrors = False
         Me.dgvDeudas.Size = New System.Drawing.Size(804, 142)
         Me.dgvDeudas.TabIndex = 33
-        '
-        'ID_DEUDA
-        '
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.ID_DEUDA.DefaultCellStyle = DataGridViewCellStyle3
-        Me.ID_DEUDA.HeaderText = "NUMERO DE DEUDA"
-        Me.ID_DEUDA.Name = "ID_DEUDA"
-        Me.ID_DEUDA.ReadOnly = True
-        Me.ID_DEUDA.Width = 86
-        '
-        'IMPORTE_DEUDA
-        '
-        Me.IMPORTE_DEUDA.HeaderText = "IMPORTE DEUDA"
-        Me.IMPORTE_DEUDA.Name = "IMPORTE_DEUDA"
-        Me.IMPORTE_DEUDA.ReadOnly = True
-        Me.IMPORTE_DEUDA.Width = 104
-        '
-        'POLIZA
-        '
-        Me.POLIZA.HeaderText = "POLIZA"
-        Me.POLIZA.Name = "POLIZA"
-        Me.POLIZA.ReadOnly = True
-        Me.POLIZA.Width = 67
-        '
-        'NRO_CUOTA
-        '
-        Me.NRO_CUOTA.HeaderText = "NRO CUOTA"
-        Me.NRO_CUOTA.Name = "NRO_CUOTA"
-        Me.NRO_CUOTA.ReadOnly = True
-        Me.NRO_CUOTA.Width = 84
-        '
-        'FECHA_INGRESO
-        '
-        Me.FECHA_INGRESO.HeaderText = "FECHA DEUDA"
-        Me.FECHA_INGRESO.Name = "FECHA_INGRESO"
-        Me.FECHA_INGRESO.ReadOnly = True
-        Me.FECHA_INGRESO.Width = 93
-        '
-        'ID_COMPROBANTE
-        '
-        Me.ID_COMPROBANTE.HeaderText = "ID COMPROBANTE"
-        Me.ID_COMPROBANTE.Name = "ID_COMPROBANTE"
-        Me.ID_COMPROBANTE.ReadOnly = True
-        Me.ID_COMPROBANTE.Width = 111
-        '
-        'MODIFICAR
-        '
-        Me.MODIFICAR.HeaderText = "MODIFICAR"
-        Me.MODIFICAR.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.pencil
-        Me.MODIFICAR.Name = "MODIFICAR"
-        Me.MODIFICAR.ReadOnly = True
-        Me.MODIFICAR.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.MODIFICAR.Width = 70
-        '
-        'ELIMINAR
-        '
-        Me.ELIMINAR.HeaderText = "ELIMINAR"
-        Me.ELIMINAR.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.cancelar
-        Me.ELIMINAR.Name = "ELIMINAR"
-        Me.ELIMINAR.ReadOnly = True
-        Me.ELIMINAR.Width = 60
         '
         'txtPoliza
         '
@@ -246,6 +185,67 @@ Partial Class frmDeudas
         Me.PictureBox1.TabIndex = 47
         Me.PictureBox1.TabStop = False
         '
+        'ID_DEUDA
+        '
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.ID_DEUDA.DefaultCellStyle = DataGridViewCellStyle3
+        Me.ID_DEUDA.HeaderText = "NUMERO DE DEUDA"
+        Me.ID_DEUDA.Name = "ID_DEUDA"
+        Me.ID_DEUDA.ReadOnly = True
+        Me.ID_DEUDA.Width = 86
+        '
+        'IMPORTE_DEUDA
+        '
+        Me.IMPORTE_DEUDA.HeaderText = "IMPORTE"
+        Me.IMPORTE_DEUDA.Name = "IMPORTE_DEUDA"
+        Me.IMPORTE_DEUDA.ReadOnly = True
+        Me.IMPORTE_DEUDA.Width = 76
+        '
+        'POLIZA
+        '
+        Me.POLIZA.HeaderText = "POLIZA"
+        Me.POLIZA.Name = "POLIZA"
+        Me.POLIZA.ReadOnly = True
+        Me.POLIZA.Width = 67
+        '
+        'NRO_CUOTA
+        '
+        Me.NRO_CUOTA.HeaderText = "CUOTA"
+        Me.NRO_CUOTA.Name = "NRO_CUOTA"
+        Me.NRO_CUOTA.ReadOnly = True
+        Me.NRO_CUOTA.Width = 66
+        '
+        'FECHA_INGRESO
+        '
+        Me.FECHA_INGRESO.HeaderText = "FECHA DEUDA"
+        Me.FECHA_INGRESO.Name = "FECHA_INGRESO"
+        Me.FECHA_INGRESO.ReadOnly = True
+        Me.FECHA_INGRESO.Width = 93
+        '
+        'ID_COMPROBANTE
+        '
+        Me.ID_COMPROBANTE.HeaderText = "COMPROBANTE"
+        Me.ID_COMPROBANTE.Name = "ID_COMPROBANTE"
+        Me.ID_COMPROBANTE.ReadOnly = True
+        Me.ID_COMPROBANTE.Width = 107
+        '
+        'MODIFICAR
+        '
+        Me.MODIFICAR.HeaderText = "MODIFICAR"
+        Me.MODIFICAR.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.pencil
+        Me.MODIFICAR.Name = "MODIFICAR"
+        Me.MODIFICAR.ReadOnly = True
+        Me.MODIFICAR.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.MODIFICAR.Width = 70
+        '
+        'ELIMINAR
+        '
+        Me.ELIMINAR.HeaderText = "ELIMINAR"
+        Me.ELIMINAR.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.cancelar
+        Me.ELIMINAR.Name = "ELIMINAR"
+        Me.ELIMINAR.ReadOnly = True
+        Me.ELIMINAR.Width = 60
+        '
         'frmDeudas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -281,6 +281,7 @@ Partial Class frmDeudas
     Friend WithEvents RectangleShape3 As Microsoft.VisualBasic.PowerPacks.RectangleShape
     Friend WithEvents lblSinRegistros As System.Windows.Forms.Label
     Friend WithEvents btnCerrar As System.Windows.Forms.Button
+    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents ID_DEUDA As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents IMPORTE_DEUDA As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents POLIZA As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -289,5 +290,4 @@ Partial Class frmDeudas
     Friend WithEvents ID_COMPROBANTE As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents MODIFICAR As System.Windows.Forms.DataGridViewImageColumn
     Friend WithEvents ELIMINAR As System.Windows.Forms.DataGridViewImageColumn
-    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
 End Class

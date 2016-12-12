@@ -228,22 +228,45 @@ Public Class ComprobantesAct
         Try
 
             exLibro = exApp.Workbooks.Add
-            exHoja = exLibro.Worksheets.Add()
+            exHoja = exLibro.Worksheets(1)
             Dim Fila As Integer
             Dim Col As Integer
             ' ¿Cuantas columnas y cuantas filas?
             Dim NCol As Integer = DGV.ColumnCount
             Dim NRow As Integer = DGV.RowCount
+            Dim styleHeader As Microsoft.Office.Interop.Excel.Style
+
+            styleHeader = exLibro.Styles.Add("StyleHeader")
+            styleHeader.Interior.Color = Color.FromArgb(1, 56, 131)
+            styleHeader.Font.Color = Color.White
+
+            Dim styleTotal As Microsoft.Office.Interop.Excel.Style
+
+            styleTotal = exLibro.Styles.Add("StyleTotal")
+            styleTotal.Interior.Color = Color.FromArgb(191, 191, 191)
+            styleTotal.Font.Color = Color.Red
+            styleTotal.Font.Bold = True
+
             'recorremos todas las filas, y por cada fila todas las columnas
             'y vamos escribiendo.
             For i As Integer = 1 To NCol
                 exHoja.Cells.Item(1, i) = DGV.Columns(i - 1).Name.ToString
+                exHoja.Cells.Item(1, i).Style = "StyleHeader"
             Next
 
             For Fila = 0 To NRow - 1
                 For Col = 0 To NCol - 1
-                    exHoja.Cells.Item(Fila + 2, Col + 1) =
-                    DGV.Rows(Fila).Cells(Col).Value()
+                    Dim value As String
+
+                    'Problema con formato entrada (lapiz optico)
+                    If Col = 1 Then
+
+                        value = "'" + DGV.Rows(Fila).Cells(Col).Value().ToString.Trim + "'"
+                    Else
+                        value = DGV.Rows(Fila).Cells(Col).Value()
+                    End If
+
+                    exHoja.Cells.Item(Fila + 2, Col + 1) = value
 
                     'exHoja.Cells.Item(Fila + 2, Col + 1).Style = "Text"
                 Next
@@ -251,26 +274,21 @@ Public Class ComprobantesAct
             Next
 
             exHoja.Cells.Item(Fila + 3, Col - 2) = "TOTAL DEL DIA"
+            exHoja.Cells.Item(Fila + 3, Col - 2).Style = "StyleTotal"
 
+            exHoja.Cells.Item(Fila + 3, Col - 1).Style = "StyleTotal"
 
             exHoja.Cells.Item(Fila + 5, Col - 2) = "TOTAL DE QUINCENA"
+            exHoja.Cells.Item(Fila + 5, Col - 2).Style = "StyleTotal"
 
+            exHoja.Cells.Item(Fila + 5, Col - 1).Style = "StyleTotal"
 
-            exHoja.Cells.Item(Fila + 3, Col - 1) = "$" + importeDia
+            exHoja.Cells.Item(Fila + 3, Col) = "$" + importeDia
+            exHoja.Cells.Item(Fila + 3, Col).Style = "StyleTotal"
 
+            exHoja.Cells.Item(Fila + 5, Col) = "$" + importeQuincena
+            exHoja.Cells.Item(Fila + 5, Col).Style = "StyleTotal"
 
-            exHoja.Cells.Item(Fila + 5, Col - 1) = "$" + importeQuincena
-
-            exHoja.Rows.Item(Fila + 3).Font.Bold = 1
-            exHoja.Rows.Item(Fila + 5).Font.Bold = 1
-
-
-
-
-
-            exHoja.Rows.Item(Fila + 3).Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Gray)
-
-            exHoja.Rows.Item(Fila + 5).Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Gray)
 
             'Titulo en negrita, Alineado
             exHoja.Rows.Item(1).Font.Bold = 1

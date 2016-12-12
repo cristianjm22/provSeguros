@@ -64,6 +64,7 @@ Partial Class frmReporte
         Me.dgvReporte.Location = New System.Drawing.Point(58, 216)
         Me.dgvReporte.Name = "dgvReporte"
         Me.dgvReporte.ReadOnly = True
+        Me.dgvReporte.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvReporte.ShowEditingIcon = False
         Me.dgvReporte.ShowRowErrors = False
         Me.dgvReporte.Size = New System.Drawing.Size(1185, 212)

@@ -28,6 +28,17 @@ Partial Class frmEliminarModPagos
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmEliminarModPagos))
         Me.cboEstado = New System.Windows.Forms.ComboBox()
         Me.dgvReporte = New System.Windows.Forms.DataGridView()
+        Me.lblPoliza = New System.Windows.Forms.Label()
+        Me.txtPoliza = New System.Windows.Forms.TextBox()
+        Me.lblEstado = New System.Windows.Forms.Label()
+        Me.RectangleShape1 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
+        Me.ShapeContainer1 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
+        Me.RectangleShape3 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.lblSinRegistros = New System.Windows.Forms.Label()
+        Me.btnCerrar = New System.Windows.Forms.Button()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.ID_COMPROBANTE = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.E_LAPIZ_OPTICO = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FECHA_INGRESO = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -42,17 +53,6 @@ Partial Class frmEliminarModPagos
         Me.ID_ESTADO = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ESTADO = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ELIMINAR = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.lblPoliza = New System.Windows.Forms.Label()
-        Me.txtPoliza = New System.Windows.Forms.TextBox()
-        Me.lblEstado = New System.Windows.Forms.Label()
-        Me.RectangleShape1 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
-        Me.ShapeContainer1 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
-        Me.RectangleShape3 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.lblSinRegistros = New System.Windows.Forms.Label()
-        Me.btnCerrar = New System.Windows.Forms.Button()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         CType(Me.dgvReporte, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -98,111 +98,6 @@ Partial Class frmEliminarModPagos
         Me.dgvReporte.ShowRowErrors = False
         Me.dgvReporte.Size = New System.Drawing.Size(1241, 152)
         Me.dgvReporte.TabIndex = 31
-        '
-        'ID_COMPROBANTE
-        '
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.White
-        Me.ID_COMPROBANTE.DefaultCellStyle = DataGridViewCellStyle3
-        Me.ID_COMPROBANTE.HeaderText = "ID_COMPROBANTE"
-        Me.ID_COMPROBANTE.Name = "ID_COMPROBANTE"
-        Me.ID_COMPROBANTE.ReadOnly = True
-        Me.ID_COMPROBANTE.Visible = False
-        Me.ID_COMPROBANTE.Width = 134
-        '
-        'E_LAPIZ_OPTICO
-        '
-        Me.E_LAPIZ_OPTICO.HeaderText = "ENTRADA"
-        Me.E_LAPIZ_OPTICO.Name = "E_LAPIZ_OPTICO"
-        Me.E_LAPIZ_OPTICO.ReadOnly = True
-        Me.E_LAPIZ_OPTICO.Width = 78
-        '
-        'FECHA_INGRESO
-        '
-        Me.FECHA_INGRESO.HeaderText = "FECHA DE INGRESO"
-        Me.FECHA_INGRESO.Name = "FECHA_INGRESO"
-        Me.FECHA_INGRESO.ReadOnly = True
-        Me.FECHA_INGRESO.Width = 117
-        '
-        'RM
-        '
-        Me.RM.HeaderText = "RM"
-        Me.RM.Name = "RM"
-        Me.RM.ReadOnly = True
-        Me.RM.Width = 46
-        '
-        'POLIZA
-        '
-        Me.POLIZA.HeaderText = "POLIZA"
-        Me.POLIZA.Name = "POLIZA"
-        Me.POLIZA.ReadOnly = True
-        Me.POLIZA.Width = 67
-        '
-        'ENDOSO
-        '
-        Me.ENDOSO.HeaderText = "ENDOSO"
-        Me.ENDOSO.Name = "ENDOSO"
-        Me.ENDOSO.ReadOnly = True
-        Me.ENDOSO.Width = 73
-        '
-        'NRO_CUOTA
-        '
-        Me.NRO_CUOTA.HeaderText = "CUOTA"
-        Me.NRO_CUOTA.Name = "NRO_CUOTA"
-        Me.NRO_CUOTA.ReadOnly = True
-        Me.NRO_CUOTA.Width = 66
-        '
-        'FECHA_VTO
-        '
-        Me.FECHA_VTO.HeaderText = "FECHA VENCIMIENTO"
-        Me.FECHA_VTO.Name = "FECHA_VTO"
-        Me.FECHA_VTO.ReadOnly = True
-        Me.FECHA_VTO.Width = 124
-        '
-        'ID_MONEDA
-        '
-        Me.ID_MONEDA.HeaderText = "ID_MONEDA"
-        Me.ID_MONEDA.Name = "ID_MONEDA"
-        Me.ID_MONEDA.ReadOnly = True
-        Me.ID_MONEDA.Visible = False
-        Me.ID_MONEDA.Width = 98
-        '
-        'MONEDA
-        '
-        Me.MONEDA.HeaderText = "MONEDA"
-        Me.MONEDA.Name = "MONEDA"
-        Me.MONEDA.ReadOnly = True
-        Me.MONEDA.Width = 74
-        '
-        'IMPORTE
-        '
-        Me.IMPORTE.HeaderText = "IMPORTE"
-        Me.IMPORTE.Name = "IMPORTE"
-        Me.IMPORTE.ReadOnly = True
-        Me.IMPORTE.Width = 76
-        '
-        'ID_ESTADO
-        '
-        Me.ID_ESTADO.HeaderText = "ID_ESTADO"
-        Me.ID_ESTADO.Name = "ID_ESTADO"
-        Me.ID_ESTADO.ReadOnly = True
-        Me.ID_ESTADO.Visible = False
-        Me.ID_ESTADO.Width = 95
-        '
-        'ESTADO
-        '
-        Me.ESTADO.HeaderText = "ESTADO"
-        Me.ESTADO.Name = "ESTADO"
-        Me.ESTADO.ReadOnly = True
-        Me.ESTADO.Width = 71
-        '
-        'ELIMINAR
-        '
-        Me.ELIMINAR.HeaderText = "ELIMINAR"
-        Me.ELIMINAR.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.remove
-        Me.ELIMINAR.Name = "ELIMINAR"
-        Me.ELIMINAR.ReadOnly = True
-        Me.ELIMINAR.Width = 60
         '
         'lblPoliza
         '
@@ -330,6 +225,111 @@ Partial Class frmEliminarModPagos
         Me.PictureBox2.TabIndex = 49
         Me.PictureBox2.TabStop = False
         '
+        'ID_COMPROBANTE
+        '
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.White
+        Me.ID_COMPROBANTE.DefaultCellStyle = DataGridViewCellStyle3
+        Me.ID_COMPROBANTE.HeaderText = "COMPROBANTE"
+        Me.ID_COMPROBANTE.Name = "ID_COMPROBANTE"
+        Me.ID_COMPROBANTE.ReadOnly = True
+        Me.ID_COMPROBANTE.Visible = False
+        Me.ID_COMPROBANTE.Width = 107
+        '
+        'E_LAPIZ_OPTICO
+        '
+        Me.E_LAPIZ_OPTICO.HeaderText = "ENTRADA (LAPIZ OPTICO)"
+        Me.E_LAPIZ_OPTICO.Name = "E_LAPIZ_OPTICO"
+        Me.E_LAPIZ_OPTICO.ReadOnly = True
+        Me.E_LAPIZ_OPTICO.Width = 145
+        '
+        'FECHA_INGRESO
+        '
+        Me.FECHA_INGRESO.HeaderText = "FECHA DE INGRESO"
+        Me.FECHA_INGRESO.Name = "FECHA_INGRESO"
+        Me.FECHA_INGRESO.ReadOnly = True
+        Me.FECHA_INGRESO.Width = 117
+        '
+        'RM
+        '
+        Me.RM.HeaderText = "RAMO"
+        Me.RM.Name = "RM"
+        Me.RM.ReadOnly = True
+        Me.RM.Width = 61
+        '
+        'POLIZA
+        '
+        Me.POLIZA.HeaderText = "POLIZA"
+        Me.POLIZA.Name = "POLIZA"
+        Me.POLIZA.ReadOnly = True
+        Me.POLIZA.Width = 67
+        '
+        'ENDOSO
+        '
+        Me.ENDOSO.HeaderText = "ENDOSO"
+        Me.ENDOSO.Name = "ENDOSO"
+        Me.ENDOSO.ReadOnly = True
+        Me.ENDOSO.Width = 73
+        '
+        'NRO_CUOTA
+        '
+        Me.NRO_CUOTA.HeaderText = "CUOTA"
+        Me.NRO_CUOTA.Name = "NRO_CUOTA"
+        Me.NRO_CUOTA.ReadOnly = True
+        Me.NRO_CUOTA.Width = 66
+        '
+        'FECHA_VTO
+        '
+        Me.FECHA_VTO.HeaderText = "FECHA DE VENCIMIENTO"
+        Me.FECHA_VTO.Name = "FECHA_VTO"
+        Me.FECHA_VTO.ReadOnly = True
+        Me.FECHA_VTO.Width = 139
+        '
+        'ID_MONEDA
+        '
+        Me.ID_MONEDA.HeaderText = "MONEDA"
+        Me.ID_MONEDA.Name = "ID_MONEDA"
+        Me.ID_MONEDA.ReadOnly = True
+        Me.ID_MONEDA.Visible = False
+        Me.ID_MONEDA.Width = 74
+        '
+        'MONEDA
+        '
+        Me.MONEDA.HeaderText = "MONEDA"
+        Me.MONEDA.Name = "MONEDA"
+        Me.MONEDA.ReadOnly = True
+        Me.MONEDA.Width = 74
+        '
+        'IMPORTE
+        '
+        Me.IMPORTE.HeaderText = "IMPORTE"
+        Me.IMPORTE.Name = "IMPORTE"
+        Me.IMPORTE.ReadOnly = True
+        Me.IMPORTE.Width = 76
+        '
+        'ID_ESTADO
+        '
+        Me.ID_ESTADO.HeaderText = "ID_ESTADO"
+        Me.ID_ESTADO.Name = "ID_ESTADO"
+        Me.ID_ESTADO.ReadOnly = True
+        Me.ID_ESTADO.Visible = False
+        Me.ID_ESTADO.Width = 88
+        '
+        'ESTADO
+        '
+        Me.ESTADO.HeaderText = "ESTADO"
+        Me.ESTADO.Name = "ESTADO"
+        Me.ESTADO.ReadOnly = True
+        Me.ESTADO.Width = 71
+        '
+        'ELIMINAR
+        '
+        Me.ELIMINAR.HeaderText = "ELIMINAR"
+        Me.ELIMINAR.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.remove
+        Me.ELIMINAR.Name = "ELIMINAR"
+        Me.ELIMINAR.ReadOnly = True
+        Me.ELIMINAR.Width = 60
+        '
         'frmEliminarModPagos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -370,6 +370,9 @@ Partial Class frmEliminarModPagos
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents RectangleShape3 As Microsoft.VisualBasic.PowerPacks.RectangleShape
     Friend WithEvents lblSinRegistros As System.Windows.Forms.Label
+    Friend WithEvents btnCerrar As System.Windows.Forms.Button
+    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
+    Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
     Friend WithEvents ID_COMPROBANTE As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents E_LAPIZ_OPTICO As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents FECHA_INGRESO As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -384,7 +387,4 @@ Partial Class frmEliminarModPagos
     Friend WithEvents ID_ESTADO As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents ESTADO As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents ELIMINAR As System.Windows.Forms.DataGridViewImageColumn
-    Friend WithEvents btnCerrar As System.Windows.Forms.Button
-    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
-    Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
 End Class
