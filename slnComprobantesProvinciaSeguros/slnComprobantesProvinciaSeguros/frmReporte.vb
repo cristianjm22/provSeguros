@@ -24,20 +24,24 @@ Public Class frmReporte
             btnExport.Hide()
             lblTotalDia.Hide()
             lblTotalQuincena.Hide()
+            lblproximaquincena.Hide()
+
         Else
             lblSinRegistros.Hide()
             btnExport.Show()
             lblTotalDia.Text = lblTotalDia.Text + " $" + ComprobantesAct.ObtenerTotaldeldia()
             lblTotalQuincena.Text = lblTotalQuincena.Text + " $" + ComprobantesAct.ObtenerTotalporQuincena()
+            lblproximaquincena.Text = lblproximaquincena.Text + " $" + ComprobantesAct.obtenerTotalPagosFuturos
             lblTotalDia.Show()
             lblTotalQuincena.Show()
+            lblproximaquincena.Show()
         End If
 
     End Sub
 
     Private Sub btnExport_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnExport.Click
         If (MsgBox("¿Desea exportar los pagos? " + vbCrLf + "Tenga en cuenta que esta accion modifica el estado de los mismos.", MsgBoxStyle.YesNo, "Exportar")) = MsgBoxResult.Yes Then
-            Dim result = ComprobantesAct.GridAExcel555(dgvReporte, ComprobantesAct.ObtenerTotaldeldia(), ComprobantesAct.ObtenerTotalporQuincena())
+            Dim result = ComprobantesAct.GridAExcel555(dgvReporte, ComprobantesAct.ObtenerTotaldeldia(), ComprobantesAct.ObtenerTotalporQuincena(), ComprobantesAct.obtenerTotalPagosFuturos())
             If (result) Then
                 ComprobantesDA.InformarPago()
                 Me.frmReporte_Load(sender, e)

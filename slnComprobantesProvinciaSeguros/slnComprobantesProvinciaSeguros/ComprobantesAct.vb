@@ -211,13 +211,36 @@ Public Class ComprobantesAct
     End Function
 
 
+    Public Shared Function obtenerTotalPagosFuturos() As String
+        Try
+            Dim dt As DataTable
+            dt = ComprobantesDA.obtenerTotalPagosFuturos()
+            If dt.Rows.Count > 0 Then
+
+                Return dt.Rows(0)(0).ToString
+
+            End If
+
+            Return "0"
+
+
+        Catch ex As Exception
+            MsgBox(ex.Message.ToString)
+            Return False
+        End Try
+
+    End Function
+
+
+
+
     ''' <summary>
     ''' 
     ''' </summary>
     ''' <param name="DGV"></param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Shared Function GridAExcel555(ByVal DGV As DataGridView, ByVal importeDia As String, ByVal importeQuincena As String) As Boolean
+    Public Shared Function GridAExcel555(ByVal DGV As DataGridView, ByVal importeDia As String, ByVal importeQuincena As String, ByVal importePagosFuturo As String) As Boolean
 
         'Creamos las variables
 
@@ -247,6 +270,28 @@ Public Class ComprobantesAct
             styleTotal.Font.Color = Color.Red
             styleTotal.Font.Bold = True
 
+
+
+            Dim stylePagoInformado As Microsoft.Office.Interop.Excel.Style
+
+            stylePagoInformado = exLibro.Styles.Add("stylePagoInformado")
+            stylePagoInformado.Interior.Color = Color.FromArgb(192, 255, 192)
+
+
+            Dim stylePagoFuturo As Microsoft.Office.Interop.Excel.Style
+
+            stylePagoFuturo = exLibro.Styles.Add("stylePagoFuturo")
+            stylePagoFuturo.Interior.Color = Color.FromArgb(128, 128, 255)
+
+
+            Dim stylePagoPendiente As Microsoft.Office.Interop.Excel.Style
+
+            stylePagoPendiente = exLibro.Styles.Add("stylePagoPendiente")
+            stylePagoPendiente.Interior.Color = Color.FromArgb(255, 255, 128)
+
+
+
+
             'recorremos todas las filas, y por cada fila todas las columnas
             'y vamos escribiendo.
             For i As Integer = 1 To NCol
@@ -266,7 +311,19 @@ Public Class ComprobantesAct
                         value = DGV.Rows(Fila).Cells(Col).Value()
                     End If
 
-                    exHoja.Cells.Item(Fila + 2, Col + 1) = value
+
+                    If (DGV.Rows(Fila).Cells(10).Value().ToString() = "PAGO INFORMADO") Then
+                        exHoja.Cells.Item(Fila + 2, Col + 1) = value
+                        exHoja.Cells.Item(Fila + 2, Col + 1).Style = "stylePagoInformado"
+
+                    ElseIf (DGV.Rows(Fila).Cells(10).Value().ToString() = "PAGO FUTURO") Then
+                        exHoja.Cells.Item(Fila + 2, Col + 1) = value
+                        exHoja.Cells.Item(Fila + 2, Col + 1).Style = "stylePagoFuturo"
+
+                    Else
+                        exHoja.Cells.Item(Fila + 2, Col + 1) = value
+                    End If
+
 
                     'exHoja.Cells.Item(Fila + 2, Col + 1).Style = "Text"
                 Next
@@ -283,11 +340,23 @@ Public Class ComprobantesAct
 
             exHoja.Cells.Item(Fila + 5, Col - 1).Style = "StyleTotal"
 
+
+            exHoja.Cells.Item(Fila + 7, Col - 2) = "TOTAL PROXIMA QUINCENA"
+            exHoja.Cells.Item(Fila + 7, Col - 2).Style = "StyleTotal"
+
+            exHoja.Cells.Item(Fila + 7, Col - 1).Style = "StyleTotal"
+
+
+
             exHoja.Cells.Item(Fila + 3, Col) = "$" + importeDia
             exHoja.Cells.Item(Fila + 3, Col).Style = "StyleTotal"
 
             exHoja.Cells.Item(Fila + 5, Col) = "$" + importeQuincena
             exHoja.Cells.Item(Fila + 5, Col).Style = "StyleTotal"
+
+
+            exHoja.Cells.Item(Fila + 7, Col) = "$" + importePagosFuturo
+            exHoja.Cells.Item(Fila + 7, Col).Style = "StyleTotal"
 
 
             'Titulo en negrita, Alineado

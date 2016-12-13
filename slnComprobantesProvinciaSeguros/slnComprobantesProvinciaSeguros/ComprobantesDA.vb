@@ -381,6 +381,34 @@ Public Class ComprobantesDA
 
     End Function
 
+
+
+
+
+    Public Shared Function obtenerTotalPagosFuturos()
+
+        Dim dt As New DataTable
+
+        Try
+            conn = New SqlConnection(sCnn)
+            conn.Open()
+            Dim cmd As New SqlCommand("SP_OBTENER_TOTAL_PAGOS_FUTUROS", conn)
+            cmd.CommandTimeout = 300 'Especifico que lance un error de time out  despues de 5 min.
+            cmd.CommandType = CommandType.StoredProcedure
+
+            Dim da As New SqlDataAdapter(cmd)
+            da.Fill(dt)
+            conn.Close()
+
+        Catch e As SqlException
+            MsgBox("Mensaje: " & e.Message)
+        End Try
+
+        Return dt
+
+    End Function
+
+
     Public Shared Function verificarExistenciaPago(ByVal entrada As String) As Integer
         Dim count As Integer
         Try
