@@ -40,7 +40,7 @@ Partial Class frmChange
         'RectangleShape1
         '
         Me.RectangleShape1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.RectangleShape1.BorderColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
         Me.RectangleShape1.FillColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(60, Byte), Integer))
         Me.RectangleShape1.FillGradientColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
@@ -96,6 +96,7 @@ Partial Class frmChange
         'txtUser
         '
         Me.txtUser.Location = New System.Drawing.Point(119, 172)
+        Me.txtUser.MaxLength = 15
         Me.txtUser.Name = "txtUser"
         Me.txtUser.Size = New System.Drawing.Size(177, 20)
         Me.txtUser.TabIndex = 1
@@ -103,6 +104,7 @@ Partial Class frmChange
         'txtOldPass
         '
         Me.txtOldPass.Location = New System.Drawing.Point(119, 200)
+        Me.txtOldPass.MaxLength = 15
         Me.txtOldPass.Name = "txtOldPass"
         Me.txtOldPass.Size = New System.Drawing.Size(177, 20)
         Me.txtOldPass.TabIndex = 2
@@ -122,6 +124,7 @@ Partial Class frmChange
         'txtNewPass
         '
         Me.txtNewPass.Location = New System.Drawing.Point(119, 228)
+        Me.txtNewPass.MaxLength = 15
         Me.txtNewPass.Name = "txtNewPass"
         Me.txtNewPass.Size = New System.Drawing.Size(177, 20)
         Me.txtNewPass.TabIndex = 3

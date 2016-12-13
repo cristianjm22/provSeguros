@@ -71,4 +71,44 @@ Public Class frmDeudas
 
         End If
     End Sub
+
+    Private Sub txtPoliza_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtPoliza.KeyPress
+
+
+
+        If Char.IsDigit(e.KeyChar) Then
+
+            e.Handled = False
+
+        ElseIf Char.IsControl(e.KeyChar) Then
+
+            e.Handled = False
+
+        ElseIf Char.IsSymbol(e.KeyChar) Then
+
+            e.Handled = False
+
+        ElseIf Char.IsSeparator(e.KeyChar) Then
+
+            e.Handled = False
+
+        ElseIf Char.IsWhiteSpace(e.KeyChar) Then
+
+            e.Handled = False
+
+        Else
+
+            e.Handled = True
+
+        End If
+
+
+
+        Me.txtPoliza.Text = Trim(Replace(Me.txtPoliza.Text, "  ", " "))
+
+        txtPoliza.Select(txtPoliza.Text.Length, 0)
+
+
+
+    End Sub
 End Class

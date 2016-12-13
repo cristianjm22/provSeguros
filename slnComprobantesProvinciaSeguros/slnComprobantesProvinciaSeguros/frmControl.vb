@@ -142,6 +142,41 @@ Public Class frmControl
     End Sub
 
     Private Sub txtEntrada_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtEntrada.KeyPress
+
+
+        If Char.IsDigit(e.KeyChar) Then
+
+            e.Handled = False
+
+        ElseIf Char.IsControl(e.KeyChar) Then
+
+            e.Handled = False
+
+        ElseIf Char.IsSymbol(e.KeyChar) Then
+
+            e.Handled = False
+
+        ElseIf Char.IsSeparator(e.KeyChar) Then
+
+            e.Handled = False
+
+        ElseIf Char.IsWhiteSpace(e.KeyChar) Then
+
+            e.Handled = False
+
+        Else
+
+            e.Handled = True
+
+        End If
+
+
+
+        Me.txtEntrada.Text = Trim(Replace(Me.txtEntrada.Text, "  ", " "))
+
+        txtEntrada.Select(txtEntrada.Text.Length, 0)
+
+
         If (e.KeyChar = ChrW(13)) Then
             If txtEntrada.Text = String.Empty Then
                 MsgBox("Ingrese el codigo", MsgBoxStyle.Exclamation, "Aviso")
@@ -206,5 +241,54 @@ Public Class frmControl
     Private Sub btnCerrar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCerrar.Click
         frmLogin.Show()
         Me.Close()
+    End Sub
+
+
+  
+
+    Private Sub txtObservaciones_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtObservaciones.TextChanged
+
+    End Sub
+
+
+    Private Sub txtObservaciones_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtObservaciones.KeyPress
+        If Char.IsLetter(e.KeyChar) Then
+
+            e.Handled = False
+
+        ElseIf Char.IsControl(e.KeyChar) Then
+
+            e.Handled = False
+
+        ElseIf Char.IsSeparator(e.KeyChar) Then
+
+            e.Handled = False
+
+        Else
+
+            e.Handled = True
+
+        End If
+
+
+
+        Me.txtObservaciones.Text = Trim(Replace(Me.txtObservaciones.Text, " ", ""))
+
+        txtObservaciones.Select(txtObservaciones.Text.Length, 0)
+    End Sub
+
+    Private Sub txtDeuda_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtDeuda.TextChanged
+
+    End Sub
+
+    Private Sub txtDeuda_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtDeuda.KeyPress
+
+
+
+        ComprobantesAct.NumeroDec(e, Me.txtDeuda)
+
+
+
+
     End Sub
 End Class

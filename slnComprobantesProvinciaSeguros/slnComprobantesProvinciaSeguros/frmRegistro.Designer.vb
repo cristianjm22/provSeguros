@@ -38,7 +38,7 @@ Partial Class frmRegistro
         'RectangleShape1
         '
         Me.RectangleShape1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.RectangleShape1.BorderColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
         Me.RectangleShape1.FillColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(60, Byte), Integer))
         Me.RectangleShape1.FillGradientColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
@@ -83,6 +83,7 @@ Partial Class frmRegistro
         'txtClave
         '
         Me.txtClave.Location = New System.Drawing.Point(121, 199)
+        Me.txtClave.MaxLength = 20
         Me.txtClave.Name = "txtClave"
         Me.txtClave.Size = New System.Drawing.Size(178, 20)
         Me.txtClave.TabIndex = 2
@@ -91,6 +92,7 @@ Partial Class frmRegistro
         'txtUser
         '
         Me.txtUser.Location = New System.Drawing.Point(121, 173)
+        Me.txtUser.MaxLength = 20
         Me.txtUser.Name = "txtUser"
         Me.txtUser.Size = New System.Drawing.Size(178, 20)
         Me.txtUser.TabIndex = 1

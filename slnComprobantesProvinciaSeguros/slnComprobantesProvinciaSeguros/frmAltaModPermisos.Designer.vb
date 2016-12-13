@@ -86,6 +86,7 @@ Partial Class frmAltaModPermisos
         'txtMenuDesc
         '
         Me.txtMenuDesc.Location = New System.Drawing.Point(121, 244)
+        Me.txtMenuDesc.MaxLength = 20
         Me.txtMenuDesc.Name = "txtMenuDesc"
         Me.txtMenuDesc.Size = New System.Drawing.Size(161, 20)
         Me.txtMenuDesc.TabIndex = 3
@@ -93,6 +94,7 @@ Partial Class frmAltaModPermisos
         'txtMenu
         '
         Me.txtMenu.Location = New System.Drawing.Point(121, 209)
+        Me.txtMenu.MaxLength = 20
         Me.txtMenu.Name = "txtMenu"
         Me.txtMenu.Size = New System.Drawing.Size(161, 20)
         Me.txtMenu.TabIndex = 2
@@ -109,7 +111,7 @@ Partial Class frmAltaModPermisos
         'RectangleShape1
         '
         Me.RectangleShape1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.RectangleShape1.BorderColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
         Me.RectangleShape1.FillColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(60, Byte), Integer))
         Me.RectangleShape1.FillGradientColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))

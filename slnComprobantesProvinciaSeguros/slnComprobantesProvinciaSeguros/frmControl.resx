@@ -121,10 +121,13 @@
   <data name="txtEntrada.Location" type="System.Drawing.Point, System.Drawing">
     <value>46, 212</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="txtEntrada.MaxLength" type="System.Int32, mscorlib">
+    <value>38</value>
+  </data>
   <data name="txtEntrada.Size" type="System.Drawing.Size, System.Drawing">
     <value>392, 20</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="txtEntrada.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
@@ -858,6 +861,9 @@
   </data>
   <data name="txtDeuda.Location" type="System.Drawing.Point, System.Drawing">
     <value>338, 406</value>
+  </data>
+  <data name="txtDeuda.MaxLength" type="System.Int32, mscorlib">
+    <value>5</value>
   </data>
   <data name="txtDeuda.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 20</value>

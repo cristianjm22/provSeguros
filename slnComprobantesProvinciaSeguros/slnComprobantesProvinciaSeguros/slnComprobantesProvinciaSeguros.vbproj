@@ -67,7 +67,7 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>3953CBBF408C17679BB81639E9594CA00A5A7966</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>42B38F1CDAC6C75333CB819B72FE4AADEEB779BF</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestKeyFile>slnComprobantesProvinciaSeguros_TemporaryKey.pfx</ManifestKeyFile>
@@ -264,6 +264,7 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
+    <None Include="slnComprobantesProvinciaSeguros_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logo.png" />

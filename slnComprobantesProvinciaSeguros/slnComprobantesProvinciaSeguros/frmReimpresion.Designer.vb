@@ -54,6 +54,7 @@ Partial Class frmReimpresion
         'txtPoliza
         '
         Me.txtPoliza.Location = New System.Drawing.Point(103, 176)
+        Me.txtPoliza.MaxLength = 15
         Me.txtPoliza.Name = "txtPoliza"
         Me.txtPoliza.Size = New System.Drawing.Size(100, 20)
         Me.txtPoliza.TabIndex = 1
@@ -95,7 +96,7 @@ Partial Class frmReimpresion
         'RectangleShape1
         '
         Me.RectangleShape1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.RectangleShape1.BorderColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
         Me.RectangleShape1.FillColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(60, Byte), Integer))
         Me.RectangleShape1.FillGradientColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
