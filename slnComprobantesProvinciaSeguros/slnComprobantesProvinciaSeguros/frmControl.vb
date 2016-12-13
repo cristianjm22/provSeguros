@@ -2,8 +2,11 @@
 Imports System.Data
 Imports System.Data.SqlClient
 Imports System.Globalization
+Imports System.Text.RegularExpressions
 
 Public Class frmControl
+
+    Dim errores As New Dictionary(Of String, String)
 
     ''' <summary>
     ''' Autor: Morales Cristian
@@ -104,33 +107,37 @@ Public Class frmControl
         Dim tipomoneda As String
         Dim idComprobante As Integer
         Dim repeticion As String = ""
+        If errores.Count = 0 Then
 
-        If txtEntrada.Text = String.Empty Then
-            MsgBox("Ingrese el codigo", MsgBoxStyle.Exclamation, "Aviso")
-        ElseIf (txtEntrada.Text.Length = 38) Then
-            Dim cantPagos = ComprobantesDA.verificarExistenciaPago(txtEntrada.Text)
-            If (cantPagos <> 0) Then
-                repeticion = ComprobantesAct.getDetalleRepeticion(cantPagos)
-                MsgBox("Este pago ya ha sido realizado " + cantPagos.ToString + " vez/veces." + vbCrLf + "El mismo será marcado como " + repeticion, MsgBoxStyle.Information, "Informacion")
+            If txtEntrada.Text = String.Empty Then
+                MsgBox("Ingrese el codigo de barras", MsgBoxStyle.Exclamation, "Aviso")
+            ElseIf (txtEntrada.Text.Length = 38) Then
+                Dim cantPagos = ComprobantesDA.verificarExistenciaPago(txtEntrada.Text)
+                If (cantPagos <> 0) Then
+                    repeticion = ComprobantesAct.getDetalleRepeticion(cantPagos)
+                    MsgBox("Este pago ya ha sido realizado " + cantPagos.ToString + " vez/veces." + vbCrLf + "El mismo será marcado como " + repeticion, MsgBoxStyle.Information, "Informacion")
+                End If
+
+                tipomoneda = ComprobantesAct.getIdMonedaByDescription(txtMoneda.Text)
+
+                Dim codigoMoneda = ComprobantesAct.getCodMonedaByDescription(txtMoneda.Text)
+                idComprobante = ComprobantesDA.InsertarDetalleComprobante(txtEntrada.Text, txtRM.Text, txtPoliza.Text, txtEndoso.Text, txtNroCuota.Text, dtpFechaVencimiento.Text, tipomoneda, Convert.ToDecimal(txtImporte.Text), txtObservaciones.Text, Usuario, repeticion)
+
+                If txtDeuda.Text <> String.Empty Then
+                    ComprobantesDA.InsertDeuda(idComprobante, txtPoliza.Text, txtNroCuota.Text, txtDeuda.Text)
+                End If
+                If MsgBox("El pago ha sido registrado correctamente." + vbCrLf + "¿Desea imprimir el comprobante?", MsgBoxStyle.YesNo, "Pago Registrado") = MsgBoxResult.Yes Then
+                    ComprobantesAct.PrintTicket(txtPoliza.Text, txtNroCuota.Text, codigoMoneda, txtImporte.Text, idComprobante, txtRM.Text)
+                End If
+                Me.btnLimpiar_Click(sender, e)
+            Else
+                MsgBox("El codigo de barra ingresado es invalido", MsgBoxStyle.Exclamation, "Aviso")
             End If
 
-            tipomoneda = ComprobantesAct.getIdMonedaByDescription(txtMoneda.Text)
-
-            Dim codigoMoneda = ComprobantesAct.getCodMonedaByDescription(txtMoneda.Text)
-            idComprobante = ComprobantesDA.InsertarDetalleComprobante(txtEntrada.Text, txtRM.Text, txtPoliza.Text, txtEndoso.Text, txtNroCuota.Text, dtpFechaVencimiento.Text, tipomoneda, Convert.ToDecimal(txtImporte.Text), txtObservaciones.Text, Usuario, repeticion)
-
-            If txtDeuda.Text <> String.Empty Then
-                ComprobantesDA.InsertDeuda(idComprobante, txtPoliza.Text, txtNroCuota.Text, txtDeuda.Text)
-            End If
-            If MsgBox("El pago ha sido registrado correctamente." + vbCrLf + "¿Desea imprimir el comprobante?", MsgBoxStyle.YesNo, "Pago Registrado") = MsgBoxResult.Yes Then
-                ComprobantesAct.PrintTicket(txtPoliza.Text, txtNroCuota.Text, codigoMoneda, txtImporte.Text, idComprobante, txtRM.Text)
-            End If
-            Me.btnLimpiar_Click(sender, e)
+            txtEntrada.Focus()
         Else
-            MsgBox("El codigo de barra ingresado es invalido", MsgBoxStyle.Exclamation, "Aviso")
+            MsgBox("No es posible registrar el pago." + vbCrLf + "Por favor verifique los datos ingresados", MsgBoxStyle.Exclamation, "Aviso")
         End If
-
-        txtEntrada.Focus()
     End Sub
 
     Private Sub BtnReimpresion_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnReimpresion.Click
@@ -142,40 +149,6 @@ Public Class frmControl
     End Sub
 
     Private Sub txtEntrada_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtEntrada.KeyPress
-
-
-        If Char.IsDigit(e.KeyChar) Then
-
-            e.Handled = False
-
-        ElseIf Char.IsControl(e.KeyChar) Then
-
-            e.Handled = False
-
-        ElseIf Char.IsSymbol(e.KeyChar) Then
-
-            e.Handled = False
-
-        ElseIf Char.IsSeparator(e.KeyChar) Then
-
-            e.Handled = False
-
-        ElseIf Char.IsWhiteSpace(e.KeyChar) Then
-
-            e.Handled = False
-
-        Else
-
-            e.Handled = True
-
-        End If
-
-
-
-        Me.txtEntrada.Text = Trim(Replace(Me.txtEntrada.Text, "  ", " "))
-
-        txtEntrada.Select(txtEntrada.Text.Length, 0)
-
 
         If (e.KeyChar = ChrW(13)) Then
             If txtEntrada.Text = String.Empty Then
@@ -224,6 +197,12 @@ Public Class frmControl
 
     Private Sub txtEntrada_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtEntrada.TextChanged
         clean()
+        If Not Regex.Match(txtEntrada.Text, "^\d+$", RegexOptions.IgnoreCase).Success Then
+            txtEntrada.ForeColor = Color.Red
+
+        Else
+            txtEntrada.ForeColor = Color.Black
+        End If
     End Sub
 
     Private Sub btnDeudas_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnDeudas.Click
@@ -234,7 +213,7 @@ Public Class frmControl
         frmInforme.Show()
     End Sub
 
-    Private Sub btnModificarPagos_Click(sender As System.Object, e As System.EventArgs) Handles btnModificarPagos.Click
+    Private Sub btnModificarPagos_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnModificarPagos.Click
         frmEliminarModPagos.Show()
     End Sub
 
@@ -243,52 +222,60 @@ Public Class frmControl
         Me.Close()
     End Sub
 
-
-  
-
-    Private Sub txtObservaciones_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtObservaciones.TextChanged
-
-    End Sub
-
-
-    Private Sub txtObservaciones_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtObservaciones.KeyPress
-        If Char.IsLetter(e.KeyChar) Then
-
-            e.Handled = False
-
-        ElseIf Char.IsControl(e.KeyChar) Then
-
-            e.Handled = False
-
-        ElseIf Char.IsSeparator(e.KeyChar) Then
-
-            e.Handled = False
-
+    Private Sub txtDeuda_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtDeuda.TextChanged
+        If Not Regex.Match(txtDeuda.Text, "^\d+(\,\d{1,2})?$", RegexOptions.IgnoreCase).Success Then
+            txtDeuda.ForeColor = Color.Red
+            If Not errores.ContainsKey("txtDeuda") Then
+                errores.Add("txtDeuda", "error")
+            End If
         Else
-
-            e.Handled = True
+            txtDeuda.ForeColor = Color.Black
+            If errores.ContainsKey("txtDeuda") Then
+                errores.Remove("txtDeuda")
+            End If
 
         End If
-
-
-
-        Me.txtObservaciones.Text = Trim(Replace(Me.txtObservaciones.Text, " ", ""))
-
-        txtObservaciones.Select(txtObservaciones.Text.Length, 0)
     End Sub
 
-    Private Sub txtDeuda_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtDeuda.TextChanged
-
+    Private Sub txtRM_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtRM.TextChanged
+        If Not Regex.Match(txtRM.Text, "^([0-9][0-9]+|[1-9])$", RegexOptions.IgnoreCase).Success Then
+            txtRM.ForeColor = Color.Red
+            If Not errores.ContainsKey("txtRM") Then
+                errores.Add("txtRM", "error")
+            End If
+        Else
+            txtRM.ForeColor = Color.Black
+            If errores.ContainsKey("txtRM") Then
+                errores.Remove("txtRM")
+            End If
+        End If
     End Sub
 
-    Private Sub txtDeuda_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtDeuda.KeyPress
+    Private Sub txtNroCuota_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtNroCuota.TextChanged
+        If Not Regex.Match(txtNroCuota.Text, "^([0-9][0-9]+|[1-9])$", RegexOptions.IgnoreCase).Success Then
+            txtNroCuota.ForeColor = Color.Red
+            If Not errores.ContainsKey("txtNroCuota") Then
+                errores.Add("txtNroCuota", "error")
+            End If
+        Else
+            txtNroCuota.ForeColor = Color.Black
+            If errores.ContainsKey("txtNroCuota") Then
+                errores.Remove("txtNroCuota")
+            End If
+        End If
+    End Sub
 
-
-
-        ComprobantesAct.NumeroDec(e, Me.txtDeuda)
-
-
-
-
+    Private Sub txtImporte_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtImporte.TextChanged
+        If Not Regex.Match(txtImporte.Text, "^\d+(\,\d{1,2})?$", RegexOptions.IgnoreCase).Success Then
+            txtImporte.ForeColor = Color.Red
+            If Not errores.ContainsKey("txtImporte") Then
+                errores.Add("txtImporte", "error")
+            End If
+        Else
+            txtImporte.ForeColor = Color.Black
+            If errores.ContainsKey("txtImporte") Then
+                errores.Remove("txtImporte")
+            End If
+        End If
     End Sub
 End Class

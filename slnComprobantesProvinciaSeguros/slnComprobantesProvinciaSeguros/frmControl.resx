@@ -179,6 +179,9 @@
   <data name="txtRM.Location" type="System.Drawing.Point, System.Drawing">
     <value>46, 257</value>
   </data>
+  <data name="txtRM.MaxLength" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
   <data name="txtRM.Size" type="System.Drawing.Size, System.Drawing">
     <value>44, 20</value>
   </data>
@@ -263,6 +266,9 @@
   <data name="txtPoliza.Location" type="System.Drawing.Point, System.Drawing">
     <value>193, 304</value>
   </data>
+  <data name="txtPoliza.MaxLength" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
   <data name="txtPoliza.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 20</value>
   </data>
@@ -317,6 +323,9 @@
   <data name="txtEndoso.Location" type="System.Drawing.Point, System.Drawing">
     <value>46, 304</value>
   </data>
+  <data name="txtEndoso.MaxLength" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
   <data name="txtEndoso.Size" type="System.Drawing.Size, System.Drawing">
     <value>108, 20</value>
   </data>
@@ -370,6 +379,9 @@
   </data>
   <data name="txtNroCuota.Location" type="System.Drawing.Point, System.Drawing">
     <value>193, 353</value>
+  </data>
+  <data name="txtNroCuota.MaxLength" type="System.Int32, mscorlib">
+    <value>2</value>
   </data>
   <data name="txtNroCuota.Size" type="System.Drawing.Size, System.Drawing">
     <value>35, 20</value>
@@ -508,6 +520,9 @@
   </data>
   <data name="txtImporte.Location" type="System.Drawing.Point, System.Drawing">
     <value>44, 406</value>
+  </data>
+  <data name="txtImporte.MaxLength" type="System.Int32, mscorlib">
+    <value>18</value>
   </data>
   <data name="txtImporte.Size" type="System.Drawing.Size, System.Drawing">
     <value>110, 20</value>
@@ -670,21 +685,6 @@
   <data name="ShapeContainer1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
-  <data name="RectangleShape3.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Zoom</value>
-  </data>
-  <data name="RectangleShape3.BorderColor" type="System.Drawing.Color, System.Drawing">
-    <value>Transparent</value>
-  </data>
-  <data name="RectangleShape3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>313, -4</value>
-  </data>
-  <data name="RectangleShape3.SelectionColor" type="System.Drawing.Color, System.Drawing">
-    <value>Transparent</value>
-  </data>
-  <data name="RectangleShape3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>176, 103</value>
-  </data>
   <data name="ShapeContainer1.Size" type="System.Drawing.Size, System.Drawing">
     <value>495, 530</value>
   </data>
@@ -702,6 +702,21 @@
   </data>
   <data name="&gt;&gt;ShapeContainer1.ZOrder" xml:space="preserve">
     <value>30</value>
+  </data>
+  <data name="RectangleShape3.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="RectangleShape3.BorderColor" type="System.Drawing.Color, System.Drawing">
+    <value>Transparent</value>
+  </data>
+  <data name="RectangleShape3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>313, -4</value>
+  </data>
+  <data name="RectangleShape3.SelectionColor" type="System.Drawing.Color, System.Drawing">
+    <value>Transparent</value>
+  </data>
+  <data name="RectangleShape3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>176, 103</value>
   </data>
   <data name="btnPermisos.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -863,7 +878,7 @@
     <value>338, 406</value>
   </data>
   <data name="txtDeuda.MaxLength" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>18</value>
   </data>
   <data name="txtDeuda.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 20</value>

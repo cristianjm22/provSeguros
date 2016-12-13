@@ -264,7 +264,9 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
-    <None Include="slnComprobantesProvinciaSeguros_TemporaryKey.pfx" />
+    <None Include="slnComprobantesProvinciaSeguros_TemporaryKey.pfx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logo.png" />
