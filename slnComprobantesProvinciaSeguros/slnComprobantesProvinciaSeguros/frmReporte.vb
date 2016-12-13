@@ -25,16 +25,22 @@ Public Class frmReporte
             lblTotalDia.Hide()
             lblTotalQuincena.Hide()
             lblproximaquincena.Hide()
+            totalDia.Hide()
+            totalQuincena.Hide()
+            totalProx.Hide()
 
         Else
             lblSinRegistros.Hide()
             btnExport.Show()
-            lblTotalDia.Text = lblTotalDia.Text + " $" + ComprobantesAct.ObtenerTotaldeldia()
-            lblTotalQuincena.Text = lblTotalQuincena.Text + " $" + ComprobantesAct.ObtenerTotalporQuincena()
-            lblproximaquincena.Text = lblproximaquincena.Text + " $" + ComprobantesAct.obtenerTotalPagosFuturos
+            totalDia.Text = "$" + ComprobantesAct.ObtenerTotaldeldia()
+            totalQuincena.Text = "$" + ComprobantesAct.ObtenerTotalporQuincena()
+            totalProx.Text = "$" + ComprobantesAct.obtenerTotalPagosFuturos()
             lblTotalDia.Show()
             lblTotalQuincena.Show()
             lblproximaquincena.Show()
+            totalDia.Show()
+            totalQuincena.Show()
+            totalProx.Show()
         End If
 
     End Sub

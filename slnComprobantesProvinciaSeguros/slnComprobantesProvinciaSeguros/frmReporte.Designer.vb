@@ -36,6 +36,9 @@ Partial Class frmReporte
         Me.lblSinRegistros = New System.Windows.Forms.Label()
         Me.btnCerrar = New System.Windows.Forms.Button()
         Me.lblproximaquincena = New System.Windows.Forms.Label()
+        Me.totalDia = New System.Windows.Forms.Label()
+        Me.totalQuincena = New System.Windows.Forms.Label()
+        Me.totalProx = New System.Windows.Forms.Label()
         CType(Me.dgvReporte, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -85,7 +88,7 @@ Partial Class frmReporte
         'RectangleShape1
         '
         Me.RectangleShape1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.RectangleShape1.BorderColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
         Me.RectangleShape1.FillColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(60, Byte), Integer))
         Me.RectangleShape1.FillGradientColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
@@ -198,12 +201,48 @@ Partial Class frmReporte
         Me.lblproximaquincena.TabIndex = 48
         Me.lblproximaquincena.Text = "Total proxima quincena:"
         '
+        'totalDia
+        '
+        Me.totalDia.AutoSize = True
+        Me.totalDia.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.totalDia.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
+        Me.totalDia.Location = New System.Drawing.Point(345, 444)
+        Me.totalDia.Name = "totalDia"
+        Me.totalDia.Size = New System.Drawing.Size(19, 19)
+        Me.totalDia.TabIndex = 49
+        Me.totalDia.Text = "$"
+        '
+        'totalQuincena
+        '
+        Me.totalQuincena.AutoSize = True
+        Me.totalQuincena.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.totalQuincena.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
+        Me.totalQuincena.Location = New System.Drawing.Point(627, 444)
+        Me.totalQuincena.Name = "totalQuincena"
+        Me.totalQuincena.Size = New System.Drawing.Size(19, 19)
+        Me.totalQuincena.TabIndex = 50
+        Me.totalQuincena.Text = "$"
+        '
+        'totalProx
+        '
+        Me.totalProx.AutoSize = True
+        Me.totalProx.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.totalProx.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
+        Me.totalProx.Location = New System.Drawing.Point(965, 444)
+        Me.totalProx.Name = "totalProx"
+        Me.totalProx.Size = New System.Drawing.Size(19, 19)
+        Me.totalProx.TabIndex = 51
+        Me.totalProx.Text = "$"
+        '
         'frmReporte
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btnCerrar
         Me.ClientSize = New System.Drawing.Size(1284, 500)
+        Me.Controls.Add(Me.totalProx)
+        Me.Controls.Add(Me.totalQuincena)
+        Me.Controls.Add(Me.totalDia)
         Me.Controls.Add(Me.lblproximaquincena)
         Me.Controls.Add(Me.btnCerrar)
         Me.Controls.Add(Me.lblSinRegistros)
@@ -235,4 +274,7 @@ Partial Class frmReporte
     Friend WithEvents lblSinRegistros As System.Windows.Forms.Label
     Friend WithEvents btnCerrar As System.Windows.Forms.Button
     Friend WithEvents lblproximaquincena As System.Windows.Forms.Label
+    Friend WithEvents totalDia As System.Windows.Forms.Label
+    Friend WithEvents totalQuincena As System.Windows.Forms.Label
+    Friend WithEvents totalProx As System.Windows.Forms.Label
 End Class

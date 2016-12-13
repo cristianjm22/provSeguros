@@ -685,6 +685,21 @@
   <data name="ShapeContainer1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
+  <data name="RectangleShape3.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="RectangleShape3.BorderColor" type="System.Drawing.Color, System.Drawing">
+    <value>Transparent</value>
+  </data>
+  <data name="RectangleShape3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>313, -4</value>
+  </data>
+  <data name="RectangleShape3.SelectionColor" type="System.Drawing.Color, System.Drawing">
+    <value>Transparent</value>
+  </data>
+  <data name="RectangleShape3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>176, 103</value>
+  </data>
   <data name="ShapeContainer1.Size" type="System.Drawing.Size, System.Drawing">
     <value>495, 530</value>
   </data>
@@ -702,21 +717,6 @@
   </data>
   <data name="&gt;&gt;ShapeContainer1.ZOrder" xml:space="preserve">
     <value>30</value>
-  </data>
-  <data name="RectangleShape3.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Zoom</value>
-  </data>
-  <data name="RectangleShape3.BorderColor" type="System.Drawing.Color, System.Drawing">
-    <value>Transparent</value>
-  </data>
-  <data name="RectangleShape3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>313, -4</value>
-  </data>
-  <data name="RectangleShape3.SelectionColor" type="System.Drawing.Color, System.Drawing">
-    <value>Transparent</value>
-  </data>
-  <data name="RectangleShape3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>176, 103</value>
   </data>
   <data name="btnPermisos.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>

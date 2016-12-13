@@ -159,7 +159,7 @@ Public Class frmControl
                 txtDeuda.Enabled = True
                 Dim dt As DataTable = DeudasDA.obtenerDeudas(txtPoliza.Text.ToString)
                 If dt.Rows.Count > 0 Then
-                    MsgBox("Tenga en cuenta que esta poliza posee deudas. (ver menu Deudas)", MsgBoxStyle.Exclamation, "Aviso")
+                    MsgBox("Tenga en cuenta que esta poliza posee deudas. " + vbCrLf + "(Ver menu Deudas)", MsgBoxStyle.Exclamation, "Aviso")
                 End If
             Else
                 MsgBox("El codigo ingresado no es correcto", MsgBoxStyle.Exclamation, "Aviso")
@@ -199,8 +199,13 @@ Public Class frmControl
         clean()
         If Not Regex.Match(txtEntrada.Text, "^\d+$", RegexOptions.IgnoreCase).Success Then
             txtEntrada.ForeColor = Color.Red
-
+            If Not errores.ContainsKey("txtEntrada") Then
+                errores.Add("txtEntrada", "error")
+            End If
         Else
+            If errores.ContainsKey("txtEntrada") Then
+                errores.Remove("txtEntrada")
+            End If
             txtEntrada.ForeColor = Color.Black
         End If
     End Sub
@@ -223,17 +228,23 @@ Public Class frmControl
     End Sub
 
     Private Sub txtDeuda_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtDeuda.TextChanged
-        If Not Regex.Match(txtDeuda.Text, "^\d+(\,\d{1,2})?$", RegexOptions.IgnoreCase).Success Then
-            txtDeuda.ForeColor = Color.Red
-            If Not errores.ContainsKey("txtDeuda") Then
-                errores.Add("txtDeuda", "error")
+        If Not txtDeuda.Text = String.Empty Then
+            If Not Regex.Match(txtDeuda.Text, "^\d+(\,\d{1,2})?$", RegexOptions.IgnoreCase).Success Then
+                txtDeuda.ForeColor = Color.Red
+                If Not errores.ContainsKey("txtDeuda") Then
+                    errores.Add("txtDeuda", "error")
+                End If
+            Else
+                txtDeuda.ForeColor = Color.Black
+                If errores.ContainsKey("txtDeuda") Then
+                    errores.Remove("txtDeuda")
+                End If
+
             End If
         Else
-            txtDeuda.ForeColor = Color.Black
             If errores.ContainsKey("txtDeuda") Then
                 errores.Remove("txtDeuda")
             End If
-
         End If
     End Sub
 
