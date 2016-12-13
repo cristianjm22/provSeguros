@@ -20,8 +20,18 @@ Public Class frmInforme
         dgvReimpresion.DataSource = table
         If (table.Rows.Count = 0) Then
             lblSinRegistros.Show()
+
             btnInformar.Hide()
+            lblTotal.Hide()
+            totalPesos.Hide()
+        Else
+            lblTotal.Show()
+
+            totalPesos.Text = "$" + ComprobantesAct.obtenerTotalPagosInformados()
+            totalPesos.Show()
         End If
+
+
     End Sub
 
     Private Sub btnInformar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnInformar.Click

@@ -33,6 +33,8 @@ Partial Class frmInforme
         Me.lblInforme = New System.Windows.Forms.Label()
         Me.btnInformar = New System.Windows.Forms.Button()
         Me.btnCerrar = New System.Windows.Forms.Button()
+        Me.totalPesos = New System.Windows.Forms.Label()
+        Me.lblTotal = New System.Windows.Forms.Label()
         CType(Me.dgvReimpresion, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -162,12 +164,36 @@ Partial Class frmInforme
         Me.btnCerrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnCerrar.UseVisualStyleBackColor = False
         '
+        'totalPesos
+        '
+        Me.totalPesos.AutoSize = True
+        Me.totalPesos.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.totalPesos.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
+        Me.totalPesos.Location = New System.Drawing.Point(554, 412)
+        Me.totalPesos.Name = "totalPesos"
+        Me.totalPesos.Size = New System.Drawing.Size(19, 19)
+        Me.totalPesos.TabIndex = 51
+        Me.totalPesos.Text = "$"
+        '
+        'lblTotal
+        '
+        Me.lblTotal.AutoSize = True
+        Me.lblTotal.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTotal.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
+        Me.lblTotal.Location = New System.Drawing.Point(499, 412)
+        Me.lblTotal.Name = "lblTotal"
+        Me.lblTotal.Size = New System.Drawing.Size(58, 19)
+        Me.lblTotal.TabIndex = 50
+        Me.lblTotal.Text = "Total:"
+        '
         'frmInforme
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btnCerrar
         Me.ClientSize = New System.Drawing.Size(1170, 462)
+        Me.Controls.Add(Me.totalPesos)
+        Me.Controls.Add(Me.lblTotal)
         Me.Controls.Add(Me.btnCerrar)
         Me.Controls.Add(Me.btnInformar)
         Me.Controls.Add(Me.lblInforme)
@@ -193,4 +219,6 @@ Partial Class frmInforme
     Friend WithEvents lblInforme As System.Windows.Forms.Label
     Friend WithEvents btnInformar As System.Windows.Forms.Button
     Friend WithEvents btnCerrar As System.Windows.Forms.Button
+    Friend WithEvents totalPesos As System.Windows.Forms.Label
+    Friend WithEvents lblTotal As System.Windows.Forms.Label
 End Class
