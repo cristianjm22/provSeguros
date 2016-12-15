@@ -39,6 +39,8 @@ Partial Class frmReporte
         Me.totalDia = New System.Windows.Forms.Label()
         Me.totalQuincena = New System.Windows.Forms.Label()
         Me.totalProx = New System.Windows.Forms.Label()
+        Me.lblTotalPagoAnticipado = New System.Windows.Forms.Label()
+        Me.lblPagoAnticipado = New System.Windows.Forms.Label()
         CType(Me.dgvReporte, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -65,13 +67,13 @@ Partial Class frmReporte
         Me.dgvReporte.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvReporte.ColumnHeadersHeight = 30
         Me.dgvReporte.EnableHeadersVisualStyles = False
-        Me.dgvReporte.Location = New System.Drawing.Point(58, 216)
+        Me.dgvReporte.Location = New System.Drawing.Point(58, 157)
         Me.dgvReporte.Name = "dgvReporte"
         Me.dgvReporte.ReadOnly = True
         Me.dgvReporte.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvReporte.ShowEditingIcon = False
         Me.dgvReporte.ShowRowErrors = False
-        Me.dgvReporte.Size = New System.Drawing.Size(1185, 212)
+        Me.dgvReporte.Size = New System.Drawing.Size(1185, 253)
         Me.dgvReporte.TabIndex = 0
         '
         'lblReporte
@@ -79,7 +81,7 @@ Partial Class frmReporte
         Me.lblReporte.AutoSize = True
         Me.lblReporte.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblReporte.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
-        Me.lblReporte.Location = New System.Drawing.Point(54, 176)
+        Me.lblReporte.Location = New System.Drawing.Point(54, 117)
         Me.lblReporte.Name = "lblReporte"
         Me.lblReporte.Size = New System.Drawing.Size(127, 19)
         Me.lblReporte.TabIndex = 28
@@ -88,7 +90,7 @@ Partial Class frmReporte
         'RectangleShape1
         '
         Me.RectangleShape1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.RectangleShape1.BorderColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
         Me.RectangleShape1.FillColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(60, Byte), Integer))
         Me.RectangleShape1.FillGradientColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
@@ -142,28 +144,28 @@ Partial Class frmReporte
         Me.lblTotalDia.AutoSize = True
         Me.lblTotalDia.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTotalDia.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
-        Me.lblTotalDia.Location = New System.Drawing.Point(230, 444)
+        Me.lblTotalDia.Location = New System.Drawing.Point(155, 434)
         Me.lblTotalDia.Name = "lblTotalDia"
-        Me.lblTotalDia.Size = New System.Drawing.Size(118, 19)
+        Me.lblTotalDia.Size = New System.Drawing.Size(88, 19)
         Me.lblTotalDia.TabIndex = 38
-        Me.lblTotalDia.Text = "Total del dia:"
+        Me.lblTotalDia.Text = "Total dia:"
         '
         'lblTotalQuincena
         '
         Me.lblTotalQuincena.AutoSize = True
         Me.lblTotalQuincena.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTotalQuincena.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
-        Me.lblTotalQuincena.Location = New System.Drawing.Point(469, 444)
+        Me.lblTotalQuincena.Location = New System.Drawing.Point(574, 437)
         Me.lblTotalQuincena.Name = "lblTotalQuincena"
-        Me.lblTotalQuincena.Size = New System.Drawing.Size(161, 19)
+        Me.lblTotalQuincena.Size = New System.Drawing.Size(136, 19)
         Me.lblTotalQuincena.TabIndex = 39
-        Me.lblTotalQuincena.Text = "Total de quincena:"
+        Me.lblTotalQuincena.Text = "Total quincena:"
         '
         'lblSinRegistros
         '
         Me.lblSinRegistros.AutoSize = True
         Me.lblSinRegistros.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblSinRegistros.Location = New System.Drawing.Point(544, 260)
+        Me.lblSinRegistros.Location = New System.Drawing.Point(544, 201)
         Me.lblSinRegistros.Name = "lblSinRegistros"
         Me.lblSinRegistros.Size = New System.Drawing.Size(191, 16)
         Me.lblSinRegistros.TabIndex = 40
@@ -182,7 +184,7 @@ Partial Class frmReporte
         Me.btnCerrar.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.back_1_
         Me.btnCerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnCerrar.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.btnCerrar.Location = New System.Drawing.Point(58, 434)
+        Me.btnCerrar.Location = New System.Drawing.Point(58, 431)
         Me.btnCerrar.Name = "btnCerrar"
         Me.btnCerrar.Size = New System.Drawing.Size(74, 29)
         Me.btnCerrar.TabIndex = 47
@@ -195,7 +197,7 @@ Partial Class frmReporte
         Me.lblproximaquincena.AutoSize = True
         Me.lblproximaquincena.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblproximaquincena.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
-        Me.lblproximaquincena.Location = New System.Drawing.Point(762, 444)
+        Me.lblproximaquincena.Location = New System.Drawing.Point(574, 465)
         Me.lblproximaquincena.Name = "lblproximaquincena"
         Me.lblproximaquincena.Size = New System.Drawing.Size(208, 19)
         Me.lblproximaquincena.TabIndex = 48
@@ -206,7 +208,7 @@ Partial Class frmReporte
         Me.totalDia.AutoSize = True
         Me.totalDia.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.totalDia.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
-        Me.totalDia.Location = New System.Drawing.Point(345, 444)
+        Me.totalDia.Location = New System.Drawing.Point(249, 434)
         Me.totalDia.Name = "totalDia"
         Me.totalDia.Size = New System.Drawing.Size(19, 19)
         Me.totalDia.TabIndex = 49
@@ -217,7 +219,7 @@ Partial Class frmReporte
         Me.totalQuincena.AutoSize = True
         Me.totalQuincena.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.totalQuincena.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
-        Me.totalQuincena.Location = New System.Drawing.Point(627, 444)
+        Me.totalQuincena.Location = New System.Drawing.Point(716, 437)
         Me.totalQuincena.Name = "totalQuincena"
         Me.totalQuincena.Size = New System.Drawing.Size(19, 19)
         Me.totalQuincena.TabIndex = 50
@@ -228,11 +230,33 @@ Partial Class frmReporte
         Me.totalProx.AutoSize = True
         Me.totalProx.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.totalProx.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
-        Me.totalProx.Location = New System.Drawing.Point(965, 444)
+        Me.totalProx.Location = New System.Drawing.Point(788, 465)
         Me.totalProx.Name = "totalProx"
         Me.totalProx.Size = New System.Drawing.Size(19, 19)
         Me.totalProx.TabIndex = 51
         Me.totalProx.Text = "$"
+        '
+        'lblTotalPagoAnticipado
+        '
+        Me.lblTotalPagoAnticipado.AutoSize = True
+        Me.lblTotalPagoAnticipado.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTotalPagoAnticipado.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
+        Me.lblTotalPagoAnticipado.Location = New System.Drawing.Point(348, 462)
+        Me.lblTotalPagoAnticipado.Name = "lblTotalPagoAnticipado"
+        Me.lblTotalPagoAnticipado.Size = New System.Drawing.Size(19, 19)
+        Me.lblTotalPagoAnticipado.TabIndex = 53
+        Me.lblTotalPagoAnticipado.Text = "$"
+        '
+        'lblPagoAnticipado
+        '
+        Me.lblPagoAnticipado.AutoSize = True
+        Me.lblPagoAnticipado.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPagoAnticipado.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
+        Me.lblPagoAnticipado.Location = New System.Drawing.Point(155, 462)
+        Me.lblPagoAnticipado.Name = "lblPagoAnticipado"
+        Me.lblPagoAnticipado.Size = New System.Drawing.Size(193, 19)
+        Me.lblPagoAnticipado.TabIndex = 52
+        Me.lblPagoAnticipado.Text = "Total pago anticipado:"
         '
         'frmReporte
         '
@@ -240,6 +264,8 @@ Partial Class frmReporte
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btnCerrar
         Me.ClientSize = New System.Drawing.Size(1284, 500)
+        Me.Controls.Add(Me.lblTotalPagoAnticipado)
+        Me.Controls.Add(Me.lblPagoAnticipado)
         Me.Controls.Add(Me.totalProx)
         Me.Controls.Add(Me.totalQuincena)
         Me.Controls.Add(Me.totalDia)
@@ -277,4 +303,6 @@ Partial Class frmReporte
     Friend WithEvents totalDia As System.Windows.Forms.Label
     Friend WithEvents totalQuincena As System.Windows.Forms.Label
     Friend WithEvents totalProx As System.Windows.Forms.Label
+    Friend WithEvents lblTotalPagoAnticipado As System.Windows.Forms.Label
+    Friend WithEvents lblPagoAnticipado As System.Windows.Forms.Label
 End Class
