@@ -34,6 +34,9 @@ Partial Class frmDeudas
         Me.NRO_CUOTA = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FECHA_INGRESO = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ID_COMPROBANTE = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ULTIMO_PAGO = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FECHA_ULTIMO_PAGO = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DEUDA_PENDIENTE = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.MODIFICAR = New System.Windows.Forms.DataGridViewImageColumn()
         Me.ELIMINAR = New System.Windows.Forms.DataGridViewImageColumn()
         Me.txtPoliza = New System.Windows.Forms.TextBox()
@@ -80,7 +83,7 @@ Partial Class frmDeudas
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgvDeudas.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvDeudas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvDeudas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID_DEUDA, Me.IMPORTE_DEUDA, Me.POLIZA, Me.NRO_CUOTA, Me.FECHA_INGRESO, Me.ID_COMPROBANTE, Me.MODIFICAR, Me.ELIMINAR})
+        Me.dgvDeudas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID_DEUDA, Me.IMPORTE_DEUDA, Me.POLIZA, Me.NRO_CUOTA, Me.FECHA_INGRESO, Me.ID_COMPROBANTE, Me.ULTIMO_PAGO, Me.FECHA_ULTIMO_PAGO, Me.DEUDA_PENDIENTE, Me.MODIFICAR, Me.ELIMINAR})
         Me.dgvDeudas.EnableHeadersVisualStyles = False
         Me.dgvDeudas.Location = New System.Drawing.Point(56, 234)
         Me.dgvDeudas.MultiSelect = False
@@ -89,7 +92,7 @@ Partial Class frmDeudas
         Me.dgvDeudas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvDeudas.ShowEditingIcon = False
         Me.dgvDeudas.ShowRowErrors = False
-        Me.dgvDeudas.Size = New System.Drawing.Size(804, 142)
+        Me.dgvDeudas.Size = New System.Drawing.Size(1097, 142)
         Me.dgvDeudas.TabIndex = 33
         '
         'ID_DEUDA
@@ -103,10 +106,10 @@ Partial Class frmDeudas
         '
         'IMPORTE_DEUDA
         '
-        Me.IMPORTE_DEUDA.HeaderText = "IMPORTE"
+        Me.IMPORTE_DEUDA.HeaderText = "DEUDA INICIAL"
         Me.IMPORTE_DEUDA.Name = "IMPORTE_DEUDA"
         Me.IMPORTE_DEUDA.ReadOnly = True
-        Me.IMPORTE_DEUDA.Width = 76
+        Me.IMPORTE_DEUDA.Width = 97
         '
         'POLIZA
         '
@@ -135,6 +138,27 @@ Partial Class frmDeudas
         Me.ID_COMPROBANTE.Name = "ID_COMPROBANTE"
         Me.ID_COMPROBANTE.ReadOnly = True
         Me.ID_COMPROBANTE.Width = 107
+        '
+        'ULTIMO_PAGO
+        '
+        Me.ULTIMO_PAGO.HeaderText = "ULTIMO PAGO"
+        Me.ULTIMO_PAGO.Name = "ULTIMO_PAGO"
+        Me.ULTIMO_PAGO.ReadOnly = True
+        Me.ULTIMO_PAGO.Width = 92
+        '
+        'FECHA_ULTIMO_PAGO
+        '
+        Me.FECHA_ULTIMO_PAGO.HeaderText = "FECHA ULTIMO PAGO"
+        Me.FECHA_ULTIMO_PAGO.Name = "FECHA_ULTIMO_PAGO"
+        Me.FECHA_ULTIMO_PAGO.ReadOnly = True
+        Me.FECHA_ULTIMO_PAGO.Width = 124
+        '
+        'DEUDA_PENDIENTE
+        '
+        Me.DEUDA_PENDIENTE.HeaderText = "DEUDA PENDIENTE"
+        Me.DEUDA_PENDIENTE.Name = "DEUDA_PENDIENTE"
+        Me.DEUDA_PENDIENTE.ReadOnly = True
+        Me.DEUDA_PENDIENTE.Width = 113
         '
         'MODIFICAR
         '
@@ -175,7 +199,7 @@ Partial Class frmDeudas
         'RectangleShape1
         '
         Me.RectangleShape1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.RectangleShape1.BorderColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
         Me.RectangleShape1.FillColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(60, Byte), Integer))
         Me.RectangleShape1.FillGradientColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
@@ -184,7 +208,7 @@ Partial Class frmDeudas
         Me.RectangleShape1.Location = New System.Drawing.Point(-1, 0)
         Me.RectangleShape1.Name = "RectangleShape1"
         Me.RectangleShape1.SelectionColor = System.Drawing.Color.Transparent
-        Me.RectangleShape1.Size = New System.Drawing.Size(903, 94)
+        Me.RectangleShape1.Size = New System.Drawing.Size(1165, 94)
         '
         'ShapeContainer1
         '
@@ -192,7 +216,7 @@ Partial Class frmDeudas
         Me.ShapeContainer1.Margin = New System.Windows.Forms.Padding(0)
         Me.ShapeContainer1.Name = "ShapeContainer1"
         Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape3, Me.RectangleShape1})
-        Me.ShapeContainer1.Size = New System.Drawing.Size(903, 456)
+        Me.ShapeContainer1.Size = New System.Drawing.Size(1165, 456)
         Me.ShapeContainer1.TabIndex = 41
         Me.ShapeContainer1.TabStop = False
         '
@@ -201,7 +225,7 @@ Partial Class frmDeudas
         Me.RectangleShape3.BackgroundImage = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.Sin
         Me.RectangleShape3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.RectangleShape3.BorderColor = System.Drawing.Color.Transparent
-        Me.RectangleShape3.Location = New System.Drawing.Point(707, -4)
+        Me.RectangleShape3.Location = New System.Drawing.Point(924, -3)
         Me.RectangleShape3.Name = "RectangleShape3"
         Me.RectangleShape3.SelectionColor = System.Drawing.Color.Transparent
         Me.RectangleShape3.Size = New System.Drawing.Size(176, 103)
@@ -210,7 +234,7 @@ Partial Class frmDeudas
         '
         Me.lblSinRegistros.AutoSize = True
         Me.lblSinRegistros.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblSinRegistros.Location = New System.Drawing.Point(352, 271)
+        Me.lblSinRegistros.Location = New System.Drawing.Point(502, 273)
         Me.lblSinRegistros.Name = "lblSinRegistros"
         Me.lblSinRegistros.Size = New System.Drawing.Size(191, 16)
         Me.lblSinRegistros.TabIndex = 40
@@ -252,7 +276,7 @@ Partial Class frmDeudas
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btnCerrar
-        Me.ClientSize = New System.Drawing.Size(903, 456)
+        Me.ClientSize = New System.Drawing.Size(1165, 456)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.btnCerrar)
         Me.Controls.Add(Me.lblSinRegistros)
@@ -289,6 +313,9 @@ Partial Class frmDeudas
     Friend WithEvents NRO_CUOTA As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents FECHA_INGRESO As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents ID_COMPROBANTE As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents ULTIMO_PAGO As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents FECHA_ULTIMO_PAGO As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DEUDA_PENDIENTE As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents MODIFICAR As System.Windows.Forms.DataGridViewImageColumn
     Friend WithEvents ELIMINAR As System.Windows.Forms.DataGridViewImageColumn
 End Class

@@ -51,7 +51,7 @@ Public Class frmReimpresion
             Dim cuota = row.Item(6)
             Dim moneda = ComprobantesAct.getCodMonedaByDescription(row.Item(8).Value)
             Dim importe = row.Item(9)
-            ComprobantesAct.PrintTicket(poliza.Value, cuota.Value, moneda, importe.Value, comprobante.Value, ramo.Value)
+            ComprobantesAct.PrintTicket(poliza.Value, cuota.Value, moneda, importe.Value, comprobante.Value, ramo.Value, "CUOTA", "", "")
         Else
             MsgBox("Debe seleccionar un registro para poder imprimir", MsgBoxStyle.Exclamation, "Aviso")
         End If

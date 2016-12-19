@@ -27,7 +27,7 @@ Public Class DeudasDA
 
     End Function
 
-    Public Shared Function UpdateDeudas(ByVal ID_DEUDA As Integer, ByVal IMPORTE_DEUDA As Decimal)
+    Public Shared Function UpdateDeudas(ByVal ID_DEUDA As Integer, ByVal ULTIMO_PAGO As Decimal, ByVal PENDIENTE As Decimal)
 
         Try
             conn = New SqlConnection(sCnn)
@@ -36,7 +36,8 @@ Public Class DeudasDA
             cmd.CommandType = CommandType.StoredProcedure
 
             cmd.Parameters.AddWithValue("@ID_DEUDA", ID_DEUDA)
-            cmd.Parameters.AddWithValue("@IMPORTE_DEUDA", IMPORTE_DEUDA)
+            cmd.Parameters.AddWithValue("@ULTIMO_PAGO", ULTIMO_PAGO)
+            cmd.Parameters.AddWithValue("@PENDIENTE", PENDIENTE)
 
             Return cmd.ExecuteNonQuery()
             conn.Close()
@@ -76,4 +77,54 @@ Public Class DeudasDA
         Return dt
 
     End Function
+
+    Public Shared Function CancelarDeuda(ByVal idDeuda As Integer)
+        Try
+            conn = New SqlConnection(sCnn)
+            conn.Open()
+            Dim cmd As New SqlCommand("SP_DELETE_DEUDAS", conn)
+            cmd.CommandType = CommandType.StoredProcedure
+
+            cmd.Parameters.AddWithValue("@ID_DEUDA", idDeuda)
+
+            Return cmd.ExecuteNonQuery()
+            conn.Close()
+        Catch e As SqlException
+            MsgBox("Mensaje: " & e.Message)
+            Return 0
+        End Try
+    End Function
+
+    Public Shared Function FindDeudaById(ByVal idDeuda As Integer)
+        Try
+            conn = New SqlConnection(sCnn)
+            conn.Open()
+            Dim cmd As New SqlCommand("SP_FIND_DEUDAS_BY_ID", conn)
+            cmd.CommandType = CommandType.StoredProcedure
+
+
+            cmd.Parameters.AddWithValue("@ID_DEUDA", idDeuda)
+            Dim reader = cmd.ExecuteReader()
+            reader.Read()
+            Dim ticketDeuda = New TicketDeuda
+            ticketDeuda.setComprobante(reader(5).ToString)
+            ticketDeuda.setCuota(reader(2).ToString.Trim)
+            ticketDeuda.setDeudaInicial(reader(7).ToString)
+            ticketDeuda.setDeudaPendiente(reader(8).ToString)
+            ticketDeuda.setFechaIngreso(reader(4).ToString)
+            ticketDeuda.setMoneda(reader(3).ToString.Trim)
+            ticketDeuda.setPoliza(reader(1).ToString.Trim)
+            ticketDeuda.setRamo(reader(6).ToString.Trim)
+            ticketDeuda.setUltimoPago(reader(0).ToString)
+
+            Return ticketDeuda
+            conn.Close()
+        Catch e As SqlException
+            MsgBox("Mensaje: " & e.Message)
+            Return Nothing
+        End Try
+    End Function
+
+
+
 End Class

@@ -24,7 +24,7 @@ Partial Class frmModDeuda
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmModDeuda))
         Me.lblNroDeuda = New System.Windows.Forms.Label()
-        Me.lblImporte = New System.Windows.Forms.Label()
+        Me.lblDeudaInicial = New System.Windows.Forms.Label()
         Me.txtidDeuda = New System.Windows.Forms.TextBox()
         Me.txtImporte = New System.Windows.Forms.TextBox()
         Me.btnCancelar = New System.Windows.Forms.Button()
@@ -33,6 +33,10 @@ Partial Class frmModDeuda
         Me.RectangleShape3 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.ShapeContainer1 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.txtUltimoPago = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.txtPendiente = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'lblNroDeuda
@@ -46,29 +50,30 @@ Partial Class frmModDeuda
         Me.lblNroDeuda.TabIndex = 3
         Me.lblNroDeuda.Text = "Nro. Deuda"
         '
-        'lblImporte
+        'lblDeudaInicial
         '
-        Me.lblImporte.AutoSize = True
-        Me.lblImporte.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblImporte.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.lblImporte.Location = New System.Drawing.Point(37, 211)
-        Me.lblImporte.Name = "lblImporte"
-        Me.lblImporte.Size = New System.Drawing.Size(51, 14)
-        Me.lblImporte.TabIndex = 4
-        Me.lblImporte.Text = "Importe"
+        Me.lblDeudaInicial.AutoSize = True
+        Me.lblDeudaInicial.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDeudaInicial.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.lblDeudaInicial.Location = New System.Drawing.Point(37, 192)
+        Me.lblDeudaInicial.Name = "lblDeudaInicial"
+        Me.lblDeudaInicial.Size = New System.Drawing.Size(73, 14)
+        Me.lblDeudaInicial.TabIndex = 4
+        Me.lblDeudaInicial.Text = "Deuda inicial"
         '
         'txtidDeuda
         '
         Me.txtidDeuda.Enabled = False
-        Me.txtidDeuda.Location = New System.Drawing.Point(112, 164)
+        Me.txtidDeuda.Location = New System.Drawing.Point(122, 164)
         Me.txtidDeuda.Name = "txtidDeuda"
         Me.txtidDeuda.Size = New System.Drawing.Size(138, 20)
         Me.txtidDeuda.TabIndex = 5
         '
         'txtImporte
         '
-        Me.txtImporte.Location = New System.Drawing.Point(112, 209)
+        Me.txtImporte.Location = New System.Drawing.Point(122, 190)
         Me.txtImporte.Name = "txtImporte"
+        Me.txtImporte.ReadOnly = True
         Me.txtImporte.Size = New System.Drawing.Size(138, 20)
         Me.txtImporte.TabIndex = 6
         '
@@ -84,7 +89,7 @@ Partial Class frmModDeuda
         Me.btnCancelar.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.cancelar
         Me.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnCancelar.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.btnCancelar.Location = New System.Drawing.Point(75, 258)
+        Me.btnCancelar.Location = New System.Drawing.Point(85, 284)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(85, 29)
         Me.btnCancelar.TabIndex = 42
@@ -104,7 +109,7 @@ Partial Class frmModDeuda
         Me.btnAceptar.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.aceptar
         Me.btnAceptar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnAceptar.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.btnAceptar.Location = New System.Drawing.Point(166, 258)
+        Me.btnAceptar.Location = New System.Drawing.Point(176, 284)
         Me.btnAceptar.Name = "btnAceptar"
         Me.btnAceptar.Size = New System.Drawing.Size(84, 29)
         Me.btnAceptar.TabIndex = 41
@@ -115,7 +120,7 @@ Partial Class frmModDeuda
         'RectangleShape1
         '
         Me.RectangleShape1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.RectangleShape1.BorderColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
         Me.RectangleShape1.FillColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(60, Byte), Integer))
         Me.RectangleShape1.FillGradientColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
@@ -142,7 +147,7 @@ Partial Class frmModDeuda
         Me.ShapeContainer1.Margin = New System.Windows.Forms.Padding(0)
         Me.ShapeContainer1.Name = "ShapeContainer1"
         Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape3, Me.RectangleShape1})
-        Me.ShapeContainer1.Size = New System.Drawing.Size(318, 316)
+        Me.ShapeContainer1.Size = New System.Drawing.Size(318, 334)
         Me.ShapeContainer1.TabIndex = 43
         Me.ShapeContainer1.TabStop = False
         '
@@ -157,17 +162,58 @@ Partial Class frmModDeuda
         Me.Label1.TabIndex = 44
         Me.Label1.Text = "Modificacion Deudas"
         '
+        'txtUltimoPago
+        '
+        Me.txtUltimoPago.Location = New System.Drawing.Point(122, 216)
+        Me.txtUltimoPago.Name = "txtUltimoPago"
+        Me.txtUltimoPago.Size = New System.Drawing.Size(138, 20)
+        Me.txtUltimoPago.TabIndex = 46
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Label2.Location = New System.Drawing.Point(37, 218)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(70, 14)
+        Me.Label2.TabIndex = 45
+        Me.Label2.Text = "Pago actual"
+        '
+        'txtPendiente
+        '
+        Me.txtPendiente.Location = New System.Drawing.Point(122, 242)
+        Me.txtPendiente.Name = "txtPendiente"
+        Me.txtPendiente.ReadOnly = True
+        Me.txtPendiente.Size = New System.Drawing.Size(138, 20)
+        Me.txtPendiente.TabIndex = 48
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Label3.Location = New System.Drawing.Point(37, 244)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(63, 14)
+        Me.Label3.TabIndex = 47
+        Me.Label3.Text = "Pendiente"
+        '
         'frmModDeuda
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(318, 316)
+        Me.ClientSize = New System.Drawing.Size(318, 334)
+        Me.Controls.Add(Me.txtPendiente)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.txtUltimoPago)
+        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btnCancelar)
         Me.Controls.Add(Me.btnAceptar)
         Me.Controls.Add(Me.txtImporte)
         Me.Controls.Add(Me.txtidDeuda)
-        Me.Controls.Add(Me.lblImporte)
+        Me.Controls.Add(Me.lblDeudaInicial)
         Me.Controls.Add(Me.lblNroDeuda)
         Me.Controls.Add(Me.ShapeContainer1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
@@ -182,7 +228,7 @@ Partial Class frmModDeuda
 
     End Sub
     Friend WithEvents lblNroDeuda As System.Windows.Forms.Label
-    Friend WithEvents lblImporte As System.Windows.Forms.Label
+    Friend WithEvents lblDeudaInicial As System.Windows.Forms.Label
     Friend WithEvents txtidDeuda As System.Windows.Forms.TextBox
     Friend WithEvents txtImporte As System.Windows.Forms.TextBox
     Friend WithEvents btnCancelar As System.Windows.Forms.Button
@@ -191,4 +237,8 @@ Partial Class frmModDeuda
     Friend WithEvents RectangleShape3 As Microsoft.VisualBasic.PowerPacks.RectangleShape
     Friend WithEvents ShapeContainer1 As Microsoft.VisualBasic.PowerPacks.ShapeContainer
     Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents txtUltimoPago As System.Windows.Forms.TextBox
+    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents txtPendiente As System.Windows.Forms.TextBox
+    Friend WithEvents Label3 As System.Windows.Forms.Label
 End Class

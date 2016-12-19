@@ -127,7 +127,7 @@ Public Class frmControl
                     ComprobantesDA.InsertDeuda(idComprobante, txtPoliza.Text, txtNroCuota.Text, txtDeuda.Text)
                 End If
                 If MsgBox("El pago ha sido registrado correctamente." + vbCrLf + "¿Desea imprimir el comprobante?", MsgBoxStyle.YesNo, "Pago Registrado") = MsgBoxResult.Yes Then
-                    ComprobantesAct.PrintTicket(txtPoliza.Text, txtNroCuota.Text, codigoMoneda, txtImporte.Text, idComprobante, txtRM.Text)
+                    ComprobantesAct.PrintTicket(txtPoliza.Text, txtNroCuota.Text, codigoMoneda, txtImporte.Text, idComprobante, txtRM.Text, "CUOTA", "", "")
                 End If
                 Me.btnLimpiar_Click(sender, e)
             Else

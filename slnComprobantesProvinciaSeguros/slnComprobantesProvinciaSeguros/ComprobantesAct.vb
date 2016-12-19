@@ -11,6 +11,9 @@ Public Class ComprobantesAct
     Public Shared FechaPago As Date
     Public Shared NroComprobante As Integer
     Public Shared Ramo As String
+    Public Shared Tipo As String
+    Public Shared DeudaInicial As String
+    Public Shared DeudaPendiente As String
 
     ''' <summary>
     ''' Autor:Walter Morales
@@ -21,6 +24,10 @@ Public Class ComprobantesAct
     ''' <param name="pMoneda"></param>
     ''' <param name="pImporte"></param>
     ''' <param name="pNroComprobante"></param>
+    ''' <param name="pRamo"></param>
+    ''' <param name="pTipo"></param>
+    ''' <param name="pDeudaInicial"></param>
+    ''' <param name="pDeudaPendiente"></param>
     ''' <remarks></remarks>
     Public Shared Sub PrintTicket(
            ByVal pPoliza As String,
@@ -28,11 +35,14 @@ Public Class ComprobantesAct
            ByVal pMoneda As String,
            ByVal pImporte As String,
            ByVal pNroComprobante As Integer,
-           ByVal pRamo As String)
+           ByVal pRamo As String,
+           ByVal pTipo As String,
+           ByVal pDeudaInicial As String,
+           ByVal pDeudaPendiente As String)
 
         Try
             Try
-                SetData(pPoliza, pCuota, pMoneda, pImporte, pNroComprobante, pRamo)
+                SetData(pPoliza, pCuota, pMoneda, pImporte, pNroComprobante, pRamo, pTipo, pDeudaInicial, pDeudaPendiente)
                 Dim PrintDoc As New PrintDocument()
                 AddHandler PrintDoc.PrintPage, AddressOf BuildData
                 PrintDoc.Print()
@@ -52,6 +62,10 @@ Public Class ComprobantesAct
     ''' <param name="pMoneda"></param>
     ''' <param name="pImporte"></param>
     ''' <param name="pNroComprobante"></param>
+    ''' <param name="pRamo"></param>
+    ''' <param name="pTipo"></param>
+    ''' <param name="pDeudaInicial"></param>
+    ''' <param name="pDeudaPendiente"></param>
     ''' <remarks></remarks>
     Public Shared Sub SetData(
            ByVal pPoliza As String,
@@ -59,15 +73,21 @@ Public Class ComprobantesAct
            ByVal pMoneda As String,
            ByVal pImporte As String,
            ByVal pNroComprobante As Integer,
-           ByVal pRamo As String)
+           ByVal pRamo As String,
+           ByVal pTipo As String,
+           ByVal pDeudaInicial As String,
+           ByVal pDeudaPendiente As String)
 
         FechaPago = Date.Now
         NroComprobante = pNroComprobante
-
-        Importe = pMoneda + pImporte
+        Moneda = pMoneda
+        Importe = pImporte
         Poliza = pPoliza
         Cuota = pCuota
         Ramo = pRamo
+        Tipo = pTipo
+        DeudaInicial = pDeudaInicial
+        DeudaPendiente = pDeudaPendiente
 
     End Sub
 
@@ -119,6 +139,22 @@ Public Class ComprobantesAct
         Return codMoneda
     End Function
 
+    ''' <summary>
+    ''' Autor:Walter Morales
+    ''' Devuelve el codigo de la moneda
+    ''' </summary>
+    ''' <param name="idMoneda"></param>
+    ''' <remarks></remarks>
+    Public Shared Function getCodMonedaById(ByVal idMoneda As String)
+        Dim codMoneda As String
+        If (idMoneda = "1") Then
+            codMoneda = "$"
+        Else
+            codMoneda = "US$"
+        End If
+        Return codMoneda
+    End Function
+
 
     ''' <summary>
     ''' Autor:Walter Morales
@@ -135,11 +171,17 @@ Public Class ComprobantesAct
         e.Graphics.DrawString("HORA: " + FechaPago.ToString("HH:mm:ss"), PrintFont, Brushes.Black, 160, 120, New StringFormat())
         e.Graphics.DrawString("NRO COMPROBANTE: " + NroComprobante.ToString, PrintFont, Brushes.Black, 15, 140, New StringFormat())
         e.Graphics.DrawString("CUOTA: " + Cuota, PrintFont, Brushes.Black, 15, 160, New StringFormat())
-        e.Graphics.DrawString("IMPORTE PAGADO: " + Importe, PrintFont, Brushes.Black, 15, 180, New StringFormat())
+        e.Graphics.DrawString("IMPORTE PAGADO: " + Moneda + Importe, PrintFont, Brushes.Black, 15, 180, New StringFormat())
         e.Graphics.DrawString("POLIZA: " + Poliza, PrintFont, Brushes.Black, 15, 200, New StringFormat())
         e.Graphics.DrawString("RAMO: " + Ramo, PrintFont, Brushes.Black, 15, 220, New StringFormat())
-        e.Graphics.DrawString("---------------------------------------------------------------", PrintFontBold, Brushes.Black, 15, 250, New StringFormat())
-
+        e.Graphics.DrawString("TIPO PAGO: " + Tipo, PrintFont, Brushes.Black, 15, 240, New StringFormat())
+        If (Tipo = "DEUDA") Then
+            e.Graphics.DrawString("DEUDA INICIAL: " + Moneda + DeudaInicial, PrintFont, Brushes.Black, 15, 260, New StringFormat())
+            e.Graphics.DrawString("DEUDA PENDIENTE: " + Moneda + DeudaPendiente, PrintFont, Brushes.Black, 15, 280, New StringFormat())
+        End If
+        Dim p1 = New Point(15, 310)
+        Dim p2 = New Point(250, 310)
+        e.Graphics.DrawLine(Pens.Black, p1, p2)
         e.HasMorePages = False
     End Sub
 
@@ -271,13 +313,6 @@ Public Class ComprobantesAct
         End Try
 
     End Function
-
-
-
-
-
-
-
 
     ''' <summary>
     ''' 

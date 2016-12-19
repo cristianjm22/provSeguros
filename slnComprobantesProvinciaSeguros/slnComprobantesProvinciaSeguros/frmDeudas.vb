@@ -13,9 +13,7 @@ Public Class frmDeudas
 
         If dt.Rows.Count > 0 Then
             For Each row As DataRow In dt.Rows
-
-                dgvDeudas.Rows.Add(row("ID_DEUDA").ToString(), row("IMPORTE_DEUDA").ToString(), row("POLIZA").ToString(), row("NRO_CUOTA").ToString(), row("FECHA_INGRESO").ToString(), row("ID_COMPROBANTE").ToString())
-
+                dgvDeudas.Rows.Add(row("ID_DEUDA").ToString(), row("IMPORTE_DEUDA").ToString(), row("POLIZA").ToString(), row("NRO_CUOTA").ToString(), row("FECHA_INGRESO").ToString(), row("ID_COMPROBANTE").ToString(), row("ULTIMO_PAGO").ToString, row("FECHA_ULTIMO_PAGO").ToString, row("DEUDA_PENDIENTE").ToString)
             Next
         End If
 
@@ -39,7 +37,7 @@ Public Class frmDeudas
     End Sub
 
     Private Sub dgvDeudas_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvDeudas.CellContentClick
-        If e.ColumnIndex = 7 Then
+        If e.ColumnIndex = 10 Then
             If e.RowIndex >= 0 AndAlso dgvDeudas.Rows(e.RowIndex).Cells(0).Value.ToString() <> Nothing Then
 
 
@@ -53,7 +51,7 @@ Public Class frmDeudas
             End If
         End If
 
-        If e.ColumnIndex = 6 Then
+        If e.ColumnIndex = 9 Then
             If e.RowIndex >= 0 AndAlso dgvDeudas.Rows(dgvDeudas.CurrentRow.Index).Cells("ID_DEUDA").Value IsNot Nothing Then
 
                 indexdgvdeuda = dgvDeudas.CurrentRow.Index
@@ -61,7 +59,7 @@ Public Class frmDeudas
                 idDeuda = dgvDeudas.Rows(indexdgvdeuda).Cells("ID_DEUDA").Value.ToString()
                 frmModDeuda.txtidDeuda.Text = idDeuda
                 frmModDeuda.txtImporte.Text = dgvDeudas.Rows(indexdgvdeuda).Cells("IMPORTE_DEUDA").Value.ToString()
-
+                frmModDeuda.txtPendiente.Text = dgvDeudas.Rows(dgvDeudas.CurrentRow.Index).Cells(8).Value.ToString()
                 ModificacionReporte = True
 
                 frmModDeuda.ShowDialog()
