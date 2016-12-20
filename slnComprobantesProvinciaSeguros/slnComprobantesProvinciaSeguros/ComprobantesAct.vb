@@ -314,6 +314,29 @@ Public Class ComprobantesAct
 
     End Function
 
+
+    Public Shared Function obtenerTotalpagosTarjeta() As String
+        Try
+            Dim dt As DataTable
+            dt = ComprobantesDA.obtenerTotalpagosTarjeta()
+            If dt.Rows.Count > 0 Then
+
+                Return dt.Rows(0)(0).ToString
+
+            End If
+
+            Return "0"
+
+
+        Catch ex As Exception
+            MsgBox(ex.Message.ToString)
+            Return False
+        End Try
+
+    End Function
+
+
+
     ''' <summary>
     ''' 
     ''' </summary>
