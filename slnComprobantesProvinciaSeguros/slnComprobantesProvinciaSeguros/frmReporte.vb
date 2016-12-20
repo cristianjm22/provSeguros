@@ -30,6 +30,8 @@ Public Class frmReporte
             totalProx.Hide()
             lblTotalPagoAnticipado.Hide()
             lblPagoAnticipado.Hide()
+            lblPagosTarjetas.Hide()
+            totalpagosTarjeta.Hide()
 
         Else
             lblSinRegistros.Hide()
@@ -38,6 +40,7 @@ Public Class frmReporte
             totalQuincena.Text = "$" + ComprobantesAct.ObtenerTotalporQuincena()
             totalProx.Text = "$" + ComprobantesAct.obtenerTotalPagosFuturos()
             lblTotalPagoAnticipado.Text = "$" + ComprobantesAct.obtenerTotalPagosAnticipados()
+            totalpagosTarjeta.Text = "$" + ComprobantesAct.obtenerTotalpagosTarjeta()
             lblTotalDia.Show()
             lblTotalQuincena.Show()
             lblproximaquincena.Show()
@@ -46,6 +49,8 @@ Public Class frmReporte
             totalProx.Show()
             lblPagoAnticipado.Show()
             lblTotalPagoAnticipado.Show()
+            lblPagosTarjetas.Show()
+            totalpagosTarjeta.Show()
         End If
 
     End Sub
@@ -66,6 +71,10 @@ Public Class frmReporte
     End Sub
 
     Private Sub totalDia_Click(sender As System.Object, e As System.EventArgs) Handles totalDia.Click
+
+    End Sub
+
+    Private Sub Label1_Click(sender As System.Object, e As System.EventArgs) Handles totalpagosTarjeta.Click
 
     End Sub
 End Class
