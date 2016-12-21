@@ -125,4 +125,19 @@
 
     End Sub
 
+    Private Sub btnExport_Click(sender As System.Object, e As System.EventArgs) Handles btnExport.Click
+
+
+        If dgvReporte.Rows.Count = 0 Then
+            MsgBox("No hay información para exportar.", MsgBoxStyle.Information, "Aviso")
+        Else
+            ' Object to mark the times for each process
+            Dim stopwatch As New Stopwatch()
+            Me.UseWaitCursor = True
+            stopwatch.Start()
+            ComprobantesAct.GridAExcelDetallePagos(dgvReporte)
+            stopwatch.Stop()
+            Me.UseWaitCursor = False
+        End If
+    End Sub
 End Class

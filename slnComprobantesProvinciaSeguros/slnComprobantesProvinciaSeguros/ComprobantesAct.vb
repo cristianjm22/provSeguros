@@ -497,6 +497,88 @@ Public Class ComprobantesAct
     End Function
 
 
+    ''' <summary>
+    ''' 
+    ''' </summary>
+    ''' <param name="DGV"></param>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    Public Shared Function GridAExcelDetallePagos(ByVal DGV As DataGridView) As Boolean
+
+        'Creamos las variables
+
+        Dim exApp As New Microsoft.Office.Interop.Excel.Application
+        Dim exLibro As Microsoft.Office.Interop.Excel.Workbook
+        Dim exHoja As Microsoft.Office.Interop.Excel.Worksheet
+
+        Try
+
+            exLibro = exApp.Workbooks.Add
+            exHoja = exLibro.Worksheets(1)
+            Dim Fila As Integer
+            Dim Col As Integer
+            ' ¿Cuantas columnas y cuantas filas?
+            Dim NCol As Integer = DGV.ColumnCount
+            Dim NRow As Integer = DGV.RowCount
+            Dim styleHeader As Microsoft.Office.Interop.Excel.Style
+
+            styleHeader = exLibro.Styles.Add("StyleHeader")
+            styleHeader.Interior.Color = Color.FromArgb(1, 56, 131)
+            styleHeader.Font.Color = Color.White
+
+           
+
+            'recorremos todas las filas, y por cada fila todas las columnas
+            'y vamos escribiendo.
+            For i As Integer = 1 To NCol
+                exHoja.Cells.Item(1, i) = DGV.Columns(i - 1).Name.ToString
+                exHoja.Cells.Item(1, i).Style = "StyleHeader"
+            Next
+
+            For Fila = 0 To NRow - 1
+                For Col = 0 To NCol - 1
+                    Dim value As String
+
+                    'Problema con formato entrada (lapiz optico)
+                    If Col = 1 Then
+
+                        value = "'" + DGV.Rows(Fila).Cells(Col).Value().ToString.Trim + "'"
+                    Else
+                        value = DGV.Rows(Fila).Cells(Col).Value()
+                    End If
+
+
+                    exHoja.Cells.Item(Fila + 2, Col + 1) = value
+
+
+
+                    'exHoja.Cells.Item(Fila + 2, Col + 1).Style = "Text"
+                Next
+
+            Next
+
+            'Titulo en negrita, Alineado
+            exHoja.Rows.Item(1).Font.Bold = 1
+            exHoja.Rows.Item(1).HorizontalAlignment = 3
+            exHoja.Columns.AutoFit()
+            'para visualizar el libro
+            exApp.Application.Visible = True
+            exHoja = Nothing
+            exLibro = Nothing
+            exApp = Nothing
+
+
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical, "Error al exportar a Excel")
+
+            Return False
+        End Try
+        Return True
+    End Function
+
+
+
+
     Public Shared Function NumeroDec(ByVal e As System.Windows.Forms.KeyPressEventArgs, ByVal Text As TextBox) As Integer
 
         Dim dig As Integer = Len(Text.Text & e.KeyChar)

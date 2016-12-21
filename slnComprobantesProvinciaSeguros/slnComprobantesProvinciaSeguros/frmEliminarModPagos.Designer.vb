@@ -53,6 +53,7 @@ Partial Class frmEliminarModPagos
         Me.btnCerrar = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.btnExport = New System.Windows.Forms.Button()
         CType(Me.dgvReporte, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -96,7 +97,7 @@ Partial Class frmEliminarModPagos
         Me.dgvReporte.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvReporte.ShowEditingIcon = False
         Me.dgvReporte.ShowRowErrors = False
-        Me.dgvReporte.Size = New System.Drawing.Size(1241, 152)
+        Me.dgvReporte.Size = New System.Drawing.Size(1238, 152)
         Me.dgvReporte.TabIndex = 31
         '
         'ID_COMPROBANTE
@@ -254,7 +255,7 @@ Partial Class frmEliminarModPagos
         Me.ShapeContainer1.Margin = New System.Windows.Forms.Padding(0)
         Me.ShapeContainer1.Name = "ShapeContainer1"
         Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape3, Me.RectangleShape1})
-        Me.ShapeContainer1.Size = New System.Drawing.Size(1288, 424)
+        Me.ShapeContainer1.Size = New System.Drawing.Size(1288, 536)
         Me.ShapeContainer1.TabIndex = 40
         Me.ShapeContainer1.TabStop = False
         '
@@ -276,9 +277,9 @@ Partial Class frmEliminarModPagos
         Me.Label3.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.Label3.Location = New System.Drawing.Point(40, 133)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(130, 19)
+        Me.Label3.Size = New System.Drawing.Size(147, 19)
         Me.Label3.TabIndex = 41
-        Me.Label3.Text = "Eliminar Pagos"
+        Me.Label3.Text = "Detalle de Pagos"
         '
         'lblSinRegistros
         '
@@ -303,12 +304,11 @@ Partial Class frmEliminarModPagos
         Me.btnCerrar.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.back_1_
         Me.btnCerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnCerrar.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.btnCerrar.Location = New System.Drawing.Point(44, 366)
+        Me.btnCerrar.Location = New System.Drawing.Point(1127, 482)
         Me.btnCerrar.Name = "btnCerrar"
-        Me.btnCerrar.Size = New System.Drawing.Size(74, 29)
+        Me.btnCerrar.Size = New System.Drawing.Size(138, 29)
         Me.btnCerrar.TabIndex = 47
         Me.btnCerrar.Text = "Volver"
-        Me.btnCerrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnCerrar.UseVisualStyleBackColor = False
         '
         'PictureBox1
@@ -331,12 +331,31 @@ Partial Class frmEliminarModPagos
         Me.PictureBox2.TabIndex = 49
         Me.PictureBox2.TabStop = False
         '
+        'btnExport
+        '
+        Me.btnExport.BackColor = System.Drawing.SystemColors.Control
+        Me.btnExport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btnExport.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.btnExport.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
+        Me.btnExport.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnExport.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnExport.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
+        Me.btnExport.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.downwards_arrow
+        Me.btnExport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnExport.Location = New System.Drawing.Point(983, 482)
+        Me.btnExport.Name = "btnExport"
+        Me.btnExport.Size = New System.Drawing.Size(138, 29)
+        Me.btnExport.TabIndex = 50
+        Me.btnExport.Text = "Exportar"
+        Me.btnExport.UseVisualStyleBackColor = False
+        '
         'frmEliminarModPagos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btnCerrar
-        Me.ClientSize = New System.Drawing.Size(1288, 424)
+        Me.ClientSize = New System.Drawing.Size(1288, 536)
+        Me.Controls.Add(Me.btnExport)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.btnCerrar)
@@ -388,4 +407,5 @@ Partial Class frmEliminarModPagos
     Friend WithEvents ID_ESTADO As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents ESTADO As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents ELIMINAR As System.Windows.Forms.DataGridViewImageColumn
+    Friend WithEvents btnExport As System.Windows.Forms.Button
 End Class

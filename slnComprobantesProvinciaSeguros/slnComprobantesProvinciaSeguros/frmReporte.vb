@@ -56,8 +56,24 @@ Public Class frmReporte
     End Sub
 
     Private Sub btnExport_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnExport.Click
+
+        Dim result = False
         If (MsgBox("¿Desea exportar los pagos? " + vbCrLf + "Tenga en cuenta que esta accion modifica el estado de los mismos.", MsgBoxStyle.YesNo, "Exportar")) = MsgBoxResult.Yes Then
-            Dim result = ComprobantesAct.GridAExcel555(dgvReporte, ComprobantesAct.ObtenerTotaldeldia(), ComprobantesAct.ObtenerTotalporQuincena(), ComprobantesAct.obtenerTotalPagosFuturos())
+
+            If dgvReporte.Rows.Count = 0 Then
+                MsgBox("No hay información para exportar.", MsgBoxStyle.Information)
+            Else
+                ' Object to mark the times for each process
+                Dim stopwatch As New Stopwatch()
+                Me.UseWaitCursor = True
+                stopwatch.Start()
+                result = ComprobantesAct.GridAExcel555(dgvReporte, ComprobantesAct.ObtenerTotaldeldia(), ComprobantesAct.ObtenerTotalporQuincena(), ComprobantesAct.obtenerTotalPagosFuturos())
+
+                stopwatch.Stop()
+                Me.UseWaitCursor = False
+
+            End If
+
             If (result) Then
                 ComprobantesDA.InformarPago()
                 Me.frmReporte_Load(sender, e)
