@@ -147,11 +147,11 @@ Public Class frmControl
     End Sub
 
     Private Sub BtnReimpresion_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnReimpresion.Click
-        frmReimpresion.Show()
+        frmReimpresion.ShowDialog()
     End Sub
 
     Private Sub btnPermisos_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnPermisos.Click
-        frmPermisos.Show()
+        frmPermisos.ShowDialog()
     End Sub
 
     Private Sub txtEntrada_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtEntrada.KeyPress
@@ -174,7 +174,7 @@ Public Class frmControl
     End Sub
 
     Private Sub btnReporte_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnReporte.Click
-        frmReporte.Show()
+        frmReporte.ShowDialog()
     End Sub
 
     Private Sub btnLimpiar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnLimpiar.Click
@@ -217,19 +217,19 @@ Public Class frmControl
     End Sub
 
     Private Sub btnDeudas_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnDeudas.Click
-        frmDeudas.Show()
+        frmDeudas.ShowDialog()
     End Sub
 
     Private Sub btnInformarPagos_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnInformarPagos.Click
-        frmInforme.Show()
+        frmInforme.ShowDialog()
     End Sub
 
     Private Sub btnModificarPagos_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnModificarPagos.Click
-        frmEliminarModPagos.Show()
+        frmEliminarModPagos.ShowDialog()
     End Sub
 
     Private Sub btnCerrar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCerrar.Click
-        frmLogin.Show()
+        frmLogin.ShowDialog()
         Me.Close()
     End Sub
 

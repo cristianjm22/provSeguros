@@ -24,7 +24,6 @@ Partial Class frmEliminarModPagos
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmEliminarModPagos))
         Me.cboEstado = New System.Windows.Forms.ComboBox()
         Me.dgvReporte = New System.Windows.Forms.DataGridView()
@@ -97,18 +96,14 @@ Partial Class frmEliminarModPagos
         Me.dgvReporte.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvReporte.ShowEditingIcon = False
         Me.dgvReporte.ShowRowErrors = False
-        Me.dgvReporte.Size = New System.Drawing.Size(1238, 152)
+        Me.dgvReporte.Size = New System.Drawing.Size(1277, 152)
         Me.dgvReporte.TabIndex = 31
         '
         'ID_COMPROBANTE
         '
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.White
-        Me.ID_COMPROBANTE.DefaultCellStyle = DataGridViewCellStyle3
         Me.ID_COMPROBANTE.HeaderText = "COMPROBANTE"
         Me.ID_COMPROBANTE.Name = "ID_COMPROBANTE"
         Me.ID_COMPROBANTE.ReadOnly = True
-        Me.ID_COMPROBANTE.Visible = False
         Me.ID_COMPROBANTE.Width = 107
         '
         'E_LAPIZ_OPTICO
@@ -238,7 +233,7 @@ Partial Class frmEliminarModPagos
         'RectangleShape1
         '
         Me.RectangleShape1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.RectangleShape1.BorderColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
         Me.RectangleShape1.FillColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(60, Byte), Integer))
         Me.RectangleShape1.FillGradientColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
@@ -247,7 +242,7 @@ Partial Class frmEliminarModPagos
         Me.RectangleShape1.Location = New System.Drawing.Point(1, 0)
         Me.RectangleShape1.Name = "RectangleShape1"
         Me.RectangleShape1.SelectionColor = System.Drawing.Color.Transparent
-        Me.RectangleShape1.Size = New System.Drawing.Size(1304, 97)
+        Me.RectangleShape1.Size = New System.Drawing.Size(1387, 97)
         '
         'ShapeContainer1
         '
@@ -255,7 +250,7 @@ Partial Class frmEliminarModPagos
         Me.ShapeContainer1.Margin = New System.Windows.Forms.Padding(0)
         Me.ShapeContainer1.Name = "ShapeContainer1"
         Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape3, Me.RectangleShape1})
-        Me.ShapeContainer1.Size = New System.Drawing.Size(1288, 536)
+        Me.ShapeContainer1.Size = New System.Drawing.Size(1371, 536)
         Me.ShapeContainer1.TabIndex = 40
         Me.ShapeContainer1.TabStop = False
         '
@@ -264,7 +259,7 @@ Partial Class frmEliminarModPagos
         Me.RectangleShape3.BackgroundImage = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.Sin
         Me.RectangleShape3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.RectangleShape3.BorderColor = System.Drawing.Color.Transparent
-        Me.RectangleShape3.Location = New System.Drawing.Point(1105, -4)
+        Me.RectangleShape3.Location = New System.Drawing.Point(1178, -5)
         Me.RectangleShape3.Name = "RectangleShape3"
         Me.RectangleShape3.SelectionColor = System.Drawing.Color.Transparent
         Me.RectangleShape3.Size = New System.Drawing.Size(176, 103)
@@ -354,7 +349,7 @@ Partial Class frmEliminarModPagos
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btnCerrar
-        Me.ClientSize = New System.Drawing.Size(1288, 536)
+        Me.ClientSize = New System.Drawing.Size(1371, 536)
         Me.Controls.Add(Me.btnExport)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.PictureBox1)
@@ -393,6 +388,7 @@ Partial Class frmEliminarModPagos
     Friend WithEvents btnCerrar As System.Windows.Forms.Button
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
+    Friend WithEvents btnExport As System.Windows.Forms.Button
     Friend WithEvents ID_COMPROBANTE As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents E_LAPIZ_OPTICO As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents FECHA_INGRESO As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -407,5 +403,4 @@ Partial Class frmEliminarModPagos
     Friend WithEvents ID_ESTADO As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents ESTADO As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents ELIMINAR As System.Windows.Forms.DataGridViewImageColumn
-    Friend WithEvents btnExport As System.Windows.Forms.Button
 End Class

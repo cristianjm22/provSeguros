@@ -22,7 +22,7 @@ Public Class frmLogin
                 cmd.CommandText = cmd.CommandText & "WHERE USUARIO='" & Usuario & "'"
                 conn.Open()
                 cmd.ExecuteNonQuery()
-                frmControl.Show()
+                frmControl.ShowDialog()
                 Me.Close()
             End If
         Else
@@ -46,10 +46,10 @@ Public Class frmLogin
     End Sub
 
     Private Sub lnkChange_LinkClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.LinkLabelLinkClickedEventArgs) Handles lnkChange.LinkClicked
-        frmChange.Show()
+        frmChange.ShowDialog()
     End Sub
 
     Private Sub lnkRegistrar_LinkClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.LinkLabelLinkClickedEventArgs) Handles lnkRegistrar.LinkClicked
-        frmRegistro.Show()
+        frmRegistro.ShowDialog()
     End Sub
 End Class

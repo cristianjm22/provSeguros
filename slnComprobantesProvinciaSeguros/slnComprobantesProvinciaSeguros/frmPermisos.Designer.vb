@@ -28,8 +28,6 @@ Partial Class frmPermisos
         Me.RectangleShape2 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.lblReporte = New System.Windows.Forms.Label()
         Me.PermisosDGV = New System.Windows.Forms.DataGridView()
-        Me.btnNuevo = New System.Windows.Forms.Button()
-        Me.btnCerrar = New System.Windows.Forms.Button()
         Me.ID_PERMISO = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.USUARIO = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NOMBRE_MENU = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -37,6 +35,8 @@ Partial Class frmPermisos
         Me.HABILITADO = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.MODIFICAR = New System.Windows.Forms.DataGridViewImageColumn()
         Me.ELIMINAR = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.btnNuevo = New System.Windows.Forms.Button()
+        Me.btnCerrar = New System.Windows.Forms.Button()
         CType(Me.PermisosDGV, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -52,7 +52,7 @@ Partial Class frmPermisos
         Me.RectangleShape1.Location = New System.Drawing.Point(-1, 0)
         Me.RectangleShape1.Name = "RectangleShape1"
         Me.RectangleShape1.SelectionColor = System.Drawing.Color.Transparent
-        Me.RectangleShape1.Size = New System.Drawing.Size(613, 94)
+        Me.RectangleShape1.Size = New System.Drawing.Size(724, 94)
         '
         'ShapeContainer1
         '
@@ -60,7 +60,7 @@ Partial Class frmPermisos
         Me.ShapeContainer1.Margin = New System.Windows.Forms.Padding(0)
         Me.ShapeContainer1.Name = "ShapeContainer1"
         Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape3, Me.RectangleShape2, Me.RectangleShape1})
-        Me.ShapeContainer1.Size = New System.Drawing.Size(607, 404)
+        Me.ShapeContainer1.Size = New System.Drawing.Size(718, 404)
         Me.ShapeContainer1.TabIndex = 41
         Me.ShapeContainer1.TabStop = False
         '
@@ -69,7 +69,7 @@ Partial Class frmPermisos
         Me.RectangleShape3.BackgroundImage = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.Sin
         Me.RectangleShape3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.RectangleShape3.BorderColor = System.Drawing.Color.Transparent
-        Me.RectangleShape3.Location = New System.Drawing.Point(400, -2)
+        Me.RectangleShape3.Location = New System.Drawing.Point(528, -1)
         Me.RectangleShape3.Name = "RectangleShape3"
         Me.RectangleShape3.SelectionColor = System.Drawing.Color.Transparent
         Me.RectangleShape3.Size = New System.Drawing.Size(176, 103)
@@ -127,47 +127,8 @@ Partial Class frmPermisos
         Me.PermisosDGV.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         Me.PermisosDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.PermisosDGV.ShowEditingIcon = False
-        Me.PermisosDGV.Size = New System.Drawing.Size(529, 131)
+        Me.PermisosDGV.Size = New System.Drawing.Size(614, 131)
         Me.PermisosDGV.TabIndex = 0
-        '
-        'btnNuevo
-        '
-        Me.btnNuevo.BackColor = System.Drawing.SystemColors.Control
-        Me.btnNuevo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.btnNuevo.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btnNuevo.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
-        Me.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnNuevo.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnNuevo.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
-        Me.btnNuevo.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.add
-        Me.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnNuevo.Location = New System.Drawing.Point(506, 147)
-        Me.btnNuevo.Name = "btnNuevo"
-        Me.btnNuevo.Size = New System.Drawing.Size(76, 29)
-        Me.btnNuevo.TabIndex = 38
-        Me.btnNuevo.Text = "Nuevo"
-        Me.btnNuevo.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnNuevo.UseVisualStyleBackColor = False
-        '
-        'btnCerrar
-        '
-        Me.btnCerrar.BackColor = System.Drawing.SystemColors.Control
-        Me.btnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.btnCerrar.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btnCerrar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
-        Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCerrar.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnCerrar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
-        Me.btnCerrar.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.back_1_
-        Me.btnCerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnCerrar.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.btnCerrar.Location = New System.Drawing.Point(53, 344)
-        Me.btnCerrar.Name = "btnCerrar"
-        Me.btnCerrar.Size = New System.Drawing.Size(74, 29)
-        Me.btnCerrar.TabIndex = 47
-        Me.btnCerrar.Text = "Volver"
-        Me.btnCerrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnCerrar.UseVisualStyleBackColor = False
         '
         'ID_PERMISO
         '
@@ -227,13 +188,52 @@ Partial Class frmPermisos
         Me.ELIMINAR.ReadOnly = True
         Me.ELIMINAR.Width = 60
         '
+        'btnNuevo
+        '
+        Me.btnNuevo.BackColor = System.Drawing.SystemColors.Control
+        Me.btnNuevo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btnNuevo.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.btnNuevo.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
+        Me.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnNuevo.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnNuevo.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
+        Me.btnNuevo.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.add
+        Me.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnNuevo.Location = New System.Drawing.Point(591, 147)
+        Me.btnNuevo.Name = "btnNuevo"
+        Me.btnNuevo.Size = New System.Drawing.Size(76, 29)
+        Me.btnNuevo.TabIndex = 38
+        Me.btnNuevo.Text = "Nuevo"
+        Me.btnNuevo.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnNuevo.UseVisualStyleBackColor = False
+        '
+        'btnCerrar
+        '
+        Me.btnCerrar.BackColor = System.Drawing.SystemColors.Control
+        Me.btnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btnCerrar.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.btnCerrar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
+        Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCerrar.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.btnCerrar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
+        Me.btnCerrar.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.back_1_
+        Me.btnCerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnCerrar.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.btnCerrar.Location = New System.Drawing.Point(53, 344)
+        Me.btnCerrar.Name = "btnCerrar"
+        Me.btnCerrar.Size = New System.Drawing.Size(74, 29)
+        Me.btnCerrar.TabIndex = 47
+        Me.btnCerrar.Text = "Volver"
+        Me.btnCerrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnCerrar.UseVisualStyleBackColor = False
+        '
         'frmPermisos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
         Me.CancelButton = Me.btnCerrar
-        Me.ClientSize = New System.Drawing.Size(607, 404)
+        Me.ClientSize = New System.Drawing.Size(718, 404)
         Me.Controls.Add(Me.btnCerrar)
         Me.Controls.Add(Me.lblReporte)
         Me.Controls.Add(Me.btnNuevo)
