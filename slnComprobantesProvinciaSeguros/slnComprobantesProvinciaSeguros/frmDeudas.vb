@@ -22,6 +22,18 @@ Public Class frmDeudas
         Else
             lblSinRegistros.Hide()
         End If
+        If ComprobantesAct.AccesoMenu(Usuario, "MODIFICACION") Then
+            dgvDeudas.Columns(9).Visible = True
+        Else
+            dgvDeudas.Columns(9).Visible = False
+        End If
+
+        If ComprobantesAct.AccesoMenu(Usuario, "ELIMINACION") Then
+            dgvDeudas.Columns(10).Visible = True
+        Else
+            dgvDeudas.Columns(10).Visible = False
+        End If
+
     End Sub
 
     Private Sub frmDeudas_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
