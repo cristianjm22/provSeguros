@@ -70,11 +70,11 @@ Public Class frmReporte
         Me.Close()
     End Sub
 
-    Private Sub totalDia_Click(sender As System.Object, e As System.EventArgs) Handles totalDia.Click
+    Private Sub totalDia_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles totalDia.Click
 
     End Sub
 
-    Private Sub Label1_Click(sender As System.Object, e As System.EventArgs) Handles totalpagosTarjeta.Click
+    Private Sub Label1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles totalpagosTarjeta.Click
 
     End Sub
 End Class
