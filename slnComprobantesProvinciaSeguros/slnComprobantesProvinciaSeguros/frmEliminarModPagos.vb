@@ -4,6 +4,11 @@
     Private Sub frmReporte2_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         CargarCombo()
         cargarGrillaReporte(RTrim(LTrim(cboEstado.SelectedValue)), txtPoliza.Text)
+        If ComprobantesAct.AccesoMenu(Usuario, "ELIMINACION") Then
+            dgvReporte.Columns(13).Visible = True
+        Else
+            dgvReporte.Columns(13).Visible = False
+        End If
     End Sub
 
     Private Sub dgvReporte_CellClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvReporte.CellClick
