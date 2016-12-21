@@ -132,7 +132,7 @@ Partial Class frmReporte
         Me.btnExport.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnExport.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnExport.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
-        Me.btnExport.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.downwards_arrow
+        Me.btnExport.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.download
         Me.btnExport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnExport.Location = New System.Drawing.Point(1085, 434)
         Me.btnExport.Name = "btnExport"
