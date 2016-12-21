@@ -44,6 +44,7 @@ Public Class frmControl
         txtNroCuota.Text = entrada.Substring(20, 2)
         cuota = Convert.ToInt16(txtNroCuota.Text)
 
+
         cuota = cuota * 1
 
         txtNroCuota.Text = rm.ToString()
@@ -112,24 +113,29 @@ Public Class frmControl
             If txtEntrada.Text = String.Empty Then
                 MsgBox("Ingrese el codigo de barras", MsgBoxStyle.Exclamation, "Aviso")
             ElseIf (txtEntrada.Text.Length = 38) Then
-                Dim cantPagos = ComprobantesDA.verificarExistenciaPago(txtEntrada.Text)
-                If (cantPagos <> 0) Then
-                    repeticion = ComprobantesAct.getDetalleRepeticion(cantPagos)
-                    MsgBox("Este pago ya ha sido realizado " + cantPagos.ToString + " vez/veces." + vbCrLf + "El mismo será marcado como " + repeticion, MsgBoxStyle.Information, "Informacion")
-                End If
 
-                tipomoneda = ComprobantesAct.getIdMonedaByDescription(txtMoneda.Text)
+                If (txtNroCuota.Text = "31" Or txtNroCuota.Text = "32") Then
+                    MsgBox("No es posible registrar el pago. La fecha maxima para ingresar un pago con tarjeta de credito es hasta el dia 10 cada mes.", MsgBoxStyle.Exclamation, "Aviso")
+                Else
+                    Dim cantPagos = ComprobantesDA.verificarExistenciaPago(txtEntrada.Text)
+                    If (cantPagos <> 0) Then
+                        repeticion = ComprobantesAct.getDetalleRepeticion(cantPagos)
+                        MsgBox("Este pago ya ha sido realizado " + cantPagos.ToString + " vez/veces." + vbCrLf + "El mismo será marcado como " + repeticion, MsgBoxStyle.Information, "Informacion")
+                    End If
 
-                Dim codigoMoneda = ComprobantesAct.getCodMonedaByDescription(txtMoneda.Text)
-                idComprobante = ComprobantesDA.InsertarDetalleComprobante(txtEntrada.Text, txtRM.Text, txtPoliza.Text, txtEndoso.Text, txtNroCuota.Text, dtpFechaVencimiento.Text, tipomoneda, Convert.ToDecimal(txtImporte.Text), txtObservaciones.Text, Usuario, repeticion)
+                    tipomoneda = ComprobantesAct.getIdMonedaByDescription(txtMoneda.Text)
 
-                If txtDeuda.Text <> String.Empty Then
-                    ComprobantesDA.InsertDeuda(idComprobante, txtPoliza.Text, txtNroCuota.Text, txtDeuda.Text)
+                    Dim codigoMoneda = ComprobantesAct.getCodMonedaByDescription(txtMoneda.Text)
+                    idComprobante = ComprobantesDA.InsertarDetalleComprobante(txtEntrada.Text, txtRM.Text, txtPoliza.Text, txtEndoso.Text, txtNroCuota.Text, dtpFechaVencimiento.Text, tipomoneda, Convert.ToDecimal(txtImporte.Text), txtObservaciones.Text, Usuario, repeticion)
+
+                    If txtDeuda.Text <> String.Empty Then
+                        ComprobantesDA.InsertDeuda(idComprobante, txtPoliza.Text, txtNroCuota.Text, txtDeuda.Text)
+                    End If
+                    If MsgBox("El pago ha sido registrado correctamente." + vbCrLf + "¿Desea imprimir el comprobante?", MsgBoxStyle.YesNo, "Pago Registrado") = MsgBoxResult.Yes Then
+                        ComprobantesAct.PrintTicket(txtPoliza.Text, txtNroCuota.Text, codigoMoneda, txtImporte.Text, idComprobante, txtRM.Text, "CUOTA", "", "")
+                    End If
+                    Me.btnLimpiar_Click(sender, e)
                 End If
-                If MsgBox("El pago ha sido registrado correctamente." + vbCrLf + "¿Desea imprimir el comprobante?", MsgBoxStyle.YesNo, "Pago Registrado") = MsgBoxResult.Yes Then
-                    ComprobantesAct.PrintTicket(txtPoliza.Text, txtNroCuota.Text, codigoMoneda, txtImporte.Text, idComprobante, txtRM.Text, "CUOTA", "", "")
-                End If
-                Me.btnLimpiar_Click(sender, e)
             Else
                 MsgBox("El codigo de barra ingresado es invalido", MsgBoxStyle.Exclamation, "Aviso")
             End If
