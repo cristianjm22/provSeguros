@@ -47,7 +47,7 @@ Public Class frmControl
 
         cuota = cuota * 1
 
-        txtNroCuota.Text = rm.ToString()
+        txtNroCuota.Text = cuota.ToString()
         Dim provider As CultureInfo = CultureInfo.InvariantCulture
         Dim fechaVtoString As String = entrada.Substring(31, 6)
         If (fechaVtoString = "000000") Then
