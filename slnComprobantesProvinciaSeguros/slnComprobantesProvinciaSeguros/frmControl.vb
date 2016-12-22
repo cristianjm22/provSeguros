@@ -114,7 +114,8 @@ Public Class frmControl
                 MsgBox("Ingrese el codigo de barras", MsgBoxStyle.Exclamation, "Aviso")
             ElseIf (txtEntrada.Text.Length = 38) Then
 
-                If (txtNroCuota.Text = "31" Or txtNroCuota.Text = "32") Then
+                If ((txtNroCuota.Text = "31" Or txtNroCuota.Text = "32") And Microsoft.VisualBasic.DateAndTime.Day(Now) > 10) Then
+
                     MsgBox("No es posible registrar el pago. La fecha maxima para ingresar un pago con tarjeta de credito es hasta el dia 10 cada mes.", MsgBoxStyle.Exclamation, "Aviso")
                 Else
                     Dim cantPagos = ComprobantesDA.verificarExistenciaPago(txtEntrada.Text)
