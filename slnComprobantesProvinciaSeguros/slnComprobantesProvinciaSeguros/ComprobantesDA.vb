@@ -171,7 +171,7 @@ Public Class ComprobantesDA
     ''' </summary>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Shared Function obtenerDetalleComprobantesPorEstado(ByVal Estado As Integer, ByVal poliza As String)
+    Public Shared Function obtenerDetalleComprobantesPorEstado(ByVal Estado As Integer, ByVal poliza As String, ByVal fechadesde As DateTime, ByVal fechahasta As DateTime)
 
         Dim dt As New DataTable
 
@@ -183,6 +183,8 @@ Public Class ComprobantesDA
             cmd.CommandType = CommandType.StoredProcedure
             cmd.Parameters.AddWithValue("@ESTADO", Estado)
             cmd.Parameters.AddWithValue("@POLIZA", poliza)
+            cmd.Parameters.AddWithValue("@F_DESDE", fechadesde)
+            cmd.Parameters.AddWithValue("@F_HASTA", fechahasta)
             Dim da As New SqlDataAdapter(cmd)
             da.Fill(dt)
             conn.Close()

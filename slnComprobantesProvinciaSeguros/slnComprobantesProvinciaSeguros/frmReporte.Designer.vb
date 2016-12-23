@@ -32,13 +32,9 @@ Partial Class frmReporte
         Me.RectangleShape2 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.btnExport = New System.Windows.Forms.Button()
         Me.lblTotalDia = New System.Windows.Forms.Label()
-        Me.lblTotalQuincena = New System.Windows.Forms.Label()
         Me.lblSinRegistros = New System.Windows.Forms.Label()
         Me.btnCerrar = New System.Windows.Forms.Button()
-        Me.lblproximaquincena = New System.Windows.Forms.Label()
         Me.totalDia = New System.Windows.Forms.Label()
-        Me.totalQuincena = New System.Windows.Forms.Label()
-        Me.totalProx = New System.Windows.Forms.Label()
         Me.lblTotalPagoAnticipado = New System.Windows.Forms.Label()
         Me.lblPagoAnticipado = New System.Windows.Forms.Label()
         Me.totalpagosTarjeta = New System.Windows.Forms.Label()
@@ -92,7 +88,7 @@ Partial Class frmReporte
         'RectangleShape1
         '
         Me.RectangleShape1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.RectangleShape1.BorderColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
         Me.RectangleShape1.FillColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(60, Byte), Integer))
         Me.RectangleShape1.FillGradientColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
@@ -148,20 +144,9 @@ Partial Class frmReporte
         Me.lblTotalDia.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
         Me.lblTotalDia.Location = New System.Drawing.Point(54, 434)
         Me.lblTotalDia.Name = "lblTotalDia"
-        Me.lblTotalDia.Size = New System.Drawing.Size(88, 19)
+        Me.lblTotalDia.Size = New System.Drawing.Size(188, 19)
         Me.lblTotalDia.TabIndex = 38
-        Me.lblTotalDia.Text = "Total dia:"
-        '
-        'lblTotalQuincena
-        '
-        Me.lblTotalQuincena.AutoSize = True
-        Me.lblTotalQuincena.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTotalQuincena.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
-        Me.lblTotalQuincena.Location = New System.Drawing.Point(411, 434)
-        Me.lblTotalQuincena.Name = "lblTotalQuincena"
-        Me.lblTotalQuincena.Size = New System.Drawing.Size(136, 19)
-        Me.lblTotalQuincena.TabIndex = 39
-        Me.lblTotalQuincena.Text = "Total quincena:"
+        Me.lblTotalDia.Text = "Total cobrado del dia:"
         '
         'lblSinRegistros
         '
@@ -193,49 +178,16 @@ Partial Class frmReporte
         Me.btnCerrar.Text = "Volver"
         Me.btnCerrar.UseVisualStyleBackColor = False
         '
-        'lblproximaquincena
-        '
-        Me.lblproximaquincena.AutoSize = True
-        Me.lblproximaquincena.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblproximaquincena.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
-        Me.lblproximaquincena.Location = New System.Drawing.Point(411, 462)
-        Me.lblproximaquincena.Name = "lblproximaquincena"
-        Me.lblproximaquincena.Size = New System.Drawing.Size(208, 19)
-        Me.lblproximaquincena.TabIndex = 48
-        Me.lblproximaquincena.Text = "Total proxima quincena:"
-        '
         'totalDia
         '
         Me.totalDia.AutoSize = True
         Me.totalDia.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.totalDia.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
-        Me.totalDia.Location = New System.Drawing.Point(148, 434)
+        Me.totalDia.Location = New System.Drawing.Point(247, 434)
         Me.totalDia.Name = "totalDia"
         Me.totalDia.Size = New System.Drawing.Size(19, 19)
         Me.totalDia.TabIndex = 49
         Me.totalDia.Text = "$"
-        '
-        'totalQuincena
-        '
-        Me.totalQuincena.AutoSize = True
-        Me.totalQuincena.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.totalQuincena.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
-        Me.totalQuincena.Location = New System.Drawing.Point(553, 434)
-        Me.totalQuincena.Name = "totalQuincena"
-        Me.totalQuincena.Size = New System.Drawing.Size(19, 19)
-        Me.totalQuincena.TabIndex = 50
-        Me.totalQuincena.Text = "$"
-        '
-        'totalProx
-        '
-        Me.totalProx.AutoSize = True
-        Me.totalProx.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.totalProx.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
-        Me.totalProx.Location = New System.Drawing.Point(625, 462)
-        Me.totalProx.Name = "totalProx"
-        Me.totalProx.Size = New System.Drawing.Size(19, 19)
-        Me.totalProx.TabIndex = 51
-        Me.totalProx.Text = "$"
         '
         'lblTotalPagoAnticipado
         '
@@ -255,9 +207,9 @@ Partial Class frmReporte
         Me.lblPagoAnticipado.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
         Me.lblPagoAnticipado.Location = New System.Drawing.Point(54, 462)
         Me.lblPagoAnticipado.Name = "lblPagoAnticipado"
-        Me.lblPagoAnticipado.Size = New System.Drawing.Size(193, 19)
+        Me.lblPagoAnticipado.Size = New System.Drawing.Size(209, 19)
         Me.lblPagoAnticipado.TabIndex = 52
-        Me.lblPagoAnticipado.Text = "Total pago anticipado:"
+        Me.lblPagoAnticipado.Text = "Total pagos anticipados:"
         '
         'totalpagosTarjeta
         '
@@ -291,13 +243,9 @@ Partial Class frmReporte
         Me.Controls.Add(Me.lblPagosTarjetas)
         Me.Controls.Add(Me.lblTotalPagoAnticipado)
         Me.Controls.Add(Me.lblPagoAnticipado)
-        Me.Controls.Add(Me.totalProx)
-        Me.Controls.Add(Me.totalQuincena)
         Me.Controls.Add(Me.totalDia)
-        Me.Controls.Add(Me.lblproximaquincena)
         Me.Controls.Add(Me.btnCerrar)
         Me.Controls.Add(Me.lblSinRegistros)
-        Me.Controls.Add(Me.lblTotalQuincena)
         Me.Controls.Add(Me.lblTotalDia)
         Me.Controls.Add(Me.btnExport)
         Me.Controls.Add(Me.lblReporte)
@@ -321,13 +269,9 @@ Partial Class frmReporte
     Friend WithEvents btnExport As System.Windows.Forms.Button
     Friend WithEvents RectangleShape2 As Microsoft.VisualBasic.PowerPacks.RectangleShape
     Friend WithEvents lblTotalDia As System.Windows.Forms.Label
-    Friend WithEvents lblTotalQuincena As System.Windows.Forms.Label
     Friend WithEvents lblSinRegistros As System.Windows.Forms.Label
     Friend WithEvents btnCerrar As System.Windows.Forms.Button
-    Friend WithEvents lblproximaquincena As System.Windows.Forms.Label
     Friend WithEvents totalDia As System.Windows.Forms.Label
-    Friend WithEvents totalQuincena As System.Windows.Forms.Label
-    Friend WithEvents totalProx As System.Windows.Forms.Label
     Friend WithEvents lblTotalPagoAnticipado As System.Windows.Forms.Label
     Friend WithEvents lblPagoAnticipado As System.Windows.Forms.Label
     Friend WithEvents totalpagosTarjeta As System.Windows.Forms.Label

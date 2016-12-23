@@ -3,7 +3,7 @@
 
     Private Sub frmReporte2_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         CargarCombo()
-        cargarGrillaReporte(RTrim(LTrim(cboEstado.SelectedValue)), txtPoliza.Text)
+        cargarGrillaReporte(RTrim(LTrim(cboEstado.SelectedValue)), txtPoliza.Text, dtpFechaDesde.Value, dtpFechaHasta.Value)
         If ComprobantesAct.AccesoMenu(Usuario, "ELIMINACION") Then
             dgvReporte.Columns(13).Visible = True
         Else
@@ -19,7 +19,7 @@
                 If MessageBox.Show("¿Desea eliminar este registro?" _
  , "AVISO", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
                     ComprobantesDA.deleteComprobantesPagos(Convert.ToInt32(dgvReporte.Rows(dgvReporte.CurrentRow.Index).Cells("ID_COMPROBANTE").Value), Usuario) ' Usuario
-                    cargarGrillaReporte(cboEstado.SelectedValue, txtPoliza.Text)
+                    cargarGrillaReporte(cboEstado.SelectedValue, txtPoliza.Text, dtpFechaDesde.Value, dtpFechaHasta.Value)
                 End If
 
             End If
@@ -48,12 +48,12 @@
     ''' </summary>
     ''' <param name="estado"></param>
     ''' <remarks></remarks>
-    Public Sub cargarGrillaReporte(ByVal estado As Integer, ByVal poliza As String)
+    Public Sub cargarGrillaReporte(ByVal estado As Integer, ByVal poliza As String, ByVal fechadesde As DateTime, ByVal fechahasta As DateTime)
 
         Try
 
             Dim dtART As DataTable
-            dtART = ComprobantesDA.obtenerDetalleComprobantesPorEstado(estado, poliza)
+            dtART = ComprobantesDA.obtenerDetalleComprobantesPorEstado(estado, poliza, fechadesde.ToString("MMMM dd, yyyy"), fechahasta)
 
             dgvReporte.Rows.Clear()  'para limpiarlo
 
@@ -61,13 +61,22 @@
 
             If dtART.Rows.Count > 0 Then
                 lblSinRegistros.Hide()
+                lblTotal.Show()
+
+                total.Show()
+
+                total.Text = "$" + ComprobantesAct.ObtenerTotalporQuincena()
+
                 For Each row As DataRow In dtART.Rows
 
-                    dgvReporte.Rows.Add(row("ID_COMPROBANTE").ToString(), row("E_LAPIZ_OPTICO").ToString(), row("FECHA_INGRESO").ToString(), row("RM").ToString(), row("POLIZA").ToString(), row("ENDOSO").ToString(), row("NRO_CUOTA").ToString(), row("FECHA_VTO").ToString(), row("ID_MONEDA").ToString(), row("MONEDA").ToString(), row("IMPORTE").ToString(), row("ID_ESTADO").ToString(), row("ESTADO").ToString())
+                    dgvReporte.Rows.Add(row("ID_COMPROBANTE").ToString(), row("E_LAPIZ_OPTICO").ToString(), row("FECHA_INGRESO").ToString(), row("RM").ToString(), row("POLIZA").ToString(), row("ENDOSO").ToString(), row("NRO_CUOTA").ToString(), row("FECHA_VTO").ToString(), row("ID_MONEDA").ToString(), row("MONEDA").ToString(), row("IMPORTE").ToString(), row("ID_ESTADO").ToString(), row("ESTADO").ToString(), row("TOTAL").ToString())
 
                 Next
             Else
                 lblSinRegistros.Show()
+                lblTotal.Hide()
+                total.Hide()
+
             End If
 
         Catch ex As Exception
@@ -78,12 +87,12 @@
 
     Private Sub cboEstado_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cboEstado.SelectedIndexChanged
         If cboEstado.SelectedValue.ToString <> "System.Data.DataRowView" Then
-            cargarGrillaReporte(RTrim(LTrim(cboEstado.SelectedValue)), txtPoliza.Text)
+            cargarGrillaReporte(RTrim(LTrim(cboEstado.SelectedValue)), txtPoliza.Text, dtpFechaDesde.Value, dtpFechaHasta.Value)
         End If
     End Sub
 
     Private Sub txtPoliza_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtPoliza.TextChanged
-        cargarGrillaReporte(RTrim(LTrim(cboEstado.SelectedValue)), txtPoliza.Text)
+        cargarGrillaReporte(RTrim(LTrim(cboEstado.SelectedValue)), txtPoliza.Text, dtpFechaDesde.Value, dtpFechaHasta.Value)
     End Sub
 
     Private Sub btnCerrar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCerrar.Click
@@ -144,5 +153,13 @@
             stopwatch.Stop()
             Me.UseWaitCursor = False
         End If
+    End Sub
+
+    Private Sub dtpFechaDesde_ValueChanged(sender As System.Object, e As System.EventArgs) Handles dtpFechaDesde.ValueChanged
+        cargarGrillaReporte(RTrim(LTrim(cboEstado.SelectedValue)), txtPoliza.Text, dtpFechaDesde.Value, dtpFechaHasta.Value)
+    End Sub
+
+    Private Sub dtpFechaHasta_ValueChanged(sender As System.Object, e As System.EventArgs) Handles dtpFechaHasta.ValueChanged
+        cargarGrillaReporte(RTrim(LTrim(cboEstado.SelectedValue)), txtPoliza.Text, dtpFechaDesde.Value, dtpFechaHasta.Value)
     End Sub
 End Class

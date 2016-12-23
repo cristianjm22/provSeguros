@@ -27,6 +27,20 @@ Partial Class frmEliminarModPagos
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmEliminarModPagos))
         Me.cboEstado = New System.Windows.Forms.ComboBox()
         Me.dgvReporte = New System.Windows.Forms.DataGridView()
+        Me.lblPoliza = New System.Windows.Forms.Label()
+        Me.txtPoliza = New System.Windows.Forms.TextBox()
+        Me.lblEstado = New System.Windows.Forms.Label()
+        Me.RectangleShape1 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
+        Me.ShapeContainer1 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
+        Me.RectangleShape3 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.lblSinRegistros = New System.Windows.Forms.Label()
+        Me.btnCerrar = New System.Windows.Forms.Button()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.btnExport = New System.Windows.Forms.Button()
+        Me.total = New System.Windows.Forms.Label()
+        Me.lblTotal = New System.Windows.Forms.Label()
         Me.ID_COMPROBANTE = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.E_LAPIZ_OPTICO = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FECHA_INGRESO = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -40,27 +54,21 @@ Partial Class frmEliminarModPagos
         Me.IMPORTE = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ID_ESTADO = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ESTADO = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TOTAL2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ELIMINAR = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.lblPoliza = New System.Windows.Forms.Label()
-        Me.txtPoliza = New System.Windows.Forms.TextBox()
-        Me.lblEstado = New System.Windows.Forms.Label()
-        Me.RectangleShape1 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
-        Me.ShapeContainer1 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
-        Me.RectangleShape3 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.lblSinRegistros = New System.Windows.Forms.Label()
-        Me.btnCerrar = New System.Windows.Forms.Button()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.btnExport = New System.Windows.Forms.Button()
-        CType(Me.dgvReporte, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.SuspendLayout()
+        Me.dtpFechaDesde = New System.Windows.Forms.DateTimePicker()
+        Me.dtpFechaHasta = New System.Windows.Forms.DateTimePicker()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        CType(Me.dgvReporte,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.PictureBox1,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.PictureBox2,System.ComponentModel.ISupportInitialize).BeginInit
+        Me.SuspendLayout
         '
         'cboEstado
         '
-        Me.cboEstado.FormattingEnabled = True
+        Me.cboEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboEstado.FormattingEnabled = true
         Me.cboEstado.Location = New System.Drawing.Point(91, 169)
         Me.cboEstado.Name = "cboEstado"
         Me.cboEstado.Size = New System.Drawing.Size(121, 21)
@@ -68,9 +76,9 @@ Partial Class frmEliminarModPagos
         '
         'dgvReporte
         '
-        Me.dgvReporte.AllowUserToAddRows = False
-        Me.dgvReporte.AllowUserToDeleteRows = False
-        Me.dgvReporte.AllowUserToOrderColumns = True
+        Me.dgvReporte.AllowUserToAddRows = false
+        Me.dgvReporte.AllowUserToDeleteRows = false
+        Me.dgvReporte.AllowUserToOrderColumns = true
         DataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke
         Me.dgvReporte.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvReporte.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
@@ -80,131 +88,30 @@ Partial Class frmEliminarModPagos
         Me.dgvReporte.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
         Me.dgvReporte.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(1,Byte),Integer), CType(CType(56,Byte),Integer), CType(CType(131,Byte),Integer))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Transparent
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgvReporte.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvReporte.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvReporte.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID_COMPROBANTE, Me.E_LAPIZ_OPTICO, Me.FECHA_INGRESO, Me.RM, Me.POLIZA, Me.ENDOSO, Me.NRO_CUOTA, Me.FECHA_VTO, Me.ID_MONEDA, Me.MONEDA, Me.IMPORTE, Me.ID_ESTADO, Me.ESTADO, Me.ELIMINAR})
-        Me.dgvReporte.EnableHeadersVisualStyles = False
+        Me.dgvReporte.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID_COMPROBANTE, Me.E_LAPIZ_OPTICO, Me.FECHA_INGRESO, Me.RM, Me.POLIZA, Me.ENDOSO, Me.NRO_CUOTA, Me.FECHA_VTO, Me.ID_MONEDA, Me.MONEDA, Me.IMPORTE, Me.ID_ESTADO, Me.ESTADO, Me.TOTAL2, Me.ELIMINAR})
+        Me.dgvReporte.EnableHeadersVisualStyles = false
         Me.dgvReporte.Location = New System.Drawing.Point(44, 208)
         Me.dgvReporte.Name = "dgvReporte"
-        Me.dgvReporte.ReadOnly = True
+        Me.dgvReporte.ReadOnly = true
         Me.dgvReporte.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvReporte.ShowEditingIcon = False
-        Me.dgvReporte.ShowRowErrors = False
+        Me.dgvReporte.ShowEditingIcon = false
+        Me.dgvReporte.ShowRowErrors = false
         Me.dgvReporte.Size = New System.Drawing.Size(1277, 152)
         Me.dgvReporte.TabIndex = 31
         '
-        'ID_COMPROBANTE
-        '
-        Me.ID_COMPROBANTE.HeaderText = "COMPROBANTE"
-        Me.ID_COMPROBANTE.Name = "ID_COMPROBANTE"
-        Me.ID_COMPROBANTE.ReadOnly = True
-        Me.ID_COMPROBANTE.Width = 107
-        '
-        'E_LAPIZ_OPTICO
-        '
-        Me.E_LAPIZ_OPTICO.HeaderText = "ENTRADA (LAPIZ OPTICO)"
-        Me.E_LAPIZ_OPTICO.Name = "E_LAPIZ_OPTICO"
-        Me.E_LAPIZ_OPTICO.ReadOnly = True
-        Me.E_LAPIZ_OPTICO.Width = 145
-        '
-        'FECHA_INGRESO
-        '
-        Me.FECHA_INGRESO.HeaderText = "FECHA DE INGRESO"
-        Me.FECHA_INGRESO.Name = "FECHA_INGRESO"
-        Me.FECHA_INGRESO.ReadOnly = True
-        Me.FECHA_INGRESO.Width = 117
-        '
-        'RM
-        '
-        Me.RM.HeaderText = "RAMO"
-        Me.RM.Name = "RM"
-        Me.RM.ReadOnly = True
-        Me.RM.Width = 61
-        '
-        'POLIZA
-        '
-        Me.POLIZA.HeaderText = "POLIZA"
-        Me.POLIZA.Name = "POLIZA"
-        Me.POLIZA.ReadOnly = True
-        Me.POLIZA.Width = 67
-        '
-        'ENDOSO
-        '
-        Me.ENDOSO.HeaderText = "ENDOSO"
-        Me.ENDOSO.Name = "ENDOSO"
-        Me.ENDOSO.ReadOnly = True
-        Me.ENDOSO.Width = 73
-        '
-        'NRO_CUOTA
-        '
-        Me.NRO_CUOTA.HeaderText = "CUOTA"
-        Me.NRO_CUOTA.Name = "NRO_CUOTA"
-        Me.NRO_CUOTA.ReadOnly = True
-        Me.NRO_CUOTA.Width = 66
-        '
-        'FECHA_VTO
-        '
-        Me.FECHA_VTO.HeaderText = "FECHA DE VENCIMIENTO"
-        Me.FECHA_VTO.Name = "FECHA_VTO"
-        Me.FECHA_VTO.ReadOnly = True
-        Me.FECHA_VTO.Width = 139
-        '
-        'ID_MONEDA
-        '
-        Me.ID_MONEDA.HeaderText = "MONEDA"
-        Me.ID_MONEDA.Name = "ID_MONEDA"
-        Me.ID_MONEDA.ReadOnly = True
-        Me.ID_MONEDA.Visible = False
-        Me.ID_MONEDA.Width = 74
-        '
-        'MONEDA
-        '
-        Me.MONEDA.HeaderText = "MONEDA"
-        Me.MONEDA.Name = "MONEDA"
-        Me.MONEDA.ReadOnly = True
-        Me.MONEDA.Width = 74
-        '
-        'IMPORTE
-        '
-        Me.IMPORTE.HeaderText = "IMPORTE"
-        Me.IMPORTE.Name = "IMPORTE"
-        Me.IMPORTE.ReadOnly = True
-        Me.IMPORTE.Width = 76
-        '
-        'ID_ESTADO
-        '
-        Me.ID_ESTADO.HeaderText = "ID_ESTADO"
-        Me.ID_ESTADO.Name = "ID_ESTADO"
-        Me.ID_ESTADO.ReadOnly = True
-        Me.ID_ESTADO.Visible = False
-        Me.ID_ESTADO.Width = 88
-        '
-        'ESTADO
-        '
-        Me.ESTADO.HeaderText = "ESTADO"
-        Me.ESTADO.Name = "ESTADO"
-        Me.ESTADO.ReadOnly = True
-        Me.ESTADO.Width = 71
-        '
-        'ELIMINAR
-        '
-        Me.ELIMINAR.HeaderText = "ELIMINAR"
-        Me.ELIMINAR.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.remove
-        Me.ELIMINAR.Name = "ELIMINAR"
-        Me.ELIMINAR.ReadOnly = True
-        Me.ELIMINAR.Width = 60
-        '
         'lblPoliza
         '
-        Me.lblPoliza.AutoSize = True
-        Me.lblPoliza.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPoliza.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.lblPoliza.AutoSize = true
+        Me.lblPoliza.Font = New System.Drawing.Font("Tahoma", 9!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.lblPoliza.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64,Byte),Integer), CType(CType(64,Byte),Integer), CType(CType(64,Byte),Integer))
         Me.lblPoliza.Location = New System.Drawing.Point(252, 174)
         Me.lblPoliza.Name = "lblPoliza"
         Me.lblPoliza.Size = New System.Drawing.Size(36, 14)
@@ -221,9 +128,9 @@ Partial Class frmEliminarModPagos
         '
         'lblEstado
         '
-        Me.lblEstado.AutoSize = True
-        Me.lblEstado.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblEstado.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.lblEstado.AutoSize = true
+        Me.lblEstado.Font = New System.Drawing.Font("Tahoma", 9!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.lblEstado.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64,Byte),Integer), CType(CType(64,Byte),Integer), CType(CType(64,Byte),Integer))
         Me.lblEstado.Location = New System.Drawing.Point(41, 174)
         Me.lblEstado.Name = "lblEstado"
         Me.lblEstado.Size = New System.Drawing.Size(44, 14)
@@ -232,11 +139,11 @@ Partial Class frmEliminarModPagos
         '
         'RectangleShape1
         '
-        Me.RectangleShape1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.RectangleShape1.BorderColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
-        Me.RectangleShape1.FillColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(60, Byte), Integer))
-        Me.RectangleShape1.FillGradientColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
+        Me.RectangleShape1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left)  _
+            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.RectangleShape1.BorderColor = System.Drawing.Color.FromArgb(CType(CType(1,Byte),Integer), CType(CType(56,Byte),Integer), CType(CType(131,Byte),Integer))
+        Me.RectangleShape1.FillColor = System.Drawing.Color.FromArgb(CType(CType(0,Byte),Integer), CType(CType(20,Byte),Integer), CType(CType(60,Byte),Integer))
+        Me.RectangleShape1.FillGradientColor = System.Drawing.Color.FromArgb(CType(CType(1,Byte),Integer), CType(CType(56,Byte),Integer), CType(CType(131,Byte),Integer))
         Me.RectangleShape1.FillGradientStyle = Microsoft.VisualBasic.PowerPacks.FillGradientStyle.Horizontal
         Me.RectangleShape1.FillStyle = Microsoft.VisualBasic.PowerPacks.FillStyle.Solid
         Me.RectangleShape1.Location = New System.Drawing.Point(1, 0)
@@ -252,7 +159,7 @@ Partial Class frmEliminarModPagos
         Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape3, Me.RectangleShape1})
         Me.ShapeContainer1.Size = New System.Drawing.Size(1371, 536)
         Me.ShapeContainer1.TabIndex = 40
-        Me.ShapeContainer1.TabStop = False
+        Me.ShapeContainer1.TabStop = false
         '
         'RectangleShape3
         '
@@ -266,9 +173,9 @@ Partial Class frmEliminarModPagos
         '
         'Label3
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
+        Me.Label3.AutoSize = true
+        Me.Label3.Font = New System.Drawing.Font("Tahoma", 12!, System.Drawing.FontStyle.Bold)
+        Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1,Byte),Integer), CType(CType(56,Byte),Integer), CType(CType(131,Byte),Integer))
         Me.Label3.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.Label3.Location = New System.Drawing.Point(40, 133)
         Me.Label3.Name = "Label3"
@@ -278,24 +185,24 @@ Partial Class frmEliminarModPagos
         '
         'lblSinRegistros
         '
-        Me.lblSinRegistros.AutoSize = True
-        Me.lblSinRegistros.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSinRegistros.AutoSize = true
+        Me.lblSinRegistros.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.lblSinRegistros.Location = New System.Drawing.Point(460, 251)
         Me.lblSinRegistros.Name = "lblSinRegistros"
         Me.lblSinRegistros.Size = New System.Drawing.Size(191, 16)
         Me.lblSinRegistros.TabIndex = 42
         Me.lblSinRegistros.Text = "No se encontraron registros"
-        Me.lblSinRegistros.Visible = False
+        Me.lblSinRegistros.Visible = false
         '
         'btnCerrar
         '
         Me.btnCerrar.BackColor = System.Drawing.SystemColors.Control
         Me.btnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.btnCerrar.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btnCerrar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
+        Me.btnCerrar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(1,Byte),Integer), CType(CType(56,Byte),Integer), CType(CType(131,Byte),Integer))
         Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCerrar.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnCerrar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
+        Me.btnCerrar.Font = New System.Drawing.Font("Tahoma", 9!)
+        Me.btnCerrar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1,Byte),Integer), CType(CType(56,Byte),Integer), CType(CType(131,Byte),Integer))
         Me.btnCerrar.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.back_1_
         Me.btnCerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnCerrar.ImeMode = System.Windows.Forms.ImeMode.NoControl
@@ -304,7 +211,7 @@ Partial Class frmEliminarModPagos
         Me.btnCerrar.Size = New System.Drawing.Size(138, 29)
         Me.btnCerrar.TabIndex = 47
         Me.btnCerrar.Text = "Volver"
-        Me.btnCerrar.UseVisualStyleBackColor = False
+        Me.btnCerrar.UseVisualStyleBackColor = false
         '
         'PictureBox1
         '
@@ -314,7 +221,7 @@ Partial Class frmEliminarModPagos
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(27, 22)
         Me.PictureBox1.TabIndex = 48
-        Me.PictureBox1.TabStop = False
+        Me.PictureBox1.TabStop = false
         '
         'PictureBox2
         '
@@ -324,17 +231,17 @@ Partial Class frmEliminarModPagos
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(27, 22)
         Me.PictureBox2.TabIndex = 49
-        Me.PictureBox2.TabStop = False
+        Me.PictureBox2.TabStop = false
         '
         'btnExport
         '
         Me.btnExport.BackColor = System.Drawing.SystemColors.Control
         Me.btnExport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.btnExport.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btnExport.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
+        Me.btnExport.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(1,Byte),Integer), CType(CType(56,Byte),Integer), CType(CType(131,Byte),Integer))
         Me.btnExport.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnExport.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnExport.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
+        Me.btnExport.Font = New System.Drawing.Font("Tahoma", 9!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.btnExport.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1,Byte),Integer), CType(CType(56,Byte),Integer), CType(CType(131,Byte),Integer))
         Me.btnExport.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.downwards_arrow
         Me.btnExport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnExport.Location = New System.Drawing.Point(983, 482)
@@ -342,14 +249,189 @@ Partial Class frmEliminarModPagos
         Me.btnExport.Size = New System.Drawing.Size(138, 29)
         Me.btnExport.TabIndex = 50
         Me.btnExport.Text = "Exportar"
-        Me.btnExport.UseVisualStyleBackColor = False
+        Me.btnExport.UseVisualStyleBackColor = false
+        '
+        'total
+        '
+        Me.total.AutoSize = true
+        Me.total.Font = New System.Drawing.Font("Tahoma", 12!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.total.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1,Byte),Integer), CType(CType(56,Byte),Integer), CType(CType(131,Byte),Integer))
+        Me.total.Location = New System.Drawing.Point(109, 492)
+        Me.total.Name = "total"
+        Me.total.Size = New System.Drawing.Size(19, 19)
+        Me.total.TabIndex = 54
+        Me.total.Text = "$"
+        '
+        'lblTotal
+        '
+        Me.lblTotal.AutoSize = true
+        Me.lblTotal.Font = New System.Drawing.Font("Tahoma", 12!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.lblTotal.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1,Byte),Integer), CType(CType(56,Byte),Integer), CType(CType(131,Byte),Integer))
+        Me.lblTotal.Location = New System.Drawing.Point(40, 492)
+        Me.lblTotal.Name = "lblTotal"
+        Me.lblTotal.Size = New System.Drawing.Size(63, 19)
+        Me.lblTotal.TabIndex = 52
+        Me.lblTotal.Text = "Total :"
+        '
+        'ID_COMPROBANTE
+        '
+        Me.ID_COMPROBANTE.HeaderText = "COMPROBANTE"
+        Me.ID_COMPROBANTE.Name = "ID_COMPROBANTE"
+        Me.ID_COMPROBANTE.ReadOnly = true
+        Me.ID_COMPROBANTE.Width = 107
+        '
+        'E_LAPIZ_OPTICO
+        '
+        Me.E_LAPIZ_OPTICO.HeaderText = "ENTRADA (LAPIZ OPTICO)"
+        Me.E_LAPIZ_OPTICO.Name = "E_LAPIZ_OPTICO"
+        Me.E_LAPIZ_OPTICO.ReadOnly = true
+        Me.E_LAPIZ_OPTICO.Width = 145
+        '
+        'FECHA_INGRESO
+        '
+        Me.FECHA_INGRESO.HeaderText = "FECHA DE INGRESO"
+        Me.FECHA_INGRESO.Name = "FECHA_INGRESO"
+        Me.FECHA_INGRESO.ReadOnly = true
+        Me.FECHA_INGRESO.Width = 117
+        '
+        'RM
+        '
+        Me.RM.HeaderText = "RAMO"
+        Me.RM.Name = "RM"
+        Me.RM.ReadOnly = true
+        Me.RM.Width = 61
+        '
+        'POLIZA
+        '
+        Me.POLIZA.HeaderText = "POLIZA"
+        Me.POLIZA.Name = "POLIZA"
+        Me.POLIZA.ReadOnly = true
+        Me.POLIZA.Width = 67
+        '
+        'ENDOSO
+        '
+        Me.ENDOSO.HeaderText = "ENDOSO"
+        Me.ENDOSO.Name = "ENDOSO"
+        Me.ENDOSO.ReadOnly = true
+        Me.ENDOSO.Width = 73
+        '
+        'NRO_CUOTA
+        '
+        Me.NRO_CUOTA.HeaderText = "CUOTA"
+        Me.NRO_CUOTA.Name = "NRO_CUOTA"
+        Me.NRO_CUOTA.ReadOnly = true
+        Me.NRO_CUOTA.Width = 66
+        '
+        'FECHA_VTO
+        '
+        Me.FECHA_VTO.HeaderText = "FECHA DE VENCIMIENTO"
+        Me.FECHA_VTO.Name = "FECHA_VTO"
+        Me.FECHA_VTO.ReadOnly = true
+        Me.FECHA_VTO.Width = 139
+        '
+        'ID_MONEDA
+        '
+        Me.ID_MONEDA.HeaderText = "MONEDA"
+        Me.ID_MONEDA.Name = "ID_MONEDA"
+        Me.ID_MONEDA.ReadOnly = true
+        Me.ID_MONEDA.Visible = false
+        Me.ID_MONEDA.Width = 74
+        '
+        'MONEDA
+        '
+        Me.MONEDA.HeaderText = "MONEDA"
+        Me.MONEDA.Name = "MONEDA"
+        Me.MONEDA.ReadOnly = true
+        Me.MONEDA.Width = 74
+        '
+        'IMPORTE
+        '
+        Me.IMPORTE.HeaderText = "IMPORTE"
+        Me.IMPORTE.Name = "IMPORTE"
+        Me.IMPORTE.ReadOnly = true
+        Me.IMPORTE.Width = 76
+        '
+        'ID_ESTADO
+        '
+        Me.ID_ESTADO.HeaderText = "ID_ESTADO"
+        Me.ID_ESTADO.Name = "ID_ESTADO"
+        Me.ID_ESTADO.ReadOnly = true
+        Me.ID_ESTADO.Visible = false
+        Me.ID_ESTADO.Width = 88
+        '
+        'ESTADO
+        '
+        Me.ESTADO.HeaderText = "ESTADO"
+        Me.ESTADO.Name = "ESTADO"
+        Me.ESTADO.ReadOnly = true
+        Me.ESTADO.Width = 71
+        '
+        'TOTAL2
+        '
+        Me.TOTAL2.HeaderText = "TOTAL2"
+        Me.TOTAL2.Name = "TOTAL2"
+        Me.TOTAL2.ReadOnly = true
+        Me.TOTAL2.Visible = false
+        Me.TOTAL2.Width = 69
+        '
+        'ELIMINAR
+        '
+        Me.ELIMINAR.HeaderText = "ELIMINAR"
+        Me.ELIMINAR.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.remove
+        Me.ELIMINAR.Name = "ELIMINAR"
+        Me.ELIMINAR.ReadOnly = true
+        Me.ELIMINAR.Width = 60
+        '
+        'dtpFechaDesde
+        '
+        Me.dtpFechaDesde.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtpFechaDesde.Location = New System.Drawing.Point(529, 170)
+        Me.dtpFechaDesde.Name = "dtpFechaDesde"
+        Me.dtpFechaDesde.Size = New System.Drawing.Size(110, 20)
+        Me.dtpFechaDesde.TabIndex = 55
+        '
+        'dtpFechaHasta
+        '
+        Me.dtpFechaHasta.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtpFechaHasta.Location = New System.Drawing.Point(710, 170)
+        Me.dtpFechaHasta.Name = "dtpFechaHasta"
+        Me.dtpFechaHasta.Size = New System.Drawing.Size(110, 20)
+        Me.dtpFechaHasta.TabIndex = 56
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = true
+        Me.Label1.Font = New System.Drawing.Font("Tahoma", 9!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64,Byte),Integer), CType(CType(64,Byte),Integer), CType(CType(64,Byte),Integer))
+        Me.Label1.Location = New System.Drawing.Point(478, 174)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(41, 14)
+        Me.Label1.TabIndex = 57
+        Me.Label1.Text = "Desde"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = true
+        Me.Label2.Font = New System.Drawing.Font("Tahoma", 9!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64,Byte),Integer), CType(CType(64,Byte),Integer), CType(CType(64,Byte),Integer))
+        Me.Label2.Location = New System.Drawing.Point(659, 174)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(37, 14)
+        Me.Label2.TabIndex = 58
+        Me.Label2.Text = "Hasta"
         '
         'frmEliminarModPagos
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btnCerrar
         Me.ClientSize = New System.Drawing.Size(1371, 536)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.dtpFechaHasta)
+        Me.Controls.Add(Me.dtpFechaDesde)
+        Me.Controls.Add(Me.total)
+        Me.Controls.Add(Me.lblTotal)
         Me.Controls.Add(Me.btnExport)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.PictureBox1)
@@ -363,18 +445,18 @@ Partial Class frmEliminarModPagos
         Me.Controls.Add(Me.dgvReporte)
         Me.Controls.Add(Me.ShapeContainer1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
-        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.MaximizeBox = False
+        Me.Icon = CType(resources.GetObject("$this.Icon"),System.Drawing.Icon)
+        Me.MaximizeBox = false
         Me.Name = "frmEliminarModPagos"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Eliminar Pagos"
-        CType(Me.dgvReporte, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.ResumeLayout(False)
-        Me.PerformLayout()
+        CType(Me.dgvReporte,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.PictureBox1,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.PictureBox2,System.ComponentModel.ISupportInitialize).EndInit
+        Me.ResumeLayout(false)
+        Me.PerformLayout
 
-    End Sub
+End Sub
     Friend WithEvents cboEstado As System.Windows.Forms.ComboBox
     Friend WithEvents dgvReporte As System.Windows.Forms.DataGridView
     Friend WithEvents lblPoliza As System.Windows.Forms.Label
@@ -389,6 +471,8 @@ Partial Class frmEliminarModPagos
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
     Friend WithEvents btnExport As System.Windows.Forms.Button
+    Friend WithEvents total As System.Windows.Forms.Label
+    Friend WithEvents lblTotal As System.Windows.Forms.Label
     Friend WithEvents ID_COMPROBANTE As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents E_LAPIZ_OPTICO As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents FECHA_INGRESO As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -402,5 +486,10 @@ Partial Class frmEliminarModPagos
     Friend WithEvents IMPORTE As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents ID_ESTADO As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents ESTADO As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents TOTAL2 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents ELIMINAR As System.Windows.Forms.DataGridViewImageColumn
+    Friend WithEvents dtpFechaDesde As System.Windows.Forms.DateTimePicker
+    Friend WithEvents dtpFechaHasta As System.Windows.Forms.DateTimePicker
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents Label2 As System.Windows.Forms.Label
 End Class

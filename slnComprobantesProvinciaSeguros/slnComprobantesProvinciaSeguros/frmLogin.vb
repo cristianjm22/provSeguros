@@ -22,7 +22,7 @@ Public Class frmLogin
                 cmd.CommandText = cmd.CommandText & "WHERE USUARIO='" & Usuario & "'"
                 conn.Open()
                 cmd.ExecuteNonQuery()
-                frmControl.ShowDialog()
+                frmControl.Show()
                 Me.Close()
             End If
         Else
