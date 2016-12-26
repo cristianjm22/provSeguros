@@ -530,25 +530,31 @@ Public Class ComprobantesAct
 
             'recorremos todas las filas, y por cada fila todas las columnas
             'y vamos escribiendo.
-            For i As Integer = 1 To NCol
+            For i As Integer = 1 To NCol - 1
+
                 exHoja.Cells.Item(1, i) = DGV.Columns(i - 1).Name.ToString
                 exHoja.Cells.Item(1, i).Style = "StyleHeader"
+
+
             Next
 
             For Fila = 0 To NRow - 1
-                For Col = 0 To NCol - 1
+                For Col = 0 To NCol - 2
                     Dim value As String
 
                     'Problema con formato entrada (lapiz optico)
                     If Col = 1 Then
 
                         value = "'" + DGV.Rows(Fila).Cells(Col).Value().ToString.Trim + "'"
+
+                        exHoja.Cells.Item(Fila + 2, Col + 1) = value
                     Else
                         value = DGV.Rows(Fila).Cells(Col).Value()
+
+                        exHoja.Cells.Item(Fila + 2, Col + 1) = value
                     End If
 
 
-                    exHoja.Cells.Item(Fila + 2, Col + 1) = value
 
 
 

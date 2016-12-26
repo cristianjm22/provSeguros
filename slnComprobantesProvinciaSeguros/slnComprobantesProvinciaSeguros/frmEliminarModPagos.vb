@@ -53,7 +53,8 @@
         Try
 
             Dim dtART As DataTable
-            dtART = ComprobantesDA.obtenerDetalleComprobantesPorEstado(estado, poliza, fechadesde.ToString("MMMM dd, yyyy"), fechahasta)
+            Dim sumatotal As Decimal
+            dtART = ComprobantesDA.obtenerDetalleComprobantesPorEstado(estado, poliza, fechadesde.ToString("yyyy-MM-dd"), fechahasta.ToString("yyyy-MM-dd"))
 
             dgvReporte.Rows.Clear()  'para limpiarlo
 
@@ -65,13 +66,15 @@
 
                 total.Show()
 
-                total.Text = "$" + ComprobantesAct.ObtenerTotalporQuincena()
+
 
                 For Each row As DataRow In dtART.Rows
 
-                    dgvReporte.Rows.Add(row("ID_COMPROBANTE").ToString(), row("E_LAPIZ_OPTICO").ToString(), row("FECHA_INGRESO").ToString(), row("RM").ToString(), row("POLIZA").ToString(), row("ENDOSO").ToString(), row("NRO_CUOTA").ToString(), row("FECHA_VTO").ToString(), row("ID_MONEDA").ToString(), row("MONEDA").ToString(), row("IMPORTE").ToString(), row("ID_ESTADO").ToString(), row("ESTADO").ToString(), row("TOTAL").ToString())
-
+                    dgvReporte.Rows.Add(row("ID_COMPROBANTE").ToString(), row("E_LAPIZ_OPTICO").ToString(), row("FECHA_INGRESO").ToString(), row("RM").ToString(), row("POLIZA").ToString(), row("ENDOSO").ToString(), row("NRO_CUOTA").ToString(), row("FECHA_VTO").ToString(), row("ID_MONEDA").ToString(), row("MONEDA").ToString(), row("IMPORTE").ToString(), row("ID_ESTADO").ToString(), row("ESTADO").ToString())
+                    sumatotal = sumatotal + Convert.ToDecimal(row("IMPORTE").ToString())
                 Next
+
+                total.Text = "$" + sumatotal.ToString()
             Else
                 lblSinRegistros.Show()
                 lblTotal.Hide()

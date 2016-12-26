@@ -171,7 +171,7 @@ Public Class ComprobantesDA
     ''' </summary>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Shared Function obtenerDetalleComprobantesPorEstado(ByVal Estado As Integer, ByVal poliza As String, ByVal fechadesde As DateTime, ByVal fechahasta As DateTime)
+    Public Shared Function obtenerDetalleComprobantesPorEstado(ByVal Estado As Integer, ByVal poliza As String, ByVal fechadesde As String, ByVal fechahasta As String)
 
         Dim dt As New DataTable
 
