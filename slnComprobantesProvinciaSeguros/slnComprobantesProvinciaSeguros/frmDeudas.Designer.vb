@@ -44,9 +44,9 @@ Partial Class frmDeudas
         Me.RectangleShape1 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.ShapeContainer1 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
         Me.RectangleShape3 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
-        Me.lblSinRegistros = New System.Windows.Forms.Label()
         Me.btnCerrar = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.lblSinRegistros = New System.Windows.Forms.Label()
         CType(Me.dgvDeudas, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -225,21 +225,10 @@ Partial Class frmDeudas
         Me.RectangleShape3.BackgroundImage = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.Sin
         Me.RectangleShape3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.RectangleShape3.BorderColor = System.Drawing.Color.Transparent
-        Me.RectangleShape3.Location = New System.Drawing.Point(924, -3)
+        Me.RectangleShape3.Location = New System.Drawing.Point(979, -5)
         Me.RectangleShape3.Name = "RectangleShape3"
         Me.RectangleShape3.SelectionColor = System.Drawing.Color.Transparent
         Me.RectangleShape3.Size = New System.Drawing.Size(176, 103)
-        '
-        'lblSinRegistros
-        '
-        Me.lblSinRegistros.AutoSize = True
-        Me.lblSinRegistros.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblSinRegistros.Location = New System.Drawing.Point(502, 273)
-        Me.lblSinRegistros.Name = "lblSinRegistros"
-        Me.lblSinRegistros.Size = New System.Drawing.Size(191, 16)
-        Me.lblSinRegistros.TabIndex = 40
-        Me.lblSinRegistros.Text = "No se encontraron registros"
-        Me.lblSinRegistros.Visible = False
         '
         'btnCerrar
         '
@@ -271,15 +260,30 @@ Partial Class frmDeudas
         Me.PictureBox1.TabIndex = 47
         Me.PictureBox1.TabStop = False
         '
+        'lblSinRegistros
+        '
+        Me.lblSinRegistros.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblSinRegistros.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblSinRegistros.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSinRegistros.Location = New System.Drawing.Point(56, 234)
+        Me.lblSinRegistros.Name = "lblSinRegistros"
+        Me.lblSinRegistros.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.lblSinRegistros.Size = New System.Drawing.Size(1045, 31)
+        Me.lblSinRegistros.TabIndex = 48
+        Me.lblSinRegistros.Text = "No se encontraron registros"
+        Me.lblSinRegistros.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.lblSinRegistros.Visible = False
+        '
         'frmDeudas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btnCerrar
         Me.ClientSize = New System.Drawing.Size(1165, 456)
+        Me.Controls.Add(Me.lblSinRegistros)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.btnCerrar)
-        Me.Controls.Add(Me.lblSinRegistros)
         Me.Controls.Add(Me.lblDeudas)
         Me.Controls.Add(Me.dgvDeudas)
         Me.Controls.Add(Me.txtPoliza)
@@ -304,7 +308,6 @@ Partial Class frmDeudas
     Friend WithEvents RectangleShape1 As Microsoft.VisualBasic.PowerPacks.RectangleShape
     Friend WithEvents ShapeContainer1 As Microsoft.VisualBasic.PowerPacks.ShapeContainer
     Friend WithEvents RectangleShape3 As Microsoft.VisualBasic.PowerPacks.RectangleShape
-    Friend WithEvents lblSinRegistros As System.Windows.Forms.Label
     Friend WithEvents btnCerrar As System.Windows.Forms.Button
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents ID_DEUDA As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -318,4 +321,5 @@ Partial Class frmDeudas
     Friend WithEvents DEUDA_PENDIENTE As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents MODIFICAR As System.Windows.Forms.DataGridViewImageColumn
     Friend WithEvents ELIMINAR As System.Windows.Forms.DataGridViewImageColumn
+    Friend WithEvents lblSinRegistros As System.Windows.Forms.Label
 End Class

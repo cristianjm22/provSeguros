@@ -343,7 +343,7 @@ Public Class ComprobantesAct
     ''' <param name="DGV"></param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Shared Function GridAExcel555(ByVal DGV As DataGridView, ByVal importeDia As String, ByVal importeQuincena As String, ByVal importePagosFuturo As String) As Boolean
+    Public Shared Function GridAExcel555(ByVal DGV As DataGridView, ByVal importeDia As String) As Boolean
 
         'Creamos las variables
 
@@ -438,28 +438,8 @@ Public Class ComprobantesAct
 
             exHoja.Cells.Item(Fila + 3, Col - 1).Style = "StyleTotal"
 
-            exHoja.Cells.Item(Fila + 5, Col - 2) = "TOTAL DE QUINCENA"
-            exHoja.Cells.Item(Fila + 5, Col - 2).Style = "StyleTotal"
-
-            exHoja.Cells.Item(Fila + 5, Col - 1).Style = "StyleTotal"
-
-
-            exHoja.Cells.Item(Fila + 7, Col - 2) = "TOTAL PROXIMA QUINCENA"
-            exHoja.Cells.Item(Fila + 7, Col - 2).Style = "StyleTotal"
-
-            exHoja.Cells.Item(Fila + 7, Col - 1).Style = "StyleTotal"
-
-
-
             exHoja.Cells.Item(Fila + 3, Col) = "$" + importeDia
             exHoja.Cells.Item(Fila + 3, Col).Style = "StyleTotal"
-
-            exHoja.Cells.Item(Fila + 5, Col) = "$" + importeQuincena
-            exHoja.Cells.Item(Fila + 5, Col).Style = "StyleTotal"
-
-
-            exHoja.Cells.Item(Fila + 7, Col) = "$" + importePagosFuturo
-            exHoja.Cells.Item(Fila + 7, Col).Style = "StyleTotal"
 
 
             'Titulo en negrita, Alineado

@@ -23,7 +23,7 @@ Public Class frmReporte
             lblSinRegistros.Show()
             btnExport.Hide()
             lblTotalDia.Hide()
-
+            dgvReporte.Hide()
             totalDia.Hide()
 
             lblTotalPagoAnticipado.Hide()
@@ -35,7 +35,7 @@ Public Class frmReporte
             lblSinRegistros.Hide()
             btnExport.Show()
             totalDia.Text = "$" + ComprobantesAct.ObtenerTotaldeldia()
- 
+            dgvReporte.Show()
             lblTotalPagoAnticipado.Text = "$" + ComprobantesAct.obtenerTotalPagosAnticipados()
             totalpagosTarjeta.Text = "$" + ComprobantesAct.obtenerTotalpagosTarjeta()
             lblTotalDia.Show()
@@ -62,7 +62,7 @@ Public Class frmReporte
                 Dim stopwatch As New Stopwatch()
                 Me.UseWaitCursor = True
                 stopwatch.Start()
-                result = ComprobantesAct.GridAExcel555(dgvReporte, ComprobantesAct.ObtenerTotaldeldia(), ComprobantesAct.ObtenerTotalporQuincena(), ComprobantesAct.obtenerTotalPagosFuturos())
+                result = ComprobantesAct.GridAExcel555(dgvReporte, ComprobantesAct.ObtenerTotaldeldia())
 
                 stopwatch.Stop()
                 Me.UseWaitCursor = False
@@ -79,13 +79,5 @@ Public Class frmReporte
 
     Private Sub btnCerrar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCerrar.Click
         Me.Close()
-    End Sub
-
-    Private Sub totalDia_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles totalDia.Click
-
-    End Sub
-
-    Private Sub Label1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles totalpagosTarjeta.Click
-
     End Sub
 End Class

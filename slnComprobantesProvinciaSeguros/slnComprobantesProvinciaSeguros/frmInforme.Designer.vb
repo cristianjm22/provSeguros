@@ -26,7 +26,6 @@ Partial Class frmInforme
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmInforme))
         Me.dgvReimpresion = New System.Windows.Forms.DataGridView()
-        Me.lblSinRegistros = New System.Windows.Forms.Label()
         Me.ShapeContainer1 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
         Me.RectangleShape3 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.RectangleShape1 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
@@ -35,6 +34,7 @@ Partial Class frmInforme
         Me.btnCerrar = New System.Windows.Forms.Button()
         Me.totalPesos = New System.Windows.Forms.Label()
         Me.lblTotal = New System.Windows.Forms.Label()
+        Me.lblSinRegistros = New System.Windows.Forms.Label()
         CType(Me.dgvReimpresion, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -70,24 +70,13 @@ Partial Class frmInforme
         Me.dgvReimpresion.Size = New System.Drawing.Size(1300, 212)
         Me.dgvReimpresion.TabIndex = 41
         '
-        'lblSinRegistros
-        '
-        Me.lblSinRegistros.AutoSize = True
-        Me.lblSinRegistros.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblSinRegistros.Location = New System.Drawing.Point(500, 224)
-        Me.lblSinRegistros.Name = "lblSinRegistros"
-        Me.lblSinRegistros.Size = New System.Drawing.Size(191, 16)
-        Me.lblSinRegistros.TabIndex = 42
-        Me.lblSinRegistros.Text = "No se encontraron registros"
-        Me.lblSinRegistros.Visible = False
-        '
         'ShapeContainer1
         '
         Me.ShapeContainer1.Location = New System.Drawing.Point(0, 0)
         Me.ShapeContainer1.Margin = New System.Windows.Forms.Padding(0)
         Me.ShapeContainer1.Name = "ShapeContainer1"
         Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape3, Me.RectangleShape1})
-        Me.ShapeContainer1.Size = New System.Drawing.Size(1170, 462)
+        Me.ShapeContainer1.Size = New System.Drawing.Size(1291, 462)
         Me.ShapeContainer1.TabIndex = 43
         Me.ShapeContainer1.TabStop = False
         '
@@ -96,7 +85,7 @@ Partial Class frmInforme
         Me.RectangleShape3.BackgroundImage = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.Sin
         Me.RectangleShape3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.RectangleShape3.BorderColor = System.Drawing.Color.Transparent
-        Me.RectangleShape3.Location = New System.Drawing.Point(972, -8)
+        Me.RectangleShape3.Location = New System.Drawing.Point(1105, -5)
         Me.RectangleShape3.Name = "RectangleShape3"
         Me.RectangleShape3.SelectionColor = System.Drawing.Color.Transparent
         Me.RectangleShape3.Size = New System.Drawing.Size(176, 103)
@@ -113,7 +102,7 @@ Partial Class frmInforme
         Me.RectangleShape1.Location = New System.Drawing.Point(0, 0)
         Me.RectangleShape1.Name = "RectangleShape1"
         Me.RectangleShape1.SelectionColor = System.Drawing.Color.Transparent
-        Me.RectangleShape1.Size = New System.Drawing.Size(1169, 94)
+        Me.RectangleShape1.Size = New System.Drawing.Size(1290, 94)
         '
         'lblInforme
         '
@@ -137,7 +126,7 @@ Partial Class frmInforme
         Me.btnInformar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
         Me.btnInformar.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.Very_Basic_Ok_icon_1_
         Me.btnInformar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnInformar.Location = New System.Drawing.Point(1010, 402)
+        Me.btnInformar.Location = New System.Drawing.Point(1109, 409)
         Me.btnInformar.Name = "btnInformar"
         Me.btnInformar.Size = New System.Drawing.Size(139, 29)
         Me.btnInformar.TabIndex = 45
@@ -185,18 +174,33 @@ Partial Class frmInforme
         Me.lblTotal.TabIndex = 50
         Me.lblTotal.Text = "Total:"
         '
+        'lblSinRegistros
+        '
+        Me.lblSinRegistros.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblSinRegistros.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblSinRegistros.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSinRegistros.Location = New System.Drawing.Point(47, 184)
+        Me.lblSinRegistros.Name = "lblSinRegistros"
+        Me.lblSinRegistros.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.lblSinRegistros.Size = New System.Drawing.Size(1223, 26)
+        Me.lblSinRegistros.TabIndex = 52
+        Me.lblSinRegistros.Text = "No se encontraron registros"
+        Me.lblSinRegistros.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.lblSinRegistros.Visible = False
+        '
         'frmInforme
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btnCerrar
-        Me.ClientSize = New System.Drawing.Size(1170, 462)
+        Me.ClientSize = New System.Drawing.Size(1291, 462)
+        Me.Controls.Add(Me.lblSinRegistros)
         Me.Controls.Add(Me.totalPesos)
         Me.Controls.Add(Me.lblTotal)
         Me.Controls.Add(Me.btnCerrar)
         Me.Controls.Add(Me.btnInformar)
         Me.Controls.Add(Me.lblInforme)
-        Me.Controls.Add(Me.lblSinRegistros)
         Me.Controls.Add(Me.dgvReimpresion)
         Me.Controls.Add(Me.ShapeContainer1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
@@ -211,7 +215,6 @@ Partial Class frmInforme
 
     End Sub
     Friend WithEvents dgvReimpresion As System.Windows.Forms.DataGridView
-    Friend WithEvents lblSinRegistros As System.Windows.Forms.Label
     Friend WithEvents ShapeContainer1 As Microsoft.VisualBasic.PowerPacks.ShapeContainer
     Friend WithEvents RectangleShape1 As Microsoft.VisualBasic.PowerPacks.RectangleShape
     Friend WithEvents RectangleShape3 As Microsoft.VisualBasic.PowerPacks.RectangleShape
@@ -220,4 +223,5 @@ Partial Class frmInforme
     Friend WithEvents btnCerrar As System.Windows.Forms.Button
     Friend WithEvents totalPesos As System.Windows.Forms.Label
     Friend WithEvents lblTotal As System.Windows.Forms.Label
+    Friend WithEvents lblSinRegistros As System.Windows.Forms.Label
 End Class

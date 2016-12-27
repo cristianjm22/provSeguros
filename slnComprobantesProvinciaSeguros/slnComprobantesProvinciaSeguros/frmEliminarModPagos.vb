@@ -65,7 +65,7 @@
                 lblTotal.Show()
 
                 total.Show()
-
+                dgvReporte.Show()
 
 
                 For Each row As DataRow In dtART.Rows
@@ -79,7 +79,7 @@
                 lblSinRegistros.Show()
                 lblTotal.Hide()
                 total.Hide()
-
+                dgvReporte.Hide()
             End If
 
         Catch ex As Exception

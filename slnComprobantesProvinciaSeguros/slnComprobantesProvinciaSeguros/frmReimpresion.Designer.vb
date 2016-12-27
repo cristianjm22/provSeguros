@@ -32,10 +32,10 @@ Partial Class frmReimpresion
         Me.ShapeContainer1 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
         Me.RectangleShape2 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.lblReimpresion = New System.Windows.Forms.Label()
-        Me.lblSinRegistros = New System.Windows.Forms.Label()
         Me.btnImprimir = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.btnCerrar = New System.Windows.Forms.Button()
+        Me.lblSinRegistros = New System.Windows.Forms.Label()
         CType(Me.dgvReimpresion, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -96,7 +96,7 @@ Partial Class frmReimpresion
         'RectangleShape1
         '
         Me.RectangleShape1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.RectangleShape1.BorderColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
         Me.RectangleShape1.FillColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(60, Byte), Integer))
         Me.RectangleShape1.FillGradientColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
@@ -105,7 +105,7 @@ Partial Class frmReimpresion
         Me.RectangleShape1.Location = New System.Drawing.Point(0, 0)
         Me.RectangleShape1.Name = "RectangleShape1"
         Me.RectangleShape1.SelectionColor = System.Drawing.Color.Transparent
-        Me.RectangleShape1.Size = New System.Drawing.Size(1606, 94)
+        Me.RectangleShape1.Size = New System.Drawing.Size(1564, 94)
         '
         'ShapeContainer1
         '
@@ -113,7 +113,7 @@ Partial Class frmReimpresion
         Me.ShapeContainer1.Margin = New System.Windows.Forms.Padding(0)
         Me.ShapeContainer1.Name = "ShapeContainer1"
         Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape2, Me.RectangleShape1})
-        Me.ShapeContainer1.Size = New System.Drawing.Size(1284, 489)
+        Me.ShapeContainer1.Size = New System.Drawing.Size(1242, 489)
         Me.ShapeContainer1.TabIndex = 3
         Me.ShapeContainer1.TabStop = False
         '
@@ -122,7 +122,7 @@ Partial Class frmReimpresion
         Me.RectangleShape2.BackgroundImage = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.Sin
         Me.RectangleShape2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.RectangleShape2.BorderColor = System.Drawing.Color.Transparent
-        Me.RectangleShape2.Location = New System.Drawing.Point(1086, -9)
+        Me.RectangleShape2.Location = New System.Drawing.Point(1059, -9)
         Me.RectangleShape2.Name = "RectangleShape2"
         Me.RectangleShape2.SelectionColor = System.Drawing.Color.Transparent
         Me.RectangleShape2.Size = New System.Drawing.Size(176, 103)
@@ -137,17 +137,6 @@ Partial Class frmReimpresion
         Me.lblReimpresion.Size = New System.Drawing.Size(192, 19)
         Me.lblReimpresion.TabIndex = 29
         Me.lblReimpresion.Text = "Reimpresion de Ticket"
-        '
-        'lblSinRegistros
-        '
-        Me.lblSinRegistros.AutoSize = True
-        Me.lblSinRegistros.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblSinRegistros.Location = New System.Drawing.Point(564, 243)
-        Me.lblSinRegistros.Name = "lblSinRegistros"
-        Me.lblSinRegistros.Size = New System.Drawing.Size(191, 16)
-        Me.lblSinRegistros.TabIndex = 39
-        Me.lblSinRegistros.Text = "No se encontraron registros"
-        Me.lblSinRegistros.Visible = False
         '
         'btnImprimir
         '
@@ -197,14 +186,29 @@ Partial Class frmReimpresion
         Me.btnCerrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnCerrar.UseVisualStyleBackColor = False
         '
+        'lblSinRegistros
+        '
+        Me.lblSinRegistros.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblSinRegistros.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblSinRegistros.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSinRegistros.Location = New System.Drawing.Point(65, 207)
+        Me.lblSinRegistros.Name = "lblSinRegistros"
+        Me.lblSinRegistros.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.lblSinRegistros.Size = New System.Drawing.Size(1091, 31)
+        Me.lblSinRegistros.TabIndex = 49
+        Me.lblSinRegistros.Text = "No se encontraron registros"
+        Me.lblSinRegistros.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.lblSinRegistros.Visible = False
+        '
         'frmReimpresion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btnCerrar
-        Me.ClientSize = New System.Drawing.Size(1284, 489)
-        Me.Controls.Add(Me.btnCerrar)
+        Me.ClientSize = New System.Drawing.Size(1242, 489)
         Me.Controls.Add(Me.lblSinRegistros)
+        Me.Controls.Add(Me.btnCerrar)
         Me.Controls.Add(Me.btnImprimir)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.lblReimpresion)
@@ -233,6 +237,6 @@ Partial Class frmReimpresion
     Friend WithEvents lblReimpresion As System.Windows.Forms.Label
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents btnImprimir As System.Windows.Forms.Button
-    Friend WithEvents lblSinRegistros As System.Windows.Forms.Label
     Friend WithEvents btnCerrar As System.Windows.Forms.Button
+    Friend WithEvents lblSinRegistros As System.Windows.Forms.Label
 End Class

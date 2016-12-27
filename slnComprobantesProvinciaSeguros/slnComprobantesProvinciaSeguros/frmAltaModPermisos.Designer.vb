@@ -111,7 +111,7 @@ Partial Class frmAltaModPermisos
         'RectangleShape1
         '
         Me.RectangleShape1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.RectangleShape1.BorderColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
         Me.RectangleShape1.FillColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(60, Byte), Integer))
         Me.RectangleShape1.FillGradientColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
@@ -137,7 +137,7 @@ Partial Class frmAltaModPermisos
         Me.RectangleShape3.BackgroundImage = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.Sin
         Me.RectangleShape3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.RectangleShape3.BorderColor = System.Drawing.Color.Transparent
-        Me.RectangleShape3.Location = New System.Drawing.Point(154, -8)
+        Me.RectangleShape3.Location = New System.Drawing.Point(169, -8)
         Me.RectangleShape3.Name = "RectangleShape3"
         Me.RectangleShape3.SelectionColor = System.Drawing.Color.Transparent
         Me.RectangleShape3.Size = New System.Drawing.Size(176, 103)

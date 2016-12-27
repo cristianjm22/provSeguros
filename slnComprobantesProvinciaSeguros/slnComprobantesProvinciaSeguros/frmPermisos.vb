@@ -171,6 +171,13 @@ Public Class frmPermisos
             Next
         End If
 
+        If (dt.Rows.Count = 0) Then
+            lblSinRegistros.Show()
+            PermisosDGV.Hide()
+        Else
+            lblSinRegistros.Hide()
+            PermisosDGV.Show()
+        End If
 
     End Sub
 

@@ -37,6 +37,7 @@ Partial Class frmPermisos
         Me.ELIMINAR = New System.Windows.Forms.DataGridViewImageColumn()
         Me.btnNuevo = New System.Windows.Forms.Button()
         Me.btnCerrar = New System.Windows.Forms.Button()
+        Me.lblSinRegistros = New System.Windows.Forms.Label()
         CType(Me.PermisosDGV, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -52,7 +53,7 @@ Partial Class frmPermisos
         Me.RectangleShape1.Location = New System.Drawing.Point(-1, 0)
         Me.RectangleShape1.Name = "RectangleShape1"
         Me.RectangleShape1.SelectionColor = System.Drawing.Color.Transparent
-        Me.RectangleShape1.Size = New System.Drawing.Size(724, 94)
+        Me.RectangleShape1.Size = New System.Drawing.Size(640, 94)
         '
         'ShapeContainer1
         '
@@ -60,7 +61,7 @@ Partial Class frmPermisos
         Me.ShapeContainer1.Margin = New System.Windows.Forms.Padding(0)
         Me.ShapeContainer1.Name = "ShapeContainer1"
         Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape3, Me.RectangleShape2, Me.RectangleShape1})
-        Me.ShapeContainer1.Size = New System.Drawing.Size(718, 404)
+        Me.ShapeContainer1.Size = New System.Drawing.Size(640, 404)
         Me.ShapeContainer1.TabIndex = 41
         Me.ShapeContainer1.TabStop = False
         '
@@ -69,7 +70,7 @@ Partial Class frmPermisos
         Me.RectangleShape3.BackgroundImage = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.Sin
         Me.RectangleShape3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.RectangleShape3.BorderColor = System.Drawing.Color.Transparent
-        Me.RectangleShape3.Location = New System.Drawing.Point(528, -1)
+        Me.RectangleShape3.Location = New System.Drawing.Point(480, -3)
         Me.RectangleShape3.Name = "RectangleShape3"
         Me.RectangleShape3.SelectionColor = System.Drawing.Color.Transparent
         Me.RectangleShape3.Size = New System.Drawing.Size(176, 103)
@@ -137,7 +138,7 @@ Partial Class frmPermisos
         Me.ID_PERMISO.Name = "ID_PERMISO"
         Me.ID_PERMISO.ReadOnly = True
         Me.ID_PERMISO.Visible = False
-        Me.ID_PERMISO.Width = 93
+        Me.ID_PERMISO.Width = 94
         '
         'USUARIO
         '
@@ -199,7 +200,7 @@ Partial Class frmPermisos
         Me.btnNuevo.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
         Me.btnNuevo.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.add
         Me.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnNuevo.Location = New System.Drawing.Point(591, 147)
+        Me.btnNuevo.Location = New System.Drawing.Point(505, 147)
         Me.btnNuevo.Name = "btnNuevo"
         Me.btnNuevo.Size = New System.Drawing.Size(76, 29)
         Me.btnNuevo.TabIndex = 38
@@ -227,13 +228,29 @@ Partial Class frmPermisos
         Me.btnCerrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnCerrar.UseVisualStyleBackColor = False
         '
+        'lblSinRegistros
+        '
+        Me.lblSinRegistros.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblSinRegistros.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblSinRegistros.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSinRegistros.Location = New System.Drawing.Point(53, 182)
+        Me.lblSinRegistros.Name = "lblSinRegistros"
+        Me.lblSinRegistros.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.lblSinRegistros.Size = New System.Drawing.Size(499, 30)
+        Me.lblSinRegistros.TabIndex = 53
+        Me.lblSinRegistros.Text = "No se encontraron registros"
+        Me.lblSinRegistros.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.lblSinRegistros.Visible = False
+        '
         'frmPermisos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
         Me.CancelButton = Me.btnCerrar
-        Me.ClientSize = New System.Drawing.Size(718, 404)
+        Me.ClientSize = New System.Drawing.Size(640, 404)
+        Me.Controls.Add(Me.lblSinRegistros)
         Me.Controls.Add(Me.btnCerrar)
         Me.Controls.Add(Me.lblReporte)
         Me.Controls.Add(Me.btnNuevo)
@@ -265,4 +282,5 @@ Partial Class frmPermisos
     Friend WithEvents HABILITADO As System.Windows.Forms.DataGridViewCheckBoxColumn
     Friend WithEvents MODIFICAR As System.Windows.Forms.DataGridViewImageColumn
     Friend WithEvents ELIMINAR As System.Windows.Forms.DataGridViewImageColumn
+    Friend WithEvents lblSinRegistros As System.Windows.Forms.Label
 End Class

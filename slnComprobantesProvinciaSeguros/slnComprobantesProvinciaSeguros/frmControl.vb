@@ -44,7 +44,6 @@ Public Class frmControl
         txtNroCuota.Text = entrada.Substring(20, 2)
         cuota = Convert.ToInt16(txtNroCuota.Text)
 
-
         cuota = cuota * 1
 
         txtNroCuota.Text = cuota.ToString()
@@ -230,7 +229,7 @@ Public Class frmControl
     End Sub
 
     Private Sub btnCerrar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCerrar.Click
-        frmLogin.ShowDialog()
+        frmLogin.Show()
         Me.Close()
     End Sub
 

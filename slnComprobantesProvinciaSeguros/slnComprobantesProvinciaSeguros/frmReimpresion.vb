@@ -35,9 +35,11 @@ Public Class frmReimpresion
         If (dv.Count = 0) Then
             lblSinRegistros.Show()
             btnImprimir.Hide()
+            dgvReimpresion.Hide()
         Else
             lblSinRegistros.Hide()
             btnImprimir.Show()
+            dgvReimpresion.Show()
         End If
     End Sub
 

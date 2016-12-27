@@ -19,8 +19,10 @@ Public Class frmDeudas
 
         If (dt.Rows.Count = 0) Then
             lblSinRegistros.Show()
+            dgvDeudas.Hide()
         Else
             lblSinRegistros.Hide()
+            dgvDeudas.Show()
         End If
         If ComprobantesAct.AccesoMenu(Usuario, "MODIFICACION") Then
             dgvDeudas.Columns(9).Visible = True

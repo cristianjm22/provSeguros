@@ -32,13 +32,13 @@ Partial Class frmReporte
         Me.RectangleShape2 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.btnExport = New System.Windows.Forms.Button()
         Me.lblTotalDia = New System.Windows.Forms.Label()
-        Me.lblSinRegistros = New System.Windows.Forms.Label()
         Me.btnCerrar = New System.Windows.Forms.Button()
         Me.totalDia = New System.Windows.Forms.Label()
         Me.lblTotalPagoAnticipado = New System.Windows.Forms.Label()
         Me.lblPagoAnticipado = New System.Windows.Forms.Label()
         Me.totalpagosTarjeta = New System.Windows.Forms.Label()
         Me.lblPagosTarjetas = New System.Windows.Forms.Label()
+        Me.lblSinRegistros = New System.Windows.Forms.Label()
         CType(Me.dgvReporte, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -88,7 +88,7 @@ Partial Class frmReporte
         'RectangleShape1
         '
         Me.RectangleShape1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.RectangleShape1.BorderColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
         Me.RectangleShape1.FillColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(60, Byte), Integer))
         Me.RectangleShape1.FillGradientColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
@@ -114,7 +114,7 @@ Partial Class frmReporte
         Me.RectangleShape2.BackgroundImage = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.Sin
         Me.RectangleShape2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.RectangleShape2.BorderColor = System.Drawing.Color.Transparent
-        Me.RectangleShape2.Location = New System.Drawing.Point(1121, -4)
+        Me.RectangleShape2.Location = New System.Drawing.Point(1131, -5)
         Me.RectangleShape2.Name = "RectangleShape2"
         Me.RectangleShape2.SelectionColor = System.Drawing.Color.Transparent
         Me.RectangleShape2.Size = New System.Drawing.Size(176, 103)
@@ -130,7 +130,7 @@ Partial Class frmReporte
         Me.btnExport.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
         Me.btnExport.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.download
         Me.btnExport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnExport.Location = New System.Drawing.Point(1085, 434)
+        Me.btnExport.Location = New System.Drawing.Point(1134, 434)
         Me.btnExport.Name = "btnExport"
         Me.btnExport.Size = New System.Drawing.Size(138, 29)
         Me.btnExport.TabIndex = 37
@@ -148,17 +148,6 @@ Partial Class frmReporte
         Me.lblTotalDia.TabIndex = 38
         Me.lblTotalDia.Text = "Total cobrado del dia:"
         '
-        'lblSinRegistros
-        '
-        Me.lblSinRegistros.AutoSize = True
-        Me.lblSinRegistros.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblSinRegistros.Location = New System.Drawing.Point(544, 201)
-        Me.lblSinRegistros.Name = "lblSinRegistros"
-        Me.lblSinRegistros.Size = New System.Drawing.Size(191, 16)
-        Me.lblSinRegistros.TabIndex = 40
-        Me.lblSinRegistros.Text = "No se encontraron registros"
-        Me.lblSinRegistros.Visible = False
-        '
         'btnCerrar
         '
         Me.btnCerrar.BackColor = System.Drawing.SystemColors.Control
@@ -171,7 +160,7 @@ Partial Class frmReporte
         Me.btnCerrar.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.back_1_
         Me.btnCerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnCerrar.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.btnCerrar.Location = New System.Drawing.Point(1085, 468)
+        Me.btnCerrar.Location = New System.Drawing.Point(1134, 468)
         Me.btnCerrar.Name = "btnCerrar"
         Me.btnCerrar.Size = New System.Drawing.Size(138, 29)
         Me.btnCerrar.TabIndex = 47
@@ -194,7 +183,7 @@ Partial Class frmReporte
         Me.lblTotalPagoAnticipado.AutoSize = True
         Me.lblTotalPagoAnticipado.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTotalPagoAnticipado.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
-        Me.lblTotalPagoAnticipado.Location = New System.Drawing.Point(247, 462)
+        Me.lblTotalPagoAnticipado.Location = New System.Drawing.Point(269, 462)
         Me.lblTotalPagoAnticipado.Name = "lblTotalPagoAnticipado"
         Me.lblTotalPagoAnticipado.Size = New System.Drawing.Size(19, 19)
         Me.lblTotalPagoAnticipado.TabIndex = 53
@@ -233,19 +222,34 @@ Partial Class frmReporte
         Me.lblPagosTarjetas.TabIndex = 54
         Me.lblPagosTarjetas.Text = "Total pagos tarjeta:"
         '
+        'lblSinRegistros
+        '
+        Me.lblSinRegistros.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblSinRegistros.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblSinRegistros.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSinRegistros.Location = New System.Drawing.Point(58, 157)
+        Me.lblSinRegistros.Name = "lblSinRegistros"
+        Me.lblSinRegistros.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.lblSinRegistros.Size = New System.Drawing.Size(1214, 31)
+        Me.lblSinRegistros.TabIndex = 56
+        Me.lblSinRegistros.Text = "No se encontraron registros"
+        Me.lblSinRegistros.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.lblSinRegistros.Visible = False
+        '
         'frmReporte
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btnCerrar
         Me.ClientSize = New System.Drawing.Size(1315, 510)
+        Me.Controls.Add(Me.lblSinRegistros)
         Me.Controls.Add(Me.totalpagosTarjeta)
         Me.Controls.Add(Me.lblPagosTarjetas)
         Me.Controls.Add(Me.lblTotalPagoAnticipado)
         Me.Controls.Add(Me.lblPagoAnticipado)
         Me.Controls.Add(Me.totalDia)
         Me.Controls.Add(Me.btnCerrar)
-        Me.Controls.Add(Me.lblSinRegistros)
         Me.Controls.Add(Me.lblTotalDia)
         Me.Controls.Add(Me.btnExport)
         Me.Controls.Add(Me.lblReporte)
@@ -269,11 +273,11 @@ Partial Class frmReporte
     Friend WithEvents btnExport As System.Windows.Forms.Button
     Friend WithEvents RectangleShape2 As Microsoft.VisualBasic.PowerPacks.RectangleShape
     Friend WithEvents lblTotalDia As System.Windows.Forms.Label
-    Friend WithEvents lblSinRegistros As System.Windows.Forms.Label
     Friend WithEvents btnCerrar As System.Windows.Forms.Button
     Friend WithEvents totalDia As System.Windows.Forms.Label
     Friend WithEvents lblTotalPagoAnticipado As System.Windows.Forms.Label
     Friend WithEvents lblPagoAnticipado As System.Windows.Forms.Label
     Friend WithEvents totalpagosTarjeta As System.Windows.Forms.Label
     Friend WithEvents lblPagosTarjetas As System.Windows.Forms.Label
+    Friend WithEvents lblSinRegistros As System.Windows.Forms.Label
 End Class

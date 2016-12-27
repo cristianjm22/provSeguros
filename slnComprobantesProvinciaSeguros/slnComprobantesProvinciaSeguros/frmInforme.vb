@@ -20,15 +20,17 @@ Public Class frmInforme
         dgvReimpresion.DataSource = table
         If (table.Rows.Count = 0) Then
             lblSinRegistros.Show()
-
+            dgvReimpresion.Hide()
             btnInformar.Hide()
             lblTotal.Hide()
             totalPesos.Hide()
         Else
             lblTotal.Show()
-
+            dgvReimpresion.Show()
             totalPesos.Text = "$" + ComprobantesAct.obtenerTotalPagosInformados()
             totalPesos.Show()
+            btnInformar.Show()
+
         End If
 
 
