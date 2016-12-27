@@ -126,9 +126,9 @@ Partial Class frmInforme
         Me.btnInformar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
         Me.btnInformar.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.Very_Basic_Ok_icon_1_
         Me.btnInformar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnInformar.Location = New System.Drawing.Point(1109, 409)
+        Me.btnInformar.Location = New System.Drawing.Point(1121, 409)
         Me.btnInformar.Name = "btnInformar"
-        Me.btnInformar.Size = New System.Drawing.Size(139, 29)
+        Me.btnInformar.Size = New System.Drawing.Size(125, 29)
         Me.btnInformar.TabIndex = 45
         Me.btnInformar.Text = "Informar"
         Me.btnInformar.UseVisualStyleBackColor = False
@@ -147,9 +147,10 @@ Partial Class frmInforme
         Me.btnCerrar.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.btnCerrar.Location = New System.Drawing.Point(47, 402)
         Me.btnCerrar.Name = "btnCerrar"
-        Me.btnCerrar.Size = New System.Drawing.Size(139, 29)
+        Me.btnCerrar.Size = New System.Drawing.Size(75, 29)
         Me.btnCerrar.TabIndex = 47
         Me.btnCerrar.Text = "Volver"
+        Me.btnCerrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnCerrar.UseVisualStyleBackColor = False
         '
         'totalPesos

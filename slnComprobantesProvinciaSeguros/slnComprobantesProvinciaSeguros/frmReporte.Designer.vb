@@ -105,7 +105,7 @@ Partial Class frmReporte
         Me.ShapeContainer1.Margin = New System.Windows.Forms.Padding(0)
         Me.ShapeContainer1.Name = "ShapeContainer1"
         Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape2, Me.RectangleShape1})
-        Me.ShapeContainer1.Size = New System.Drawing.Size(1315, 510)
+        Me.ShapeContainer1.Size = New System.Drawing.Size(1315, 523)
         Me.ShapeContainer1.TabIndex = 31
         Me.ShapeContainer1.TabStop = False
         '
@@ -128,11 +128,11 @@ Partial Class frmReporte
         Me.btnExport.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnExport.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnExport.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
-        Me.btnExport.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.download
+        Me.btnExport.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.downwards_arrow
         Me.btnExport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnExport.Location = New System.Drawing.Point(1134, 434)
+        Me.btnExport.Location = New System.Drawing.Point(1127, 469)
         Me.btnExport.Name = "btnExport"
-        Me.btnExport.Size = New System.Drawing.Size(138, 29)
+        Me.btnExport.Size = New System.Drawing.Size(125, 29)
         Me.btnExport.TabIndex = 37
         Me.btnExport.Text = "Exportar"
         Me.btnExport.UseVisualStyleBackColor = False
@@ -140,13 +140,13 @@ Partial Class frmReporte
         'lblTotalDia
         '
         Me.lblTotalDia.AutoSize = True
-        Me.lblTotalDia.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTotalDia.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTotalDia.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
-        Me.lblTotalDia.Location = New System.Drawing.Point(54, 434)
+        Me.lblTotalDia.Location = New System.Drawing.Point(55, 434)
         Me.lblTotalDia.Name = "lblTotalDia"
-        Me.lblTotalDia.Size = New System.Drawing.Size(188, 19)
+        Me.lblTotalDia.Size = New System.Drawing.Size(133, 18)
         Me.lblTotalDia.TabIndex = 38
-        Me.lblTotalDia.Text = "Total cobrado del dia:"
+        Me.lblTotalDia.Text = "Total a informar:"
         '
         'btnCerrar
         '
@@ -160,9 +160,9 @@ Partial Class frmReporte
         Me.btnCerrar.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.back_1_
         Me.btnCerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnCerrar.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.btnCerrar.Location = New System.Drawing.Point(1134, 468)
+        Me.btnCerrar.Location = New System.Drawing.Point(58, 469)
         Me.btnCerrar.Name = "btnCerrar"
-        Me.btnCerrar.Size = New System.Drawing.Size(138, 29)
+        Me.btnCerrar.Size = New System.Drawing.Size(125, 29)
         Me.btnCerrar.TabIndex = 47
         Me.btnCerrar.Text = "Volver"
         Me.btnCerrar.UseVisualStyleBackColor = False
@@ -170,55 +170,55 @@ Partial Class frmReporte
         'totalDia
         '
         Me.totalDia.AutoSize = True
-        Me.totalDia.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.totalDia.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.totalDia.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
-        Me.totalDia.Location = New System.Drawing.Point(247, 434)
+        Me.totalDia.Location = New System.Drawing.Point(184, 434)
         Me.totalDia.Name = "totalDia"
-        Me.totalDia.Size = New System.Drawing.Size(19, 19)
+        Me.totalDia.Size = New System.Drawing.Size(18, 18)
         Me.totalDia.TabIndex = 49
         Me.totalDia.Text = "$"
         '
         'lblTotalPagoAnticipado
         '
         Me.lblTotalPagoAnticipado.AutoSize = True
-        Me.lblTotalPagoAnticipado.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTotalPagoAnticipado.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTotalPagoAnticipado.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
-        Me.lblTotalPagoAnticipado.Location = New System.Drawing.Point(269, 462)
+        Me.lblTotalPagoAnticipado.Location = New System.Drawing.Point(656, 434)
         Me.lblTotalPagoAnticipado.Name = "lblTotalPagoAnticipado"
-        Me.lblTotalPagoAnticipado.Size = New System.Drawing.Size(19, 19)
+        Me.lblTotalPagoAnticipado.Size = New System.Drawing.Size(18, 18)
         Me.lblTotalPagoAnticipado.TabIndex = 53
         Me.lblTotalPagoAnticipado.Text = "$"
         '
         'lblPagoAnticipado
         '
         Me.lblPagoAnticipado.AutoSize = True
-        Me.lblPagoAnticipado.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPagoAnticipado.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblPagoAnticipado.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
-        Me.lblPagoAnticipado.Location = New System.Drawing.Point(54, 462)
+        Me.lblPagoAnticipado.Location = New System.Drawing.Point(471, 434)
         Me.lblPagoAnticipado.Name = "lblPagoAnticipado"
-        Me.lblPagoAnticipado.Size = New System.Drawing.Size(209, 19)
+        Me.lblPagoAnticipado.Size = New System.Drawing.Size(189, 18)
         Me.lblPagoAnticipado.TabIndex = 52
         Me.lblPagoAnticipado.Text = "Total pagos anticipados:"
         '
         'totalpagosTarjeta
         '
         Me.totalpagosTarjeta.AutoSize = True
-        Me.totalpagosTarjeta.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.totalpagosTarjeta.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.totalpagosTarjeta.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
-        Me.totalpagosTarjeta.Location = New System.Drawing.Point(923, 434)
+        Me.totalpagosTarjeta.Location = New System.Drawing.Point(1086, 434)
         Me.totalpagosTarjeta.Name = "totalpagosTarjeta"
-        Me.totalpagosTarjeta.Size = New System.Drawing.Size(19, 19)
+        Me.totalpagosTarjeta.Size = New System.Drawing.Size(18, 18)
         Me.totalpagosTarjeta.TabIndex = 55
         Me.totalpagosTarjeta.Text = "$"
         '
         'lblPagosTarjetas
         '
         Me.lblPagosTarjetas.AutoSize = True
-        Me.lblPagosTarjetas.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPagosTarjetas.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblPagosTarjetas.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
-        Me.lblPagosTarjetas.Location = New System.Drawing.Point(744, 434)
+        Me.lblPagosTarjetas.Location = New System.Drawing.Point(935, 434)
         Me.lblPagosTarjetas.Name = "lblPagosTarjetas"
-        Me.lblPagosTarjetas.Size = New System.Drawing.Size(173, 19)
+        Me.lblPagosTarjetas.Size = New System.Drawing.Size(154, 18)
         Me.lblPagosTarjetas.TabIndex = 54
         Me.lblPagosTarjetas.Text = "Total pagos tarjeta:"
         '
@@ -242,7 +242,7 @@ Partial Class frmReporte
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btnCerrar
-        Me.ClientSize = New System.Drawing.Size(1315, 510)
+        Me.ClientSize = New System.Drawing.Size(1315, 523)
         Me.Controls.Add(Me.lblSinRegistros)
         Me.Controls.Add(Me.totalpagosTarjeta)
         Me.Controls.Add(Me.lblPagosTarjetas)

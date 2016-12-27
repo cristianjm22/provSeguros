@@ -433,7 +433,7 @@ Public Class ComprobantesAct
 
             Next
 
-            exHoja.Cells.Item(Fila + 3, Col - 2) = "TOTAL DEL DIA"
+            exHoja.Cells.Item(Fila + 3, Col - 2) = "TOTAL A INFORMAR"
             exHoja.Cells.Item(Fila + 3, Col - 2).Style = "StyleTotal"
 
             exHoja.Cells.Item(Fila + 3, Col - 1).Style = "StyleTotal"
@@ -611,4 +611,20 @@ Public Class ComprobantesAct
         End If
         Return 0
     End Function
+
+    Shared Function esPagoTarjetaInvalido(ByVal fechaVencimiento As String) As Boolean
+        Dim result As Boolean = False
+        Dim monthVto = fechaVencimiento.Substring(3, 2)
+        Dim yearVto = fechaVencimiento.Substring(6, 4)
+        Dim yearNow = System.DateTime.Now.ToString("yyyy")
+        Dim monthNow = System.DateTime.Now.ToString("MM")
+        Dim dayNow = System.DateTime.Now.ToString("dd")
+        If (yearVto < yearNow AndAlso monthVto < monthNow) Then
+            result = True
+        ElseIf (yearVto = yearNow AndAlso monthVto = monthNow) AndAlso (dayNow > 10) Then
+            result = True
+        End If
+        Return result
+    End Function
+
 End Class

@@ -127,7 +127,7 @@ Partial Class frmEliminarModPagos
         Me.dgvReporte.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvReporte.ShowEditingIcon = False
         Me.dgvReporte.ShowRowErrors = False
-        Me.dgvReporte.Size = New System.Drawing.Size(1313, 152)
+        Me.dgvReporte.Size = New System.Drawing.Size(1261, 152)
         Me.dgvReporte.TabIndex = 31
         '
         'ID_COMPROBANTE
@@ -273,7 +273,7 @@ Partial Class frmEliminarModPagos
         Me.RectangleShape1.Location = New System.Drawing.Point(1, 0)
         Me.RectangleShape1.Name = "RectangleShape1"
         Me.RectangleShape1.SelectionColor = System.Drawing.Color.Transparent
-        Me.RectangleShape1.Size = New System.Drawing.Size(1355, 97)
+        Me.RectangleShape1.Size = New System.Drawing.Size(1303, 97)
         '
         'ShapeContainer1
         '
@@ -281,7 +281,7 @@ Partial Class frmEliminarModPagos
         Me.ShapeContainer1.Margin = New System.Windows.Forms.Padding(0)
         Me.ShapeContainer1.Name = "ShapeContainer1"
         Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape3, Me.RectangleShape1})
-        Me.ShapeContainer1.Size = New System.Drawing.Size(1339, 466)
+        Me.ShapeContainer1.Size = New System.Drawing.Size(1287, 466)
         Me.ShapeContainer1.TabIndex = 40
         Me.ShapeContainer1.TabStop = False
         '
@@ -290,7 +290,7 @@ Partial Class frmEliminarModPagos
         Me.RectangleShape3.BackgroundImage = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.Sin
         Me.RectangleShape3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.RectangleShape3.BorderColor = System.Drawing.Color.Transparent
-        Me.RectangleShape3.Location = New System.Drawing.Point(1152, -5)
+        Me.RectangleShape3.Location = New System.Drawing.Point(1102, -5)
         Me.RectangleShape3.Name = "RectangleShape3"
         Me.RectangleShape3.SelectionColor = System.Drawing.Color.Transparent
         Me.RectangleShape3.Size = New System.Drawing.Size(176, 103)
@@ -316,7 +316,7 @@ Partial Class frmEliminarModPagos
         Me.lblSinRegistros.Location = New System.Drawing.Point(44, 208)
         Me.lblSinRegistros.Name = "lblSinRegistros"
         Me.lblSinRegistros.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.lblSinRegistros.Size = New System.Drawing.Size(1265, 26)
+        Me.lblSinRegistros.Size = New System.Drawing.Size(1207, 26)
         Me.lblSinRegistros.TabIndex = 42
         Me.lblSinRegistros.Text = "No se encontraron registros"
         Me.lblSinRegistros.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -334,11 +334,12 @@ Partial Class frmEliminarModPagos
         Me.btnCerrar.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.back_1_
         Me.btnCerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnCerrar.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.btnCerrar.Location = New System.Drawing.Point(1165, 422)
+        Me.btnCerrar.Location = New System.Drawing.Point(44, 412)
         Me.btnCerrar.Name = "btnCerrar"
-        Me.btnCerrar.Size = New System.Drawing.Size(138, 29)
+        Me.btnCerrar.Size = New System.Drawing.Size(75, 29)
         Me.btnCerrar.TabIndex = 47
         Me.btnCerrar.Text = "Volver"
+        Me.btnCerrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnCerrar.UseVisualStyleBackColor = False
         '
         'PictureBox1
@@ -372,9 +373,9 @@ Partial Class frmEliminarModPagos
         Me.btnExport.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
         Me.btnExport.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.downwards_arrow
         Me.btnExport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnExport.Location = New System.Drawing.Point(1021, 422)
+        Me.btnExport.Location = New System.Drawing.Point(1126, 412)
         Me.btnExport.Name = "btnExport"
-        Me.btnExport.Size = New System.Drawing.Size(138, 29)
+        Me.btnExport.Size = New System.Drawing.Size(125, 29)
         Me.btnExport.TabIndex = 50
         Me.btnExport.Text = "Exportar"
         Me.btnExport.UseVisualStyleBackColor = False
@@ -454,7 +455,7 @@ Partial Class frmEliminarModPagos
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btnCerrar
-        Me.ClientSize = New System.Drawing.Size(1339, 466)
+        Me.ClientSize = New System.Drawing.Size(1287, 466)
         Me.Controls.Add(Me.PictureBox3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)

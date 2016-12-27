@@ -25,6 +25,7 @@ Public Class frmInforme
             lblTotal.Hide()
             totalPesos.Hide()
         Else
+            lblSinRegistros.Hide()
             lblTotal.Show()
             dgvReimpresion.Show()
             totalPesos.Text = "$" + ComprobantesAct.obtenerTotalPagosInformados()

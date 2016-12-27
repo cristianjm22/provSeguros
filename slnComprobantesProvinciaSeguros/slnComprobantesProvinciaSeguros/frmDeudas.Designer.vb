@@ -244,7 +244,7 @@ Partial Class frmDeudas
         Me.btnCerrar.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.btnCerrar.Location = New System.Drawing.Point(56, 403)
         Me.btnCerrar.Name = "btnCerrar"
-        Me.btnCerrar.Size = New System.Drawing.Size(74, 29)
+        Me.btnCerrar.Size = New System.Drawing.Size(75, 29)
         Me.btnCerrar.TabIndex = 46
         Me.btnCerrar.Text = "Volver"
         Me.btnCerrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -266,7 +266,7 @@ Partial Class frmDeudas
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblSinRegistros.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lblSinRegistros.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblSinRegistros.Location = New System.Drawing.Point(56, 234)
+        Me.lblSinRegistros.Location = New System.Drawing.Point(56, 224)
         Me.lblSinRegistros.Name = "lblSinRegistros"
         Me.lblSinRegistros.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.lblSinRegistros.Size = New System.Drawing.Size(1045, 31)

@@ -25,12 +25,12 @@ Public Class frmReimpresion
             lblSinRegistros.Hide()
             btnImprimir.Show()
         End If
-
+        CargarCombo()
     End Sub
 
     Private Sub txtPoliza_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtPoliza.TextChanged
         Dim dv As DataView
-        dv = New DataView(table, "POLIZA like '%" + txtPoliza.Text + "%'", "POLIZA Desc", DataViewRowState.CurrentRows)
+        dv = New DataView(table, "POLIZA like '%" + txtPoliza.Text + "%' AND ESTADO like '%" + cboEstado.Text + "%'", "POLIZA Desc", DataViewRowState.CurrentRows)
         dgvReimpresion.DataSource = dv
         If (dv.Count = 0) Then
             lblSinRegistros.Show()
@@ -40,6 +40,23 @@ Public Class frmReimpresion
             lblSinRegistros.Hide()
             btnImprimir.Show()
             dgvReimpresion.Show()
+        End If
+    End Sub
+
+    ''' <summary>
+    ''' Cristian Morales
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub CargarCombo()
+        Dim ds As New DataTable
+        Dim Query As String = "Select [ID_ESTADO],[ESTADO] FROM [dbo].[TIPOS_ESTADOS] WHERE [ID_ESTADO] <> 4"
+
+        ds = ComprobantesDA.EjecutaQuery(Query)
+        If ds.Rows.Count > 0 Then
+            cboEstado.DataSource = ds
+
+            cboEstado.ValueMember = "ID_ESTADO"
+            cboEstado.DisplayMember = "ESTADO"
         End If
     End Sub
 
@@ -101,5 +118,22 @@ Public Class frmReimpresion
 
 
 
+    End Sub
+
+    Private Sub cboEstado_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cboEstado.SelectedIndexChanged
+        If cboEstado.SelectedValue.ToString <> "System.Data.DataRowView" Then
+            Dim dv As DataView
+            dv = New DataView(table, "POLIZA like '%" + txtPoliza.Text + "%' AND ESTADO like '%" + cboEstado.Text + "%'", "ESTADO Desc", DataViewRowState.CurrentRows)
+            dgvReimpresion.DataSource = dv
+            If (dv.Count = 0) Then
+                lblSinRegistros.Show()
+                btnImprimir.Hide()
+                dgvReimpresion.Hide()
+            Else
+                lblSinRegistros.Hide()
+                btnImprimir.Show()
+                dgvReimpresion.Show()
+            End If
+        End If
     End Sub
 End Class

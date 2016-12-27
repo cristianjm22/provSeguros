@@ -63,7 +63,7 @@
             If dtART.Rows.Count > 0 Then
                 lblSinRegistros.Hide()
                 lblTotal.Show()
-
+                btnExport.Show()
                 total.Show()
                 dgvReporte.Show()
 
@@ -80,6 +80,7 @@
                 lblTotal.Hide()
                 total.Hide()
                 dgvReporte.Hide()
+                btnExport.Hide()
             End If
 
         Catch ex As Exception
@@ -164,5 +165,13 @@
 
     Private Sub dtpFechaHasta_ValueChanged(sender As System.Object, e As System.EventArgs) Handles dtpFechaHasta.ValueChanged
         cargarGrillaReporte(RTrim(LTrim(cboEstado.SelectedValue)), txtPoliza.Text, dtpFechaDesde.Value, dtpFechaHasta.Value)
+    End Sub
+
+    Private Sub lblEstado_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles lblEstado.Click
+
+    End Sub
+
+    Private Sub PictureBox2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PictureBox2.Click
+
     End Sub
 End Class

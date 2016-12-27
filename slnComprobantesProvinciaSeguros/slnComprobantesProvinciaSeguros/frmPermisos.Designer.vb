@@ -222,7 +222,7 @@ Partial Class frmPermisos
         Me.btnCerrar.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.btnCerrar.Location = New System.Drawing.Point(53, 344)
         Me.btnCerrar.Name = "btnCerrar"
-        Me.btnCerrar.Size = New System.Drawing.Size(74, 29)
+        Me.btnCerrar.Size = New System.Drawing.Size(75, 29)
         Me.btnCerrar.TabIndex = 47
         Me.btnCerrar.Text = "Volver"
         Me.btnCerrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight

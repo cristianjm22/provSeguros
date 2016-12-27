@@ -941,10 +941,10 @@
     <value>MiddleLeft</value>
   </data>
   <data name="btnLimpiar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>196, 460</value>
+    <value>181, 460</value>
   </data>
   <data name="btnLimpiar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 29</value>
+    <value>125, 29</value>
   </data>
   <data name="btnLimpiar.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -983,10 +983,10 @@
     <value>NoControl</value>
   </data>
   <data name="btnGuardar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>326, 460</value>
+    <value>312, 460</value>
   </data>
   <data name="btnGuardar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>112, 29</value>
+    <value>125, 29</value>
   </data>
   <data name="btnGuardar.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>

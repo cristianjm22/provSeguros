@@ -36,8 +36,12 @@ Partial Class frmReimpresion
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.btnCerrar = New System.Windows.Forms.Button()
         Me.lblSinRegistros = New System.Windows.Forms.Label()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.lblEstado = New System.Windows.Forms.Label()
+        Me.cboEstado = New System.Windows.Forms.ComboBox()
         CType(Me.dgvReimpresion, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lblPoliza
@@ -45,7 +49,7 @@ Partial Class frmReimpresion
         Me.lblPoliza.AutoSize = True
         Me.lblPoliza.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblPoliza.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.lblPoliza.Location = New System.Drawing.Point(62, 179)
+        Me.lblPoliza.Location = New System.Drawing.Point(363, 180)
         Me.lblPoliza.Name = "lblPoliza"
         Me.lblPoliza.Size = New System.Drawing.Size(36, 14)
         Me.lblPoliza.TabIndex = 0
@@ -53,7 +57,7 @@ Partial Class frmReimpresion
         '
         'txtPoliza
         '
-        Me.txtPoliza.Location = New System.Drawing.Point(103, 176)
+        Me.txtPoliza.Location = New System.Drawing.Point(404, 177)
         Me.txtPoliza.MaxLength = 15
         Me.txtPoliza.Name = "txtPoliza"
         Me.txtPoliza.Size = New System.Drawing.Size(100, 20)
@@ -105,7 +109,7 @@ Partial Class frmReimpresion
         Me.RectangleShape1.Location = New System.Drawing.Point(0, 0)
         Me.RectangleShape1.Name = "RectangleShape1"
         Me.RectangleShape1.SelectionColor = System.Drawing.Color.Transparent
-        Me.RectangleShape1.Size = New System.Drawing.Size(1564, 94)
+        Me.RectangleShape1.Size = New System.Drawing.Size(1616, 94)
         '
         'ShapeContainer1
         '
@@ -113,7 +117,7 @@ Partial Class frmReimpresion
         Me.ShapeContainer1.Margin = New System.Windows.Forms.Padding(0)
         Me.ShapeContainer1.Name = "ShapeContainer1"
         Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape2, Me.RectangleShape1})
-        Me.ShapeContainer1.Size = New System.Drawing.Size(1242, 489)
+        Me.ShapeContainer1.Size = New System.Drawing.Size(1294, 489)
         Me.ShapeContainer1.TabIndex = 3
         Me.ShapeContainer1.TabStop = False
         '
@@ -122,7 +126,7 @@ Partial Class frmReimpresion
         Me.RectangleShape2.BackgroundImage = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.Sin
         Me.RectangleShape2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.RectangleShape2.BorderColor = System.Drawing.Color.Transparent
-        Me.RectangleShape2.Location = New System.Drawing.Point(1059, -9)
+        Me.RectangleShape2.Location = New System.Drawing.Point(1107, -10)
         Me.RectangleShape2.Name = "RectangleShape2"
         Me.RectangleShape2.SelectionColor = System.Drawing.Color.Transparent
         Me.RectangleShape2.Size = New System.Drawing.Size(176, 103)
@@ -149,9 +153,9 @@ Partial Class frmReimpresion
         Me.btnImprimir.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(131, Byte), Integer))
         Me.btnImprimir.Image = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.Very_Basic_Ok_icon_1_
         Me.btnImprimir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnImprimir.Location = New System.Drawing.Point(1048, 425)
+        Me.btnImprimir.Location = New System.Drawing.Point(1132, 425)
         Me.btnImprimir.Name = "btnImprimir"
-        Me.btnImprimir.Size = New System.Drawing.Size(108, 29)
+        Me.btnImprimir.Size = New System.Drawing.Size(125, 29)
         Me.btnImprimir.TabIndex = 38
         Me.btnImprimir.Text = "Imprimir"
         Me.btnImprimir.UseVisualStyleBackColor = False
@@ -160,7 +164,7 @@ Partial Class frmReimpresion
         '
         Me.PictureBox1.BackgroundImage = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.appbar_filter
         Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.PictureBox1.Location = New System.Drawing.Point(209, 174)
+        Me.PictureBox1.Location = New System.Drawing.Point(510, 175)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(27, 22)
         Me.PictureBox1.TabIndex = 30
@@ -180,7 +184,7 @@ Partial Class frmReimpresion
         Me.btnCerrar.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.btnCerrar.Location = New System.Drawing.Point(65, 425)
         Me.btnCerrar.Name = "btnCerrar"
-        Me.btnCerrar.Size = New System.Drawing.Size(74, 29)
+        Me.btnCerrar.Size = New System.Drawing.Size(75, 29)
         Me.btnCerrar.TabIndex = 47
         Me.btnCerrar.Text = "Volver"
         Me.btnCerrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -195,18 +199,51 @@ Partial Class frmReimpresion
         Me.lblSinRegistros.Location = New System.Drawing.Point(65, 207)
         Me.lblSinRegistros.Name = "lblSinRegistros"
         Me.lblSinRegistros.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.lblSinRegistros.Size = New System.Drawing.Size(1091, 31)
+        Me.lblSinRegistros.Size = New System.Drawing.Size(1143, 31)
         Me.lblSinRegistros.TabIndex = 49
         Me.lblSinRegistros.Text = "No se encontraron registros"
         Me.lblSinRegistros.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.lblSinRegistros.Visible = False
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.BackgroundImage = Global.slnComprobantesProvinciaSeguros.My.Resources.Resources.appbar_filter
+        Me.PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.PictureBox2.Location = New System.Drawing.Point(242, 175)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(27, 22)
+        Me.PictureBox2.TabIndex = 52
+        Me.PictureBox2.TabStop = False
+        '
+        'lblEstado
+        '
+        Me.lblEstado.AutoSize = True
+        Me.lblEstado.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblEstado.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.lblEstado.Location = New System.Drawing.Point(65, 181)
+        Me.lblEstado.Name = "lblEstado"
+        Me.lblEstado.Size = New System.Drawing.Size(44, 14)
+        Me.lblEstado.TabIndex = 51
+        Me.lblEstado.Text = "Estado"
+        '
+        'cboEstado
+        '
+        Me.cboEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboEstado.FormattingEnabled = True
+        Me.cboEstado.Location = New System.Drawing.Point(115, 176)
+        Me.cboEstado.Name = "cboEstado"
+        Me.cboEstado.Size = New System.Drawing.Size(121, 21)
+        Me.cboEstado.TabIndex = 50
         '
         'frmReimpresion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btnCerrar
-        Me.ClientSize = New System.Drawing.Size(1242, 489)
+        Me.ClientSize = New System.Drawing.Size(1294, 489)
+        Me.Controls.Add(Me.PictureBox2)
+        Me.Controls.Add(Me.lblEstado)
+        Me.Controls.Add(Me.cboEstado)
         Me.Controls.Add(Me.lblSinRegistros)
         Me.Controls.Add(Me.btnCerrar)
         Me.Controls.Add(Me.btnImprimir)
@@ -224,6 +261,7 @@ Partial Class frmReimpresion
         Me.Text = "Reimpresion de Ticket"
         CType(Me.dgvReimpresion, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -239,4 +277,7 @@ Partial Class frmReimpresion
     Friend WithEvents btnImprimir As System.Windows.Forms.Button
     Friend WithEvents btnCerrar As System.Windows.Forms.Button
     Friend WithEvents lblSinRegistros As System.Windows.Forms.Label
+    Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
+    Friend WithEvents lblEstado As System.Windows.Forms.Label
+    Friend WithEvents cboEstado As System.Windows.Forms.ComboBox
 End Class
